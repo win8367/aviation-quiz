@@ -43,13 +43,22 @@
         .nav-item.answered { background: #f1f5f9; color: #64748b; }
         .nav-item.correct { background: #10b981; color: white; border-color: transparent; }
         .nav-item.wrong { background: #ef4444; color: white; border-color: transparent; }
+        
+        /* 애니메이션 효과 */
+        .fade-in-up {
+            animation: fadeInUp 0.4s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
     <div id="root"></div>
 
     <script type="text/babel">
-        const { useState, useEffect, useRef } = React;
+        const { useState, useEffect, useRef, useMemo } = React;
 
         const firebaseConfig = {
             apiKey: "AIzaSyCoSlnAX9Hqh85IBtJuGqLrJdpxRbFgwnc",
@@ -60,13 +69,11 @@
             appId: "1:203408450908:web:1be58ef1b4b4f4b3f5cd99",
             measurementId: "G-PC36TY5R3M"
         };
-        const appId = window.__app_id || 'aviation-master-pro';
         
+        const appId = 'aviation-master-pro';
         const app = !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
         const auth = firebase.auth();
         const db = firebase.firestore();
-
-        db.settings({ cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED, merge: true });
 
         const MathText = ({ text }) => {
             const containerRef = useRef(null);
@@ -89,7 +96,6 @@
         const App = () => {
             const [view, setView] = useState('LOGIN');
             const [user, setUser] = useState(null);
-            const [isAuthReady, setIsAuthReady] = useState(false);
             const [loading, setLoading] = useState(true);
             const [studentProfile, setStudentProfile] = useState(null);
             
@@ -109,22 +115,25 @@
             });
 
             useEffect(() => {
-                const initAuth = async () => {
-                    try {
-                        const token = window.__initial_auth_token;
-                        if (token) await auth.signInWithCustomToken(token);
-                        else await auth.signInAnonymously();
-                    } catch (err) { console.error("Auth Failed:", err); }
-                };
-                const unsubscribe = auth.onAuthStateChanged((u) => {
-                    if (u) { setUser(u); setIsAuthReady(true); setLoading(false); }
-                    else initAuth();
+                if (examConfig.active) {
+                    setFilters(f => ({...f, mode: 'EXAM'}));
+                }
+            }, [examConfig.active]);
+
+            useEffect(() => {
+                const unsubscribe = auth.onAuthStateChanged(async (u) => {
+                    if (u) {
+                        setUser(u);
+                        setLoading(false);
+                    } else {
+                        await auth.signInAnonymously();
+                    }
                 });
                 return () => unsubscribe();
             }, []);
 
             useEffect(() => {
-                if (!isAuthReady || !user) return;
+                if (!user) return;
                 const publicPath = db.collection('artifacts').doc(appId).collection('public').doc('data');
                 
                 const unsubQ = publicPath.collection('questions').onSnapshot(s => setQuestions(s.docs.map(d => ({id: d.id, ...d.data()}))));
@@ -135,7 +144,7 @@
                 });
 
                 return () => { unsubQ(); unsubS(); unsubR(); unsubC(); };
-            }, [isAuthReady, user]);
+            }, [user]);
 
             const handleLogin = (name, sid) => {
                 if (!name || !sid) return alert("성함과 학번을 입력해주세요.");
@@ -146,19 +155,14 @@
             };
 
             const startQuiz = () => {
-                if (filters.mode === 'EXAM' && !examConfig.active) return alert("시험 모드가 비활성화 상태입니다.");
-
                 let pool = questions.filter(q => 
                     (filters.year === '전체' || String(q.year) === filters.year) &&
                     (filters.session === '전체' || q.session === filters.session) &&
                     (filters.category === '전체' || q.category === filters.category)
                 );
-
                 if (pool.length === 0) return alert("해당 조건의 문제가 없습니다.");
-
                 pool = [...pool].sort(() => Math.random() - 0.5);
                 if (filters.limit !== '전체') pool = pool.slice(0, parseInt(filters.limit));
-
                 setQuizList(pool);
                 setAnswers({});
                 setCurrentIdx(0);
@@ -167,10 +171,9 @@
             };
 
             const submitQuiz = async () => {
-                if (!user) return;
+                if (isReviewMode) return setView('HOME');
                 const correctCount = quizList.filter((q, idx) => answers[idx] === q.correct).length;
                 const finalScore = Math.round((correctCount / quizList.length) * 100);
-                
                 try {
                     await db.collection('artifacts').doc(appId).collection('public').doc('data').collection('results').add({
                         name: studentProfile.name,
@@ -180,7 +183,9 @@
                         total: quizList.length,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                         mode: filters.mode,
-                        uid: user.uid
+                        uid: user.uid,
+                        userAnswers: answers,
+                        questionSet: quizList.map(q => q.id)
                     });
                     setView('RESULT');
                 } catch (e) { alert("저장 실패"); }
@@ -192,12 +197,9 @@
                     await db.collection('artifacts').doc(appId).collection('public').doc('data').collection('configs').doc('main').set({
                         exam: { active: newStatus }
                     }, { merge: true });
-                } catch (e) {
-                    alert("상태 변경 실패");
-                }
+                } catch (e) { alert("상태 변경 실패"); }
             };
 
-            // 일괄 업로드 (JSON)
             const uploadJSON = (e) => {
                 const file = e.target.files[0];
                 if (!file) return;
@@ -218,7 +220,6 @@
                 reader.readAsText(file);
             };
 
-            // 학생 파일 업로드 (CSV: 성함,학번)
             const uploadStudentsCSV = (e) => {
                 const file = e.target.files[0];
                 if (!file) return;
@@ -243,17 +244,16 @@
                 reader.readAsText(file);
             };
 
-            const downloadResults = () => {
-                const header = "이름,학번,점수,맞은개수,전체개수,모드,시간\n";
-                const rows = results.map(r => 
-                    `${r.name},${r.studentId},${r.score},${r.correct},${r.total},${r.mode},${r.timestamp?.toDate().toLocaleString()}`
-                ).join('\n');
-                const blob = new Blob(["\ufeff" + header + rows], { type: 'text/csv;charset=utf-8;' });
-                const link = document.createElement("a");
-                link.href = URL.createObjectURL(blob);
-                link.download = `exam_results_${Date.now()}.csv`;
-                link.click();
-            };
+            const categoryAnalysis = useMemo(() => {
+                const stats = {};
+                quizList.forEach((q, i) => {
+                    const cat = q.category || '기타';
+                    if (!stats[cat]) stats[cat] = { total: 0, correct: 0 };
+                    stats[cat].total++;
+                    if (answers[i] === q.correct) stats[cat].correct++;
+                });
+                return stats;
+            }, [quizList, answers, view]);
 
             if (loading) return (
                 <div className="h-screen flex flex-col items-center justify-center bg-slate-900 text-white">
@@ -269,12 +269,18 @@
                     <div className={`nav-drawer ${isNavOpen ? 'open' : ''} overflow-y-auto custom-scroll`}>
                         <div className="px-4 py-6">
                             <h4 className="text-[10px] font-black text-slate-300 mb-4 text-center uppercase tracking-tighter">문항 이동</h4>
-                            {quizList.map((_, i) => (
-                                <div key={i} onClick={() => { setCurrentIdx(i); setIsNavOpen(false); }} 
-                                    className={`nav-item ${currentIdx === i ? 'active' : ''} ${answers[i] !== undefined ? 'answered' : ''}`}>
-                                    {i + 1}
-                                </div>
-                            ))}
+                            {quizList.map((q, i) => {
+                                let statusClass = answers[i] !== undefined ? 'answered' : '';
+                                if (isReviewMode || (filters.mode === 'PRACTICE' && answers[i] !== undefined)) {
+                                    statusClass = answers[i] === q.correct ? 'correct' : 'wrong';
+                                }
+                                return (
+                                    <div key={i} onClick={() => { setCurrentIdx(i); setIsNavOpen(false); }} 
+                                        className={`nav-item ${currentIdx === i ? 'active' : ''} ${statusClass}`}>
+                                        {i + 1}
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
 
@@ -321,10 +327,16 @@
                                 <div className="p-8 bg-white rounded-[32px] border border-slate-100 shadow-sm space-y-8">
                                     <div className="flex justify-between items-center">
                                         <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">Setup Quiz Session</h3>
+                                        {examConfig.active && <span className="bg-rose-100 text-rose-600 px-3 py-1 rounded-full text-[10px] font-black animate-pulse">시험 진행중</span>}
                                     </div>
                                     <div className="grid grid-cols-2 gap-2 bg-slate-50 p-1.5 rounded-2xl">
-                                        <button onClick={() => setFilters({...filters, mode: 'PRACTICE'})} className={`py-4 rounded-xl font-black text-xs transition-all ${filters.mode === 'PRACTICE' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-400 hover:text-slate-600'}`}>연습 모드</button>
-                                        <button onClick={() => setFilters({...filters, mode: 'EXAM'})} className={`py-4 rounded-xl font-black text-xs transition-all ${filters.mode === 'EXAM' ? 'bg-slate-900 text-white shadow-lg' : 'text-slate-400 hover:text-slate-600'}`}>시험 모드</button>
+                                        <button 
+                                            disabled={examConfig.active}
+                                            onClick={() => setFilters({...filters, mode: 'PRACTICE'})} 
+                                            className={`py-4 rounded-xl font-black text-xs transition-all ${filters.mode === 'PRACTICE' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-400'}`}>
+                                            연습 모드
+                                        </button>
+                                        <button onClick={() => setFilters({...filters, mode: 'EXAM'})} className={`py-4 rounded-xl font-black text-xs transition-all ${filters.mode === 'EXAM' ? 'bg-slate-900 text-white shadow-lg' : 'text-slate-400'}`}>시험 모드</button>
                                     </div>
                                     
                                     <div className="grid grid-cols-1 gap-4">
@@ -368,9 +380,12 @@
                         )}
 
                         {view === 'QUIZ' && quizList[currentIdx] && (
-                            <div className="pb-32 animate-in fade-in">
+                            <div className="pb-40 animate-in fade-in">
                                 <div className="flex justify-between items-center mb-6 px-2">
-                                    <span className="text-[10px] font-black text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full uppercase tracking-widest">{quizList[currentIdx].category}</span>
+                                    <div className="flex flex-col">
+                                        <span className="text-[10px] font-black text-indigo-600 uppercase tracking-widest">{quizList[currentIdx].category}</span>
+                                        <span className="text-[10px] font-bold text-slate-300">{quizList[currentIdx].year}년 {quizList[currentIdx].session}</span>
+                                    </div>
                                     <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Question {currentIdx + 1} / {quizList.length}</span>
                                 </div>
                                 <div className="bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm mb-8 font-bold text-slate-800 text-xl leading-relaxed min-h-[160px]">
@@ -379,109 +394,154 @@
                                 <div className="space-y-3">
                                     {quizList[currentIdx].options.map((opt, i) => {
                                         const isSelected = answers[currentIdx] === i;
+                                        const isCorrect = i === quizList[currentIdx].correct;
+                                        const isAnswered = answers[currentIdx] !== undefined;
+                                        const showFeedback = isReviewMode || (filters.mode === 'PRACTICE' && isAnswered);
+                                        
+                                        let btnClass = "border-white bg-white hover:border-slate-100";
+                                        if (showFeedback) {
+                                            if (isCorrect) btnClass = "border-emerald-500 bg-emerald-50 shadow-sm";
+                                            else if (isSelected) btnClass = "border-rose-500 bg-rose-50";
+                                        } else if (isSelected) {
+                                            btnClass = "border-indigo-600 bg-indigo-50 shadow-md";
+                                        }
+
                                         return (
-                                            <button key={i} onClick={() => setAnswers({...answers, [currentIdx]: i})} className={`w-full p-5 text-left border-2 rounded-2xl flex gap-4 transition-all ${isSelected ? 'border-indigo-600 bg-indigo-50 shadow-md' : 'border-white bg-white hover:border-slate-100'}`}>
+                                            <button 
+                                                key={i} 
+                                                disabled={showFeedback && !isReviewMode}
+                                                onClick={() => setAnswers(prev => ({...prev, [currentIdx]: i}))} 
+                                                className={`w-full p-5 text-left border-2 rounded-2xl flex gap-4 transition-all ${btnClass}`}>
                                                 <span className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 text-xs font-black ${isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-400'}`}>{i+1}</span>
                                                 <div className="text-[16px] font-bold flex-1 pt-0.5"><MathText text={opt} /></div>
                                             </button>
                                         );
                                     })}
                                 </div>
+
+                                {/* 해설 섹션: 연습 모드에서 선택했거나 복습 모드일 때만 표시 */}
+                                {(isReviewMode || (filters.mode === 'PRACTICE' && answers[currentIdx] !== undefined)) && (
+                                    <div className="mt-8 p-6 bg-slate-900 text-white rounded-[24px] fade-in-up">
+                                        <div className="flex items-center gap-2 mb-3 text-indigo-400">
+                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-[10px] font-black uppercase tracking-widest">Commentary (해설)</span>
+                                        </div>
+                                        <div className="text-sm font-medium leading-relaxed opacity-90 border-t border-white/10 pt-3">
+                                            <MathText text={quizList[currentIdx].commentary || "이 문제에 대한 추가 해설 데이터가 없습니다."} />
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         )}
 
                         {view === 'RESULT' && (
-                            <div className="text-center py-12 animate-in zoom-in-95">
-                                <div className="w-24 h-24 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                            <div className="animate-in zoom-in-95 pb-12">
+                                <div className="text-center py-8">
+                                    <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                                    </div>
+                                    <h2 className="text-3xl font-black mb-1">테스트 완료!</h2>
+                                    <p className="text-slate-400 font-medium">분석 결과가 생성되었습니다.</p>
                                 </div>
-                                <h2 className="text-3xl font-black mb-2">테스트 종료</h2>
-                                <p className="text-slate-400 mb-10 font-medium">수고하셨습니다. 결과가 저장되었습니다.</p>
-                                <div className="bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm mb-10">
-                                    <div className="grid grid-cols-2 gap-4">
-                                        <div className="p-6 bg-slate-50 rounded-2xl">
-                                            <p className="text-[10px] font-black text-slate-400 mb-1 uppercase">Score</p>
-                                            <p className="text-4xl font-black text-indigo-600">{quizList.length > 0 ? Math.round((quizList.filter((q, i) => answers[i] === q.correct).length / quizList.length) * 100) : 0}<span className="text-sm font-bold text-slate-400 ml-1">pts</span></p>
+                                <div className="space-y-4">
+                                    <div className="bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm flex justify-between items-center">
+                                        <div className="text-left">
+                                            <p className="text-[10px] font-black text-slate-300 uppercase">Total Score</p>
+                                            <p className="text-5xl font-black text-indigo-600">{quizList.length > 0 ? Math.round((quizList.filter((q, i) => answers[i] === q.correct).length / quizList.length) * 100) : 0}<span className="text-lg text-slate-300 ml-1">pts</span></p>
                                         </div>
-                                        <div className="p-6 bg-slate-50 rounded-2xl">
-                                            <p className="text-[10px] font-black text-slate-400 mb-1 uppercase">Correct</p>
-                                            <p className="text-4xl font-black text-slate-800">{quizList.filter((q, i) => answers[i] === q.correct).length}<span className="text-sm font-bold text-slate-400 ml-1">/{quizList.length}</span></p>
+                                        <div className="text-right">
+                                            <p className="text-[10px] font-black text-slate-300 uppercase">Correct Ratio</p>
+                                            <p className="text-2xl font-black text-slate-800">{quizList.filter((q, i) => answers[i] === q.correct).length} <span className="text-slate-300">/ {quizList.length}</span></p>
                                         </div>
                                     </div>
+                                    <div className="bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm space-y-6">
+                                        <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">Category Analysis</h3>
+                                        <div className="space-y-4">
+                                            {Object.entries(categoryAnalysis).map(([cat, data]) => {
+                                                const ratio = Math.round((data.correct / data.total) * 100);
+                                                return (
+                                                    <div key={cat} className="space-y-2">
+                                                        <div className="flex justify-between text-xs font-bold">
+                                                            <span>{cat}</span>
+                                                            <span className={ratio >= 70 ? 'text-emerald-500' : 'text-rose-500'}>{ratio}%</span>
+                                                        </div>
+                                                        <div className="h-2 bg-slate-50 rounded-full overflow-hidden">
+                                                            <div className={`h-full rounded-full transition-all duration-1000 ${ratio >= 70 ? 'bg-emerald-500' : 'bg-rose-500'}`} style={{width: `${ratio}%`}}></div>
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-3">
+                                        <button onClick={() => { setIsReviewMode(true); setCurrentIdx(0); setView('QUIZ'); }} className="py-5 bg-slate-900 text-white rounded-3xl font-black shadow-xl hover:bg-slate-800 transition-all">오답 복습</button>
+                                        <button onClick={() => setView('HOME')} className="py-5 bg-white border-2 border-slate-100 text-slate-400 rounded-3xl font-black hover:border-slate-200 transition-all">종료하기</button>
+                                    </div>
                                 </div>
-                                <button onClick={() => setView('HOME')} className="w-full py-5 bg-slate-900 text-white rounded-3xl font-black shadow-xl">메인으로 돌아가기</button>
                             </div>
                         )}
 
                         {view === 'ADMIN' && (
                             <div className="space-y-8 animate-in fade-in pb-24">
-                                {/* Dashboard Cards */}
+                                <div className="flex justify-between items-center">
+                                    <h2 className="text-2xl font-black tracking-tighter">관리자 대시보드</h2>
+                                    <button onClick={() => setView('LOGIN')} className="px-4 py-2 bg-rose-50 text-rose-600 rounded-xl text-xs font-black">나가기 (로그아웃)</button>
+                                </div>
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="p-6 bg-white rounded-3xl border border-slate-100 shadow-sm">
-                                        <p className="text-[10px] font-black text-slate-400 mb-1 uppercase tracking-widest">Total Questions</p>
-                                        <p className="text-3xl font-black text-indigo-600 tracking-tighter">{questions.length}</p>
+                                        <p className="text-[10px] font-black text-slate-400 mb-1 uppercase tracking-widest">Questions</p>
+                                        <p className="text-3xl font-black text-indigo-600">{questions.length}</p>
                                     </div>
                                     <div className="p-6 bg-white rounded-3xl border border-slate-100 shadow-sm">
-                                        <p className="text-[10px] font-black text-slate-400 mb-1 uppercase tracking-widest">Registered Students</p>
-                                        <p className="text-3xl font-black text-slate-800 tracking-tighter">{students.length}</p>
+                                        <p className="text-[10px] font-black text-slate-400 mb-1 uppercase tracking-widest">Students</p>
+                                        <p className="text-3xl font-black text-slate-800">{students.length}</p>
                                     </div>
                                 </div>
-
-                                {/* Actions */}
                                 <div className="p-8 bg-white rounded-[32px] border border-slate-100 shadow-sm space-y-6">
                                     <h3 className="font-black text-xl flex items-center gap-2">
                                         <span className="w-2 h-6 bg-indigo-600 rounded-full"></span>
-                                        일괄 데이터 관리
+                                        환경 설정
                                     </h3>
-                                    <div className="grid grid-cols-1 gap-3">
-                                        <button onClick={toggleExam} className={`p-5 rounded-2xl font-black text-sm transition-all ${examConfig.active ? 'bg-rose-500 text-white shadow-lg shadow-rose-100' : 'bg-slate-100 text-slate-600'}`}>
-                                            시험 모드 상태: {examConfig.active ? '활성화 (종료하기)' : '비활성화 (시작하기)'}
+                                    <div className="flex flex-col gap-3">
+                                        <button onClick={toggleExam} className={`p-5 rounded-2xl font-black text-sm transition-all ${examConfig.active ? 'bg-rose-500 text-white' : 'bg-slate-100 text-slate-600'}`}>
+                                            시험 모드 상태: {examConfig.active ? '활성화 중' : '비활성화'}
                                         </button>
-                                        <div className="grid grid-cols-2 gap-3">
-                                            <label className="p-5 bg-slate-900 text-white rounded-2xl font-black text-xs text-center cursor-pointer hover:bg-slate-800 transition-all">
-                                                문제 JSON 업로드
-                                                <input type="file" className="hidden" accept=".json" onChange={uploadJSON} />
-                                            </label>
-                                            <label className="p-5 bg-indigo-600 text-white rounded-2xl font-black text-xs text-center cursor-pointer hover:bg-indigo-700 transition-all">
-                                                학생 CSV 업로드
-                                                <input type="file" className="hidden" accept=".csv" onChange={uploadStudentsCSV} />
-                                            </label>
-                                        </div>
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-3">
+                                        <label className="p-4 bg-slate-900 text-white rounded-2xl font-black text-xs text-center cursor-pointer hover:bg-slate-800 transition-all">
+                                            문제 JSON 업로드
+                                            <input type="file" className="hidden" accept=".json" onChange={uploadJSON} />
+                                        </label>
+                                        <label className="p-4 bg-indigo-600 text-white rounded-2xl font-black text-xs text-center cursor-pointer hover:bg-indigo-700 transition-all">
+                                            학생 CSV 업로드
+                                            <input type="file" className="hidden" accept=".csv" onChange={uploadStudentsCSV} />
+                                        </label>
                                     </div>
                                 </div>
-
-                                {/* Results Table */}
                                 <div className="p-8 bg-white rounded-[32px] border border-slate-100 shadow-sm space-y-6">
-                                    <div className="flex justify-between items-center">
-                                        <h3 className="font-black text-xl flex items-center gap-2">
-                                            <span className="w-2 h-6 bg-emerald-500 rounded-full"></span>
-                                            시험 결과 현황
-                                        </h3>
-                                        <button onClick={downloadResults} className="px-4 py-2 bg-emerald-50 text-emerald-600 rounded-xl font-black text-[10px] hover:bg-emerald-100">CSV 추출</button>
-                                    </div>
+                                    <h3 className="font-black text-xl flex items-center gap-2">
+                                        <span className="w-2 h-6 bg-emerald-500 rounded-full"></span>
+                                        실시간 결과 (최근 10건)
+                                    </h3>
                                     <div className="overflow-x-auto">
-                                        <table className="w-full text-left text-xs font-bold border-collapse">
+                                        <table className="w-full text-left text-xs font-bold">
                                             <thead>
-                                                <tr className="border-b border-slate-50 text-slate-400">
-                                                    <th className="py-3 px-2">이름</th>
-                                                    <th className="py-3 px-2">학번</th>
-                                                    <th className="py-3 px-2">점수</th>
-                                                    <th className="py-3 px-2">모드</th>
+                                                <tr className="border-b border-slate-50 text-slate-300">
+                                                    <th className="py-2 text-[10px] uppercase tracking-wider">이름</th>
+                                                    <th className="py-2 text-[10px] uppercase tracking-wider">점수</th>
+                                                    <th className="py-2 text-[10px] uppercase tracking-wider">모드</th>
                                                 </tr>
                                             </thead>
-                                            <tbody className="text-slate-600">
-                                                {results.length > 0 ? results.slice().sort((a,b) => (b.timestamp?.seconds || 0) - (a.timestamp?.seconds || 0)).slice(0, 20).map((r, i) => (
+                                            <tbody>
+                                                {results.slice().sort((a,b) => (b.timestamp?.seconds || 0) - (a.timestamp?.seconds || 0)).slice(0, 10).map((r, i) => (
                                                     <tr key={i} className="border-b border-slate-50">
-                                                        <td className="py-4 px-2">{r.name}</td>
-                                                        <td className="py-4 px-2 text-slate-400">{r.studentId}</td>
-                                                        <td className="py-4 px-2 text-indigo-600 font-black">{r.score}</td>
-                                                        <td className="py-4 px-2"><span className={`px-2 py-1 rounded-md text-[9px] ${r.mode === 'EXAM' ? 'bg-slate-900 text-white' : 'bg-slate-100'}`}>{r.mode}</span></td>
+                                                        <td className="py-3">{r.name}</td>
+                                                        <td className="py-3 text-indigo-600 font-black">{r.score}</td>
+                                                        <td className="py-3 opacity-50">{r.mode}</td>
                                                     </tr>
-                                                )) : (
-                                                    <tr>
-                                                        <td colSpan="4" className="py-10 text-center text-slate-300">결과 데이터가 없습니다.</td>
-                                                    </tr>
-                                                )}
+                                                ))}
                                             </tbody>
                                         </table>
                                     </div>
@@ -498,11 +558,11 @@
                             <button 
                                 onClick={() => {
                                     if (currentIdx < quizList.length - 1) setCurrentIdx(p => p + 1);
-                                    else if(confirm("모든 정답을 제출하시겠습니까?")) submitQuiz();
+                                    else if(confirm(isReviewMode ? "복습을 마치시겠습니까?" : "모든 정답을 제출하시겠습니까?")) submitQuiz();
                                 }} 
-                                className="flex-1 bg-slate-900 text-white rounded-3xl font-black text-lg shadow-2xl active:scale-[0.98] transition-all"
+                                className="flex-1 bg-slate-900 text-white rounded-3xl font-black text-lg shadow-2xl active:scale-[0.98] transition-all hover:bg-slate-800"
                             >
-                                {currentIdx === quizList.length - 1 ? '최종 제출하기' : '다음 문항'}
+                                {currentIdx === quizList.length - 1 ? (isReviewMode ? '복습 종료' : '최종 제출하기') : '다음 문항'}
                             </button>
                         </footer>
                     )}
