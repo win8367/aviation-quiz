@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>항공마스터 Pro - 통합 관리 시스템</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap');
+        body { font-family: 'Pretendard', sans-serif; -webkit-tap-highlight-color: transparent; background-color: #f8fafc; overflow: hidden; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .katex-display { margin: 0.5em 0; padding: 1em; background: rgba(248, 250, 252, 0.5); border-radius: 12px; font-size: 1.1em; overflow-x: auto; }
+        .katex { font-size: 1.1em; }
+        .admin-card { background: white; border-radius: 16px; border: 1px solid #f1f5f9; transition: all 0.2s; }
+        .admin-card:hover { border-color: #e2e8f0; transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05); }
+        .glass-panel { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.4); }
+        .glass-dark { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .floating-nav { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); width: calc(100% - 2rem); max-width: 500px; z-index: 50; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade { animation: fadeIn 0.4s ease-out forwards; }
+    </style>
+</head>
+<body class="text-slate-900">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useMemo, useRef } = React;
+
+        const firebaseConfig = { 
+            apiKey: "AIzaSyCoSlnAX9Hqh85IBtJuGqLrJdpxRbFgwnc",
+            authDomain: "airtest-422fe.firebaseapp.com",
+            projectId: "airtest-422fe",
+            storageBucket: "airtest-422fe.firebasestorage.app",
+            messagingSenderId: "203408450908",
+            appId: "1:203408450908:web:1be58ef1b4b4f4b3f5cd99",
+            measurementId: "G-PC36TY5R3M"
+        };
+        const appId = 'aviation-master-pro-v4';
+
+        if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+
+        const Icons = {
+            Menu: () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>,
+            X: () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>,
+            Plane: () => <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>,
+            Trash: () => <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>,
+            Back: () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" /></svg>,
+            Next: () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" /></svg>,
+            Download: () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>,
+            Plus: () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>,
+            Upload: () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
+        };
+
+        const MathText = ({ text }) => {
+            const containerRef = useRef(null);
+            useEffect(() => {
+                if (containerRef.current && window.renderMathInElement) {
+                    containerRef.current.innerHTML = String(text || '');
+                    window.renderMathInElement(containerRef.current, {
+                        delimiters: [
+                            { left: '$$', right: '$$', display: true },
+                            { left: '$', right: '$', display: false }
+                        ],
+                        throwOnError: false,
+                        trust: true
+                    });
+                }
+            }, [text]);
+            return <div ref={containerRef} className="math-container"></div>;
+        };
+
+        function App() {
+            const [user, setUser] = useState(null);
+            const [view, setView] = useState('LOGIN');
+            const [adminTab, setAdminTab] = useState('STUDENTS');
+            const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+            const [isSubmitting, setIsSubmitting] = useState(false);
+            
+            const [questions, setQuestions] = useState([]);
+            const [students, setStudents] = useState([]);
+            const [results, setResults] = useState([]);
+            
+            const [loginId, setLoginId] = useState('');
+            const [filters, setFilters] = useState({ year: '전체', round: '전체', category: '전체', count: '10', mode: '실전 모드' });
+            
+            const [quizSet, setQuizSet] = useState([]);
+            const [currentIdx, setCurrentIdx] = useState(0);
+            const [answers, setAnswers] = useState({});
+            const [analysis, setAnalysis] = useState(null);
+            const [isReviewMode, setIsReviewMode] = useState(false);
+
+            const [newStudentId, setNewStudentId] = useState('');
+
+            useEffect(() => {
+                const initAuth = async () => {
+                    try { await auth.signInAnonymously(); } catch(e) { console.error("인증 오류", e); }
+                };
+                initAuth();
+                const unsub = auth.onAuthStateChanged(u => setUser(u));
+                return () => unsub();
+            }, []);
+
+            useEffect(() => {
+                if (!user) return;
+                const base = db.collection('artifacts').doc(appId).collection('public').doc('data');
+                
+                const unsubQ = base.collection('questions').onSnapshot(s => {
+                    setQuestions(s.docs.map(d => ({ ...d.data(), id: d.id, round: d.data().round || '1회' })));
+                }, err => console.log("Q Load Err", err));
+                
+                const unsubS = base.collection('students').onSnapshot(s => {
+                    const sorted = s.docs.map(d => ({ ...d.data(), id: d.id }))
+                        .sort((a, b) => String(a.studentId).localeCompare(String(b.studentId)));
+                    setStudents(sorted);
+                }, err => console.log("S Load Err", err));
+                
+                const unsubR = base.collection('results').onSnapshot(s => {
+                    setResults(s.docs.map(d => ({ ...d.data(), id: d.id })));
+                }, err => console.log("R Load Err", err));
+
+                return () => { unsubQ(); unsubS(); unsubR(); };
+            }, [user]);
+
+            const yearOptions = useMemo(() => [...new Set(questions.map(q => String(q.year)))].sort((a,b)=>b-a), [questions]);
+            const roundOptions = useMemo(() => [...new Set(questions.map(q => String(q.round)))].sort(), [questions]);
+            const categoryOptions = useMemo(() => [...new Set(questions.map(q => q.category))].sort(), [questions]);
+
+            const startQuiz = () => {
+                if (!loginId.trim()) return alert('학번을 입력해주세요.');
+                if (loginId !== 'admin' && !students.some(s => String(s.studentId) === String(loginId))) {
+                    return alert('등록되지 않은 학번입니다. 관리자에게 문의하세요.');
+                }
+                
+                const pool = questions.filter(q => 
+                    (filters.year === '전체' || String(q.year) === filters.year) && 
+                    (filters.round === '전체' || String(q.round) === filters.round) &&
+                    (filters.category === '전체' || q.category === filters.category)
+                );
+                
+                if (pool.length === 0) return alert('조건에 맞는 문제가 없습니다.');
+                
+                const shuffled = [...pool].sort(() => Math.random() - 0.5);
+                const limit = filters.count === '전체' ? shuffled.length : Math.min(parseInt(filters.count), shuffled.length);
+                
+                setQuizSet(shuffled.slice(0, limit));
+                setAnswers({});
+                setCurrentIdx(0);
+                setIsReviewMode(false);
+                setIsSubmitting(false);
+                setView('QUIZ');
+            };
+
+            const submitFinal = async () => {
+                if (!confirm('시험을 종료하고 제출하시겠습니까?')) return;
+                
+                setIsSubmitting(true);
+                
+                let correctCount = 0;
+                const feedback = {};
+                
+                quizSet.forEach((q, i) => {
+                    const isCorrect = answers[i] === q.correct;
+                    if (isCorrect) correctCount++;
+                    if (!feedback[q.category]) feedback[q.category] = { total: 0, correct: 0 };
+                    feedback[q.category].total++;
+                    if (isCorrect) feedback[q.category].correct++;
+                });
+                
+                const score = Math.round((correctCount / quizSet.length) * 100);
+                const resultData = {
+                    studentId: loginId,
+                    score,
+                    timestamp: new Date().toISOString(),
+                    feedback,
+                    totalQuestions: quizSet.length,
+                    correctQuestions: correctCount
+                };
+
+                try {
+                    // 결과 화면용 분석 데이터 설정 (먼저 설정하여 UI 응답성 확보)
+                    setAnalysis({ score, total: quizSet.length, correct: correctCount, feedback });
+                    
+                    // DB 저장 시도 (학습 모드가 아니거나 관리자가 아닐 때 저장)
+                    if (loginId !== 'admin' && filters.mode === '실전 모드') {
+                        await db.collection('artifacts').doc(appId).collection('public').doc('data').collection('results').add(resultData);
+                    }
+                } catch (error) {
+                    console.error("결과 제출 실패:", error);
+                } finally {
+                    setIsSubmitting(false);
+                    setView('RESULT');
+                }
+            };
+
+            const addStudent = async () => {
+                if (!newStudentId.trim()) return;
+                if (students.some(s => String(s.studentId) === String(newStudentId))) return alert('이미 등록된 학번입니다.');
+                await db.collection('artifacts').doc(appId).collection('public').doc('data').collection('students').add({ studentId: newStudentId });
+                setNewStudentId('');
+            };
+
+            const deleteDoc = async (col, id) => {
+                if (!confirm('해당 데이터를 삭제하시겠습니까?')) return;
+                await db.collection('artifacts').doc(appId).collection('public').doc('data').collection(col).doc(id).delete();
+            };
+
+            const deleteAll = async (col) => {
+                const count = col === 'students' ? students.length : col === 'questions' ? questions.length : results.length;
+                if (count === 0) return alert('삭제할 데이터가 없습니다.');
+                if (!confirm(`정말 모든 ${col === 'students' ? '학생' : col === 'questions' ? '문제' : '결과'} 데이터를 삭제하시겠습니까? (총 ${count}건)`)) return;
+                
+                const batch = db.batch();
+                const snapshot = await db.collection('artifacts').doc(appId).collection('public').doc('data').collection(col).get();
+                snapshot.docs.forEach(d => batch.delete(d.ref));
+                await batch.commit();
+                alert('전체 삭제가 완료되었습니다.');
+            };
+
+            const handleBulkStudents = async (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = async (event) => {
+                    const text = event.target.result;
+                    const ids = text.split(/[\n,]/).map(s => s.trim()).filter(s => s);
+                    const existingIds = new Set(students.map(s => String(s.studentId)));
+                    const newIds = ids.filter(id => !existingIds.has(id));
+
+                    if (newIds.length === 0) return alert('모든 학번이 이미 등록되어 있습니다.');
+                    
+                    const batch = db.batch();
+                    const base = db.collection('artifacts').doc(appId).collection('public').doc('data').collection('students');
+                    newIds.forEach(id => {
+                        const newDoc = base.doc();
+                        batch.set(newDoc, { studentId: id });
+                    });
+                    await batch.commit();
+                    alert(`${newIds.length}명의 학생이 신규 등록되었습니다.`);
+                };
+                reader.readAsText(file);
+                e.target.value = '';
+            };
+
+            const handleBulkQuestions = async (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = async (event) => {
+                    try {
+                        const data = JSON.parse(event.target.result);
+                        const items = Array.isArray(data) ? data : [data];
+                        const batch = db.batch();
+                        const base = db.collection('artifacts').doc(appId).collection('public').doc('data').collection('questions');
+                        items.forEach(item => {
+                            const newDoc = base.doc();
+                            batch.set(newDoc, item);
+                        });
+                        await batch.commit();
+                        alert(`${items.length}개의 문제가 등록되었습니다.`);
+                    } catch(err) {
+                        alert('JSON 형식이 올바르지 않습니다.');
+                    }
+                };
+                reader.readAsText(file);
+                e.target.value = '';
+            };
+
+            const exportResults = () => {
+                if (results.length === 0) return alert('추출할 데이터가 없습니다.');
+                const headers = ['일시', '학번', '점수', '상세결과'];
+                const rows = results.map(r => [
+                    new Date(r.timestamp).toLocaleString(),
+                    r.studentId,
+                    r.score,
+                    JSON.stringify(r.feedback).replace(/"/g, "'")
+                ]);
+                const csvContent = "\uFEFF" + [headers, ...rows].map(e => e.join(",")).join("\n");
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement("a");
+                link.href = URL.createObjectURL(blob);
+                link.download = `시험결과_${new Date().toISOString().slice(0,10)}.csv`;
+                link.click();
+            };
+
+            return (
+                <div className="h-screen w-full flex flex-col bg-slate-50 relative overflow-hidden">
+                    {/* 상단 네비게이션 드로어 */}
+                    <div className={`fixed inset-0 z-[100] transition-all ${isDrawerOpen ? 'visible' : 'invisible'}`}>
+                        <div className={`absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity ${isDrawerOpen ? 'opacity-100' : 'opacity-0'}`} onClick={() => setIsDrawerOpen(false)} />
+                        <div className={`absolute left-0 top-0 bottom-0 w-64 bg-white shadow-2xl transition-transform transform ${isDrawerOpen ? 'translate-x-0' : '-translate-x-full'} flex flex-col`}>
+                            <div className="p-6 border-b flex justify-between items-center bg-indigo-600 text-white">
+                                <div className="font-bold">문항 바로가기</div>
+                                <button onClick={() => setIsDrawerOpen(false)} className="p-1 hover:bg-white/20 rounded-lg"><Icons.X /></button>
+                            </div>
+                            <div className="p-5 grid grid-cols-4 gap-2 overflow-y-auto">
+                                {quizSet.map((_, i) => (
+                                    <button key={`nav-${i}`} onClick={() => { setCurrentIdx(i); setIsDrawerOpen(false); }} 
+                                        className={`aspect-square rounded-xl flex items-center justify-center text-xs font-bold transition-all
+                                        ${currentIdx === i ? 'ring-2 ring-indigo-600 ring-offset-2 scale-105' : ''} 
+                                        ${answers[i] !== undefined ? 'bg-indigo-600 text-white shadow-md' : 'bg-slate-100 text-slate-400'}`}>
+                                        {i + 1}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {view === 'LOGIN' && (
+                        <div className="flex-1 flex flex-col items-center justify-center p-6 space-y-10 animate-fade overflow-y-auto hide-scrollbar">
+                            <div className="text-center space-y-3">
+                                <div className="mx-auto w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-2xl shadow-indigo-200"><Icons.Plane /></div>
+                                <h1 className="text-2xl font-black text-slate-900 tracking-tight">항공마스터 Pro</h1>
+                                <p className="text-[10px] font-bold text-slate-400 tracking-widest uppercase">Integrated Flight System</p>
+                            </div>
+                            <div className="w-full max-w-sm bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 space-y-6 border border-slate-100">
+                                <input type="text" value={loginId} onChange={e => setLoginId(e.target.value)} placeholder="학번 또는 ID" className="w-full p-4 bg-slate-50 rounded-2xl font-bold text-center text-lg border-2 border-transparent focus:border-indigo-600 focus:bg-white outline-none transition-all" />
+                                
+                                <div className="space-y-4">
+                                    <div className="flex bg-slate-100 p-1 rounded-xl">
+                                        {['실전 모드', '학습 모드'].map(m => (
+                                            <button key={m} onClick={() => setFilters({...filters, mode: m})} className={`flex-1 py-2.5 text-xs font-bold rounded-lg transition-all ${filters.mode === m ? 'bg-white shadow-sm text-indigo-600' : 'text-slate-400'}`}>{m}</button>
+                                        ))}
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-2">
+                                        <select value={filters.year} onChange={e => setFilters({...filters, year: e.target.value})} className="p-3 bg-slate-50 rounded-xl text-xs font-bold outline-none border border-transparent focus:border-slate-200">
+                                            <option value="전체">전체 연도</option>
+                                            {yearOptions.map(y => <option key={`y-${y}`} value={y}>{y}년</option>)}
+                                        </select>
+                                        <select value={filters.round} onChange={e => setFilters({...filters, round: e.target.value})} className="p-3 bg-slate-50 rounded-xl text-xs font-bold outline-none border border-transparent focus:border-slate-200">
+                                            <option value="전체">전체 회차</option>
+                                            {roundOptions.map(r => <option key={`r-${r}`} value={r}>{r}</option>)}
+                                        </select>
+                                    </div>
+                                    <select value={filters.category} onChange={e => setFilters({...filters, category: e.target.value})} className="w-full p-3 bg-slate-50 rounded-xl text-xs font-bold outline-none border border-transparent focus:border-slate-200">
+                                        <option value="전체">모든 과목</option>
+                                        {categoryOptions.map(c => <option key={`c-${c}`} value={c}>{c}</option>)}
+                                    </select>
+                                    <div className="flex flex-wrap gap-1 justify-center">
+                                        {['5','10','20','40','전체'].map(v => (
+                                            <button key={`cnt-${v}`} onClick={() => setFilters({...filters, count: v})} className={`px-3 py-2 text-[10px] font-bold rounded-lg border transition-all ${filters.count === v ? 'border-indigo-600 bg-indigo-50 text-indigo-600' : 'border-slate-100 text-slate-400'}`}>{v}문항</button>
+                                        ))}
+                                    </div>
+                                </div>
+                                
+                                <button onClick={() => loginId === 'admin' ? setView('ADMIN') : startQuiz()} className="w-full py-4 bg-indigo-600 text-white rounded-2xl text-base font-bold shadow-lg shadow-indigo-100 active:scale-95 transition-all">
+                                    {loginId === 'admin' ? '관리자 도구 접속' : '시험 시작하기'}
+                                </button>
+                            </div>
+                        </div>
+                    )}
+
+                    {view === 'ADMIN' && (
+                        <div className="flex-1 flex flex-col h-full bg-slate-50 animate-fade">
+                            <header className="h-16 px-6 flex items-center justify-between border-b bg-white shrink-0">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white"><Icons.Plane /></div>
+                                    <h2 className="text-sm font-bold text-slate-900">시스템 관리자</h2>
+                                </div>
+                                <button onClick={() => setView('LOGIN')} className="px-3 py-1.5 bg-slate-100 text-slate-600 rounded-lg text-xs font-bold">로그아웃</button>
+                            </header>
+                            
+                            <nav className="px-6 pt-3 flex gap-4 shrink-0 bg-white border-b">
+                                {[
+                                    { id: 'STUDENTS', label: '학생 관리' },
+                                    { id: 'QUESTIONS', label: '문제 관리' },
+                                    { id: 'RESULTS', label: '응시 데이터' }
+                                ].map(tab => (
+                                    <button key={tab.id} onClick={() => setAdminTab(tab.id)} 
+                                        className={`pb-3 font-bold text-sm transition-all border-b-2 ${adminTab === tab.id ? 'text-indigo-600 border-indigo-600' : 'text-slate-400 border-transparent'}`}>
+                                        {tab.label}
+                                    </button>
+                                ))}
+                            </nav>
+
+                            <main className="flex-1 overflow-y-auto p-6">
+                                {adminTab === 'STUDENTS' && (
+                                    <div className="space-y-6 max-w-4xl mx-auto">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div className="p-5 bg-white rounded-2xl border border-slate-200 space-y-3">
+                                                <h3 className="text-xs font-bold text-slate-400">학번 개별 추가</h3>
+                                                <div className="flex gap-2">
+                                                    <input type="text" value={newStudentId} onChange={e => setNewStudentId(e.target.value)} placeholder="학번 입력" className="flex-1 p-2.5 bg-slate-50 rounded-xl font-bold border-2 border-transparent focus:border-indigo-600 outline-none text-sm" />
+                                                    <button onClick={addStudent} className="px-4 bg-indigo-600 text-white rounded-xl font-bold text-sm">추가</button>
+                                                </div>
+                                            </div>
+                                            <div className="p-5 bg-white rounded-2xl border border-slate-200 space-y-3">
+                                                <h3 className="text-xs font-bold text-slate-400">일괄 데이터 도구</h3>
+                                                <div className="flex gap-2">
+                                                    <label className="flex-1 flex items-center justify-center gap-2 p-2.5 bg-slate-100 rounded-xl cursor-pointer hover:bg-slate-200 transition-all">
+                                                        <Icons.Upload />
+                                                        <span className="text-xs font-bold text-slate-600">CSV 등록</span>
+                                                        <input type="file" accept=".csv" onChange={handleBulkStudents} className="hidden" />
+                                                    </label>
+                                                    <button onClick={() => deleteAll('students')} className="px-4 bg-red-50 text-red-500 rounded-xl font-bold text-xs hover:bg-red-500 hover:text-white transition-all">전체 삭제</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                                            {students.map(s => (
+                                                <div key={s.id} className="p-3 admin-card flex items-center justify-between group bg-white">
+                                                    <span className="text-xs font-bold text-slate-700">{s.studentId}</span>
+                                                    <button onClick={() => deleteDoc('students', s.id)} className="p-1 text-slate-200 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all"><Icons.Trash /></button>
+                                                </div>
+                                            ))}
+                                        </div>
+                                        {students.length === 0 && <div className="text-center py-10 text-slate-300 text-sm">등록된 학생이 없습니다.</div>}
+                                    </div>
+                                )}
+
+                                {adminTab === 'QUESTIONS' && (
+                                    <div className="space-y-6 max-w-4xl mx-auto">
+                                        <div className="p-5 bg-white rounded-2xl border border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-4">
+                                            <div className="text-center sm:text-left">
+                                                <h3 className="text-xs font-bold text-slate-400">등록된 문제: {questions.length}개</h3>
+                                                <p className="text-[10px] text-slate-300 mt-0.5">JSON 형식 파일을 업로드하세요.</p>
+                                            </div>
+                                            <div className="flex gap-2">
+                                                <label className="px-4 py-2 bg-indigo-600 text-white rounded-xl cursor-pointer font-bold text-xs flex items-center gap-2">
+                                                    <Icons.Upload /> JSON 업로드
+                                                    <input type="file" accept=".json" onChange={handleBulkQuestions} className="hidden" />
+                                                </label>
+                                                <button onClick={() => deleteAll('questions')} className="px-4 py-2 bg-red-50 text-red-500 rounded-xl font-bold text-xs hover:bg-red-500 hover:text-white transition-all">전체 삭제</button>
+                                            </div>
+                                        </div>
+                                        <div className="grid gap-2">
+                                            {questions.slice(0, 30).map(q => (
+                                                <div key={q.id} className="p-4 admin-card flex items-start gap-4 group bg-white">
+                                                    <div className="flex-1 min-w-0">
+                                                        <div className="flex items-center gap-2 mb-1">
+                                                            <span className="text-[9px] font-bold bg-indigo-50 text-indigo-500 px-2 py-0.5 rounded-full">{q.category}</span>
+                                                            <span className="text-[9px] font-medium text-slate-300">{q.year}년 {q.round}</span>
+                                                        </div>
+                                                        <p className="text-slate-800 font-medium text-sm truncate">{q.q}</p>
+                                                    </div>
+                                                    <button onClick={() => deleteDoc('questions', q.id)} className="p-2 text-slate-200 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all"><Icons.Trash /></button>
+                                                </div>
+                                            ))}
+                                            {questions.length > 30 && <div className="text-center py-4 text-slate-300 text-[10px]">상위 30개 문항만 표시 중입니다.</div>}
+                                        </div>
+                                    </div>
+                                )}
+
+                                {adminTab === 'RESULTS' && (
+                                    <div className="space-y-6 max-w-5xl mx-auto">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                            <div className="p-6 bg-slate-900 rounded-2xl text-white">
+                                                <div className="text-xs font-bold text-slate-400">누적 응시</div>
+                                                <div className="text-3xl font-bold mt-1">{results.length}건</div>
+                                            </div>
+                                            <div className="p-6 bg-white rounded-2xl border border-slate-200 flex gap-2">
+                                                <button onClick={exportResults} className="flex-1 flex flex-col items-center justify-center gap-2 hover:bg-slate-50 transition-all rounded-xl border border-slate-100">
+                                                    <Icons.Download />
+                                                    <span className="text-xs font-bold text-slate-600">CSV 다운로드</span>
+                                                </button>
+                                                <button onClick={() => deleteAll('results')} className="px-4 bg-red-50 text-red-500 rounded-xl font-bold text-xs hover:bg-red-500 hover:text-white transition-all">전체 삭제</button>
+                                            </div>
+                                        </div>
+                                        <div className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm">
+                                            <table className="w-full text-left">
+                                                <thead className="bg-slate-50 border-b border-slate-100">
+                                                    <tr>
+                                                        <th className="p-4 text-[10px] font-bold text-slate-400">응시 일시</th>
+                                                        <th className="p-4 text-[10px] font-bold text-slate-400">학번</th>
+                                                        <th className="p-4 text-[10px] font-bold text-slate-400 text-center">점수</th>
+                                                        <th className="p-4 text-[10px] font-bold text-slate-400 text-right">관리</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody className="divide-y divide-slate-50">
+                                                    {results.sort((a,b)=>new Date(b.timestamp)-new Date(a.timestamp)).slice(0, 50).map(r => (
+                                                        <tr key={r.id} className="hover:bg-slate-50/50">
+                                                            <td className="p-4 text-xs text-slate-400">{new Date(r.timestamp).toLocaleString()}</td>
+                                                            <td className="p-4 text-xs font-bold text-slate-700">{r.studentId}</td>
+                                                            <td className="p-4 text-center font-bold text-indigo-600">{r.score}</td>
+                                                            <td className="p-4 text-right">
+                                                                <button onClick={() => deleteDoc('results', r.id)} className="p-1 text-slate-200 hover:text-red-500 transition-all"><Icons.Trash /></button>
+                                                            </td>
+                                                        </tr>
+                                                    ))}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                )}
+                            </main>
+                        </div>
+                    )}
+
+                    {view === 'QUIZ' && quizSet[currentIdx] && (
+                        <div className="flex-1 flex flex-col h-full bg-white animate-fade">
+                            <header className="h-16 px-6 flex items-center justify-between border-b shrink-0 bg-white/80 backdrop-blur-md sticky top-0 z-10">
+                                <button onClick={() => setIsDrawerOpen(true)} className="p-2 hover:bg-slate-100 rounded-lg text-slate-600"><Icons.Menu /></button>
+                                <div className="text-center">
+                                    <div className="text-[9px] font-bold text-indigo-500 tracking-widest uppercase mb-0.5">{isReviewMode ? '복습 모드' : filters.mode}</div>
+                                    <div className="text-sm font-bold text-slate-800">{currentIdx + 1} / {quizSet.length}</div>
+                                </div>
+                                <button 
+                                    disabled={isSubmitting}
+                                    onClick={isReviewMode ? () => setView('RESULT') : submitFinal} 
+                                    className={`px-4 py-1.5 text-white text-xs font-bold rounded-lg shadow-md transition-all ${isSubmitting ? 'bg-slate-400 cursor-not-allowed' : 'bg-indigo-600 shadow-indigo-100'}`}
+                                >
+                                    {isSubmitting ? '제출중...' : (isReviewMode ? '종료' : '제출')}
+                                </button>
+                            </header>
+                            
+                            <main className="flex-1 overflow-y-auto p-6 pb-40 hide-scrollbar">
+                                <div className="max-w-xl mx-auto space-y-8">
+                                    <div className="space-y-4">
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-[10px] font-bold bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-md uppercase">{quizSet[currentIdx].category}</span>
+                                        </div>
+                                        <div className="text-lg font-bold text-slate-800 leading-relaxed">
+                                            <MathText text={quizSet[currentIdx].q} />
+                                        </div>
+                                    </div>
+
+                                    <div className="grid gap-3">
+                                        {quizSet[currentIdx].options.map((opt, i) => {
+                                            const isSelected = answers[currentIdx] === i;
+                                            const isCorrect = i === quizSet[currentIdx].correct;
+                                            const isStudyShow = filters.mode === '학습 모드' && answers[currentIdx] !== undefined;
+                                            
+                                            let style = "border-slate-100 bg-white";
+                                            if (isSelected) style = "border-indigo-600 bg-indigo-50 ring-1 ring-indigo-600";
+                                            
+                                            if (isReviewMode || isStudyShow) {
+                                                if (isCorrect) style = "border-emerald-500 bg-emerald-50 ring-2 ring-emerald-500";
+                                                else if (isSelected) style = "border-red-500 bg-red-50 ring-2 ring-red-500";
+                                            }
+
+                                            return (
+                                                <button key={`opt-${currentIdx}-${i}`} disabled={isReviewMode || isStudyShow} 
+                                                    onClick={() => setAnswers({...answers, [currentIdx]: i})} 
+                                                    className={`w-full p-4 rounded-xl border-2 text-left transition-all flex items-center gap-4 ${style}`}>
+                                                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold shrink-0
+                                                        ${isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-50 text-slate-400'}`}>
+                                                        {i + 1}
+                                                    </div>
+                                                    <div className="text-sm font-semibold flex-1 text-slate-700">
+                                                        <MathText text={opt} />
+                                                    </div>
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
+
+                                    {(isReviewMode || (filters.mode === '학습 모드' && answers[currentIdx] !== undefined)) && (
+                                        <div className="p-6 glass-dark rounded-3xl text-white space-y-3 shadow-xl animate-fade">
+                                            <div className="flex items-center justify-between">
+                                                <span className="text-[10px] font-bold text-indigo-400 tracking-widest uppercase">문제 해설</span>
+                                                <div className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${answers[currentIdx] === quizSet[currentIdx].correct ? 'bg-emerald-500/20 text-emerald-400' : 'bg-red-500/20 text-red-400'}`}>
+                                                    {answers[currentIdx] === quizSet[currentIdx].correct ? '정답' : '오답'}
+                                                </div>
+                                            </div>
+                                            <div className="text-sm font-medium leading-relaxed text-slate-300">
+                                                <MathText text={quizSet[currentIdx].exp || "제공된 해설이 없습니다."} />
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            </main>
+
+                            <div className="floating-nav">
+                                <div className="glass-panel rounded-2xl p-2 flex justify-between items-center shadow-xl gap-3">
+                                    <button disabled={currentIdx === 0} onClick={() => setCurrentIdx(p => p - 1)} className="h-12 w-12 bg-white hover:bg-slate-50 rounded-xl flex items-center justify-center border border-slate-100 disabled:opacity-20 transition-all"><Icons.Back /></button>
+                                    <div className="flex-1 flex justify-center text-[11px] font-bold text-slate-400 uppercase tracking-widest">
+                                        {currentIdx + 1} / {quizSet.length}
+                                    </div>
+                                    <button disabled={currentIdx === quizSet.length - 1} onClick={() => setCurrentIdx(p => p + 1)} className="h-12 w-12 bg-slate-900 text-white rounded-xl flex items-center justify-center shadow-lg active:scale-95 transition-all"><Icons.Next /></button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {view === 'RESULT' && analysis && (
+                        <div className="flex-1 overflow-y-auto flex flex-col items-center justify-center p-6 bg-indigo-900 animate-fade">
+                            <div className="w-full max-w-sm bg-white rounded-[2.5rem] shadow-2xl p-10 text-center space-y-8">
+                                <div className="space-y-4">
+                                    <div className="text-xs font-bold text-indigo-500 tracking-widest">최종 응시 결과</div>
+                                    <div className="text-8xl font-black text-slate-900 tracking-tighter italic">{analysis.score}</div>
+                                    <div className="space-y-1">
+                                        <p className="text-xs font-bold text-slate-400 uppercase">최종 점수</p>
+                                        <p className="text-[10px] font-bold text-slate-300">{analysis.correct} / {analysis.total} 문항 맞춤</p>
+                                    </div>
+                                </div>
+                                <div className="space-y-2 max-h-40 overflow-y-auto hide-scrollbar">
+                                    {Object.entries(analysis.feedback).map(([cat, data], idx) => (
+                                        <div key={idx} className="p-3 bg-slate-50 rounded-xl flex justify-between items-center">
+                                            <span className="text-[10px] font-bold text-slate-500 truncate text-left flex-1">{cat}</span>
+                                            <div className="flex items-center gap-3 shrink-0">
+                                                <span className="text-[10px] text-slate-300 font-bold">{data.correct}/{data.total}</span>
+                                                <span className="text-indigo-600 font-bold text-xs">{data.total > 0 ? Math.round((data.correct/data.total)*100) : 0}%</span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="grid grid-cols-2 gap-3 pt-2">
+                                    <button onClick={() => { setIsReviewMode(true); setCurrentIdx(0); setView('QUIZ'); }} className="py-4 bg-slate-100 text-slate-600 rounded-xl font-bold text-xs hover:bg-slate-200 transition-all">오답 복습</button>
+                                    <button onClick={() => setView('LOGIN')} className="py-4 bg-indigo-600 text-white rounded-xl font-bold text-xs shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition-all">홈으로</button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
