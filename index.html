@@ -43,15 +43,8 @@
         .nav-item.answered { background: #f1f5f9; color: #64748b; }
         .nav-item.correct { background: #10b981; color: white; border-color: transparent; }
         .nav-item.wrong { background: #ef4444; color: white; border-color: transparent; }
-        
-        /* 애니메이션 효과 */
-        .fade-in-up {
-            animation: fadeInUp 0.4s ease-out forwards;
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        .fade-in-up { animation: fadeInUp 0.4s ease-out forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
@@ -60,6 +53,7 @@
     <script type="text/babel">
         const { useState, useEffect, useRef, useMemo } = React;
 
+        // User Provided Firebase Config
         const firebaseConfig = {
             apiKey: "AIzaSyCoSlnAX9Hqh85IBtJuGqLrJdpxRbFgwnc",
             authDomain: "airtest-422fe.firebaseapp.com",
@@ -69,25 +63,25 @@
             appId: "1:203408450908:web:1be58ef1b4b4f4b3f5cd99",
             measurementId: "G-PC36TY5R3M"
         };
-        
-        const appId = 'aviation-master-pro';
+
         const app = !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
         const auth = firebase.auth();
         const db = firebase.firestore();
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'aviation-master-pro';
 
         const MathText = ({ text }) => {
             const containerRef = useRef(null);
             useEffect(() => {
                 if (containerRef.current) {
-                    renderMathInElement(containerRef.current, {
-                        delimiters: [
-                            { left: "$$", right: "$$", display: true },
-                            { left: "$", right: "$", display: false },
-                            { left: "\\(", right: "\\)", display: false },
-                            { left: "\\[", right: "\\]", display: true }
-                        ],
-                        throwOnError: false
-                    });
+                    try {
+                        renderMathInElement(containerRef.current, {
+                            delimiters: [
+                                { left: "$$", right: "$$", display: true },
+                                { left: "$", right: "$", display: false }
+                            ],
+                            throwOnError: false
+                        });
+                    } catch (e) {}
                 }
             }, [text]);
             return <div ref={containerRef} className="whitespace-pre-wrap leading-relaxed">{text || ""}</div>;
@@ -102,7 +96,7 @@
             const [questions, setQuestions] = useState([]);
             const [students, setStudents] = useState([]);
             const [results, setResults] = useState([]);
-            const [examConfig, setExamConfig] = useState({ active: false });
+            const [examConfig, setExamConfig] = useState({ forceExam: false });
             
             const [quizList, setQuizList] = useState([]);
             const [currentIdx, setCurrentIdx] = useState(0);
@@ -114,55 +108,57 @@
                 year: '전체', session: '전체', category: '전체', limit: '10', mode: 'PRACTICE' 
             });
 
+            // Auth Setup
             useEffect(() => {
-                if (examConfig.active) {
-                    setFilters(f => ({...f, mode: 'EXAM'}));
-                }
-            }, [examConfig.active]);
-
-            useEffect(() => {
-                const unsubscribe = auth.onAuthStateChanged(async (u) => {
-                    if (u) {
-                        setUser(u);
-                        setLoading(false);
-                    } else {
-                        await auth.signInAnonymously();
+                const unsubscribe = auth.onAuthStateChanged((u) => {
+                    if (!u) {
+                        auth.signInAnonymously().catch(e => console.error("Auth error:", e));
                     }
+                    setUser(u);
+                    setLoading(false);
                 });
                 return () => unsubscribe();
             }, []);
 
+            // Data Subscription
             useEffect(() => {
                 if (!user) return;
                 const publicPath = db.collection('artifacts').doc(appId).collection('public').doc('data');
                 
-                const unsubQ = publicPath.collection('questions').onSnapshot(s => setQuestions(s.docs.map(d => ({id: d.id, ...d.data()}))));
-                const unsubS = publicPath.collection('students').onSnapshot(s => setStudents(s.docs.map(d => ({id: d.id, ...d.data()}))));
-                const unsubR = publicPath.collection('results').onSnapshot(s => setResults(s.docs.map(d => ({id: d.id, ...d.data()}))));
+                const unsubQ = publicPath.collection('questions').onSnapshot(s => setQuestions(s.docs.map(d => ({id: d.id, ...d.data()}))), e => console.error(e));
+                const unsubS = publicPath.collection('students').onSnapshot(s => setStudents(s.docs.map(d => ({id: d.id, ...d.data()}))), e => console.error(e));
+                const unsubR = publicPath.collection('results').onSnapshot(s => setResults(s.docs.map(d => ({id: d.id, ...d.data()}))), e => console.error(e));
                 const unsubC = publicPath.collection('configs').doc('main').onSnapshot(doc => { 
-                    if(doc.exists) setExamConfig(doc.data().exam || { active: false }); 
-                });
+                    if(doc.exists) setExamConfig(doc.data()); 
+                }, e => console.error(e));
 
                 return () => { unsubQ(); unsubS(); unsubR(); unsubC(); };
             }, [user]);
 
-            const handleLogin = (name, sid) => {
-                if (!name || !sid) return alert("성함과 학번을 입력해주세요.");
-                const found = students.find(s => s.name === name && String(s.studentId) === String(sid));
-                if (students.length > 0 && !found) return alert("등록되지 않은 학생 정보입니다.");
-                setStudentProfile({ name, studentId: sid });
-                setView('HOME');
+            // Exam Mode Enforcement
+            useEffect(() => {
+                if (examConfig.forceExam && filters.mode === 'PRACTICE') {
+                    setFilters(prev => ({...prev, mode: 'EXAM'}));
+                }
+            }, [examConfig]);
+
+            const handleAdminAccess = () => {
+                const pw = prompt("관리자 암호를 입력하세요.");
+                if (pw === "111") setView('ADMIN');
+                else if (pw !== null) alert("암호가 틀렸습니다.");
             };
 
             const startQuiz = () => {
                 let pool = questions.filter(q => 
                     (filters.year === '전체' || String(q.year) === filters.year) &&
-                    (filters.session === '전체' || q.session === filters.session) &&
+                    (filters.session === '전체' || String(q.session) === filters.session) &&
                     (filters.category === '전체' || q.category === filters.category)
                 );
+                
                 if (pool.length === 0) return alert("해당 조건의 문제가 없습니다.");
                 pool = [...pool].sort(() => Math.random() - 0.5);
                 if (filters.limit !== '전체') pool = pool.slice(0, parseInt(filters.limit));
+                
                 setQuizList(pool);
                 setAnswers({});
                 setCurrentIdx(0);
@@ -170,34 +166,26 @@
                 setView('QUIZ');
             };
 
-            const submitQuiz = async () => {
-                if (isReviewMode) return setView('HOME');
-                const correctCount = quizList.filter((q, idx) => answers[idx] === q.correct).length;
-                const finalScore = Math.round((correctCount / quizList.length) * 100);
-                try {
-                    await db.collection('artifacts').doc(appId).collection('public').doc('data').collection('results').add({
-                        name: studentProfile.name,
-                        studentId: studentProfile.studentId,
-                        score: finalScore,
-                        correct: correctCount,
-                        total: quizList.length,
-                        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                        mode: filters.mode,
-                        uid: user.uid,
-                        userAnswers: answers,
-                        questionSet: quizList.map(q => q.id)
-                    });
-                    setView('RESULT');
-                } catch (e) { alert("저장 실패"); }
-            };
+            const submitExam = async () => {
+                const score = quizList.reduce((acc, q, i) => acc + (answers[i] === q.correct ? 1 : 0), 0);
+                const total = quizList.length;
+                const resultData = {
+                    studentId: studentProfile.id,
+                    studentName: studentProfile.name,
+                    score,
+                    total,
+                    percent: Math.round((score/total)*100),
+                    timestamp: Date.now(),
+                    answers,
+                    questions: quizList.map(q => ({id: q.id, category: q.category, correct: q.correct}))
+                };
 
-            const toggleExam = async () => {
                 try {
-                    const newStatus = !examConfig.active;
-                    await db.collection('artifacts').doc(appId).collection('public').doc('data').collection('configs').doc('main').set({
-                        exam: { active: newStatus }
-                    }, { merge: true });
-                } catch (e) { alert("상태 변경 실패"); }
+                    await db.collection('artifacts').doc(appId).collection('public').doc('data').collection('results').add(resultData);
+                    setView('RESULT');
+                } catch (e) {
+                    alert("결과 저장 중 오류가 발생했습니다.");
+                }
             };
 
             const uploadJSON = (e) => {
@@ -220,55 +208,51 @@
                 reader.readAsText(file);
             };
 
-            const uploadStudentsCSV = (e) => {
+            const uploadCSV = (e) => {
                 const file = e.target.files[0];
                 if (!file) return;
                 const reader = new FileReader();
                 reader.onload = async (evt) => {
                     try {
-                        const lines = evt.target.result.split('\n');
+                        const rows = evt.target.result.split('\n').filter(r => r.trim());
                         const batch = db.batch();
                         const sRef = db.collection('artifacts').doc(appId).collection('public').doc('data').collection('students');
-                        let count = 0;
-                        lines.forEach((line) => {
-                            const [name, sid] = line.split(',').map(s => s.trim());
-                            if (name && sid) {
-                                batch.set(sRef.doc(sid), { name, studentId: sid });
-                                count++;
-                            }
+                        rows.forEach((row, i) => {
+                            const [id, name, group] = row.split(',').map(s => s.trim());
+                            if (id && name) batch.set(sRef.doc(id), { id, name, group: group || '기본' });
                         });
                         await batch.commit();
-                        alert(`${count}명의 학생 등록 완료!`);
-                    } catch (err) { alert("CSV 형식을 확인하세요 (성함,학번)."); }
+                        alert(`${rows.length}명의 학생 등록 완료!`);
+                    } catch (err) { alert("CSV 형식을 확인하세요 (학번, 이름, 소속)."); }
                 };
                 reader.readAsText(file);
             };
 
-            const categoryAnalysis = useMemo(() => {
-                const stats = {};
-                quizList.forEach((q, i) => {
-                    const cat = q.category || '기타';
-                    if (!stats[cat]) stats[cat] = { total: 0, correct: 0 };
-                    stats[cat].total++;
-                    if (answers[i] === q.correct) stats[cat].correct++;
+            const toggleExamMode = async () => {
+                await db.collection('artifacts').doc(appId).collection('public').doc('data').collection('configs').doc('main').set({
+                    forceExam: !examConfig.forceExam
                 });
-                return stats;
-            }, [quizList, answers, view]);
+            };
+
+            // Dynamic Filter Options
+            const yearOptions = useMemo(() => ['전체', ...new Set(questions.map(q => String(q.year)))].sort((a,b) => b-a), [questions]);
+            const sessionOptions = useMemo(() => ['전체', ...new Set(questions.map(q => String(q.session)))].sort(), [questions]);
+            const categoryOptions = useMemo(() => ['전체', ...new Set(questions.map(q => q.category))].sort(), [questions]);
 
             if (loading) return (
                 <div className="h-screen flex flex-col items-center justify-center bg-slate-900 text-white">
                     <div className="w-10 h-10 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin mb-4"></div>
-                    <p className="text-sm font-bold opacity-50">시스템 초기화 중...</p>
+                    <p className="text-sm font-bold opacity-50 tracking-widest">SYSTEM INITIALIZING</p>
                 </div>
             );
 
             return (
-                <div className="max-w-xl mx-auto min-h-screen flex flex-col bg-slate-50 shadow-2xl relative">
+                <div className="max-w-xl mx-auto min-h-screen flex flex-col bg-slate-50 shadow-2xl relative border-x border-slate-200">
                     
                     {/* Navigation Drawer */}
                     <div className={`nav-drawer ${isNavOpen ? 'open' : ''} overflow-y-auto custom-scroll`}>
-                        <div className="px-4 py-6">
-                            <h4 className="text-[10px] font-black text-slate-300 mb-4 text-center uppercase tracking-tighter">문항 이동</h4>
+                        <div className="px-4 py-6 text-center">
+                            <h4 className="text-[10px] font-black text-slate-300 mb-4 uppercase">NAV</h4>
                             {quizList.map((q, i) => {
                                 let statusClass = answers[i] !== undefined ? 'answered' : '';
                                 if (isReviewMode || (filters.mode === 'PRACTICE' && answers[i] !== undefined)) {
@@ -285,110 +269,131 @@
                     </div>
 
                     <header className="p-4 glass sticky top-0 z-[1001] flex justify-between items-center px-6">
-                        <div className="cursor-pointer flex items-center gap-2" onClick={() => setView('HOME')}>
-                            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-black text-xs italic">A</div>
+                        <div className="cursor-pointer flex items-center gap-2" onClick={() => setView('LOGIN')}>
+                            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-black text-xs italic shadow-lg shadow-indigo-200">A</div>
                             <span className="text-lg font-black text-slate-800 tracking-tighter uppercase italic">Master Pro</span>
                         </div>
-                        <div className="flex gap-2">
+                        <div className="flex items-center gap-2">
                             {view === 'QUIZ' && (
-                                <button onClick={() => setIsNavOpen(!isNavOpen)} className="px-3 py-1.5 bg-slate-100 rounded-xl text-[10px] font-black text-slate-600 border border-slate-200">
-                                    {isNavOpen ? '닫기' : '문항'}
+                                <button onClick={() => setIsNavOpen(!isNavOpen)} className="px-3 py-1.5 bg-slate-100 rounded-xl text-[10px] font-black text-slate-600 border border-slate-200 uppercase">
+                                    Menu
                                 </button>
                             )}
-                            <button onClick={() => setView('ADMIN')} className="p-2 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-all">
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path></svg>
+                            <button onClick={handleAdminAccess} className="p-2 text-slate-400 hover:text-indigo-600 transition-colors">
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                             </button>
                         </div>
                     </header>
 
-                    <main className="flex-1 p-6 overflow-y-auto custom-scroll">
+                    <main className="flex-1 p-6 overflow-y-auto custom-scroll flex flex-col">
                         {view === 'LOGIN' && (
-                            <div className="flex flex-col items-center justify-center py-12 animate-in fade-in zoom-in-95">
-                                <div className="text-center mb-10">
-                                    <h2 className="text-4xl font-black text-slate-900 tracking-tighter">학생 인증</h2>
-                                    <p className="text-slate-400 text-sm mt-2 font-medium">항공마스터 시스템에 오신 것을 환영합니다</p>
+                            <div className="flex flex-col items-center justify-center py-12 animate-in fade-in flex-1">
+                                <div className="w-20 h-20 bg-indigo-50 rounded-[32px] flex items-center justify-center mb-8">
+                                    <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
                                 </div>
-                                <div className="w-full space-y-4 mb-8">
-                                    <div className="space-y-1">
-                                        <label className="text-[10px] font-black text-slate-400 ml-1 uppercase">Name</label>
-                                        <input id="l-name" type="text" placeholder="성함을 입력하세요" className="w-full p-4 bg-white border-2 border-slate-100 rounded-2xl font-bold outline-none focus:border-indigo-500 transition-all" />
-                                    </div>
-                                    <div className="space-y-1">
-                                        <label className="text-[10px] font-black text-slate-400 ml-1 uppercase">Student ID</label>
-                                        <input id="l-id" type="text" placeholder="학번을 입력하세요" className="w-full p-4 bg-white border-2 border-slate-100 rounded-2xl font-bold outline-none focus:border-indigo-500 transition-all" />
-                                    </div>
+                                <h2 className="text-3xl font-black mb-2 text-slate-800 tracking-tight">STUDENT LOGIN</h2>
+                                <p className="text-slate-400 font-bold mb-10 text-sm">인증을 위해 정보를 입력하세요.</p>
+                                
+                                <div className="w-full space-y-3">
+                                    <input id="l-name" placeholder="성함" className="w-full p-5 bg-white border-2 border-slate-100 rounded-2xl font-bold focus:border-indigo-600 outline-none transition-all shadow-sm" />
+                                    <input id="l-id" placeholder="학번" className="w-full p-5 bg-white border-2 border-slate-100 rounded-2xl font-bold focus:border-indigo-600 outline-none transition-all shadow-sm" />
+                                    <button onClick={() => { 
+                                        const n = document.getElementById('l-name').value;
+                                        const i = document.getElementById('l-id').value;
+                                        if(!n || !i) return alert("모든 정보를 입력하세요.");
+                                        setStudentProfile({name: n, id: i}); 
+                                        setView('HOME'); 
+                                    }} className="w-full py-5 bg-indigo-600 text-white rounded-2xl font-black text-lg shadow-xl shadow-indigo-100 hover:scale-[0.98] active:scale-95 transition-all mt-4">접속하기</button>
                                 </div>
-                                <button onClick={() => handleLogin(document.getElementById('l-name').value, document.getElementById('l-id').value)} className="w-full py-5 bg-indigo-600 text-white rounded-2xl font-black shadow-xl shadow-indigo-100 hover:bg-indigo-700 transition-all">접속하기</button>
                             </div>
                         )}
 
                         {view === 'HOME' && (
-                            <div className="space-y-6 animate-in slide-in-from-bottom-6">
-                                <div className="p-8 bg-white rounded-[32px] border border-slate-100 shadow-sm space-y-8">
-                                    <div className="flex justify-between items-center">
-                                        <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">Setup Quiz Session</h3>
-                                        {examConfig.active && <span className="bg-rose-100 text-rose-600 px-3 py-1 rounded-full text-[10px] font-black animate-pulse">시험 진행중</span>}
+                            <div className="space-y-6 fade-in-up">
+                                <div className="p-8 bg-white rounded-[40px] border border-slate-100 space-y-8 shadow-sm">
+                                    <div className="flex justify-between items-end">
+                                        <div>
+                                            <p className="text-[10px] font-black text-slate-300 uppercase tracking-widest mb-1">Welcome back</p>
+                                            <h3 className="text-2xl font-black text-slate-800">{studentProfile?.name} 님</h3>
+                                        </div>
+                                        <div className="text-right">
+                                            <span className="px-3 py-1 bg-indigo-50 text-indigo-600 text-[10px] font-black rounded-full uppercase">Student</span>
+                                        </div>
                                     </div>
-                                    <div className="grid grid-cols-2 gap-2 bg-slate-50 p-1.5 rounded-2xl">
-                                        <button 
-                                            disabled={examConfig.active}
-                                            onClick={() => setFilters({...filters, mode: 'PRACTICE'})} 
-                                            className={`py-4 rounded-xl font-black text-xs transition-all ${filters.mode === 'PRACTICE' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-400'}`}>
-                                            연습 모드
+
+                                    <div className="space-y-6">
+                                        <div className="grid grid-cols-2 gap-2 bg-slate-50 p-1.5 rounded-2xl">
+                                            <button 
+                                                disabled={examConfig.forceExam}
+                                                onClick={() => setFilters({...filters, mode: 'PRACTICE'})} 
+                                                className={`py-3 rounded-xl font-black text-xs transition-all ${filters.mode === 'PRACTICE' ? 'bg-white shadow-sm text-indigo-600' : 'text-slate-400'} ${examConfig.forceExam ? 'opacity-30 cursor-not-allowed' : ''}`}>
+                                                연습 모드 {examConfig.forceExam && "🔒"}
+                                            </button>
+                                            <button 
+                                                onClick={() => setFilters({...filters, mode: 'EXAM'})} 
+                                                className={`py-3 rounded-xl font-black text-xs transition-all ${filters.mode === 'EXAM' ? 'bg-slate-900 text-white shadow-lg' : 'text-slate-400'}`}>
+                                                시험 모드
+                                            </button>
+                                        </div>
+
+                                        <div className="grid grid-cols-1 gap-3">
+                                            <div className="grid grid-cols-2 gap-3">
+                                                <div className="space-y-1">
+                                                    <label className="text-[10px] font-black text-slate-400 ml-2 uppercase">연도</label>
+                                                    <select value={filters.year} onChange={e => setFilters({...filters, year: e.target.value})} className="w-full p-4 bg-slate-50 border-0 rounded-2xl font-bold text-sm focus:ring-2 ring-indigo-500 outline-none">
+                                                        {yearOptions.map(y => <option key={y} value={y}>{y === '전체' ? '전체 연도' : `${y}년`}</option>)}
+                                                    </select>
+                                                </div>
+                                                <div className="space-y-1">
+                                                    <label className="text-[10px] font-black text-slate-400 ml-2 uppercase">회차</label>
+                                                    <select value={filters.session} onChange={e => setFilters({...filters, session: e.target.value})} className="w-full p-4 bg-slate-50 border-0 rounded-2xl font-bold text-sm focus:ring-2 ring-indigo-500 outline-none">
+                                                        {sessionOptions.map(s => <option key={s} value={s}>{s === '전체' ? '전체 회차' : s}</option>)}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div className="space-y-1">
+                                                <label className="text-[10px] font-black text-slate-400 ml-2 uppercase">과목 선택</label>
+                                                <select value={filters.category} onChange={e => setFilters({...filters, category: e.target.value})} className="w-full p-4 bg-slate-50 border-0 rounded-2xl font-bold text-sm focus:ring-2 ring-indigo-500 outline-none">
+                                                    {categoryOptions.map(c => <option key={c} value={c}>{c === '전체' ? '전체 과목' : c}</option>)}
+                                                </select>
+                                            </div>
+                                            <div className="space-y-1">
+                                                <label className="text-[10px] font-black text-slate-400 ml-2 uppercase">문항 수</label>
+                                                <select value={filters.limit} onChange={e => setFilters({...filters, limit: e.target.value})} className="w-full p-4 bg-slate-50 border-0 rounded-2xl font-bold text-sm focus:ring-2 ring-indigo-500 outline-none">
+                                                    {['5', '10', '20', '30', '60', '전체'].map(l => <option key={l} value={l}>{l}문항</option>)}
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <button onClick={startQuiz} className="w-full py-6 bg-indigo-600 text-white rounded-[24px] font-black text-xl shadow-xl shadow-indigo-100 hover:bg-indigo-700 transition-all">
+                                            테스트 시작
                                         </button>
-                                        <button onClick={() => setFilters({...filters, mode: 'EXAM'})} className={`py-4 rounded-xl font-black text-xs transition-all ${filters.mode === 'EXAM' ? 'bg-slate-900 text-white shadow-lg' : 'text-slate-400'}`}>시험 모드</button>
-                                    </div>
-                                    
-                                    <div className="grid grid-cols-1 gap-4">
-                                        <div className="grid grid-cols-2 gap-4">
-                                            <div className="space-y-1.5">
-                                                <label className="text-[10px] font-black text-slate-400 ml-1">연도 선택</label>
-                                                <select value={filters.year} onChange={e => setFilters({...filters, year: e.target.value})} className="w-full p-4 bg-slate-50 border-0 rounded-2xl font-bold text-sm outline-none">
-                                                    <option value="전체">전체 연도</option>
-                                                    {[...new Set(questions.map(q => String(q.year)))].sort().reverse().map(y => <option key={y} value={y}>{y}년</option>)}
-                                                </select>
-                                            </div>
-                                            <div className="space-y-1.5">
-                                                <label className="text-[10px] font-black text-slate-400 ml-1">회차 선택</label>
-                                                <select value={filters.session} onChange={e => setFilters({...filters, session: e.target.value})} className="w-full p-4 bg-slate-50 border-0 rounded-2xl font-bold text-sm outline-none">
-                                                    <option value="전체">전체 회차</option>
-                                                    {[...new Set(questions.map(q => q.session))].sort().map(s => <option key={s} value={s}>{s}</option>)}
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div className="space-y-1.5">
-                                            <label className="text-[10px] font-black text-slate-400 ml-1">과목 선택</label>
-                                            <select value={filters.category} onChange={e => setFilters({...filters, category: e.target.value})} className="w-full p-4 bg-slate-50 border-0 rounded-2xl font-bold text-sm outline-none">
-                                                <option value="전체">전체 과목</option>
-                                                {[...new Set(questions.map(q => q.category))].sort().map(c => <option key={c} value={c}>{c}</option>)}
-                                            </select>
-                                        </div>
-                                        <div className="space-y-1.5">
-                                            <label className="text-[10px] font-black text-slate-400 ml-1">문제 수</label>
-                                            <div className="grid grid-cols-3 gap-2">
-                                                {['5', '10', '20', '30', '60', '전체'].map(num => (
-                                                    <button key={num} onClick={() => setFilters({...filters, limit: num})} className={`py-3 rounded-xl font-bold text-xs border-2 transition-all ${filters.limit === num ? 'border-indigo-600 bg-indigo-50 text-indigo-600' : 'border-slate-100 text-slate-400'}`}>
-                                                        {num}개
-                                                    </button>
-                                                ))}
-                                            </div>
-                                        </div>
-                                        <button onClick={startQuiz} className="w-full py-5 bg-indigo-600 text-white rounded-3xl font-black text-lg shadow-xl shadow-indigo-100 hover:bg-indigo-700 transition-all active:scale-[0.98]">테스트 시작하기</button>
                                     </div>
                                 </div>
+                                {examConfig.forceExam && (
+                                    <div className="p-4 bg-rose-50 border border-rose-100 rounded-2xl flex items-center gap-3">
+                                        <div className="w-10 h-10 bg-rose-100 rounded-xl flex items-center justify-center text-rose-600">
+                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" /></svg>
+                                        </div>
+                                        <div>
+                                            <p className="text-xs font-black text-rose-800 uppercase">Exam Mode Active</p>
+                                            <p className="text-[10px] text-rose-600 font-bold">현재 관리자에 의해 시험 모드만 이용 가능합니다.</p>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         )}
 
                         {view === 'QUIZ' && quizList[currentIdx] && (
-                            <div className="pb-40 animate-in fade-in">
-                                <div className="flex justify-between items-center mb-6 px-2">
-                                    <div className="flex flex-col">
-                                        <span className="text-[10px] font-black text-indigo-600 uppercase tracking-widest">{quizList[currentIdx].category}</span>
-                                        <span className="text-[10px] font-bold text-slate-300">{quizList[currentIdx].year}년 {quizList[currentIdx].session}</span>
+                            <div className="pb-40 fade-in-up">
+                                <div className="flex justify-between items-center mb-6">
+                                    <div className="flex items-center gap-2">
+                                        <span className="px-2 py-0.5 bg-indigo-600 text-white text-[9px] font-black rounded uppercase tracking-tighter italic">Q {currentIdx + 1}</span>
+                                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{quizList[currentIdx].category}</span>
                                     </div>
-                                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Question {currentIdx + 1} / {quizList.length}</span>
+                                    <span className="text-[11px] font-black text-slate-300 tabular-nums uppercase">{currentIdx + 1} / {quizList.length}</span>
                                 </div>
-                                <div className="bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm mb-8 font-bold text-slate-800 text-xl leading-relaxed min-h-[160px]">
+                                <div className="bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm mb-8 text-xl font-bold text-slate-800 min-h-[160px] flex items-center leading-relaxed">
                                     <MathText text={quizList[currentIdx].q} />
                                 </div>
                                 <div className="space-y-3">
@@ -398,12 +403,12 @@
                                         const isAnswered = answers[currentIdx] !== undefined;
                                         const showFeedback = isReviewMode || (filters.mode === 'PRACTICE' && isAnswered);
                                         
-                                        let btnClass = "border-white bg-white hover:border-slate-100";
+                                        let btnClass = "border-white bg-white hover:border-slate-200 shadow-sm";
                                         if (showFeedback) {
-                                            if (isCorrect) btnClass = "border-emerald-500 bg-emerald-50 shadow-sm";
-                                            else if (isSelected) btnClass = "border-rose-500 bg-rose-50";
+                                            if (isCorrect) btnClass = "border-emerald-500 bg-emerald-50 ring-2 ring-emerald-100";
+                                            else if (isSelected) btnClass = "border-rose-500 bg-rose-50 ring-2 ring-rose-100";
                                         } else if (isSelected) {
-                                            btnClass = "border-indigo-600 bg-indigo-50 shadow-md";
+                                            btnClass = "border-indigo-600 bg-indigo-50 ring-2 ring-indigo-100";
                                         }
 
                                         return (
@@ -411,25 +416,22 @@
                                                 key={i} 
                                                 disabled={showFeedback && !isReviewMode}
                                                 onClick={() => setAnswers(prev => ({...prev, [currentIdx]: i}))} 
-                                                className={`w-full p-5 text-left border-2 rounded-2xl flex gap-4 transition-all ${btnClass}`}>
-                                                <span className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 text-xs font-black ${isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-400'}`}>{i+1}</span>
-                                                <div className="text-[16px] font-bold flex-1 pt-0.5"><MathText text={opt} /></div>
+                                                className={`w-full p-5 text-left border-2 rounded-2xl flex gap-4 transition-all duration-200 group active:scale-[0.98] ${btnClass}`}>
+                                                <span className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 text-xs font-black transition-colors ${isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-400 group-hover:bg-slate-200'}`}>{i+1}</span>
+                                                <div className="text-[16px] font-bold flex-1"><MathText text={opt} /></div>
                                             </button>
                                         );
                                     })}
                                 </div>
 
-                                {/* 해설 섹션: 연습 모드에서 선택했거나 복습 모드일 때만 표시 */}
                                 {(isReviewMode || (filters.mode === 'PRACTICE' && answers[currentIdx] !== undefined)) && (
-                                    <div className="mt-8 p-6 bg-slate-900 text-white rounded-[24px] fade-in-up">
-                                        <div className="flex items-center gap-2 mb-3 text-indigo-400">
-                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-                                            </svg>
-                                            <span className="text-[10px] font-black uppercase tracking-widest">Commentary (해설)</span>
-                                        </div>
-                                        <div className="text-sm font-medium leading-relaxed opacity-90 border-t border-white/10 pt-3">
-                                            <MathText text={quizList[currentIdx].commentary || "이 문제에 대한 추가 해설 데이터가 없습니다."} />
+                                    <div className="mt-8 p-6 bg-slate-900 text-white rounded-[32px] shadow-xl fade-in-up">
+                                        <p className="text-[10px] font-black uppercase text-indigo-400 mb-4 tracking-widest flex items-center gap-2">
+                                            <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-pulse"></div>
+                                            Master Commentary
+                                        </p>
+                                        <div className="text-sm font-medium leading-relaxed opacity-90 border-t border-white/10 pt-4">
+                                            <MathText text={quizList[currentIdx].exp || "이 문항에 대한 해설이 등록되지 않았습니다."} />
                                         </div>
                                     </div>
                                 )}
@@ -437,113 +439,143 @@
                         )}
 
                         {view === 'RESULT' && (
-                            <div className="animate-in zoom-in-95 pb-12">
-                                <div className="text-center py-8">
-                                    <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
-                                    </div>
-                                    <h2 className="text-3xl font-black mb-1">테스트 완료!</h2>
-                                    <p className="text-slate-400 font-medium">분석 결과가 생성되었습니다.</p>
+                            <div className="py-8 space-y-8 fade-in-up">
+                                <div className="text-center space-y-2">
+                                    <h2 className="text-4xl font-black text-slate-800 tracking-tighter uppercase italic">TEST COMPLETED</h2>
+                                    <p className="text-slate-400 font-bold uppercase text-[10px] tracking-widest">수고하셨습니다. 결과를 확인하세요.</p>
                                 </div>
-                                <div className="space-y-4">
-                                    <div className="bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm flex justify-between items-center">
-                                        <div className="text-left">
-                                            <p className="text-[10px] font-black text-slate-300 uppercase">Total Score</p>
-                                            <p className="text-5xl font-black text-indigo-600">{quizList.length > 0 ? Math.round((quizList.filter((q, i) => answers[i] === q.correct).length / quizList.length) * 100) : 0}<span className="text-lg text-slate-300 ml-1">pts</span></p>
-                                        </div>
-                                        <div className="text-right">
-                                            <p className="text-[10px] font-black text-slate-300 uppercase">Correct Ratio</p>
-                                            <p className="text-2xl font-black text-slate-800">{quizList.filter((q, i) => answers[i] === q.correct).length} <span className="text-slate-300">/ {quizList.length}</span></p>
-                                        </div>
-                                    </div>
-                                    <div className="bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm space-y-6">
-                                        <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">Category Analysis</h3>
-                                        <div className="space-y-4">
-                                            {Object.entries(categoryAnalysis).map(([cat, data]) => {
-                                                const ratio = Math.round((data.correct / data.total) * 100);
-                                                return (
-                                                    <div key={cat} className="space-y-2">
-                                                        <div className="flex justify-between text-xs font-bold">
-                                                            <span>{cat}</span>
-                                                            <span className={ratio >= 70 ? 'text-emerald-500' : 'text-rose-500'}>{ratio}%</span>
+
+                                {(() => {
+                                    const score = quizList.reduce((acc, q, i) => acc + (answers[i] === q.correct ? 1 : 0), 0);
+                                    const total = quizList.length;
+                                    const percent = Math.round((score/total)*100);
+                                    const isPass = percent >= 60;
+                                    
+                                    const cats = [...new Set(quizList.map(q => q.category))];
+                                    const catStats = cats.map(c => {
+                                        const qItems = quizList.filter(q => q.category === c);
+                                        const qIdxs = quizList.map((q, idx) => q.category === c ? idx : -1).filter(i => i !== -1);
+                                        const cCorrect = qIdxs.reduce((acc, idx) => acc + (answers[idx] === quizList[idx].correct ? 1 : 0), 0);
+                                        return { name: c, correct: cCorrect, total: qItems.length };
+                                    });
+
+                                    return (
+                                        <div className="space-y-6">
+                                            <div className="p-8 bg-white rounded-[40px] border border-slate-100 shadow-sm text-center">
+                                                <div className={`inline-flex px-4 py-1.5 rounded-full text-[10px] font-black uppercase mb-4 ${isPass ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'}`}>
+                                                    {isPass ? 'Pass' : 'Failed'}
+                                                </div>
+                                                <div className="text-7xl font-black text-slate-900 mb-2 tabular-nums">{percent}<span className="text-3xl text-slate-300">%</span></div>
+                                                <p className="text-sm font-bold text-slate-400">{total}문항 중 {score}문항 정답</p>
+                                            </div>
+
+                                            <div className="grid grid-cols-1 gap-3">
+                                                <p className="text-[10px] font-black text-slate-400 ml-2 uppercase tracking-widest">영역별 피드백</p>
+                                                {catStats.map(s => (
+                                                    <div key={s.name} className="p-5 bg-white rounded-2xl border border-slate-100 flex justify-between items-center">
+                                                        <div>
+                                                            <p className="text-[10px] font-black text-indigo-600 uppercase mb-1">{s.name}</p>
+                                                            <div className="w-32 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                                                                <div className="h-full bg-indigo-500 rounded-full" style={{width: `${(s.correct/s.total)*100}%`}}></div>
+                                                            </div>
                                                         </div>
-                                                        <div className="h-2 bg-slate-50 rounded-full overflow-hidden">
-                                                            <div className={`h-full rounded-full transition-all duration-1000 ${ratio >= 70 ? 'bg-emerald-500' : 'bg-rose-500'}`} style={{width: `${ratio}%`}}></div>
-                                                        </div>
+                                                        <p className="text-lg font-black text-slate-800">{Math.round((s.correct/s.total)*100)}%</p>
                                                     </div>
-                                                );
-                                            })}
+                                                ))}
+                                            </div>
+
+                                            <div className="grid grid-cols-2 gap-3 pt-4">
+                                                <button onClick={() => { setIsReviewMode(true); setView('QUIZ'); setCurrentIdx(0); }} className="p-5 bg-slate-900 text-white rounded-2xl font-black text-sm shadow-xl shadow-slate-200">오답 복습하기</button>
+                                                <button onClick={() => setView('HOME')} className="p-5 bg-white border-2 border-slate-100 rounded-2xl font-black text-sm">메인으로</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="grid grid-cols-2 gap-3">
-                                        <button onClick={() => { setIsReviewMode(true); setCurrentIdx(0); setView('QUIZ'); }} className="py-5 bg-slate-900 text-white rounded-3xl font-black shadow-xl hover:bg-slate-800 transition-all">오답 복습</button>
-                                        <button onClick={() => setView('HOME')} className="py-5 bg-white border-2 border-slate-100 text-slate-400 rounded-3xl font-black hover:border-slate-200 transition-all">종료하기</button>
-                                    </div>
-                                </div>
+                                    );
+                                })()}
                             </div>
                         )}
 
                         {view === 'ADMIN' && (
-                            <div className="space-y-8 animate-in fade-in pb-24">
-                                <div className="flex justify-between items-center">
-                                    <h2 className="text-2xl font-black tracking-tighter">관리자 대시보드</h2>
-                                    <button onClick={() => setView('LOGIN')} className="px-4 py-2 bg-rose-50 text-rose-600 rounded-xl text-xs font-black">나가기 (로그아웃)</button>
+                            <div className="space-y-8 pb-12 fade-in-up">
+                                <div className="flex justify-between items-end">
+                                    <h2 className="text-3xl font-black text-slate-800 uppercase italic tracking-tighter">Admin Panel</h2>
+                                    <button onClick={() => setView('LOGIN')} className="px-4 py-2 bg-rose-50 text-rose-600 rounded-xl font-black text-[10px] uppercase">Logout to Main</button>
                                 </div>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div className="p-6 bg-white rounded-3xl border border-slate-100 shadow-sm">
-                                        <p className="text-[10px] font-black text-slate-400 mb-1 uppercase tracking-widest">Questions</p>
-                                        <p className="text-3xl font-black text-indigo-600">{questions.length}</p>
+
+                                <div className="grid grid-cols-3 gap-3">
+                                    <div className="p-4 bg-white rounded-2xl border border-slate-100">
+                                        <p className="text-[9px] font-black text-slate-400 uppercase mb-1">Items</p>
+                                        <p className="text-xl font-black text-indigo-600">{questions.length}</p>
                                     </div>
-                                    <div className="p-6 bg-white rounded-3xl border border-slate-100 shadow-sm">
-                                        <p className="text-[10px] font-black text-slate-400 mb-1 uppercase tracking-widest">Students</p>
-                                        <p className="text-3xl font-black text-slate-800">{students.length}</p>
+                                    <div className="p-4 bg-white rounded-2xl border border-slate-100">
+                                        <p className="text-[9px] font-black text-slate-400 uppercase mb-1">Students</p>
+                                        <p className="text-xl font-black text-slate-800">{students.length}</p>
+                                    </div>
+                                    <div className="p-4 bg-white rounded-2xl border border-slate-100">
+                                        <p className="text-[9px] font-black text-slate-400 uppercase mb-1">Results</p>
+                                        <p className="text-xl font-black text-slate-800">{results.length}</p>
                                     </div>
                                 </div>
-                                <div className="p-8 bg-white rounded-[32px] border border-slate-100 shadow-sm space-y-6">
-                                    <h3 className="font-black text-xl flex items-center gap-2">
-                                        <span className="w-2 h-6 bg-indigo-600 rounded-full"></span>
-                                        환경 설정
-                                    </h3>
-                                    <div className="flex flex-col gap-3">
-                                        <button onClick={toggleExam} className={`p-5 rounded-2xl font-black text-sm transition-all ${examConfig.active ? 'bg-rose-500 text-white' : 'bg-slate-100 text-slate-600'}`}>
-                                            시험 모드 상태: {examConfig.active ? '활성화 중' : '비활성화'}
-                                        </button>
+
+                                <div className="space-y-4">
+                                    <div className={`p-6 rounded-3xl border transition-all ${examConfig.forceExam ? 'bg-slate-900 border-slate-900 text-white' : 'bg-white border-slate-100 text-slate-800'}`}>
+                                        <div className="flex justify-between items-center">
+                                            <div>
+                                                <p className="text-[10px] font-black uppercase opacity-50 mb-1">System Control</p>
+                                                <h4 className="text-lg font-black italic">시험 모드 강제 제어</h4>
+                                            </div>
+                                            <button onClick={toggleExamMode} className={`w-14 h-8 rounded-full relative transition-colors ${examConfig.forceExam ? 'bg-indigo-500' : 'bg-slate-200'}`}>
+                                                <div className={`absolute top-1 w-6 h-6 bg-white rounded-full transition-all ${examConfig.forceExam ? 'left-7' : 'left-1 shadow-sm'}`}></div>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div className="grid grid-cols-2 gap-3">
-                                        <label className="p-4 bg-slate-900 text-white rounded-2xl font-black text-xs text-center cursor-pointer hover:bg-slate-800 transition-all">
-                                            문제 JSON 업로드
+
+                                    <div className="grid grid-cols-1 gap-3">
+                                        <label className="p-5 bg-white border-2 border-slate-100 rounded-2xl font-black text-center cursor-pointer hover:bg-slate-50 transition-all flex items-center justify-center gap-3">
+                                            <svg className="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                                            문제 일괄 업로드 (JSON)
                                             <input type="file" className="hidden" accept=".json" onChange={uploadJSON} />
                                         </label>
-                                        <label className="p-4 bg-indigo-600 text-white rounded-2xl font-black text-xs text-center cursor-pointer hover:bg-indigo-700 transition-all">
-                                            학생 CSV 업로드
-                                            <input type="file" className="hidden" accept=".csv" onChange={uploadStudentsCSV} />
+                                        <label className="p-5 bg-white border-2 border-slate-100 rounded-2xl font-black text-center cursor-pointer hover:bg-slate-50 transition-all flex items-center justify-center gap-3">
+                                            <svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                                            학생 명단 업로드 (CSV)
+                                            <input type="file" className="hidden" accept=".csv" onChange={uploadCSV} />
                                         </label>
                                     </div>
                                 </div>
-                                <div className="p-8 bg-white rounded-[32px] border border-slate-100 shadow-sm space-y-6">
-                                    <h3 className="font-black text-xl flex items-center gap-2">
-                                        <span className="w-2 h-6 bg-emerald-500 rounded-full"></span>
-                                        실시간 결과 (최근 10건)
-                                    </h3>
-                                    <div className="overflow-x-auto">
-                                        <table className="w-full text-left text-xs font-bold">
-                                            <thead>
-                                                <tr className="border-b border-slate-50 text-slate-300">
-                                                    <th className="py-2 text-[10px] uppercase tracking-wider">이름</th>
-                                                    <th className="py-2 text-[10px] uppercase tracking-wider">점수</th>
-                                                    <th className="py-2 text-[10px] uppercase tracking-wider">모드</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {results.slice().sort((a,b) => (b.timestamp?.seconds || 0) - (a.timestamp?.seconds || 0)).slice(0, 10).map((r, i) => (
-                                                    <tr key={i} className="border-b border-slate-50">
-                                                        <td className="py-3">{r.name}</td>
-                                                        <td className="py-3 text-indigo-600 font-black">{r.score}</td>
-                                                        <td className="py-3 opacity-50">{r.mode}</td>
+
+                                <div className="space-y-3">
+                                    <div className="flex justify-between items-center px-2">
+                                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Recent Exam Results</p>
+                                        <button onClick={() => {
+                                            const csv = [["학번", "이름", "점수", "정답률", "일시"], ...results.map(r => [r.studentId, r.studentName, r.score, r.percent, new Date(r.timestamp).toLocaleString()])].map(e => e.join(",")).join("\n");
+                                            const blob = new Blob(["\uFEFF" + csv], { type: 'text/csv;charset=utf-8;' });
+                                            const link = document.createElement("a");
+                                            link.href = URL.createObjectURL(blob);
+                                            link.download = "exam_results.csv";
+                                            link.click();
+                                        }} className="text-[9px] font-black text-indigo-600 uppercase">Export CSV</button>
+                                    </div>
+                                    <div className="bg-white rounded-3xl border border-slate-100 overflow-hidden">
+                                        <div className="max-h-[300px] overflow-y-auto custom-scroll">
+                                            <table className="w-full text-left border-collapse">
+                                                <thead className="sticky top-0 bg-slate-50 text-[10px] font-black text-slate-400 uppercase">
+                                                    <tr>
+                                                        <th className="p-4">이름</th>
+                                                        <th className="p-4">정답률</th>
+                                                        <th className="p-4">날짜</th>
                                                     </tr>
-                                                ))}
-                                            </tbody>
-                                        </table>
+                                                </thead>
+                                                <tbody className="divide-y divide-slate-50">
+                                                    {[...results].sort((a,b) => b.timestamp - a.timestamp).map((r, i) => (
+                                                        <tr key={i} className="text-xs font-bold text-slate-600 hover:bg-slate-50 transition-colors">
+                                                            <td className="p-4">{r.studentName} <span className="block text-[9px] text-slate-300">{r.studentId}</span></td>
+                                                            <td className="p-4"><span className={`px-2 py-1 rounded-lg ${r.percent >= 60 ? 'bg-emerald-50 text-emerald-600' : 'bg-rose-50 text-rose-600'}`}>{r.percent}%</span></td>
+                                                            <td className="p-4 text-slate-300 text-[9px]">{new Date(r.timestamp).toLocaleDateString()}</td>
+                                                        </tr>
+                                                    ))}
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -552,17 +584,17 @@
 
                     {view === 'QUIZ' && (
                         <footer className="fixed bottom-0 left-0 right-0 max-w-xl mx-auto p-6 glass flex gap-4 z-[1001]">
-                            <button disabled={currentIdx === 0} onClick={() => setCurrentIdx(p => p - 1)} className={`w-16 h-16 rounded-3xl flex items-center justify-center transition-all ${currentIdx === 0 ? 'bg-slate-50 text-slate-200' : 'bg-slate-100 text-slate-400 hover:bg-slate-200'}`}>
-                                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M15 19l-7-7 7-7"></path></svg>
+                            <button disabled={currentIdx === 0} onClick={() => setCurrentIdx(p => p - 1)} className="w-16 h-16 bg-slate-100 text-slate-400 rounded-3xl flex items-center justify-center hover:bg-slate-200 transition-all disabled:opacity-30 active:scale-90">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M15 19l-7-7 7-7"></path></svg>
                             </button>
-                            <button 
-                                onClick={() => {
-                                    if (currentIdx < quizList.length - 1) setCurrentIdx(p => p + 1);
-                                    else if(confirm(isReviewMode ? "복습을 마치시겠습니까?" : "모든 정답을 제출하시겠습니까?")) submitQuiz();
-                                }} 
-                                className="flex-1 bg-slate-900 text-white rounded-3xl font-black text-lg shadow-2xl active:scale-[0.98] transition-all hover:bg-slate-800"
-                            >
-                                {currentIdx === quizList.length - 1 ? (isReviewMode ? '복습 종료' : '최종 제출하기') : '다음 문항'}
+                            <button onClick={() => {
+                                if (currentIdx < quizList.length - 1) setCurrentIdx(p => p + 1);
+                                else {
+                                    if (isReviewMode) setView('RESULT');
+                                    else if (confirm("모든 문항을 풀었습니다. 제출하시겠습니까?")) submitExam();
+                                }
+                            }} className="flex-1 bg-slate-900 text-white rounded-3xl font-black text-lg shadow-xl shadow-slate-200 hover:bg-black active:scale-95 transition-all">
+                                {currentIdx === quizList.length - 1 ? (isReviewMode ? '복습 종료' : '제출하기') : '다음 문항'}
                             </button>
                         </footer>
                     )}
