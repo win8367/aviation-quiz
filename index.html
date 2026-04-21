@@ -419,9 +419,14 @@
                                     <span className="text-[11px] font-black text-slate-300 tabular-nums uppercase">{currentIdx + 1} / {quizList.length}</span>
                                 </div>
 
-                                {/* 문제 이미지 표시 영역 추가 */}
+                                {/* [1] 문제 텍스트 박스 */}
+                                <div className="bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm mb-4 text-xl font-bold text-slate-800 min-h-[100px] flex items-center leading-relaxed">
+                                    <MathText text={quizList[currentIdx].q} />
+                                </div>
+
+                                {/* [2] 문제 이미지 (텍스트 다음으로 배치) */}
                                 {quizList[currentIdx].imgUrl && (
-                                    <div className="mb-4 rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-white p-2">
+                                    <div className="mb-8 rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-white p-2">
                                         <img 
                                             src={quizList[currentIdx].imgUrl} 
                                             className="w-full h-auto object-contain max-h-[300px] mx-auto" 
@@ -431,9 +436,6 @@
                                     </div>
                                 )}
 
-                                <div className="bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm mb-8 text-xl font-bold text-slate-800 min-h-[160px] flex items-center leading-relaxed">
-                                    <MathText text={quizList[currentIdx].q} />
-                                </div>
                                 <div className="space-y-3">
                                     {quizList[currentIdx].options.map((opt, i) => {
                                         const isSelected = answers[currentIdx] === i;
@@ -468,6 +470,19 @@
                                             <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-pulse"></div>
                                             Master Commentary
                                         </p>
+                                        
+                                        {/* [3] 해설 전용 이미지 (eurl 필드가 있을 때만 독립 작동) */}
+                                        {quizList[currentIdx].eurl && (
+                                            <div className="mb-6 rounded-2xl overflow-hidden bg-white/10 p-2 border border-white/10">
+                                                <img 
+                                                    src={quizList[currentIdx].eurl} 
+                                                    className="w-full h-auto object-contain max-h-[280px] mx-auto" 
+                                                    alt="해설 그림"
+                                                    onError={(e) => e.target.style.display = 'none'} 
+                                                />
+                                            </div>
+                                        )}
+
                                         <div className="text-sm font-medium leading-relaxed opacity-90 border-t border-white/10 pt-4">
                                             <MathText text={quizList[currentIdx].exp || "이 문항에 대한 해설이 등록되지 않았습니다."} />
                                         </div>
