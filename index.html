@@ -169,13 +169,25 @@
                 return cats.map(c => {
                     const qItems = qList.filter(q => q.category === c);
                     const qIdxs = qList.map((q, idx) => q.category === c ? idx : -1).filter(i => i !== -1);
-                    const cCorrect = qIdxs.reduce((acc, idx) => acc + (ansMap[idx] === qList[idx].correct ? 1 : 0), 0);
+                    // 보정된 정답 판정 방식 적용 (1~4 기반)
+                    const cCorrect = qIdxs.reduce((acc, idx) => {
+                        const targetQ = qList[idx];
+                        const exactCorrectNum = parseInt(targetQ.correct);
+                        const userAnsNum = ansMap[idx] !== undefined ? (ansMap[idx] + 1) : -1;
+                        return acc + (userAnsNum === exactCorrectNum ? 1 : 0);
+                    }, 0);
                     return { name: c, correct: cCorrect, total: qItems.length, percent: Math.round((cCorrect/qItems.length)*100) };
                 });
             };
 
             const submitExam = async () => {
-                const score = quizList.reduce((acc, q, i) => acc + (answers[i] === q.correct ? 1 : 0), 0);
+                // 제출 시점 정답 판단 인덱스 보정 (1~4 방식과 매핑)
+                const score = quizList.reduce((acc, q, i) => {
+                    const exactCorrectNum = parseInt(q.correct);
+                    const userAnsNum = answers[i] !== undefined ? (answers[i] + 1) : -1;
+                    return acc + (userAnsNum === exactCorrectNum ? 1 : 0);
+                }, 0);
+                
                 const total = quizList.length;
                 const stats = calculateCategoryStats(quizList, answers);
                 
@@ -288,7 +300,10 @@
                             {quizList.map((q, i) => {
                                 let statusClass = answers[i] !== undefined ? 'answered' : '';
                                 if (isReviewMode || (filters.mode === 'PRACTICE' && answers[i] !== undefined)) {
-                                    statusClass = answers[i] === q.correct ? 'correct' : 'wrong';
+                                    // 사이드바 네비게이션 정답 색상 매핑 보정
+                                    const exactCorrectNum = parseInt(q.correct);
+                                    const userAnsNum = answers[i] !== undefined ? (answers[i] + 1) : -1;
+                                    statusClass = userAnsNum === exactCorrectNum ? 'correct' : 'wrong';
                                 }
                                 return (
                                     <div key={i} onClick={() => { setCurrentIdx(i); setIsNavOpen(false); }} 
@@ -472,9 +487,11 @@
                                         const optText = quizList[currentIdx][optKey] || quizList[currentIdx].options?.[num-1];
                                         if (!optText) return null;
 
-                                        const i = num - 1;
+                                        const i = num - 1; // 버튼 인덱스 (0, 1, 2, 3)
                                         const isSelected = answers[currentIdx] === i;
-                                        const isCorrect = i === (parseInt(quizList[currentIdx].correct) - 1);
+                                        
+                                        // 🌟 핵심 보정 포인트: 데이터셋의 1~4 정답 구조와 맞추기 위해 보기 번호(num)와 직접 비교
+                                        const isCorrect = num === parseInt(quizList[currentIdx].correct);
                                         const isAnswered = answers[currentIdx] !== undefined;
                                         const showFeedback = isReviewMode || (filters.mode === 'PRACTICE' && isAnswered);
                                         
@@ -534,7 +551,12 @@
                                 </div>
 
                                 {(() => {
-                                    const score = quizList.reduce((acc, q, i) => acc + (answers[i] === (parseInt(q.correct)-1) ? 1 : 0), 0);
+                                    // 결과 화면 정답 계산식 보정
+                                    const score = quizList.reduce((acc, q, i) => {
+                                        const exactCorrectNum = parseInt(q.correct);
+                                        const userAnsNum = answers[i] !== undefined ? (answers[i] + 1) : -1;
+                                        return acc + (userAnsNum === exactCorrectNum ? 1 : 0);
+                                    }, 0);
                                     const total = quizList.length;
                                     const percent = Math.round((score/total)*100);
                                     const isPass = percent >= 60;
@@ -615,7 +637,7 @@
                                         <div className="grid grid-cols-1 gap-2">
                                             <div className="flex gap-2">
                                                 <label className="flex-1 p-4 bg-white border-2 border-slate-100 rounded-2xl font-black text-xs cursor-pointer hover:bg-slate-50 transition-all flex items-center justify-center gap-2 text-center">
-                                                    CSV -> JSON 변환 후 업로드 (JSON 전용)
+                                                    문제 업로드 (JSON)
                                                     <input type="file" className="hidden" accept=".json" onChange={uploadJSON} />
                                                 </label>
                                                 <button onClick={() => clearCollection('questions')} className="px-4 bg-rose-50 text-rose-600 rounded-2xl border border-rose-100 font-black text-[10px] uppercase">초기화</button>
