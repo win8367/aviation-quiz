@@ -164,28 +164,35 @@
                 setView('QUIZ');
             };
 
+            // 🌟 정답 검증 통합 보정 유틸리티 (문자열, 숫자, 공백 예외 처리 제거완료)
+            const checkIsCorrect = (q, userSelectedIdx) => {
+                if (userSelectedIdx === undefined || !q || q.correct === undefined) return false;
+                const dbCorrectStr = String(q.correct).trim();
+                const dbCorrectNum = parseInt(dbCorrectStr, 10);
+                
+                // 사용자가 고른 번호 (1, 2, 3, 4)
+                const userSelectedNum = userSelectedIdx + 1;
+                
+                // DB 값이 1~4 구조일 때와 0~3 구조일 때 모두 안전하게 매핑 보정
+                return userSelectedNum === dbCorrectNum || userSelectedIdx === dbCorrectNum;
+            };
+
             const calculateCategoryStats = (qList, ansMap) => {
                 const cats = [...new Set(qList.map(q => q.category))];
                 return cats.map(c => {
                     const qItems = qList.filter(q => q.category === c);
                     const qIdxs = qList.map((q, idx) => q.category === c ? idx : -1).filter(i => i !== -1);
-                    // 보정된 정답 판정 방식 적용 (1~4 기반)
+                    
                     const cCorrect = qIdxs.reduce((acc, idx) => {
-                        const targetQ = qList[idx];
-                        const exactCorrectNum = parseInt(targetQ.correct);
-                        const userAnsNum = ansMap[idx] !== undefined ? (ansMap[idx] + 1) : -1;
-                        return acc + (userAnsNum === exactCorrectNum ? 1 : 0);
+                        return acc + (checkIsCorrect(qList[idx], ansMap[idx]) ? 1 : 0);
                     }, 0);
                     return { name: c, correct: cCorrect, total: qItems.length, percent: Math.round((cCorrect/qItems.length)*100) };
                 });
             };
 
             const submitExam = async () => {
-                // 제출 시점 정답 판단 인덱스 보정 (1~4 방식과 매핑)
                 const score = quizList.reduce((acc, q, i) => {
-                    const exactCorrectNum = parseInt(q.correct);
-                    const userAnsNum = answers[i] !== undefined ? (answers[i] + 1) : -1;
-                    return acc + (userAnsNum === exactCorrectNum ? 1 : 0);
+                    return acc + (checkIsCorrect(q, answers[i]) ? 1 : 0);
                 }, 0);
                 
                 const total = quizList.length;
@@ -300,10 +307,7 @@
                             {quizList.map((q, i) => {
                                 let statusClass = answers[i] !== undefined ? 'answered' : '';
                                 if (isReviewMode || (filters.mode === 'PRACTICE' && answers[i] !== undefined)) {
-                                    // 사이드바 네비게이션 정답 색상 매핑 보정
-                                    const exactCorrectNum = parseInt(q.correct);
-                                    const userAnsNum = answers[i] !== undefined ? (answers[i] + 1) : -1;
-                                    statusClass = userAnsNum === exactCorrectNum ? 'correct' : 'wrong';
+                                    statusClass = checkIsCorrect(q, answers[i]) ? 'correct' : 'wrong';
                                 }
                                 return (
                                     <div key={i} onClick={() => { setCurrentIdx(i); setIsNavOpen(false); }} 
@@ -487,11 +491,11 @@
                                         const optText = quizList[currentIdx][optKey] || quizList[currentIdx].options?.[num-1];
                                         if (!optText) return null;
 
-                                        const i = num - 1; // 버튼 인덱스 (0, 1, 2, 3)
+                                        const i = num - 1; 
                                         const isSelected = answers[currentIdx] === i;
                                         
-                                        // 🌟 핵심 보정 포인트: 데이터셋의 1~4 정답 구조와 맞추기 위해 보기 번호(num)와 직접 비교
-                                        const isCorrect = num === parseInt(quizList[currentIdx].correct);
+                                        // 🌟 핵심 보정 및 상호 검증 적용
+                                        const isCorrect = checkIsCorrect(quizList[currentIdx], i);
                                         const isAnswered = answers[currentIdx] !== undefined;
                                         const showFeedback = isReviewMode || (filters.mode === 'PRACTICE' && isAnswered);
                                         
@@ -551,11 +555,8 @@
                                 </div>
 
                                 {(() => {
-                                    // 결과 화면 정답 계산식 보정
                                     const score = quizList.reduce((acc, q, i) => {
-                                        const exactCorrectNum = parseInt(q.correct);
-                                        const userAnsNum = answers[i] !== undefined ? (answers[i] + 1) : -1;
-                                        return acc + (userAnsNum === exactCorrectNum ? 1 : 0);
+                                        return acc + (checkIsCorrect(q, answers[i]) ? 1 : 0);
                                     }, 0);
                                     const total = quizList.length;
                                     const percent = Math.round((score/total)*100);
@@ -664,26 +665,4 @@
 
                     {view === 'QUIZ' && (
                         <footer className="fixed bottom-0 left-0 right-0 max-w-xl mx-auto p-6 glass flex gap-4 z-[1001]">
-                            <button disabled={currentIdx === 0} onClick={() => setCurrentIdx(p => p - 1)} className="w-16 h-16 bg-slate-100 text-slate-400 rounded-3xl flex items-center justify-center hover:bg-slate-200 transition-all disabled:opacity-30 active:scale-90">
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M15 19l-7-7 7-7"></path></svg>
-                            </button>
-                            <button onClick={() => {
-                                if (currentIdx < quizList.length - 1) setCurrentIdx(p => p + 1);
-                                else {
-                                    if (isReviewMode) setView('RESULT');
-                                    else if (confirm("모든 문항을 풀었습니다. 제출하시겠습니까?")) submitExam();
-                                }
-                            }} className="flex-1 bg-slate-900 text-white rounded-3xl font-black text-lg shadow-xl shadow-slate-200 hover:bg-black active:scale-95 transition-all">
-                                {currentIdx === quizList.length - 1 ? (isReviewMode ? '복습 종료' : '제출하기') : '다음 문항'}
-                            </button>
-                        </footer>
-                    )}
-                </div>
-            );
-        };
-
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
-</body>
-</html>
+                            <button disabled={currentIdx === 0} onClick={()
