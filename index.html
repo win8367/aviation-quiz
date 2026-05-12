@@ -164,37 +164,20 @@
                 setView('QUIZ');
             };
 
-            // 🌟 정답 검증 통합 보정 유틸리티 (문자열, 숫자, 공백 예외 처리 제거완료)
-            const checkIsCorrect = (q, userSelectedIdx) => {
-                if (userSelectedIdx === undefined || !q || q.correct === undefined) return false;
-                const dbCorrectStr = String(q.correct).trim();
-                const dbCorrectNum = parseInt(dbCorrectStr, 10);
-                
-                // 사용자가 고른 번호 (1, 2, 3, 4)
-                const userSelectedNum = userSelectedIdx + 1;
-                
-                // DB 값이 1~4 구조일 때와 0~3 구조일 때 모두 안전하게 매핑 보정
-                return userSelectedNum === dbCorrectNum || userSelectedIdx === dbCorrectNum;
-            };
-
             const calculateCategoryStats = (qList, ansMap) => {
                 const cats = [...new Set(qList.map(q => q.category))];
                 return cats.map(c => {
                     const qItems = qList.filter(q => q.category === c);
                     const qIdxs = qList.map((q, idx) => q.category === c ? idx : -1).filter(i => i !== -1);
-                    
-                    const cCorrect = qIdxs.reduce((acc, idx) => {
-                        return acc + (checkIsCorrect(qList[idx], ansMap[idx]) ? 1 : 0);
-                    }, 0);
-                    return { name: c, correct: cCorrect, total: qItems.length, percent: Math.round((cCorrect/qItems.length)*100) };
+                    // 정답 변경 로직: ansMap[idx](0~3)와 qList[idx].correct(1~4에서 1을 뺀 값)를 비교
+                    const cCorrect = qIdxs.reduce((acc, idx) => acc + (ansMap[idx] === (parseInt(qList[idx].correct) - 1) ? 1 : 0), 0);
+                    return { name: c, correct: cCorrect, total: qItems.length, percent: qItems.length ? Math.round((cCorrect/qItems.length)*100) : 0 };
                 });
             };
 
             const submitExam = async () => {
-                const score = quizList.reduce((acc, q, i) => {
-                    return acc + (checkIsCorrect(q, answers[i]) ? 1 : 0);
-                }, 0);
-                
+                // 정답 변경 로직: answers[i](0~3)와 q.correct(1~4에서 1을 뺀 값)를 비교
+                const score = quizList.reduce((acc, q, i) => acc + (answers[i] === (parseInt(q.correct) - 1) ? 1 : 0), 0);
                 const total = quizList.length;
                 const stats = calculateCategoryStats(quizList, answers);
                 
@@ -203,7 +186,7 @@
                     studentName: studentProfile.name,
                     score,
                     total,
-                    percent: Math.round((score/total)*100),
+                    percent: total ? Math.round((score/total)*100) : 0,
                     mode: filters.mode,
                     timestamp: Date.now(),
                     categoryFeedback: stats,
@@ -307,7 +290,8 @@
                             {quizList.map((q, i) => {
                                 let statusClass = answers[i] !== undefined ? 'answered' : '';
                                 if (isReviewMode || (filters.mode === 'PRACTICE' && answers[i] !== undefined)) {
-                                    statusClass = checkIsCorrect(q, answers[i]) ? 'correct' : 'wrong';
+                                    // 정답 변경 로직: answers[i]와 q.correct(1~4에서 1을 뺀 값)를 비교
+                                    statusClass = answers[i] === (parseInt(q.correct) - 1) ? 'correct' : 'wrong';
                                 }
                                 return (
                                     <div key={i} onClick={() => { setCurrentIdx(i); setIsNavOpen(false); }} 
@@ -318,6 +302,23 @@
                             })}
                         </div>
                     </div>
+
+                    <header className="p-4 glass sticky top-0 z-[1001] flex justify-between items-center px-6">
+                        <div className="cursor-pointer flex items-center gap-2" onClick={() => setView('LOGIN')}>
+                            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-black text-xs italic shadow-lg shadow-indigo-200">A</div>
+                            <span className="text-lg font-black text-slate-800 tracking-tighter uppercase italic">Master Pro</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            {view === 'QUIZ' && (
+                                <button onClick={() => setIsNavOpen(!isNavOpen)} className="px-3 py-1.5 bg-slate-100 rounded-xl text-[10px] font-black text-slate-600 border border-slate-200 uppercase tracking-tighter">
+                                    Menu
+                                </button>
+                            )}
+                            <button onClick={handleAdminAccess} className="p-2 text-slate-400 hover:text-indigo-600 transition-colors">
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                            </button>
+                        </div>
+                    </header>
 
                     <header className="p-4 glass sticky top-0 z-[1001] flex justify-between items-center px-6">
                         <div className="cursor-pointer flex items-center gap-2" onClick={() => setView('LOGIN')}>
@@ -491,11 +492,10 @@
                                         const optText = quizList[currentIdx][optKey] || quizList[currentIdx].options?.[num-1];
                                         if (!optText) return null;
 
-                                        const i = num - 1; 
+                                        const i = num - 1;
                                         const isSelected = answers[currentIdx] === i;
-                                        
-                                        // 🌟 핵심 보정 및 상호 검증 적용
-                                        const isCorrect = checkIsCorrect(quizList[currentIdx], i);
+                                        // 정답 변경 로직: answers[currentIdx](0~3)와 q.correct(1~4에서 1을 뺀 값)를 비교
+                                        const isCorrect = i === (parseInt(quizList[currentIdx].correct) - 1);
                                         const isAnswered = answers[currentIdx] !== undefined;
                                         const showFeedback = isReviewMode || (filters.mode === 'PRACTICE' && isAnswered);
                                         
@@ -555,11 +555,10 @@
                                 </div>
 
                                 {(() => {
-                                    const score = quizList.reduce((acc, q, i) => {
-                                        return acc + (checkIsCorrect(q, answers[i]) ? 1 : 0);
-                                    }, 0);
+                                    // 정답 변경 로직: 채점 과정에서도 answers[i]와 q.correct - 1 이 완전히 동일하게 비교되도록 통일
+                                    const score = quizList.reduce((acc, q, i) => acc + (answers[i] === (parseInt(q.correct) - 1) ? 1 : 0), 0);
                                     const total = quizList.length;
-                                    const percent = Math.round((score/total)*100);
+                                    const percent = total ? Math.round((score/total)*100) : 0;
                                     const isPass = percent >= 60;
                                     const stats = calculateCategoryStats(quizList, answers);
 
@@ -638,7 +637,7 @@
                                         <div className="grid grid-cols-1 gap-2">
                                             <div className="flex gap-2">
                                                 <label className="flex-1 p-4 bg-white border-2 border-slate-100 rounded-2xl font-black text-xs cursor-pointer hover:bg-slate-50 transition-all flex items-center justify-center gap-2 text-center">
-                                                    문제 업로드 (JSON)
+                                                    CSV -> JSON 변환 후 업로드 (JSON 전용)
                                                     <input type="file" className="hidden" accept=".json" onChange={uploadJSON} />
                                                 </label>
                                                 <button onClick={() => clearCollection('questions')} className="px-4 bg-rose-50 text-rose-600 rounded-2xl border border-rose-100 font-black text-[10px] uppercase">초기화</button>
@@ -665,4 +664,26 @@
 
                     {view === 'QUIZ' && (
                         <footer className="fixed bottom-0 left-0 right-0 max-w-xl mx-auto p-6 glass flex gap-4 z-[1001]">
-                            <button disabled={currentIdx === 0} onClick={()
+                            <button disabled={currentIdx === 0} onClick={() => setCurrentIdx(p => p - 1)} className="w-16 h-16 bg-slate-100 text-slate-400 rounded-3xl flex items-center justify-center hover:bg-slate-200 transition-all disabled:opacity-30 active:scale-90">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M15 19l-7-7 7-7"></path></svg>
+                            </button>
+                            <button onClick={() => {
+                                if (currentIdx < quizList.length - 1) setCurrentIdx(p => p + 1);
+                                else {
+                                    if (isReviewMode) setView('RESULT');
+                                    else if (confirm("모든 문항을 풀었습니다. 제출하시겠습니까?")) submitExam();
+                                }
+                            }} className="flex-1 bg-slate-900 text-white rounded-3xl font-black text-lg shadow-xl shadow-slate-200 hover:bg-black active:scale-95 transition-all">
+                                {currentIdx === quizList.length - 1 ? (isReviewMode ? '복습 종료' : '제출하기') : '다음 문항'}
+                            </button>
+                        </footer>
+                    )}
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
