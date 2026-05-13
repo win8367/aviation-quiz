@@ -552,7 +552,7 @@ const isCorrect = i == correctAns;
                             </div>
                         )}
 
-                        {view === 'RESULT' && (
+{view === 'RESULT' && (
                             <div className="py-8 space-y-8 fade-in-up">
                                 <div className="text-center space-y-2">
                                     <h2 className="text-4xl font-black text-slate-800 tracking-tighter uppercase italic">TEST COMPLETED</h2>
@@ -561,11 +561,11 @@ const isCorrect = i == correctAns;
 
                                 {(() => {
                                     const score = quizList.reduce((acc, q, i) => {
-                                    const correctAns = Number(q.correct) > 3 ? Number(q.correct) - 1 : Number(q.correct);
-                                    return acc + (answers[i] == correctAns ? 1 : 0);
-}, 0);
+                                        const correctAns = Number(q.correct) > 3 ? Number(q.correct) - 1 : Number(q.correct);
+                                        return acc + (answers[i] == correctAns ? 1 : 0);
+                                    }, 0);
                                     const total = quizList.length;
-                                    const percent = Math.round((score/total)*100);
+                                    const percent = Math.round((score / total) * 100);
                                     const isPass = percent >= 60;
                                     const stats = calculateCategoryStats(quizList, answers);
 
@@ -578,38 +578,29 @@ const isCorrect = i == correctAns;
                                                 <div className="text-7xl font-black text-slate-900 mb-2 tabular-nums">{percent}<span className="text-3xl text-slate-300">%</span></div>
                                                 <p className="text-sm font-bold text-slate-400">{total}문항 중 {score}문항 정답</p>
                                             </div>
-// RESULT 뷰 안에서 통계 데이터를 뿌려주는 UI 예시
-{examResult && (
-    <div className="space-y-4">
-        <h3 className="text-xl font-bold">단원별 분석 결과</h3>
-        {Object.entries(examResult.stats).map(([ch, data]) => (
-            <div key={ch} className="flex justify-between items-center bg-slate-50 p-3 rounded-xl">
-                <span className="font-medium">{ch}</span>
-                <span className="text-slate-600 font-bold">
-                    {data.correct} / {data.total} ({Math.round((data.correct/data.total)*100)}%)
-                </span>
-            </div>
-        ))}
-    </div>
-)}
+
+                                            {/* 영역별/단원별 피드백 UI 연동 구조 강화 */}
                                             <div className="grid grid-cols-1 gap-3">
-                                                <p className="text-[10px] font-black text-slate-400 ml-2 uppercase tracking-widest">영역별 피드백</p>
+                                                <p className="text-[10px] font-black text-slate-400 ml-2 uppercase tracking-widest">영역별 피드백 및 분석 결과</p>
                                                 {stats.map(s => (
-                                                    <div key={s.name} className="p-5 bg-white rounded-2xl border border-slate-100 flex justify-between items-center">
-                                                        <div>
-                                                            <p className="text-[10px] font-black text-indigo-600 uppercase mb-1">{s.name}</p>
-                                                            <div className="w-32 h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                                                                <div className="h-full bg-indigo-500 rounded-full" style={{width: `${s.percent}%`}}></div>
+                                                    <div key={s.name} className="p-5 bg-white rounded-2xl border border-slate-100 flex justify-between items-center shadow-sm">
+                                                        <div className="flex-1 pr-4">
+                                                            <p className="text-[11px] font-black text-indigo-600 uppercase mb-1.5">{s.name}</p>
+                                                            <div className="flex items-center gap-3">
+                                                                <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+                                                                    <div className="h-full bg-indigo-500 rounded-full transition-all" style={{ width: `${s.percent}%` }}></div>
+                                                                </div>
+                                                                <span className="text-[10px] font-bold text-slate-400 tabular-nums">{s.correct} / {s.total}</span>
                                                             </div>
                                                         </div>
-                                                        <p className="text-lg font-black text-slate-800">{s.percent}%</p>
+                                                        <p className="text-xl font-black text-slate-800 tabular-nums">{s.percent}%</p>
                                                     </div>
                                                 ))}
                                             </div>
 
                                             <div className="grid grid-cols-2 gap-3 pt-4">
-                                                <button onClick={() => { setIsReviewMode(true); setView('QUIZ'); setCurrentIdx(0); }} className="p-5 bg-slate-900 text-white rounded-2xl font-black text-sm shadow-xl shadow-slate-200">오답 복습하기</button>
-                                                <button onClick={() => setView('HOME')} className="p-5 bg-white border-2 border-slate-100 rounded-2xl font-black text-sm">메인으로</button>
+                                                <button onClick={() => { setIsReviewMode(true); setView('QUIZ'); setCurrentIdx(0); }} className="p-5 bg-slate-900 text-white rounded-2xl font-black text-sm shadow-xl shadow-slate-200 hover:scale-[0.99] transition-all">오답 복습하기</button>
+                                                <button onClick={() => setView('HOME')} className="p-5 bg-white border-2 border-slate-100 rounded-2xl font-black text-sm hover:bg-slate-50 transition-all">메인으로</button>
                                             </div>
                                         </div>
                                     );
