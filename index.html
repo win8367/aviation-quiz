@@ -169,15 +169,13 @@
                 return cats.map(c => {
                     const qItems = qList.filter(q => q.category === c);
                     const qIdxs = qList.map((q, idx) => q.category === c ? idx : -1).filter(i => i !== -1);
-                    // 정답 변경 로직: ansMap[idx](0~3)와 qList[idx].correct(1~4에서 1을 뺀 값)를 비교
-                    const cCorrect = qIdxs.reduce((acc, idx) => acc + (ansMap[idx] === (parseInt(qList[idx].correct) - 1) ? 1 : 0), 0);
-                    return { name: c, correct: cCorrect, total: qItems.length, percent: qItems.length ? Math.round((cCorrect/qItems.length)*100) : 0 };
+                    const cCorrect = qIdxs.reduce((acc, idx) => acc + (ansMap[idx] === qList[idx].correct ? 1 : 0), 0);
+                    return { name: c, correct: cCorrect, total: qItems.length, percent: Math.round((cCorrect/qItems.length)*100) };
                 });
             };
 
             const submitExam = async () => {
-                // 정답 변경 로직: answers[i](0~3)와 q.correct(1~4에서 1을 뺀 값)를 비교
-                const score = quizList.reduce((acc, q, i) => acc + (answers[i] === (parseInt(q.correct) - 1) ? 1 : 0), 0);
+                const score = quizList.reduce((acc, q, i) => acc + (answers[i] === q.correct ? 1 : 0), 0);
                 const total = quizList.length;
                 const stats = calculateCategoryStats(quizList, answers);
                 
@@ -186,7 +184,7 @@
                     studentName: studentProfile.name,
                     score,
                     total,
-                    percent: total ? Math.round((score/total)*100) : 0,
+                    percent: Math.round((score/total)*100),
                     mode: filters.mode,
                     timestamp: Date.now(),
                     categoryFeedback: stats,
@@ -290,8 +288,7 @@
                             {quizList.map((q, i) => {
                                 let statusClass = answers[i] !== undefined ? 'answered' : '';
                                 if (isReviewMode || (filters.mode === 'PRACTICE' && answers[i] !== undefined)) {
-                                    // 정답 변경 로직: answers[i]와 q.correct(1~4에서 1을 뺀 값)를 비교
-                                    statusClass = answers[i] === (parseInt(q.correct) - 1) ? 'correct' : 'wrong';
+                                    statusClass = answers[i] === q.correct ? 'correct' : 'wrong';
                                 }
                                 return (
                                     <div key={i} onClick={() => { setCurrentIdx(i); setIsNavOpen(false); }} 
@@ -302,23 +299,6 @@
                             })}
                         </div>
                     </div>
-
-                    <header className="p-4 glass sticky top-0 z-[1001] flex justify-between items-center px-6">
-                        <div className="cursor-pointer flex items-center gap-2" onClick={() => setView('LOGIN')}>
-                            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-black text-xs italic shadow-lg shadow-indigo-200">A</div>
-                            <span className="text-lg font-black text-slate-800 tracking-tighter uppercase italic">Master Pro</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            {view === 'QUIZ' && (
-                                <button onClick={() => setIsNavOpen(!isNavOpen)} className="px-3 py-1.5 bg-slate-100 rounded-xl text-[10px] font-black text-slate-600 border border-slate-200 uppercase tracking-tighter">
-                                    Menu
-                                </button>
-                            )}
-                            <button onClick={handleAdminAccess} className="p-2 text-slate-400 hover:text-indigo-600 transition-colors">
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                            </button>
-                        </div>
-                    </header>
 
                     <header className="p-4 glass sticky top-0 z-[1001] flex justify-between items-center px-6">
                         <div className="cursor-pointer flex items-center gap-2" onClick={() => setView('LOGIN')}>
@@ -494,8 +474,8 @@
 
                                         const i = num - 1;
                                         const isSelected = answers[currentIdx] === i;
-                                        // 정답 변경 로직: answers[currentIdx](0~3)와 q.correct(1~4에서 1을 뺀 값)를 비교
-                                        const isCorrect = i === (parseInt(quizList[currentIdx].correct) - 1);
+                                       const correctAns = Number(quizList[currentIdx].correct) > 3 ? Number(quizList[currentIdx].correct) - 1 : Number(quizList[currentIdx].correct);
+const isCorrect = i == correctAns;
                                         const isAnswered = answers[currentIdx] !== undefined;
                                         const showFeedback = isReviewMode || (filters.mode === 'PRACTICE' && isAnswered);
                                         
@@ -555,10 +535,12 @@
                                 </div>
 
                                 {(() => {
-                                    // 정답 변경 로직: 채점 과정에서도 answers[i]와 q.correct - 1 이 완전히 동일하게 비교되도록 통일
-                                    const score = quizList.reduce((acc, q, i) => acc + (answers[i] === (parseInt(q.correct) - 1) ? 1 : 0), 0);
+                                    const score = quizList.reduce((acc, q, i) => {
+                                    const correctAns = Number(q.correct) > 3 ? Number(q.correct) - 1 : Number(q.correct);
+                                    return acc + (answers[i] == correctAns ? 1 : 0);
+}, 0);
                                     const total = quizList.length;
-                                    const percent = total ? Math.round((score/total)*100) : 0;
+                                    const percent = Math.round((score/total)*100);
                                     const isPass = percent >= 60;
                                     const stats = calculateCategoryStats(quizList, answers);
 
