@@ -352,41 +352,47 @@
                                 <p className="text-slate-400 font-bold mb-10 text-sm">인증을 위해 정보를 입력하세요.</p>
                                 
                                 <div className="w-full space-y-3">
-                                    <input id="l-name" placeholder="이름" className="w-full p-5 bg-white border-2 border-slate-100 rounded-2xl font-bold focus:border-indigo-600 outline-none transition-all shadow-sm" />
                                     <input id="l-id" placeholder="학번" className="w-full p-5 bg-white border-2 border-slate-100 rounded-2xl font-bold focus:border-indigo-600 outline-none transition-all shadow-sm" />
-                                   <button 
-    onClick={() => {
-        // 공백 제거 처리
-        const inputId = i.trim();
-        const inputName = n.trim();
+                                    <input id="l-name" placeholder="이름" className="w-full p-5 bg-white border-2 border-slate-100 rounded-2xl font-bold focus:border-indigo-600 outline-none transition-all shadow-sm" />
+<button 
+                                        onClick={() => {
+                                            // [필수 추가] 화면의 input 창에서 이름(l-name)과 학번(l-id) 입력값을 직접 가져옵니다.
+                                            const nameInput = document.getElementById('l-name');
+                                            const idInput = document.getElementById('l-id');
+                                            
+                                            const inputName = nameInput ? nameInput.value.trim() : '';
+                                            const inputId = idInput ? idInput.value.trim() : '';
 
-        if (!inputId || !inputName) {
-            alert("학번과 이름을 모두 입력해주세요.");
-            return;
-        }
+                                            if (!inputName || !inputId) {
+                                                alert("이름과 학번을 모두 입력해주세요.");
+                                                return;
+                                            }
 
-        // DB에서 실시간으로 긁어온 students 배열에서 학번과 이름이 일치하는 학생 찾기
-        const targetStudent = students.find(s => 
-            String(s.id).trim() === inputId && 
-            String(s.name).trim() === inputName
-        );
+                                            // DB에서 실시간으로 가져온 students 배열과 촘촘하게 대조 검증
+                                            const targetStudent = students.find(s => {
+                                                // 학번이 s.id(문서ID) 혹은 s.studentId(내부 필드) 어느 쪽에 저장되어 있어도 다 찾을 수 있게 양방향 체크
+                                                const dbId = String(s.id || s.studentId || '').trim();
+                                                const dbName = String(s.name || s.studentName || '').trim();
+                                                
+                                                return dbId === inputId && dbName === inputName;
+                                            });
 
-        if (!targetStudent) {
-            alert("등록되지 않은 학생 정보이거나, 학번과 이름이 일치하지 않습니다.\n관리자에게 문의하세요.");
-            return;
-        }
+                                            if (!targetStudent) {
+                                                alert("등록되지 않은 학생 정보이거나, 학번과 이름이 일치하지 않습니다.\n관리자에게 명단 등록을 요청하세요.");
+                                                return;
+                                            }
 
-        // 인증 성공 시 프로필 저장 및 대시보드로 진입
-        setStudentProfile({
-            id: targetStudent.id,
-            name: targetStudent.name
-        });
-        setView('HOME');
-    }} 
-    className="w-full py-5 bg-indigo-600 text-white rounded-2xl font-black text-lg shadow-xl shadow-indigo-100 hover:scale-[0.98] active:scale-95 transition-all mt-4 uppercase"
->
-    Login
-</button>
+                                            // 인증 성공 시 프로필 매핑 후 메인 대시보드로 진입
+                                            setStudentProfile({
+                                                id: targetStudent.id || targetStudent.studentId || inputId,
+                                                name: targetStudent.name
+                                            });
+                                            setView('HOME');
+                                        }} 
+                                        className="w-full py-5 bg-indigo-600 text-white rounded-2xl font-black text-lg shadow-xl shadow-indigo-100 hover:scale-[0.98] active:scale-95 transition-all mt-4 uppercase"
+                                    >
+                                        Login
+                                    </button>
                                 </div>
                             </div>
                         )}
