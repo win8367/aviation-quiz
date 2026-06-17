@@ -21,13 +21,6 @@
 
     <style>
         body { font-family: sans-serif; background-color: #f8fafc; }
-        .nav-drawer { position: fixed; left: 0; top: 0; bottom: 0; width: 70px; background: white; box-shadow: 4px 0 15px rgba(0,0,0,0.05); transform: translateX(-100%); transition: transform 0.3s ease; z-index: 1000; padding-top: 80px; }
-        .nav-drawer.open { transform: translateX(0); }
-        .nav-item { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; margin: 0 auto 10px auto; border: 2px solid #f1f5f9; cursor: pointer; }
-        .nav-item.active { border-color: #4f46e5; background: #4f46e5; color: white; }
-        .nav-item.answered { background: #f1f5f9; color: #64748b; }
-        .nav-item.correct { background: #10b981; color: white; }
-        .nav-item.wrong { background: #ef4444; color: white; }
     </style>
 </head>
 <body>
@@ -36,35 +29,38 @@
     <script type="text/babel">
         const { useState, useEffect, useRef } = React;
 
-        // 라이브러리 체크 후 안전하게 렌더링하는 컴포넌트
         const MathText = ({ text }) => {
             const containerRef = useRef(null);
+
             useEffect(() => {
-                const render = () => {
-                    if (containerRef.current && window.renderMathInElement) {
-                        window.renderMathInElement(containerRef.current, {
-                            delimiters: [
-                                { left: "$$", right: "$$", display: true },
-                                { left: "$", right: "$", display: false }
-                            ],
-                            throwOnError: false
-                        });
+                // 라이브러리가 로드될 때까지 최대 2초간 대기하는 루프
+                const checkAndRender = (retryCount = 0) => {
+                    if (window.renderMathInElement) {
+                        try {
+                            window.renderMathInElement(containerRef.current, {
+                                delimiters: [
+                                    { left: "$$", right: "$$", display: true },
+                                    { left: "$", right: "$", display: false }
+                                ],
+                                throwOnError: false
+                            });
+                        } catch (e) { console.error(e); }
+                    } else if (retryCount < 20) {
+                        setTimeout(() => checkAndRender(retryCount + 1), 100);
                     }
                 };
                 
-                // 라이브러리가 로드될 시간을 살짝 부여
-                const timer = setTimeout(render, 100);
-                return () => clearTimeout(timer);
+                checkAndRender();
             }, [text]);
             
-            return <div ref={containerRef} className="whitespace-pre-wrap leading-relaxed">{text || ""}</div>;
+            return <div ref={containerRef} className="whitespace-pre-wrap">{text || ""}</div>;
         };
 
-        // 메인 앱 로직
         const App = () => {
             return (
-                <div className="flex items-center justify-center h-screen">
-                    <h1 className="text-xl font-bold">시스템이 정상적으로 로드되었습니다.</h1>
+                <div className="p-10 text-center">
+                    <h1 className="text-2xl font-black mb-4">정상 작동 확인</h1>
+                    <MathText text="수학 공식 테스트: $E=mc^2$" />
                 </div>
             );
         };
