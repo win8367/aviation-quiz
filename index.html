@@ -47,7 +47,7 @@
 <body>
     <div id="root"></div>
 
-    <script type="text/babel">
+    <script type="text/babel" data-type="module">
         const { useState, useEffect, useRef, useMemo } = React;
 
         const firebaseConfig = {
@@ -60,12 +60,10 @@
             measurementId: "G-PC36TY5R3M"
         };
 
-        // Firebase 초기화 안전 검사
         const app = !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
         const auth = firebase.auth();
         const db = firebase.firestore();
         
-        // [핵심 수정] 에러 화면의 원인이 된 컬렉션 경로를 'aviation-master-pro' 고정 문자열로 안전하게 선정
         const TARGET_APP_ID = 'aviation-master-pro';
 
         const MathText = ({ text }) => {
@@ -119,7 +117,6 @@
 
             useEffect(() => {
                 if (!user) return;
-                // 안전하게 정의된 고정 경로 사용
                 const publicPath = db.collection('artifacts').doc(TARGET_APP_ID).collection('public').doc('data');
                 
                 const unsubQ = publicPath.collection('questions').onSnapshot(s => setQuestions(s.docs.map(d => ({id: d.id, ...d.data()}))), e => console.error(e));
@@ -284,7 +281,6 @@
             };
 
             const toggleExamMode = async () => {
-                // 무중단 업데이트가 가능하도록 고정 경로로 데이터 쓰기 처리
                 await db.collection('artifacts').doc(TARGET_APP_ID).collection('public').doc('data').collection('configs').doc('main').set({
                     forceExam: !examConfig.forceExam
                 });
