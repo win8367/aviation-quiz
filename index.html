@@ -63,12 +63,14 @@
             measurementId: "G-PC36TY5R3M"
         };
 
-        if (!firebase.apps.length) {
-            firebase.initializeApp(firebaseConfig);
+        // 전역 window 객체에서 안전하게 가져오기
+        const firebaseApp = window.firebase;
+        if (!firebaseApp.apps.length) {
+            firebaseApp.initializeApp(firebaseConfig);
         }
-        const auth = firebase.auth();
-        const db = firebase.firestore();
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'aviation-master-pro';
+        const auth = firebaseApp.auth();
+        const db = firebaseApp.firestore();
+        const appId = 'aviation-master-pro';
 
         const MathText = ({ text }) => {
             const containerRef = useRef(null);
@@ -111,10 +113,15 @@
             });
 
             useEffect(() => {
-    // 익명 로그인 처리를 잠시 건너뛰고, 바로 유저가 로그인된 것처럼 처리합니다.
-    setUser({ uid: "temp_student" }); 
-    setLoading(false);
-}, []);
+                const unsubscribe = auth.onAuthStateChanged((u) => {
+                    if (!u) {
+                        auth.signInAnonymously().catch(e => console.error("익명 로그인 실패:", e));
+                    }
+                    setUser(u);
+                    setLoading(false);
+                });
+                return () => unsubscribe();
+            }, []);
 
             useEffect(() => {
                 if (!user) return;
@@ -297,7 +304,7 @@
             if (loading) return (
                 <div className="h-screen flex flex-col items-center justify-center bg-slate-900 text-white">
                     <div className="w-10 h-10 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin mb-4"></div>
-                    <p className="text-sm font-bold opacity-50 tracking-widest uppercase italic">Initializing</p>
+                    <p className="text-sm font-bold opacity-50 tracking-widest uppercase italic">Initializing System</p>
                 </div>
             );
 
@@ -523,13 +530,11 @@
                                         const i = num - 1;
                                         const isSelected = answers[currentIdx] === i;
                                         const correctAns = Number(quizList[currentIdx].correct) > 3 ? Number(quizList[currentIdx].correct) - 1 : Number(quizList[currentIdx].correct);
-                                        const isCorrect = (i === correctAns);
-                                        const isAnswered = answers[currentIdx] !== undefined;
-                                        const showFeedback = isReviewMode || (filters.mode === 'PRACTICE' && isAnswered);
+                                        const showFeedback = isReviewMode || (filters.mode === 'PRACTICE' && answers[currentIdx] !== undefined);
                                         
                                         let btnClass = "border-white bg-white hover:border-slate-200 shadow-sm";
                                         if (showFeedback) {
-                                            if (isCorrect) btnClass = "border-emerald-500 bg-emerald-50 ring-2 ring-emerald-100";
+                                            if (i === correctAns) btnClass = "border-emerald-500 bg-emerald-50 ring-2 ring-emerald-100";
                                             else if (isSelected) btnClass = "border-rose-500 bg-rose-50 ring-2 ring-rose-100";
                                         } else if (isSelected) {
                                             btnClass = "border-indigo-600 bg-indigo-50 ring-2 ring-indigo-100";
