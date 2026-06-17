@@ -111,15 +111,10 @@
             });
 
             useEffect(() => {
-                const unsubscribe = auth.onAuthStateChanged((u) => {
-                    if (!u) {
-                        auth.signInAnonymously().catch(e => console.error("Auth error:", e));
-                    }
-                    setUser(u);
-                    setLoading(false);
-                });
-                return () => unsubscribe();
-            }, []);
+    // 익명 로그인 처리를 잠시 건너뛰고, 바로 유저가 로그인된 것처럼 처리합니다.
+    setUser({ uid: "temp_student" }); 
+    setLoading(false);
+}, []);
 
             useEffect(() => {
                 if (!user) return;
