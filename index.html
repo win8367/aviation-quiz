@@ -67,19 +67,22 @@
         
         const TARGET_APP_ID = 'aviation-master-pro';
 
+        // ReferenceError 방지를 위해 윈도우 객체 및 로드 체크 로직 보완
         const MathText = ({ text }) => {
             const containerRef = useRef(null);
             useEffect(() => {
-                if (containerRef.current) {
+                if (containerRef.current && typeof window.renderMathInElement === 'function') {
                     try {
-                        renderMathInElement(containerRef.current, {
+                        window.renderMathInElement(containerRef.current, {
                             delimiters: [
                                 { left: "$$", right: "$$", display: true },
                                 { left: "$", right: "$", display: false }
                             ],
                             throwOnError: false
                         });
-                    } catch (e) {}
+                    } catch (e) {
+                        console.warn("KaTeX rendering error:", e);
+                    }
                 }
             }, [text]);
             return <div ref={containerRef} className="whitespace-pre-wrap leading-relaxed">{text || ""}</div>;
