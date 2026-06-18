@@ -15,9 +15,9 @@
     <script type="text/babel">
         var { useState, useMemo, useEffect } = React;
 
-        // 업로드된 데이터 파일의 내용을 기반으로 구성된 데이터셋입니다.
+        // 기출 데이터셋 (데이터 파일 내용을 반영하여 확장)
         var QUIZ_DATA = [
-            [
+           [
   {
     "no": "1",
     "id": "2023-1-A-01",
@@ -31491,7 +31491,7 @@
     "imp": "A급",
     "eq": "q0003"
   }
-]     ];
+]       ];
 
         function App() {
             var [mode, setMode] = useState("연습");
