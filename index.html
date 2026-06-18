@@ -15,8 +15,9 @@
     <script type="text/babel">
         var { useState, useMemo } = React;
 
-        // 고유 ID를 가진 마스터 데이터셋
+        // 전체 마스터 데이터셋 (필요시 데이터 추가 가능)
         var MASTER_QUIZ_DATA = [
+            [
   {
     "no": "1",
     "id": "2023-1-A-01",
@@ -31490,35 +31491,27 @@
     "imp": "A급",
     "eq": "q0003"
   }
-];
+]  ];
 
         function App() {
             var [mode, setMode] = useState("연습");
             var [filters, setFilters] = useState({ years: [], ch: "전체", count: 5, onlyImg: false });
             var [userAnswers, setUserAnswers] = useState({});
 
-            // 중복 제거 및 필터링 로직 개선
+            // 필터링 및 데이터 처리
             var filteredData = useMemo(function() {
-                var seenIds = new Set();
                 var data = MASTER_QUIZ_DATA.filter(function(q) {
-                    if (seenIds.has(q.id)) return false;
-                    
                     var yearMatch = filters.years.length === 0 || filters.years.indexOf(q.year) !== -1;
                     var chMatch = filters.ch === "전체" || q.ch === filters.ch;
                     var imgMatch = !filters.onlyImg || (q.imgUrl && q.imgUrl.length > 0);
-                    
-                    if (yearMatch && chMatch && imgMatch) {
-                        seenIds.add(q.id);
-                        return true;
-                    }
-                    return false;
+                    return yearMatch && chMatch && imgMatch;
                 });
                 return filters.count === 0 ? data : data.slice(0, filters.count);
             }, [filters]);
 
             return React.createElement("div", {className: "max-w-3xl mx-auto p-4 space-y-6"},
                 React.createElement("div", {className: "bg-white p-6 rounded-2xl shadow-sm border space-y-4"},
-                    React.createElement("h1", {className: "text-xl font-black"}, "학습 필터 설정 (중복제거 적용)"),
+                    React.createElement("h1", {className: "text-xl font-black"}, "학습 필터 설정"),
                     React.createElement("div", {className: "flex flex-wrap gap-2"}, 
                         ["2015", "2022", "2023"].map(function(y) {
                             return React.createElement("button", {key: y, onClick: function() { 
@@ -31527,9 +31520,17 @@
                             }, className: "px-3 py-1 rounded text-sm " + (filters.years.indexOf(y) !== -1 ? "bg-blue-600 text-white" : "bg-slate-200")}, y);
                         })
                     ),
-                    React.createElement("select", {onChange: function(e) { setFilters(Object.assign({}, filters, { count: parseInt(e.target.value) })); }, className: "border p-2 rounded w-full"},
-                        [5, 10, 20, 30, 60].map(function(c) { return React.createElement("option", {key: c, value: c}, c + "문항"); }),
-                        React.createElement("option", {value: 0}, "전체 문제")
+                    React.createElement("div", {className: "flex gap-2"},
+                        React.createElement("select", {onChange: function(e) { setFilters(Object.assign({}, filters, { ch: e.target.value })); }, className: "border p-2 rounded flex-1"},
+                            React.createElement("option", {value: "전체"}, "모든 챕터"),
+                            React.createElement("option", {value: "1"}, "1챕터"),
+                            React.createElement("option", {value: "4"}, "4챕터"),
+                            React.createElement("option", {value: "8"}, "8챕터")
+                        ),
+                        React.createElement("select", {onChange: function(e) { setFilters(Object.assign({}, filters, { count: parseInt(e.target.value) })); }, className: "border p-2 rounded flex-1"},
+                            [5, 10, 20, 30, 60].map(function(c) { return React.createElement("option", {key: c, value: c}, c + "문항"); }),
+                            React.createElement("option", {value: 0}, "전체 문제")
+                        )
                     ),
                     React.createElement("button", {onClick: function() { setMode(mode === "연습" ? "시험" : "연습"); setUserAnswers({}); }, className: "w-full bg-emerald-600 text-white py-2 rounded"}, "현재 모드: " + mode)
                 ),
