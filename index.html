@@ -27,70 +27,79 @@
             var [submitted, setSubmitted] = useState(false);
             var [history, setHistory] = useState([]);
 
-            useEffect(() => {
+            useEffect(function() {
                 var saved = localStorage.getItem("quiz_history");
                 if (saved) setHistory(JSON.parse(saved));
             }, []);
 
-            var filteredData = useMemo(() => {
-                let data = QUIZ_DATA.filter(q => 
-                    (filters.years.length === 0 || filters.years.includes(q.year)) &&
-                    (filters.ch === "전체" || q.ch === filters.ch) &&
-                    (!filters.onlyImg || q.imgUrl)
-                );
-                return data.slice(0, filters.count);
+            var filteredData = useMemo(function() {
+                return QUIZ_DATA.filter(function(q) {
+                    var yearMatch = filters.years.length === 0 || filters.years.indexOf(q.year) !== -1;
+                    var chMatch = filters.ch === "전체" || q.ch === filters.ch;
+                    var imgMatch = !filters.onlyImg || (q.imgUrl && q.imgUrl.length > 0);
+                    return yearMatch && chMatch && imgMatch;
+                }).slice(0, filters.count);
             }, [filters]);
 
-            var calculateScore = () => {
-                let correct = 0;
-                filteredData.forEach(q => { if(userAnswers[q.id] === q.correct) correct++; });
+            var calculateScore = function() {
+                var correct = 0;
+                filteredData.forEach(function(q) {
+                    if (userAnswers[q.id] === q.correct) correct++;
+                });
                 return correct;
             };
 
-            var handleSubmit = () => {
+            var handleSubmit = function() {
                 var finalScore = calculateScore();
                 var record = { date: new Date().toLocaleString(), score: finalScore, total: filteredData.length };
-                var newHistory = [...history, record];
+                var newHistory = history.concat([record]);
                 setHistory(newHistory);
                 localStorage.setItem("quiz_history", JSON.stringify(newHistory));
                 setSubmitted(true);
             };
 
-            return (
-                <div className="max-w-3xl mx-auto p-4 space-y-6">
-                    <div className="bg-white p-6 rounded-2xl shadow-sm border space-y-4">
-                        <h1 className="text-xl font-black">학습 설정 및 점수 관리</h1>
-                        <button onClick={() => {setMode(mode === "연습" ? "시험" : "연습"); setSubmitted(false); setUserAnswers({});}} className="bg-emerald-600 text-white px-4 py-2 rounded">현재 모드: {mode}</button>
-                        <div className="text-sm">최근 기록: {history.length > 0 ? history[history.length-1].score + "/" + history[history.length-1].total + "점" : "기록 없음"}</div>
-                    </div>
-
-                    {filteredData.map((q, idx) => (
-                        <div key={q.id} className="bg-white p-6 rounded-2xl shadow-sm border">
-                            <h2 className="font-bold">{idx + 1}. {q.q}</h2>
-                            {q.imgUrl && <img src={q.imgUrl} className="my-2 max-h-48" alt="문제" />}
-                            <div className="grid gap-2 mt-4">
-                                {q.options.map((opt, i) => (
-                                    <button key={i} onClick={() => !submitted && setUserAnswers({...userAnswers, [q.id]: i})} className={`p-2 border rounded ${userAnswers[q.id] === i ? "bg-blue-200" : ""}`}>
-                                        {opt}
-                                    </button>
-                                ))}
-                            </div>
-                            {(mode === "연습" || submitted) && (
-                                <div className="mt-4 p-4 bg-emerald-50 rounded-lg">
-                                    <p>해설: {q.exp}</p>
-                                    {q.eurl && <img src={q.eurl} className="mt-2 max-h-48" alt="해설" />}
-                                </div>
-                            )}
-                        </div>
-                    ))}
-
-                    {mode === "시험" && !submitted && <button onClick={handleSubmit} className="w-full py-4 bg-blue-600 text-white rounded-xl">제출하기</button>}
-                    {submitted && <div className="text-2xl font-bold text-center">최종 점수: {calculateScore()} / {filteredData.length}</div>}
-                </div>
+            return React.createElement("div", {className: "max-w-3xl mx-auto p-4 space-y-6"},
+                React.createElement("div", {className: "bg-white p-6 rounded-2xl shadow-sm border space-y-4"},
+                    React.createElement("h1", {className: "text-xl font-black"}, "학습 설정 및 점수 관리"),
+                    React.createElement("button", {
+                        onClick: function() { setMode(mode === "연습" ? "시험" : "연습"); setSubmitted(false); setUserAnswers({}); },
+                        className: "bg-emerald-600 text-white px-4 py-2 rounded"
+                    }, "현재 모드: " + mode),
+                    React.createElement("div", {className: "text-sm"}, "최근 기록: " + (history.length > 0 ? history[history.length - 1].score + "/" + history[history.length - 1].total + "점" : "기록 없음"))
+                ),
+                filteredData.map(function(q, idx) {
+                    return React.createElement("div", {key: q.id, className: "bg-white p-6 rounded-2xl shadow-sm border"},
+                        React.createElement("h2", {className: "font-bold"}, (idx + 1) + ". " + q.q),
+                        q.imgUrl ? React.createElement("img", {src: q.imgUrl, className: "my-2 max-h-48", alt: "문제"}) : null,
+                        React.createElement("div", {className: "grid gap-2 mt-4"},
+                            q.options.map(function(opt, i) {
+                                return React.createElement("button", {
+                                    key: i,
+                                    onClick: function() {
+                                        if (!submitted) {
+                                            var nextAnswers = Object.assign({}, userAnswers);
+                                            nextAnswers[q.id] = i;
+                                            setUserAnswers(nextAnswers);
+                                        }
+                                    },
+                                    className: "p-2 border rounded " + (userAnswers[q.id] === i ? "bg-blue-200" : "")
+                                }, opt);
+                            })
+                        ),
+                        (mode === "연습" || submitted) ? React.createElement("div", {className: "mt-4 p-4 bg-emerald-50 rounded-lg"},
+                            React.createElement("p", null, "해설: " + q.exp),
+                            q.eurl ? React.createElement("img", {src: q.eurl, className: "mt-2 max-h-48", alt: "해설"}) : null
+                        ) : null
+                    );
+                }),
+                mode === "시험" && !submitted ? React.createElement("button", {onClick: handleSubmit, className: "w-full py-4 bg-blue-600 text-white rounded-xl"}, "제출하기") : null,
+                submitted ? React.createElement("div", {className: "text-2xl font-bold text-center"}, "최종 점수: " + calculateScore() + " / " + filteredData.length) : null
             );
         }
 
-        ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+        var container = document.getElementById('root');
+        var root = ReactDOM.createRoot(container);
+        root.render(React.createElement(App));
     </script>
 </body>
 </html>
