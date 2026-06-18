@@ -31473,4 +31473,5 @@ const QUIZ_DATA = [
     "imp": "A급",
     "eq": "q0003"
   }
-]
+],
+window.QUIZ_DATA = QUIZ_DATA
