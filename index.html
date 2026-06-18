@@ -47,14 +47,14 @@
 <body>
     <div id="root"></div>
 
-    <script type="text/babel" data-presets="react">
+   <script type="text/babel" data-type="module">
         const { useState, useEffect, useRef, useMemo } = React;
 
         const firebaseConfig = {
             apiKey: "AIzaSyCoSlnAX9Hqh85IBtJuGqLrJdpxRbFgwnc",
             authDomain: "airtest-422fe.firebaseapp.com",
             projectId: "airtest-422fe",
-            storageBucket: "airtest-422fe.appspot.com",
+            storageBucket: "airtest-422fe.firebasestorage.app",
             messagingSenderId: "203408450908",
             appId: "1:203408450908:web:1be58ef1b4b4f4b3f5cd99",
             measurementId: "G-PC36TY5R3M"
@@ -106,35 +106,27 @@
             });
 
             useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(async (u) => {
-        if (!u) {
-            try {
-                await auth.signInAnonymously();
-            } catch (e) {
-                console.warn("오프라인 모드: 로컬 인증 정보 사용");
-            }
-        } else {
-            setUser(u);
-        }
-        setLoading(false);
-    });
-    return () => unsubscribe();
-}, []);
+                const unsubscribe = auth.onAuthStateChanged((u) => {
+                    if (!u) auth.signInAnonymously().catch(e => console.error("Auth error:", e));
+                    setUser(u);
+                    setLoading(false);
+                });
+                return () => unsubscribe();
+            }, []);
 
             useEffect(() => {
-    if (!user) return;
-    const publicPath = db.collection('artifacts').doc(appId).collection('public').doc('data');
-    
-    // 서버 구독 및 에러 시 로컬 전환
-    const unsubQ = publicPath.collection('questions').onSnapshot(
-        s => setQuestions(s.docs.map(d => ({id: d.id, ...d.data()}))),
-        e => {
-            console.warn("서버 연결 실패, 로컬 데이터(window.QUIZ_DATA)로 로드");
-            setQuestions(window.QUIZ_DATA || []);
-        }
-    );
-    // ... 나머지 unsubS, unsubR, unsubC 동일하게 적용
-}, [user]);
+                if (!user) return;
+                const publicPath = db.collection('artifacts').doc(appId).collection('public').doc('data');
+                
+                const unsubQ = publicPath.collection('questions').onSnapshot(s => setQuestions(s.docs.map(d => ({id: d.id, ...d.data()}))), e => console.error(e));
+                const unsubS = publicPath.collection('students').onSnapshot(s => setStudents(s.docs.map(d => ({id: d.id, ...d.data()}))), e => console.error(e));
+                const unsubR = publicPath.collection('results').onSnapshot(s => setResults(s.docs.map(d => ({id: d.id, ...d.data()}))), e => console.error(e));
+                const unsubC = publicPath.collection('configs').doc('main').onSnapshot(doc => { 
+                    if(doc.exists) setExamConfig(doc.data()); 
+                }, e => console.error(e));
+
+                return () => { unsubQ(); unsubS(); unsubR(); unsubC(); };
+            }, [user]);
 
             useEffect(() => {
                 if (examConfig.forceExam && filters.mode === 'PRACTICE') {
