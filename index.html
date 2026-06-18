@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>항공기정비기능사 Pro - 학습 시스템</title>
+    <title>항공기정비기능사 Pro - 점수 저장 시스템</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -13,87 +13,84 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        var useState = React.useState;
-        var useMemo = React.useMemo;
+        var { useState, useMemo, useEffect } = React;
 
         var QUIZ_DATA = [
-            { 
-                no: "477", id: "q0034", year: "2015", session: "1회", category: "기체 정비", 
-                q: "측정기기의 구조에 따른 분류에 의해 아메스형과 칼마형으로 분류되는 측정기기는?",
-                options: ["실린더 게이지", "두께 게이지", "버니어 캘리퍼스", "텔레스코핑 게이지"],
-                correct: 0,
-                exp: "보어 게이지라고도 불리는 실린더 게이지는 다이얼의 형태나 내부 메커니즘에 따라 아메스형과 칼마형으로 나뉩니다.",
-                imgUrl: "https://raw.githubusercontent.com/win8367/aviation-images/refs/heads/main/image11.svg",
-                eurl: "https://raw.githubusercontent.com/win8367/aviation-images/refs/heads/main/image109.svg"
-            }
+            { no: "477", id: "q0034", year: "2015", session: "1회", category: "기체 정비", ch: "4", q: "측정기기 아메스/칼마형은?", options: ["실린더 게이지", "두께 게이지", "버니어 캘리퍼스", "텔레스코핑 게이지"], correct: 0, exp: "실린더 게이지에 대한 설명입니다.", imgUrl: "https://raw.githubusercontent.com/win8367/aviation-images/refs/heads/main/image11.svg", eurl: "https://raw.githubusercontent.com/win8367/aviation-images/refs/heads/main/image109.svg" },
+            { no: "478", id: "q0035", year: "2016", session: "1회", category: "항공역학", ch: "1", q: "양력의 발생 원리는?", options: ["베르누이", "뉴턴", "파스칼", "보일"], correct: 0, exp: "베르누이 정리에 의한 양력 설명입니다.", imgUrl: "", eurl: "" }
         ];
 
         function App() {
-            var [filter, setFilter] = useState("전체");
-            var [mode, setMode] = useState("연습"); // 연습 or 시험
+            var [mode, setMode] = useState("연습");
+            var [filters, setFilters] = useState({ years: [], ch: "전체", count: 5, onlyImg: false });
             var [userAnswers, setUserAnswers] = useState({});
+            var [submitted, setSubmitted] = useState(false);
+            var [history, setHistory] = useState([]);
 
-            var categories = useMemo(function() {
-                var cats = ["전체"];
-                QUIZ_DATA.forEach(function(q) { if (!cats.includes(q.category)) cats.push(q.category); });
-                return cats;
+            useEffect(() => {
+                var saved = localStorage.getItem("quiz_history");
+                if (saved) setHistory(JSON.parse(saved));
             }, []);
 
-            var filteredData = filter === "전체" ? QUIZ_DATA : QUIZ_DATA.filter(function(q) { return q.category === filter; });
+            var filteredData = useMemo(() => {
+                let data = QUIZ_DATA.filter(q => 
+                    (filters.years.length === 0 || filters.years.includes(q.year)) &&
+                    (filters.ch === "전체" || q.ch === filters.ch) &&
+                    (!filters.onlyImg || q.imgUrl)
+                );
+                return data.slice(0, filters.count);
+            }, [filters]);
 
-            return React.createElement("div", {className: "max-w-3xl mx-auto p-4"},
-                React.createElement("header", {className: "mb-8"},
-                    React.createElement("h1", {className: "text-2xl font-black text-slate-800 mb-4"}, "항공기정비기능사 학습 시스템"),
-                    React.createElement("div", {className: "flex flex-wrap gap-4"},
-                        React.createElement("div", {className: "flex gap-2"},
-                            categories.map(function(cat) {
-                                return React.createElement("button", {
-                                    key: cat,
-                                    onClick: function() { setFilter(cat); },
-                                    className: "px-3 py-1 rounded-full text-xs font-bold " + (filter === cat ? "bg-blue-600 text-white" : "bg-white text-slate-600 border")
-                                }, cat);
-                            })
-                        ),
-                        React.createElement("div", {className: "flex gap-2"},
-                            ["연습", "시험"].map(function(m) {
-                                return React.createElement("button", {
-                                    key: m,
-                                    onClick: function() { setMode(m); },
-                                    className: "px-3 py-1 rounded-full text-xs font-bold " + (mode === m ? "bg-emerald-600 text-white" : "bg-white text-slate-600 border")
-                                }, m + " 모드");
-                            })
-                        )
-                    )
-                ),
-                React.createElement("div", {className: "space-y-6"},
-                    filteredData.map(function(q) {
-                        return React.createElement("div", {key: q.id, className: "bg-white p-6 rounded-2xl shadow-sm border border-slate-100"},
-                            React.createElement("span", {className: "text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded"}, q.category),
-                            React.createElement("h2", {className: "mt-3 text-lg font-semibold"}, q.q),
-                            q.imgUrl && React.createElement("img", {src: q.imgUrl, className: "mt-3 rounded-lg border", alt: "문제 이미지"}),
-                            React.createElement("div", {className: "mt-4 space-y-2"},
-                                q.options.map(function(opt, idx) {
-                                    return React.createElement("button", {
-                                        key: idx,
-                                        onClick: function() { setUserAnswers({...userAnswers, [q.id]: idx}) },
-                                        className: "w-full text-left p-3 rounded-lg border text-sm transition " + (userAnswers[q.id] === idx ? "bg-blue-100 border-blue-400" : "bg-slate-50")
-                                    }, (idx + 1) + ". " + opt);
-                                })
-                            ),
-                            (mode === "연습" || userAnswers[q.id] !== undefined) && React.createElement("div", {className: "mt-6 p-4 bg-emerald-50 rounded-xl"},
-                                React.createElement("p", {className: "text-sm font-bold text-emerald-800"}, "해설"),
-                                React.createElement("p", {className: "mt-1 text-sm text-emerald-700"}, q.exp),
-                                q.eurl && React.createElement("img", {src: q.eurl, className: "mt-3 rounded-lg border bg-white", alt: "해설 이미지"})
-                            )
-                        );
-                    })
-                )
+            var calculateScore = () => {
+                let correct = 0;
+                filteredData.forEach(q => { if(userAnswers[q.id] === q.correct) correct++; });
+                return correct;
+            };
+
+            var handleSubmit = () => {
+                var finalScore = calculateScore();
+                var record = { date: new Date().toLocaleString(), score: finalScore, total: filteredData.length };
+                var newHistory = [...history, record];
+                setHistory(newHistory);
+                localStorage.setItem("quiz_history", JSON.stringify(newHistory));
+                setSubmitted(true);
+            };
+
+            return (
+                <div className="max-w-3xl mx-auto p-4 space-y-6">
+                    <div className="bg-white p-6 rounded-2xl shadow-sm border space-y-4">
+                        <h1 className="text-xl font-black">학습 설정 및 점수 관리</h1>
+                        <button onClick={() => {setMode(mode === "연습" ? "시험" : "연습"); setSubmitted(false); setUserAnswers({});}} className="bg-emerald-600 text-white px-4 py-2 rounded">현재 모드: {mode}</button>
+                        <div className="text-sm">최근 기록: {history.length > 0 ? history[history.length-1].score + "/" + history[history.length-1].total + "점" : "기록 없음"}</div>
+                    </div>
+
+                    {filteredData.map((q, idx) => (
+                        <div key={q.id} className="bg-white p-6 rounded-2xl shadow-sm border">
+                            <h2 className="font-bold">{idx + 1}. {q.q}</h2>
+                            {q.imgUrl && <img src={q.imgUrl} className="my-2 max-h-48" alt="문제" />}
+                            <div className="grid gap-2 mt-4">
+                                {q.options.map((opt, i) => (
+                                    <button key={i} onClick={() => !submitted && setUserAnswers({...userAnswers, [q.id]: i})} className={`p-2 border rounded ${userAnswers[q.id] === i ? "bg-blue-200" : ""}`}>
+                                        {opt}
+                                    </button>
+                                ))}
+                            </div>
+                            {(mode === "연습" || submitted) && (
+                                <div className="mt-4 p-4 bg-emerald-50 rounded-lg">
+                                    <p>해설: {q.exp}</p>
+                                    {q.eurl && <img src={q.eurl} className="mt-2 max-h-48" alt="해설" />}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+
+                    {mode === "시험" && !submitted && <button onClick={handleSubmit} className="w-full py-4 bg-blue-600 text-white rounded-xl">제출하기</button>}
+                    {submitted && <div className="text-2xl font-bold text-center">최종 점수: {calculateScore()} / {filteredData.length}</div>}
+                </div>
             );
         }
 
-        var container = document.getElementById('root');
-        var root = ReactDOM.createRoot(container);
-        root.render(React.createElement(App));
+        ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
     </script>
 </body>
 </html>
