@@ -8,6 +8,11 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    // JSX 내부의 { } 부분 바로 앞에 추가해서 확인
+console.log("렌더링 데이터 타입 확인:", typeof 변수명);
+if (typeof 변수명 === 'object') {
+    console.log("객체 내용 상세:", JSON.stringify(변수명));
+}
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
     
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
