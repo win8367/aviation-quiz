@@ -1,4 +1,4 @@
-const QUIZ_DATA = [
+window. QUIZ_DATA = [
   {
     "no": "1",
     "id": "2023-1-A-01",
