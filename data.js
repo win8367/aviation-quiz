@@ -1,4 +1,4 @@
-window. QUIZ_DATA = [
+const QUIZ_DATA = [
   {
     "no": "1",
     "id": "2023-1-A-01",
@@ -110,6 +110,7 @@ window. QUIZ_DATA = [
       "딤플링(Dimpling)",
       "본딩(Bonding)"
     ],
+    window.QUIZ_DATA = QUIZ_DATA, 
     "correct": 2,
     "exp": "판재 두께가 리벳 머리보다 얇을 경우 강제로 판재를 성형하여 홈을 만드는 딤플링 공법을 씁니다 [8].",
     "subcat": "리벳 딤플링 공법",
