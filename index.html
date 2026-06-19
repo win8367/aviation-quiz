@@ -8,7 +8,6 @@
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <!-- MathJax 렌더링 설정 -->
     <script>
         window.MathJax = {
             tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
@@ -38,7 +37,6 @@
                 if (saved) setHistory(JSON.parse(saved));
             }, []);
 
-            // 화면 변경 시 수식 다시 렌더링
             useEffect(function() {
                 setUserAnswers({});
                 setSubmitted(false);
@@ -47,7 +45,6 @@
                 }
             }, [filters, mode]);
 
-            // 정답 체크 시에도 수식 렌더링 유지
             useEffect(function() {
                 if (window.MathJax) {
                     window.MathJax.typesetPromise();
@@ -94,7 +91,7 @@
                             }, className: "px-3 py-1 rounded text-sm " + (filters.years.indexOf(y) !== -1 ? "bg-blue-600 text-white" : "bg-slate-200")}, y);
                         })
                     ),
-                    React.createElement("div", {className: "flex gap-2 flex-wrap"},
+                    React.createElement("div", {className: "flex gap-2 flex-wrap items-center"},
                         React.createElement("select", {value: filters.ch, onChange: function(e) { setFilters(Object.assign({}, filters, { ch: e.target.value })); }, className: "border p-2 rounded flex-1"},
                             React.createElement("option", {value: "전체"}, "모든 챕터"),
                             ...Array.from({length: 15}, (_, i) => i + 1).map(c => React.createElement("option", {key: c, value: c.toString()}, c + "장"))
@@ -102,6 +99,10 @@
                         React.createElement("select", {value: filters.count, onChange: function(e) { setFilters(Object.assign({}, filters, { count: parseInt(e.target.value) })); }, className: "border p-2 rounded flex-1"},
                             [5, 10, 20, 30, 60].map(function(c) { return React.createElement("option", {key: c, value: c}, c + "문항"); }),
                             React.createElement("option", {value: 0}, "전체")
+                        ),
+                        React.createElement("label", {className: "flex items-center gap-2 cursor-pointer border p-2 rounded"},
+                            React.createElement("input", {type: "checkbox", checked: filters.onlyImg, onChange: function(e) { setFilters(Object.assign({}, filters, { onlyImg: e.target.checked })); }}),
+                            "그림 문항만"
                         )
                     ),
                     React.createElement("button", {onClick: function() { setMode(mode === "연습" ? "시험" : "연습"); }, className: "w-full bg-emerald-600 text-white py-2 rounded font-bold"}, "현재 모드: " + mode)
