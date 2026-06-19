@@ -127,7 +127,7 @@
                         ),
                         (canShowFeedback) ? React.createElement("div", {className: "mt-4 p-4 bg-emerald-50 rounded-lg text-sm"}, 
                             React.createElement("p", null, "해설: " + q.exp),
-                            q.expImgUrl && q.expImgUrl.trim() !== "" ? React.createElement("img", {src: q.expImgUrl, className: "mt-2 w-full h-auto", alt: "해설" + q.id}) : null
+                            q.eurl && q.eurl.trim() !== "" ? React.createElement("img", {src: q.eurl, className: "mt-2 w-full h-auto", alt: "해설" + q.id}) : null
                         ) : null
                     );
                 }),
