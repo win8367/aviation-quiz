@@ -8,6 +8,7 @@
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- 수식 렌더링을 위한 MathJax 로드 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
     <script src="data.js"></script>
 </head>
@@ -25,15 +26,19 @@
             var [submitted, setSubmitted] = useState(false);
             var [history, setHistory] = useState([]);
 
+            // 기록 불러오기
             useEffect(function() {
                 var saved = localStorage.getItem("quiz_history");
                 if (saved) setHistory(JSON.parse(saved));
             }, []);
 
+            // 필터, 모드 변경 시 상태 초기화 및 수식 렌더링
             useEffect(function() {
                 setUserAnswers({});
                 setSubmitted(false);
-                if (window.MathJax) window.MathJax.typeset();
+                if (window.MathJax) {
+                    window.MathJax.typesetPromise();
+                }
             }, [filters, mode]);
 
             var availableYears = useMemo(function() {
@@ -84,6 +89,10 @@
                         React.createElement("select", {value: filters.count, onChange: function(e) { setFilters(Object.assign({}, filters, { count: parseInt(e.target.value) })); }, className: "border p-2 rounded flex-1"},
                             [5, 10, 20, 30, 60].map(function(c) { return React.createElement("option", {key: c, value: c}, c + "문항"); }),
                             React.createElement("option", {value: 0}, "전체")
+                        ),
+                        React.createElement("label", {className: "flex items-center gap-2 cursor-pointer border p-2 rounded px-4"}, 
+                            React.createElement("input", {type: "checkbox", checked: filters.onlyImg, onChange: function(e) { setFilters(Object.assign({}, filters, { onlyImg: e.target.checked })); }}), 
+                            "그림 문항만"
                         )
                     ),
                     React.createElement("button", {onClick: function() { setMode(mode === "연습" ? "시험" : "연습"); }, className: "w-full bg-emerald-600 text-white py-2 rounded font-bold"}, "현재 모드: " + mode)
