@@ -18,8 +18,8 @@
 
         function App() {
             const quizzes = typeof MASTER_QUIZ_DATA !== 'undefined' ? MASTER_QUIZ_DATA : [];
-            const [mode, setMode] = useState("연습"); // 연습 or 시험
-            const [filters, setFilters] = useState({ years: [], ch: "전체", count: 5 });
+            const [mode, setMode] = useState("연습");
+            const [filters, setFilters] = useState({ years: [], ch: "전체", count: 5, onlyImg: false });
             const [userAnswers, setUserAnswers] = useState({});
             const [submitted, setSubmitted] = useState(false);
             const [history, setHistory] = useState([]);
@@ -36,7 +36,8 @@
                 return quizzes.filter(q => {
                     const yearMatch = filters.years.length === 0 || filters.years.includes(q.year);
                     const chMatch = filters.ch === "전체" || q.ch === filters.ch;
-                    return yearMatch && chMatch;
+                    const imgMatch = !filters.onlyImg || (q.imgUrl && q.imgUrl.trim() !== "");
+                    return yearMatch && chMatch && imgMatch;
                 }).slice(0, filters.count === 0 ? undefined : filters.count);
             }, [filters, quizzes]);
 
@@ -64,13 +65,19 @@
                     e("div", {className: "flex flex-wrap gap-2"},
                         availableYears.map(y => e("button", {key: y, onClick: () => setFilters(f => ({...f, years: f.years.includes(y) ? f.years.filter(i=>i!==y) : [...f.years, y]})), className: `px-3 py-1 rounded text-sm ${filters.years.includes(y) ? "bg-blue-600 text-white" : "bg-slate-200"}`}, y))
                     ),
-                    e("div", {className: "flex gap-2"},
+                    e("div", {className: "flex flex-wrap gap-4 items-center"},
                         e("select", {onChange: (ev) => setFilters(f => ({...f, ch: ev.target.value})), className: "border p-2 rounded flex-1"},
                             e("option", {value: "전체"}, "모든 챕터"),
                             ...availableChapters.map(c => e("option", {key: c, value: c}, c + "장"))
                         ),
                         e("select", {onChange: (ev) => setFilters(f => ({...f, count: parseInt(ev.target.value)})), className: "border p-2 rounded flex-1"},
-                            [5, 10, 20, 30].map(c => e("option", {key: c, value: c}, c + "문항"))
+                            e("option", {value: 5}, "5문제"),
+                            e("option", {value: 60}, "60문제"),
+                            e("option", {value: 0}, "전체")
+                        ),
+                        e("label", {className: "flex items-center gap-2"},
+                            e("input", {type: "checkbox", checked: filters.onlyImg, onChange: (ev) => setFilters(f => ({...f, onlyImg: ev.target.checked}))}),
+                            "그림 문제만"
                         )
                     )
                 ),
@@ -80,10 +87,22 @@
                         q.imgUrl ? e("img", {src: q.imgUrl, className: "my-2 max-h-48"}) : null,
                         e("div", {className: "grid gap-2 mt-4"},
                             q.options.map((opt, i) => {
-                                let style = "";
-                                if (mode === "연습" && userAnswers[q.id] === i) style = "bg-blue-200";
-                                if (submitted) style = (i === q.correct ? "bg-green-300" : (userAnswers[q.id] === i ? "bg-red-300" : ""));
-                                return e("button", {key: i, onClick: () => !submitted && setUserAnswers(prev => ({...prev, [q.id]: i})), className: `p-2 border rounded text-left ${style}`}, opt);
+                                let style = "border-slate-200";
+                                // 연습 모드: 선택 시 즉시 표시
+                                if (mode === "연습") {
+                                    if (userAnswers[q.id] === i) style = (i === q.correct ? "bg-green-200" : "bg-red-200");
+                                    else if (i === q.correct) style = "bg-green-100";
+                                } 
+                                // 시험 모드: 제출 후 표시
+                                else if (mode === "시험") {
+                                    if (submitted) {
+                                        if (i === q.correct) style = "bg-green-300";
+                                        else if (userAnswers[q.id] === i) style = "bg-red-300";
+                                    } else {
+                                        if (userAnswers[q.id] === i) style = "bg-blue-200";
+                                    }
+                                }
+                                return e("button", {key: i, onClick: () => (mode === "연습" || !submitted) && setUserAnswers(prev => ({...prev, [q.id]: i})), className: `p-2 border rounded text-left ${style}`}, opt);
                             })
                         ),
                         (submitted || (mode === "연습" && userAnswers[q.id] !== undefined)) ? e("p", {className: "mt-2 text-sm text-gray-600"}, "해설: " + q.exp) : null
