@@ -8,7 +8,6 @@
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <!-- 수식 렌더링을 위한 MathJax 추가 -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="data.js"></script>
@@ -32,6 +31,13 @@
                 if (saved) setHistory(JSON.parse(saved));
                 if (window.MathJax) window.MathJax.typeset();
             });
+
+            // 모드 변경 시 상태 초기화
+            var changeMode = function(newMode) {
+                setMode(newMode);
+                setUserAnswers({});
+                setSubmitted(false);
+            };
 
             var availableYears = useMemo(function() {
                 return Array.from(new Set(quizzes.map(function(q) { return q.year; }))).sort().reverse();
@@ -87,7 +93,7 @@
                             "그림 문항만"
                         )
                     ),
-                    React.createElement("button", {onClick: function() { setMode(mode === "연습" ? "시험" : "연습"); setUserAnswers({}); setSubmitted(false); }, className: "w-full bg-emerald-600 text-white py-2 rounded"}, "현재 모드: " + mode)
+                    React.createElement("button", {onClick: function() { changeMode(mode === "연습" ? "시험" : "연습"); }, className: "w-full bg-emerald-600 text-white py-2 rounded"}, "현재 모드: " + mode)
                 ),
                 filteredData.map(function(q, idx) {
                     var isAnswered = userAnswers.hasOwnProperty(q.id);
