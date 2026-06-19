@@ -8,7 +8,6 @@
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <!-- MathJax CDN 로드 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
     <script src="data.js"></script>
 </head>
@@ -23,10 +22,11 @@
             var [mode, setMode] = useState("연습");
             var [filters, setFilters] = useState({ years: [], ch: "전체", count: 5, onlyImg: false });
             var [userAnswers, setUserAnswers] = useState({});
+            var [submitted, setSubmitted] = useState(false);
 
-            // 필터가 변경되면 정답/해설 상태를 초기화
             useEffect(function() {
                 setUserAnswers({});
+                setSubmitted(false);
                 if (window.MathJax) window.MathJax.typeset();
             }, [filters, mode]);
 
@@ -68,25 +68,27 @@
                             "그림 문항만"
                         )
                     ),
-                    React.createElement("button", {onClick: function() { setMode(mode === "연습" ? "시험" : "연습"); }, className: "w-full bg-emerald-600 text-white py-2 rounded"}, "현재 모드: " + mode)
+                    React.createElement("button", {onClick: function() { setMode(mode === "연습" ? "시험" : "연습"); }, className: "w-full bg-emerald-600 text-white py-2 rounded font-bold"}, "현재 모드: " + mode)
                 ),
                 filteredData.map(function(q, idx) {
                     var isAnswered = userAnswers.hasOwnProperty(q.id);
+                    var canShowFeedback = (mode === "연습" && isAnswered) || (mode === "시험" && submitted);
                     return React.createElement("div", {key: q.id, className: "bg-white p-6 rounded-2xl shadow-sm border"},
                         React.createElement("h2", {className: "font-bold"}, (idx + 1) + ". " + q.q),
                         q.imgUrl && q.imgUrl.trim() !== "" ? React.createElement("img", {src: q.imgUrl, className: "my-2 w-full h-auto", alt: "문제" + q.id}) : null,
                         React.createElement("div", {className: "grid gap-2 mt-4"},
                             q.options.map(function(opt, i) {
-                                var style = isAnswered ? (i === q.correct ? "bg-green-200" : (userAnswers[q.id] === i ? "bg-red-200" : "")) : (userAnswers[q.id] === i ? "bg-blue-200" : "");
-                                return React.createElement("button", {key: i, onClick: function() { if (!isAnswered) { var n = Object.assign({}, userAnswers); n[q.id] = i; setUserAnswers(n); } }, className: "p-2 border rounded text-left " + style}, opt);
+                                var style = canShowFeedback ? (i === q.correct ? "bg-green-200" : (userAnswers[q.id] === i ? "bg-red-200" : "")) : (userAnswers[q.id] === i ? "bg-blue-200" : "");
+                                return React.createElement("button", {key: i, onClick: function() { if (!(mode === "시험" && submitted) && !(mode === "연습" && isAnswered)) { var n = Object.assign({}, userAnswers); n[q.id] = i; setUserAnswers(n); } }, className: "p-2 border rounded text-left " + style}, opt);
                             })
                         ),
-                        (isAnswered) ? React.createElement("div", {className: "mt-4 p-4 bg-emerald-50 rounded-lg text-sm"}, 
+                        (canShowFeedback) ? React.createElement("div", {className: "mt-4 p-4 bg-emerald-50 rounded-lg text-sm"}, 
                             React.createElement("p", null, "해설: " + q.exp),
                             q.expImgUrl && q.expImgUrl.trim() !== "" ? React.createElement("img", {src: q.expImgUrl, className: "mt-2 w-full h-auto", alt: "해설" + q.id}) : null
                         ) : null
                     );
-                })
+                }),
+                mode === "시험" && !submitted && filteredData.length > 0 ? React.createElement("button", {onClick: function() { setSubmitted(true); }, className: "w-full bg-blue-600 text-white py-4 rounded-xl font-bold"}, "제출 및 채점") : null
             );
         }
 
