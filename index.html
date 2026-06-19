@@ -23,6 +23,12 @@
             var [filters, setFilters] = useState({ years: [], ch: "전체", count: 5, onlyImg: false });
             var [userAnswers, setUserAnswers] = useState({});
             var [submitted, setSubmitted] = useState(false);
+            var [history, setHistory] = useState([]);
+
+            useEffect(function() {
+                var saved = localStorage.getItem("quiz_history");
+                if (saved) setHistory(JSON.parse(saved));
+            }, []);
 
             useEffect(function() {
                 setUserAnswers({});
@@ -43,6 +49,22 @@
                 }).slice(0, filters.count === 0 ? undefined : filters.count);
             }, [filters, quizzes]);
 
+            var saveRecord = function() {
+                var score = filteredData.filter(function(q) { return userAnswers[q.id] === q.correct; }).length;
+                var total = filteredData.length;
+                var newRecord = { 
+                    date: new Date().toLocaleString(), 
+                    score: score, 
+                    total: total, 
+                    ch: filters.ch, 
+                    mode: mode 
+                };
+                var newHistory = history.concat([newRecord]);
+                setHistory(newHistory);
+                localStorage.setItem("quiz_history", JSON.stringify(newHistory));
+                setSubmitted(true);
+            };
+
             return React.createElement("div", {className: "max-w-3xl mx-auto p-4 space-y-6"},
                 React.createElement("div", {className: "bg-white p-6 rounded-2xl shadow-sm border space-y-4"},
                     React.createElement("h1", {className: "text-xl font-black"}, "학습 필터 설정"),
@@ -62,10 +84,6 @@
                         React.createElement("select", {value: filters.count, onChange: function(e) { setFilters(Object.assign({}, filters, { count: parseInt(e.target.value) })); }, className: "border p-2 rounded flex-1"},
                             [5, 10, 20, 30, 60].map(function(c) { return React.createElement("option", {key: c, value: c}, c + "문항"); }),
                             React.createElement("option", {value: 0}, "전체")
-                        ),
-                        React.createElement("label", {className: "flex items-center gap-2 cursor-pointer border p-2 rounded px-4"}, 
-                            React.createElement("input", {type: "checkbox", checked: filters.onlyImg, onChange: function(e) { setFilters(Object.assign({}, filters, { onlyImg: e.target.checked })); }}), 
-                            "그림 문항만"
                         )
                     ),
                     React.createElement("button", {onClick: function() { setMode(mode === "연습" ? "시험" : "연습"); }, className: "w-full bg-emerald-600 text-white py-2 rounded font-bold"}, "현재 모드: " + mode)
@@ -88,7 +106,11 @@
                         ) : null
                     );
                 }),
-                mode === "시험" && !submitted && filteredData.length > 0 ? React.createElement("button", {onClick: function() { setSubmitted(true); }, className: "w-full bg-blue-600 text-white py-4 rounded-xl font-bold"}, "제출 및 채점") : null
+                mode === "시험" && !submitted && filteredData.length > 0 ? React.createElement("button", {onClick: saveRecord, className: "w-full bg-blue-600 text-white py-4 rounded-xl font-bold"}, "제출 및 채점") : null,
+                history.length > 0 ? React.createElement("div", {className: "bg-white p-6 rounded-2xl shadow-sm border"},
+                    React.createElement("h3", {className: "font-bold mb-2"}, "최근 시험 기록"),
+                    history.slice(-5).map(function(h, i) { return React.createElement("p", {key: i, className: "text-sm"}, h.date + " [" + h.mode + "] 챕터:" + h.ch + " - " + h.score + "/" + h.total + " (" + Math.round((h.score/h.total)*100) + "점)"); })
+                ) : null
             );
         }
 
