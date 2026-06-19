@@ -7,7 +7,159 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>항공기정비기능사 기출 시스템</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+    <script src="data.js"></script>
+</head>
+<body class="bg-slate-50">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        var { useState, useMemo, useEffect, useRef } = React;
+        var quizzes = typeof MASTER_QUIZ_DATA !== 'undefined' ? MASTER_QUIZ_DATA : [];
+
+        function App() {
+            var [mode, setMode] = useState("연습");
+            var [filters, setFilters] = useState({ years: [], ch: "전체", count: 5, onlyImg: false });
+            var [userAnswers, setUserAnswers] = useState({});
+            var [submitted, setSubmitted] = useState(false);
+            var [history, setHistory] = useState([]);
+            var containerRef = useRef(null);
+
+            useEffect(function() {
+                var saved = localStorage.getItem("quiz_history");
+                if (saved) setHistory(JSON.parse(saved));
+            }, []);
+
+            useEffect(function() {
+                setUserAnswers({});
+                setSubmitted(false);
+                if (window.MathJax) {
+                    window.MathJax.typesetPromise();
+                }
+            }, [filters, mode]);
+
+            useEffect(function() {
+                if (window.MathJax) {
+                    window.MathJax.typesetPromise();
+                }
+            }, [submitted, userAnswers]);
+
+            var availableYears = useMemo(function() {
+                return Array.from(new Set(quizzes.map(function(q) { return q.year; }))).sort().reverse();
+            }, [quizzes]);
+
+            var toggleAllYears = function() {
+                setFilters(prev => ({
+                    ...prev,
+                    years: prev.years.length === availableYears.length ? [] : [...availableYears]
+                }));
+            };
+
+            var filteredData = useMemo(function() {
+                var data = quizzes.filter(function(q) {
+                    var yearMatch = filters.years.length === 0 || filters.years.indexOf(q.year) !== -1;
+                    var chMatch = filters.ch === "전체" || q.ch === filters.ch;
+                    var imgMatch = !filters.onlyImg || (q.imgUrl && q.imgUrl.trim() !== "");
+                    return yearMatch && chMatch && imgMatch;
+                });
+
+                if (mode === "시험") {
+                    data = [...data].sort(function() { return 0.5 - Math.random(); });
+                }
+                
+                return data.slice(0, filters.count === 0 ? undefined : filters.count);
+            }, [filters, quizzes, mode]);
+
+            var saveRecord = function() {
+                var score = filteredData.filter(function(q) { return userAnswers[q.id] === q.correct; }).length;
+                var total = filteredData.length;
+                var newRecord = { 
+                    date: new Date().toLocaleString(), 
+                    score: score, 
+                    total: total, 
+                    ch: filters.ch, 
+                    mode: mode 
+                };
+                var newHistory = history.concat([newRecord]);
+                setHistory(newHistory);
+                localStorage.setItem("quiz_history", JSON.stringify(newHistory));
+                setSubmitted(true);
+            };
+
+            return React.createElement("div", {ref: containerRef, className: "max-w-3xl mx-auto p-4 space-y-6"},
+                React.createElement("div", {className: "bg-white p-6 rounded-2xl shadow-sm border space-y-4"},
+                    React.createElement("h1", {className: "text-xl font-black"}, "학습 필터 설정"),
+                    React.createElement("div", {className: "flex flex-wrap gap-2"}, 
+                        React.createElement("button", {onClick: toggleAllYears, className: "px-3 py-1 rounded text-sm bg-slate-600 text-white font-bold"}, "전체 선택/해제"),
+                        availableYears.map(function(y) {
+                            return React.createElement("button", {key: y, onClick: function() { 
+                                var next = filters.years.indexOf(y) !== -1 ? filters.years.filter(function(i) { return i !== y; }) : filters.years.concat([y]);
+                                setFilters(Object.assign({}, filters, { years: next }));
+                            }, className: "px-3 py-1 rounded text-sm " + (filters.years.indexOf(y) !== -1 ? "bg-blue-600 text-white" : "bg-slate-200")}, y);
+                        })
+                    ),
+                    React.createElement("div", {className: "flex gap-2 flex-wrap items-center"},
+                        React.createElement("select", {value: filters.ch, onChange: function(e) { setFilters(Object.assign({}, filters, { ch: e.target.value })); }, className: "border p-2 rounded flex-1"},
+                            React.createElement("option", {value: "전체"}, "모든 챕터"),
+                            ...Array.from({length: 15}, (_, i) => i + 1).map(c => React.createElement("option", {key: c, value: c.toString()}, c + "장"))
+                        ),
+                        React.createElement("select", {value: filters.count, onChange: function(e) { setFilters(Object.assign({}, filters, { count: parseInt(e.target.value) })); }, className: "border p-2 rounded flex-1"},
+                            [5, 10, 20, 30, 60].map(function(c) { return React.createElement("option", {key: c, value: c}, c + "문항"); }),
+                            React.createElement("option", {value: 0}, "전체")
+                        ),
+                        React.createElement("label", {className: "flex items-center gap-2 cursor-pointer border p-2 rounded"},
+                            React.createElement("input", {type: "checkbox", checked: filters.onlyImg, onChange: function(e) { setFilters(Object.assign({}, filters, { onlyImg: e.target.checked })); }}),
+                            "그림 문항만"
+                        )
+                    ),
+                    React.createElement("button", {onClick: function() { setMode(mode === "연습" ? "시험" : "연습"); }, className: "w-full bg-emerald-600 text-white py-2 rounded font-bold"}, "현재 모드: " + mode)
+                ),
+                filteredData.map(function(q, idx) {
+                    var isAnswered = userAnswers.hasOwnProperty(q.id);
+                    var canShowFeedback = (mode === "연습" && isAnswered) || (mode === "시험" && submitted);
+                    return React.createElement("div", {key: q.id, className: "bg-white p-6 rounded-2xl shadow-sm border"},
+                        React.createElement("h2", {className: "font-bold"}, (idx + 1) + ". " + q.q),
+                        q.imgUrl && q.imgUrl.trim() !== "" ? React.createElement("img", {src: q.imgUrl, className: "my-2 w-full h-auto", alt: "문제" + q.id}) : null,
+                        React.createElement("div", {className: "grid gap-2 mt-4"},
+                            q.options.map(function(opt, i) {
+                                var style = canShowFeedback ? (i === q.correct ? "bg-green-200" : (userAnswers[q.id] === i ? "bg-red-200" : "")) : (userAnswers[q.id] === i ? "bg-blue-200" : "");
+                                return React.createElement("button", {key: i, onClick: function() { if (!(mode === "시험" && submitted) && !(mode === "연습" && isAnswered)) { var n = Object.assign({}, userAnswers); n[q.id] = i; setUserAnswers(n); } }, className: "p-2 border rounded text-left " + style}, opt);
+                            })
+                        ),
+                        (canShowFeedback) ? React.createElement("div", {className: "mt-4 p-4 bg-emerald-50 rounded-lg text-sm"}, 
+                            React.createElement("p", {className: "mb-2"}, "해설: " + q.exp),
+                            q.eurl && q.eurl.trim() !== "" ? React.createElement("div", {className: "bg-white p-2 border rounded"}, React.createElement("img", {src: q.eurl, className: "w-full h-auto", alt: "해설" + q.id})) : null
+                        ) : null
+                    );
+                }),
+                mode === "시험" && !submitted && filteredData.length > 0 ? React.createElement("button", {onClick: saveRecord, className: "w-full bg-blue-600 text-white py-4 rounded-xl font-bold"}, "제출 및 채점") : null,
+                history.length > 0 ? React.createElement("div", {className: "bg-white p-6 rounded-2xl shadow-sm border"},
+                    React.createElement("h3", {className: "font-bold mb-2"}, "최근 시험 기록"),
+                    history.slice(-5).map(function(h, i) { return React.createElement("p", {key: i, className: "text-sm"}, h.date + " [" + h.mode + "] 챕터:" + h.ch + " - " + h.score + "/" + h.total + " (" + Math.round((h.score/h.total)*100) + "점)"); })
+                ) : null
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+    </script>
+</body>
+</html>js"></script>
     <script>
         window.MathJax = {
             tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
