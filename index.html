@@ -56,13 +56,19 @@
             }, [quizzes]);
 
             var filteredData = useMemo(function() {
-                return quizzes.filter(function(q) {
+                var data = quizzes.filter(function(q) {
                     var yearMatch = filters.years.length === 0 || filters.years.indexOf(q.year) !== -1;
                     var chMatch = filters.ch === "전체" || q.ch === filters.ch;
                     var imgMatch = !filters.onlyImg || (q.imgUrl && q.imgUrl.trim() !== "");
                     return yearMatch && chMatch && imgMatch;
-                }).slice(0, filters.count === 0 ? undefined : filters.count);
-            }, [filters, quizzes]);
+                });
+
+                if (mode === "시험") {
+                    data = [...data].sort(function() { return 0.5 - Math.random(); });
+                }
+                
+                return data.slice(0, filters.count === 0 ? undefined : filters.count);
+            }, [filters, quizzes, mode]);
 
             var saveRecord = function() {
                 var score = filteredData.filter(function(q) { return userAnswers[q.id] === q.correct; }).length;
