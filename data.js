@@ -9188,27 +9188,6 @@ window.MASTER_QUIZ_DATA = [
   },
   {
     "no": "478",
-    "id": "q0035",
-    "year": "2016",
-    "session": "1회",
-    "category": "기체 정비",
-    "q": "단단히 조여있는 너트나 볼트를 풀 때 지렛대 역할을 하는 그림과 같은 공구의 명칭은?",
-    "options": [
-      "래칫 핸들",
-      "브레이커 바",
-      "슬라이딩 T 핸들",
-      "익스텐션 바"
-    ],
-    "correct": 1,
-    "exp": "힌지 핸들이라고도 불리는 브레이커 바는 강한 힘을 주어 초기에 볼트를 풀 때 유용합니다. [7][출제이력: 16-1회]",
-    "imgUrl": "https://raw.githubusercontent.com/win8367/aviation-images/refs/heads/main/image18.svg",
-    "subcat": "측정 및 도구",
-    "ch": "4",
-    "imp": "L급",
-    "eq": "q0035"
-  },
-  {
-    "no": "479",
     "id": "q0036",
     "year": "2015",
     "session": "5회",
@@ -9228,7 +9207,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0036"
   },
   {
-    "no": "480",
+    "no": "479",
     "id": "q0037",
     "year": "2021",
     "session": "4회",
@@ -9249,7 +9228,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0037"
   },
   {
-    "no": "481",
+    "no": "480",
     "id": "q0038",
     "year": "2017",
     "session": "3회",
@@ -9270,7 +9249,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0038"
   },
   {
-    "no": "482",
+    "no": "481",
     "id": "q0039",
     "year": "2015",
     "session": "5회",
@@ -9291,7 +9270,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0039"
   },
   {
-    "no": "483",
+    "no": "482",
     "id": "q0040",
     "year": "2019",
     "session": "4회",
@@ -9311,7 +9290,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0040"
   },
   {
-    "no": "484",
+    "no": "483",
     "id": "q0041",
     "year": "2016",
     "session": "1회",
@@ -9331,7 +9310,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0041"
   },
   {
-    "no": "485",
+    "no": "484",
     "id": "q0042",
     "year": "2018",
     "session": "3회",
@@ -9352,7 +9331,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0042"
   },
   {
-    "no": "486",
+    "no": "485",
     "id": "q0043",
     "year": "2018",
     "session": "1회",
@@ -9373,7 +9352,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0043"
   },
   {
-    "no": "487",
+    "no": "486",
     "id": "q0044",
     "year": "2014",
     "session": "1회",
@@ -9394,7 +9373,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0044"
   },
   {
-    "no": "488",
+    "no": "487",
     "id": "q0045",
     "year": "2015",
     "session": "5회",
@@ -9415,7 +9394,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0045"
   },
   {
-    "no": "489",
+    "no": "488",
     "id": "q0047",
     "year": "2016",
     "session": "1회",
@@ -9435,7 +9414,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0047"
   },
   {
-    "no": "490",
+    "no": "489",
     "id": "q0048",
     "year": "2015",
     "session": "4회",
@@ -9455,7 +9434,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0048"
   },
   {
-    "no": "491",
+    "no": "490",
     "id": "q0049",
     "year": "2015",
     "session": "1회",
@@ -9476,7 +9455,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0049"
   },
   {
-    "no": "492",
+    "no": "491",
     "id": "q0050",
     "year": "2016",
     "session": "4회",
@@ -9497,7 +9476,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0050"
   },
   {
-    "no": "493",
+    "no": "492",
     "id": "q0051",
     "year": "2021",
     "session": "3회",
@@ -9518,7 +9497,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0051"
   },
   {
-    "no": "494",
+    "no": "493",
     "id": "q0052",
     "year": "2015",
     "session": "5회",
@@ -9538,7 +9517,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0052"
   },
   {
-    "no": "495",
+    "no": "494",
     "id": "q0053",
     "year": "2015",
     "session": "5회",
@@ -9558,7 +9537,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0053"
   },
   {
-    "no": "496",
+    "no": "495",
     "id": "q0055",
     "year": "2018",
     "session": "3회",
@@ -9579,7 +9558,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0055"
   },
   {
-    "no": "497",
+    "no": "496",
     "id": "q0056",
     "year": "2015",
     "session": "2회",
@@ -9600,7 +9579,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0056"
   },
   {
-    "no": "498",
+    "no": "497",
     "id": "q0057",
     "year": "2018",
     "session": "3회",
@@ -9621,7 +9600,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0057"
   },
   {
-    "no": "499",
+    "no": "498",
     "id": "q0059",
     "year": "2019",
     "session": "2회",
@@ -9642,7 +9621,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0059"
   },
   {
-    "no": "500",
+    "no": "499",
     "id": "q0060",
     "year": "2021",
     "session": "3회",
@@ -9663,7 +9642,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0060"
   },
   {
-    "no": "501",
+    "no": "500",
     "id": "q0062",
     "year": "2021",
     "session": "4회",
@@ -9683,7 +9662,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0062"
   },
   {
-    "no": "502",
+    "no": "501",
     "id": "q0063",
     "year": "2021",
     "session": "4회",
@@ -9704,7 +9683,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0063"
   },
   {
-    "no": "503",
+    "no": "502",
     "id": "q0065",
     "year": "2015",
     "session": "1회",
@@ -9725,7 +9704,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0065"
   },
   {
-    "no": "504",
+    "no": "503",
     "id": "q0066",
     "year": "2016",
     "session": "2회",
@@ -9746,7 +9725,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0066"
   },
   {
-    "no": "505",
+    "no": "504",
     "id": "q0067",
     "year": "2020",
     "session": "3회",
@@ -9766,7 +9745,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0067"
   },
   {
-    "no": "506",
+    "no": "505",
     "id": "q0071",
     "year": "2021",
     "session": "4회",
@@ -9787,7 +9766,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0071"
   },
   {
-    "no": "507",
+    "no": "506",
     "id": "q0072",
     "year": "2022",
     "session": "3회",
@@ -9807,7 +9786,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0072"
   },
   {
-    "no": "508",
+    "no": "507",
     "id": "q0073",
     "year": "2017",
     "session": "4회",
@@ -9828,7 +9807,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0073"
   },
   {
-    "no": "509",
+    "no": "508",
     "id": "q0074",
     "year": "2015",
     "session": "2회",
@@ -9848,7 +9827,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0074"
   },
   {
-    "no": "510",
+    "no": "509",
     "id": "q0076",
     "year": "2019",
     "session": "4회",
@@ -9869,7 +9848,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0076"
   },
   {
-    "no": "511",
+    "no": "510",
     "id": "q0077",
     "year": "2021",
     "session": "4회",
@@ -9890,7 +9869,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0077"
   },
   {
-    "no": "512",
+    "no": "511",
     "id": "q0078",
     "year": "2017",
     "session": "3회",
@@ -9911,7 +9890,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0078"
   },
   {
-    "no": "513",
+    "no": "512",
     "id": "q0079",
     "year": "2021",
     "session": "4회",
@@ -9932,7 +9911,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0079"
   },
   {
-    "no": "514",
+    "no": "513",
     "id": "q0080",
     "year": "2015",
     "session": "2회",
@@ -9952,7 +9931,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0080"
   },
   {
-    "no": "515",
+    "no": "514",
     "id": "q0081",
     "year": "2024",
     "session": "2회",
@@ -9973,7 +9952,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0081"
   },
   {
-    "no": "516",
+    "no": "515",
     "id": "q0082",
     "year": "2016",
     "session": "2회",
@@ -9994,7 +9973,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0082"
   },
   {
-    "no": "517",
+    "no": "516",
     "id": "q0083",
     "year": "2024",
     "session": "2회",
@@ -10015,7 +9994,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0083"
   },
   {
-    "no": "518",
+    "no": "517",
     "id": "q0084",
     "year": "2014",
     "session": "4회",
@@ -10036,7 +10015,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0084"
   },
   {
-    "no": "519",
+    "no": "518",
     "id": "q0085",
     "year": "2016",
     "session": "1회",
@@ -10057,7 +10036,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0085"
   },
   {
-    "no": "520",
+    "no": "519",
     "id": "q0086",
     "year": "2016",
     "session": "4회",
@@ -10078,7 +10057,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0086"
   },
   {
-    "no": "521",
+    "no": "520",
     "id": "q0087",
     "year": "2015",
     "session": "1회",
@@ -10098,7 +10077,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0087"
   },
   {
-    "no": "522",
+    "no": "521",
     "id": "q0088",
     "year": "2022",
     "session": "3회",
@@ -10119,7 +10098,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0088"
   },
   {
-    "no": "523",
+    "no": "522",
     "id": "q0089",
     "year": "2024",
     "session": "1회",
@@ -10140,7 +10119,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0089"
   },
   {
-    "no": "524",
+    "no": "523",
     "id": "q0090",
     "year": "2015",
     "session": "4회",
@@ -10160,7 +10139,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0090"
   },
   {
-    "no": "525",
+    "no": "524",
     "id": "q0091",
     "year": "2015",
     "session": "5회",
@@ -10181,7 +10160,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0091"
   },
   {
-    "no": "526",
+    "no": "525",
     "id": "q0092",
     "year": "2022",
     "session": "4회",
@@ -10202,7 +10181,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0092"
   },
   {
-    "no": "527",
+    "no": "526",
     "id": "q0093",
     "year": "2022",
     "session": "4회",
@@ -10223,7 +10202,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0093"
   },
   {
-    "no": "528",
+    "no": "527",
     "id": "q0094",
     "year": "2021",
     "session": "4회",
@@ -10244,7 +10223,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0094"
   },
   {
-    "no": "529",
+    "no": "528",
     "id": "q0095",
     "year": "2018",
     "session": "1회",
@@ -10265,7 +10244,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0095"
   },
   {
-    "no": "530",
+    "no": "529",
     "id": "q0096",
     "year": "2019",
     "session": "4회",
@@ -10286,7 +10265,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0096"
   },
   {
-    "no": "531",
+    "no": "530",
     "id": "q0098",
     "year": "2014",
     "session": "5회",
@@ -10306,7 +10285,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0098"
   },
   {
-    "no": "532",
+    "no": "531",
     "id": "q0100",
     "year": "2016",
     "session": "4회",
@@ -10326,7 +10305,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0100"
   },
   {
-    "no": "533",
+    "no": "532",
     "id": "q0101",
     "year": "2019",
     "session": "4회",
@@ -10346,7 +10325,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0101"
   },
   {
-    "no": "534",
+    "no": "533",
     "id": "q0103",
     "year": "2021",
     "session": "4회",
@@ -10366,7 +10345,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0103"
   },
   {
-    "no": "535",
+    "no": "534",
     "id": "q0104",
     "year": "2022",
     "session": "4회",
@@ -10386,7 +10365,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0104"
   },
   {
-    "no": "536",
+    "no": "535",
     "id": "q0105",
     "year": "2014",
     "session": "1회",
@@ -10406,7 +10385,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0105"
   },
   {
-    "no": "537",
+    "no": "536",
     "id": "q0106",
     "year": "2021",
     "session": "4회",
@@ -10426,7 +10405,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0106"
   },
   {
-    "no": "538",
+    "no": "537",
     "id": "q0107",
     "year": "2022",
     "session": "4회",
@@ -10446,7 +10425,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0107"
   },
   {
-    "no": "539",
+    "no": "538",
     "id": "q0108",
     "year": "2021",
     "session": "4회",
@@ -10466,7 +10445,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0108"
   },
   {
-    "no": "540",
+    "no": "539",
     "id": "q0110",
     "year": "2014",
     "session": "4회",
@@ -10486,7 +10465,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0110"
   },
   {
-    "no": "541",
+    "no": "540",
     "id": "q0111",
     "year": "2021",
     "session": "3회",
@@ -10506,7 +10485,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0111"
   },
   {
-    "no": "542",
+    "no": "541",
     "id": "q0112",
     "year": "2018",
     "session": "3회",
@@ -10526,7 +10505,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0112"
   },
   {
-    "no": "543",
+    "no": "542",
     "id": "q0113",
     "year": "2015",
     "session": "1회",
@@ -10546,7 +10525,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0113"
   },
   {
-    "no": "544",
+    "no": "543",
     "id": "q0114",
     "year": "2020",
     "session": "2회",
@@ -10566,7 +10545,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0114"
   },
   {
-    "no": "545",
+    "no": "544",
     "id": "q0116",
     "year": "2020",
     "session": "3회",
@@ -10586,7 +10565,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0116"
   },
   {
-    "no": "546",
+    "no": "545",
     "id": "q0118",
     "year": "2020",
     "session": "3회",
@@ -10606,7 +10585,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0118"
   },
   {
-    "no": "547",
+    "no": "546",
     "id": "q0119",
     "year": "2018",
     "session": "1회",
@@ -10626,7 +10605,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0119"
   },
   {
-    "no": "548",
+    "no": "547",
     "id": "q0120",
     "year": "2018",
     "session": "3회",
@@ -10646,7 +10625,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0120"
   },
   {
-    "no": "549",
+    "no": "548",
     "id": "q0121",
     "year": "2020",
     "session": "3회",
@@ -10666,7 +10645,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0121"
   },
   {
-    "no": "550",
+    "no": "549",
     "id": "q0122",
     "year": "2018",
     "session": "3회",
@@ -10686,7 +10665,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0122"
   },
   {
-    "no": "551",
+    "no": "550",
     "id": "q0123",
     "year": "2020",
     "session": "2회",
@@ -10706,7 +10685,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0123"
   },
   {
-    "no": "552",
+    "no": "551",
     "id": "q0124",
     "year": "2016",
     "session": "4회",
@@ -10726,7 +10705,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0124"
   },
   {
-    "no": "553",
+    "no": "552",
     "id": "q0126",
     "year": "2022",
     "session": "2회",
@@ -10746,7 +10725,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0126"
   },
   {
-    "no": "554",
+    "no": "553",
     "id": "q0127",
     "year": "2019",
     "session": "2회",
@@ -10766,7 +10745,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0127"
   },
   {
-    "no": "555",
+    "no": "554",
     "id": "q0128",
     "year": "2020",
     "session": "3회",
@@ -10786,7 +10765,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0128"
   },
   {
-    "no": "556",
+    "no": "555",
     "id": "q0129",
     "year": "2022",
     "session": "2회",
@@ -10806,7 +10785,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0129"
   },
   {
-    "no": "557",
+    "no": "556",
     "id": "q0130",
     "year": "2024",
     "session": "2회",
@@ -10827,7 +10806,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0130"
   },
   {
-    "no": "558",
+    "no": "557",
     "id": "q0131",
     "year": "2021",
     "session": "4회",
@@ -10847,7 +10826,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0131"
   },
   {
-    "no": "559",
+    "no": "558",
     "id": "q0132",
     "year": "2015",
     "session": "1회",
@@ -10867,7 +10846,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0132"
   },
   {
-    "no": "560",
+    "no": "559",
     "id": "q0133",
     "year": "2024",
     "session": "2회",
@@ -10887,7 +10866,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0133"
   },
   {
-    "no": "561",
+    "no": "560",
     "id": "q0134",
     "year": "2020",
     "session": "2회",
@@ -10907,7 +10886,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0134"
   },
   {
-    "no": "562",
+    "no": "561",
     "id": "q0135",
     "year": "2020",
     "session": "2회",
@@ -10927,7 +10906,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0135"
   },
   {
-    "no": "563",
+    "no": "562",
     "id": "q0136",
     "year": "2015",
     "session": "1회",
@@ -10947,7 +10926,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0136"
   },
   {
-    "no": "564",
+    "no": "563",
     "id": "q0137",
     "year": "2014",
     "session": "4회",
@@ -10967,7 +10946,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0137"
   },
   {
-    "no": "565",
+    "no": "564",
     "id": "q0138",
     "year": "2015",
     "session": "4회",
@@ -10987,7 +10966,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0138"
   },
   {
-    "no": "566",
+    "no": "565",
     "id": "q0139",
     "year": "2022",
     "session": "4회",
@@ -11007,7 +10986,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0139"
   },
   {
-    "no": "567",
+    "no": "566",
     "id": "q0140",
     "year": "2022",
     "session": "4회",
@@ -11027,7 +11006,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0140"
   },
   {
-    "no": "568",
+    "no": "567",
     "id": "q0141",
     "year": "2015",
     "session": "1회",
@@ -11047,7 +11026,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0141"
   },
   {
-    "no": "569",
+    "no": "568",
     "id": "q0142",
     "year": "2014",
     "session": "5회",
@@ -11067,7 +11046,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0142"
   },
   {
-    "no": "570",
+    "no": "569",
     "id": "q0143",
     "year": "2015",
     "session": "4회",
@@ -11087,7 +11066,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0143"
   },
   {
-    "no": "571",
+    "no": "570",
     "id": "q0144",
     "year": "2015",
     "session": "5회",
@@ -11107,7 +11086,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0144"
   },
   {
-    "no": "572",
+    "no": "571",
     "id": "q0145",
     "year": "2014",
     "session": "4회",
@@ -11127,7 +11106,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0145"
   },
   {
-    "no": "573",
+    "no": "572",
     "id": "q0146",
     "year": "2015",
     "session": "1회",
@@ -11147,7 +11126,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0146"
   },
   {
-    "no": "574",
+    "no": "573",
     "id": "q0147",
     "year": "2022",
     "session": "2회",
@@ -11167,7 +11146,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0147"
   },
   {
-    "no": "575",
+    "no": "574",
     "id": "q0148",
     "year": "2022",
     "session": "4회",
@@ -11187,7 +11166,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0148"
   },
   {
-    "no": "576",
+    "no": "575",
     "id": "q0149",
     "year": "2016",
     "session": "1회",
@@ -11207,7 +11186,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0149"
   },
   {
-    "no": "577",
+    "no": "576",
     "id": "q0150",
     "year": "2022",
     "session": "2회",
@@ -11227,7 +11206,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0150"
   },
   {
-    "no": "578",
+    "no": "577",
     "id": "q0151",
     "year": "2020",
     "session": "3회",
@@ -11247,7 +11226,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0151"
   },
   {
-    "no": "579",
+    "no": "578",
     "id": "q0152",
     "year": "2014",
     "session": "1회",
@@ -11267,7 +11246,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0152"
   },
   {
-    "no": "580",
+    "no": "579",
     "id": "q0153",
     "year": "2015",
     "session": "4회",
@@ -11287,7 +11266,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0153"
   },
   {
-    "no": "581",
+    "no": "580",
     "id": "q0154",
     "year": "2024",
     "session": "2회",
@@ -11307,7 +11286,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0154"
   },
   {
-    "no": "582",
+    "no": "581",
     "id": "q0155",
     "year": "2019",
     "session": "2회",
@@ -11327,7 +11306,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0155"
   },
   {
-    "no": "583",
+    "no": "582",
     "id": "q0156",
     "year": "2016",
     "session": "4회",
@@ -11347,7 +11326,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0156"
   },
   {
-    "no": "584",
+    "no": "583",
     "id": "q0157",
     "year": "2024",
     "session": "1회",
@@ -11367,7 +11346,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0157"
   },
   {
-    "no": "585",
+    "no": "584",
     "id": "q0159",
     "year": "2022",
     "session": "4회",
@@ -11387,7 +11366,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0159"
   },
   {
-    "no": "586",
+    "no": "585",
     "id": "q0160",
     "year": "2020",
     "session": "2회",
@@ -11407,7 +11386,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0160"
   },
   {
-    "no": "587",
+    "no": "586",
     "id": "q0161",
     "year": "2014",
     "session": "1회",
@@ -11427,7 +11406,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0161"
   },
   {
-    "no": "588",
+    "no": "587",
     "id": "q0162",
     "year": "2016",
     "session": "1회",
@@ -11447,7 +11426,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0162"
   },
   {
-    "no": "589",
+    "no": "588",
     "id": "q0163",
     "year": "2021",
     "session": "4회",
@@ -11467,7 +11446,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0163"
   },
   {
-    "no": "590",
+    "no": "589",
     "id": "q0164",
     "year": "2014",
     "session": "4회",
@@ -11487,7 +11466,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0164"
   },
   {
-    "no": "591",
+    "no": "590",
     "id": "q0165",
     "year": "2024",
     "session": "2회",
@@ -11507,7 +11486,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0165"
   },
   {
-    "no": "592",
+    "no": "591",
     "id": "q0166",
     "year": "2015",
     "session": "4회",
@@ -11527,7 +11506,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0166"
   },
   {
-    "no": "593",
+    "no": "592",
     "id": "q0167",
     "year": "2016",
     "session": "1회",
@@ -11547,7 +11526,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0167"
   },
   {
-    "no": "594",
+    "no": "593",
     "id": "q0168",
     "year": "2022",
     "session": "4회",
@@ -11567,7 +11546,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0168"
   },
   {
-    "no": "595",
+    "no": "594",
     "id": "q0169",
     "year": "2020",
     "session": "2회",
@@ -11587,7 +11566,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0169"
   },
   {
-    "no": "596",
+    "no": "595",
     "id": "q0170",
     "year": "2015",
     "session": "5회",
@@ -11607,7 +11586,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0170"
   },
   {
-    "no": "597",
+    "no": "596",
     "id": "q0171",
     "year": "2024",
     "session": "1회",
@@ -11627,7 +11606,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0171"
   },
   {
-    "no": "598",
+    "no": "597",
     "id": "q0172",
     "year": "2019",
     "session": "4회",
@@ -11647,7 +11626,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0172"
   },
   {
-    "no": "599",
+    "no": "598",
     "id": "q0173",
     "year": "2016",
     "session": "1회",
@@ -11667,7 +11646,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0173"
   },
   {
-    "no": "600",
+    "no": "599",
     "id": "q0174",
     "year": "2019",
     "session": "4회",
@@ -11687,7 +11666,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0174"
   },
   {
-    "no": "601",
+    "no": "600",
     "id": "q0175",
     "year": "2020",
     "session": "2회",
@@ -11707,7 +11686,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0175"
   },
   {
-    "no": "602",
+    "no": "601",
     "id": "q0176",
     "year": "2019",
     "session": "4회",
@@ -11727,7 +11706,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0176"
   },
   {
-    "no": "603",
+    "no": "602",
     "id": "q0177",
     "year": "2019",
     "session": "2회",
@@ -11747,7 +11726,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0177"
   },
   {
-    "no": "604",
+    "no": "603",
     "id": "q0178",
     "year": "2024",
     "session": "1회",
@@ -11767,7 +11746,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0178"
   },
   {
-    "no": "605",
+    "no": "604",
     "id": "q0179",
     "year": "2024",
     "session": "1회",
@@ -11787,7 +11766,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0179"
   },
   {
-    "no": "606",
+    "no": "605",
     "id": "q0180",
     "year": "2018",
     "session": "3회",
@@ -11807,7 +11786,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0180"
   },
   {
-    "no": "607",
+    "no": "606",
     "id": "q0181",
     "year": "2024",
     "session": "1회",
@@ -11827,7 +11806,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0181"
   },
   {
-    "no": "608",
+    "no": "607",
     "id": "q0182",
     "year": "2019",
     "session": "1회",
@@ -11847,7 +11826,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0182"
   },
   {
-    "no": "609",
+    "no": "608",
     "id": "q0183",
     "year": "2022",
     "session": "4회",
@@ -11867,7 +11846,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0183"
   },
   {
-    "no": "610",
+    "no": "609",
     "id": "q0184",
     "year": "2021",
     "session": "3회",
@@ -11887,7 +11866,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0184"
   },
   {
-    "no": "611",
+    "no": "610",
     "id": "q0185",
     "year": "2022",
     "session": "2회",
@@ -11907,7 +11886,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0185"
   },
   {
-    "no": "612",
+    "no": "611",
     "id": "q0186",
     "year": "2018",
     "session": "1회",
@@ -11927,7 +11906,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0186"
   },
   {
-    "no": "613",
+    "no": "612",
     "id": "q0187",
     "year": "2016",
     "session": "4회",
@@ -11947,7 +11926,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0187"
   },
   {
-    "no": "614",
+    "no": "613",
     "id": "q0188",
     "year": "2014",
     "session": "1회",
@@ -11967,7 +11946,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0188"
   },
   {
-    "no": "615",
+    "no": "614",
     "id": "q0189",
     "year": "2015",
     "session": "4회",
@@ -11987,7 +11966,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0189"
   },
   {
-    "no": "616",
+    "no": "615",
     "id": "q0190",
     "year": "2014",
     "session": "5회",
@@ -12007,7 +11986,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0190"
   },
   {
-    "no": "617",
+    "no": "616",
     "id": "q0191",
     "year": "2014",
     "session": "5회",
@@ -12027,7 +12006,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0191"
   },
   {
-    "no": "618",
+    "no": "617",
     "id": "q0192",
     "year": "2019",
     "session": "2회",
@@ -12047,7 +12026,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0192"
   },
   {
-    "no": "619",
+    "no": "618",
     "id": "q0193",
     "year": "2019",
     "session": "4회",
@@ -12067,7 +12046,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0193"
   },
   {
-    "no": "620",
+    "no": "619",
     "id": "q0195",
     "year": "2014",
     "session": "4회",
@@ -12088,7 +12067,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0195"
   },
   {
-    "no": "621",
+    "no": "620",
     "id": "q0196",
     "year": "2015",
     "session": "2회",
@@ -12108,7 +12087,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0196"
   },
   {
-    "no": "622",
+    "no": "621",
     "id": "q0197",
     "year": "2024",
     "session": "1회",
@@ -12128,7 +12107,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0197"
   },
   {
-    "no": "623",
+    "no": "622",
     "id": "q0198",
     "year": "2015",
     "session": "5회",
@@ -12148,7 +12127,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0198"
   },
   {
-    "no": "624",
+    "no": "623",
     "id": "q0199",
     "year": "2019",
     "session": "4회",
@@ -12168,7 +12147,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0199"
   },
   {
-    "no": "625",
+    "no": "624",
     "id": "q0200",
     "year": "2018",
     "session": "1회",
@@ -12188,7 +12167,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0200"
   },
   {
-    "no": "626",
+    "no": "625",
     "id": "q0201",
     "year": "2014",
     "session": "5회",
@@ -12208,7 +12187,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0201"
   },
   {
-    "no": "627",
+    "no": "626",
     "id": "q0202",
     "year": "2020",
     "session": "3회",
@@ -12228,7 +12207,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0202"
   },
   {
-    "no": "628",
+    "no": "627",
     "id": "q0203",
     "year": "2015",
     "session": "1회",
@@ -12248,7 +12227,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0203"
   },
   {
-    "no": "629",
+    "no": "628",
     "id": "q0204",
     "year": "2022",
     "session": "4회",
@@ -12268,7 +12247,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0204"
   },
   {
-    "no": "630",
+    "no": "629",
     "id": "q0205",
     "year": "2016",
     "session": "2회",
@@ -12288,7 +12267,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0205"
   },
   {
-    "no": "631",
+    "no": "630",
     "id": "q0206",
     "year": "2024",
     "session": "1회",
@@ -12308,7 +12287,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0206"
   },
   {
-    "no": "632",
+    "no": "631",
     "id": "q0207",
     "year": "2014",
     "session": "1회",
@@ -12328,7 +12307,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0207"
   },
   {
-    "no": "633",
+    "no": "632",
     "id": "q0208",
     "year": "2017",
     "session": "3회",
@@ -12348,7 +12327,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0208"
   },
   {
-    "no": "634",
+    "no": "633",
     "id": "q0209",
     "year": "2022",
     "session": "4회",
@@ -12368,7 +12347,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0209"
   },
   {
-    "no": "635",
+    "no": "634",
     "id": "q0210",
     "year": "2015",
     "session": "4회",
@@ -12388,7 +12367,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0210"
   },
   {
-    "no": "636",
+    "no": "635",
     "id": "q0211",
     "year": "2014",
     "session": "1회",
@@ -12408,7 +12387,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0211"
   },
   {
-    "no": "637",
+    "no": "636",
     "id": "q0212",
     "year": "2015",
     "session": "2회",
@@ -12428,7 +12407,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0212"
   },
   {
-    "no": "638",
+    "no": "637",
     "id": "q0213",
     "year": "2014",
     "session": "5회",
@@ -12448,7 +12427,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0213"
   },
   {
-    "no": "639",
+    "no": "638",
     "id": "q0214",
     "year": "2016",
     "session": "4회",
@@ -12468,7 +12447,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0214"
   },
   {
-    "no": "640",
+    "no": "639",
     "id": "q0215",
     "year": "2024",
     "session": "1회",
@@ -12488,7 +12467,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0215"
   },
   {
-    "no": "641",
+    "no": "640",
     "id": "q0216",
     "year": "2014",
     "session": "4회",
@@ -12508,7 +12487,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0216"
   },
   {
-    "no": "642",
+    "no": "641",
     "id": "q0217",
     "year": "2016",
     "session": "1회",
@@ -12528,7 +12507,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0217"
   },
   {
-    "no": "643",
+    "no": "642",
     "id": "q0218",
     "year": "2014",
     "session": "5회",
@@ -12548,7 +12527,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0218"
   },
   {
-    "no": "644",
+    "no": "643",
     "id": "q0219",
     "year": "2022",
     "session": "4회",
@@ -12568,7 +12547,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0219"
   },
   {
-    "no": "645",
+    "no": "644",
     "id": "q0220",
     "year": "2021",
     "session": "3회",
@@ -12588,7 +12567,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0220"
   },
   {
-    "no": "646",
+    "no": "645",
     "id": "q0221",
     "year": "2015",
     "session": "1회",
@@ -12608,7 +12587,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0221"
   },
   {
-    "no": "647",
+    "no": "646",
     "id": "q0222",
     "year": "2020",
     "session": "3회",
@@ -12628,7 +12607,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0222"
   },
   {
-    "no": "648",
+    "no": "647",
     "id": "q0223",
     "year": "2015",
     "session": "1회",
@@ -12648,7 +12627,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0223"
   },
   {
-    "no": "649",
+    "no": "648",
     "id": "q0224",
     "year": "2016",
     "session": "1회",
@@ -12668,7 +12647,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0224"
   },
   {
-    "no": "650",
+    "no": "649",
     "id": "q0225",
     "year": "2019",
     "session": "1회",
@@ -12688,7 +12667,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0225"
   },
   {
-    "no": "651",
+    "no": "650",
     "id": "q0226",
     "year": "2022",
     "session": "4회",
@@ -12708,7 +12687,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0226"
   },
   {
-    "no": "652",
+    "no": "651",
     "id": "q0227",
     "year": "2020",
     "session": "2회",
@@ -12729,28 +12708,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0227"
   },
   {
-    "no": "653",
-    "id": "q0228",
-    "year": "2024",
-    "session": "2회",
-    "category": "기체 정비",
-    "q": "그림과 같이 실린더 헤드 플라이휠 등 측정물을 회전시켜 다이얼 게이지로 측정한 최댓값과 최솟값의 차를 구하는 것은 무엇을 측정하기 위한 방법인가?",
-    "options": [
-      "원통의 진원 측정",
-      "평면도 측정",
-      "기어의 백래시 측정",
-      "내경과 외경 측정"
-    ],
-    "correct": 0,
-    "exp": "다이얼 게이지를 이용해 회전체의 흔들림을 측정함으로써 원통의 진원도나 축의 휨 등을 확인할 수 있다. [4][출제이력: 14-1회, 24-2회]",
-    "imgUrl": "https://raw.githubusercontent.com/win8367/aviation-images/refs/heads/main/image1.svg",
-    "subcat": "측정 및 도구",
-    "ch": "4",
-    "imp": "A급",
-    "eq": "q0228"
-  },
-  {
-    "no": "654",
+    "no": "652",
     "id": "q0229",
     "year": "2022",
     "session": "4회",
@@ -12771,7 +12729,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0229"
   },
   {
-    "no": "655",
+    "no": "653",
     "id": "q0230",
     "year": "2014",
     "session": "5회",
@@ -12791,7 +12749,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0230"
   },
   {
-    "no": "656",
+    "no": "654",
     "id": "q0231",
     "year": "2021",
     "session": "4회",
@@ -12811,7 +12769,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0231"
   },
   {
-    "no": "657",
+    "no": "655",
     "id": "q0232",
     "year": "2022",
     "session": "4회",
@@ -12831,7 +12789,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0232"
   },
   {
-    "no": "658",
+    "no": "656",
     "id": "q0233",
     "year": "2024",
     "session": "2회",
@@ -12851,7 +12809,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0233"
   },
   {
-    "no": "659",
+    "no": "657",
     "id": "q0234",
     "year": "2021",
     "session": "3회",
@@ -12871,7 +12829,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0234"
   },
   {
-    "no": "660",
+    "no": "658",
     "id": "q0235",
     "year": "2019",
     "session": "1회",
@@ -12891,7 +12849,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0235"
   },
   {
-    "no": "661",
+    "no": "659",
     "id": "q0236",
     "year": "2024",
     "session": "1회",
@@ -12911,7 +12869,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0236"
   },
   {
-    "no": "662",
+    "no": "660",
     "id": "q0237",
     "year": "2021",
     "session": "4회",
@@ -12931,7 +12889,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0237"
   },
   {
-    "no": "663",
+    "no": "661",
     "id": "q0238",
     "year": "2024",
     "session": "1회",
@@ -12951,7 +12909,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0238"
   },
   {
-    "no": "664",
+    "no": "662",
     "id": "q0240",
     "year": "2016",
     "session": "4회",
@@ -12971,7 +12929,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0240"
   },
   {
-    "no": "665",
+    "no": "663",
     "id": "q0241",
     "year": "2022",
     "session": "2회",
@@ -12991,7 +12949,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0241"
   },
   {
-    "no": "666",
+    "no": "664",
     "id": "q0242",
     "year": "2020",
     "session": "2회",
@@ -13011,7 +12969,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0242"
   },
   {
-    "no": "667",
+    "no": "665",
     "id": "q0243",
     "year": "2020",
     "session": "3회",
@@ -13031,7 +12989,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0243"
   },
   {
-    "no": "668",
+    "no": "666",
     "id": "q0244",
     "year": "2022",
     "session": "4회",
@@ -13051,7 +13009,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0244"
   },
   {
-    "no": "669",
+    "no": "667",
     "id": "q0245",
     "year": "2021",
     "session": "3회",
@@ -13071,7 +13029,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0245"
   },
   {
-    "no": "670",
+    "no": "668",
     "id": "q0246",
     "year": "2017",
     "session": "3회",
@@ -13091,7 +13049,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0246"
   },
   {
-    "no": "671",
+    "no": "669",
     "id": "q0247",
     "year": "2016",
     "session": "4회",
@@ -13111,7 +13069,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0247"
   },
   {
-    "no": "672",
+    "no": "670",
     "id": "q0248",
     "year": "2024",
     "session": "2회",
@@ -13131,7 +13089,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0248"
   },
   {
-    "no": "673",
+    "no": "671",
     "id": "q0249",
     "year": "2019",
     "session": "2회",
@@ -13151,7 +13109,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0249"
   },
   {
-    "no": "674",
+    "no": "672",
     "id": "q0250",
     "year": "2017",
     "session": "3회",
@@ -13171,7 +13129,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0250"
   },
   {
-    "no": "675",
+    "no": "673",
     "id": "q0251",
     "year": "2021",
     "session": "3회",
@@ -13191,7 +13149,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0251"
   },
   {
-    "no": "676",
+    "no": "674",
     "id": "q0252",
     "year": "2019",
     "session": "1회",
@@ -13212,7 +13170,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0252"
   },
   {
-    "no": "677",
+    "no": "675",
     "id": "q0253",
     "year": "2022",
     "session": "3회",
@@ -13232,7 +13190,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0253"
   },
   {
-    "no": "678",
+    "no": "676",
     "id": "q0254",
     "year": "2016",
     "session": "1회",
@@ -13252,7 +13210,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0254"
   },
   {
-    "no": "679",
+    "no": "677",
     "id": "q0255",
     "year": "2021",
     "session": "3회",
@@ -13272,7 +13230,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0255"
   },
   {
-    "no": "680",
+    "no": "678",
     "id": "q0256",
     "year": "2020",
     "session": "3회",
@@ -13292,7 +13250,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0256"
   },
   {
-    "no": "681",
+    "no": "679",
     "id": "q0257",
     "year": "2022",
     "session": "3회",
@@ -13312,7 +13270,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0257"
   },
   {
-    "no": "682",
+    "no": "680",
     "id": "q0258",
     "year": "2016",
     "session": "1회",
@@ -13332,7 +13290,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0258"
   },
   {
-    "no": "683",
+    "no": "681",
     "id": "q0259",
     "year": "2022",
     "session": "3회",
@@ -13352,7 +13310,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0259"
   },
   {
-    "no": "684",
+    "no": "682",
     "id": "q0260",
     "year": "2016",
     "session": "2회",
@@ -13372,7 +13330,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0260"
   },
   {
-    "no": "685",
+    "no": "683",
     "id": "q0261",
     "year": "2017",
     "session": "3회",
@@ -13392,7 +13350,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0261"
   },
   {
-    "no": "686",
+    "no": "684",
     "id": "q0262",
     "year": "2022",
     "session": "3회",
@@ -13412,7 +13370,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0262"
   },
   {
-    "no": "687",
+    "no": "685",
     "id": "q0263",
     "year": "2020",
     "session": "1회",
@@ -13432,7 +13390,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0263"
   },
   {
-    "no": "688",
+    "no": "686",
     "id": "q0264",
     "year": "2014",
     "session": "5회",
@@ -13452,7 +13410,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0264"
   },
   {
-    "no": "689",
+    "no": "687",
     "id": "q0265",
     "year": "2017",
     "session": "3회",
@@ -13472,7 +13430,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0265"
   },
   {
-    "no": "690",
+    "no": "688",
     "id": "q0266",
     "year": "2022",
     "session": "3회",
@@ -13492,7 +13450,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0266"
   },
   {
-    "no": "691",
+    "no": "689",
     "id": "q0267",
     "year": "2022",
     "session": "4회",
@@ -13512,7 +13470,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0267"
   },
   {
-    "no": "692",
+    "no": "690",
     "id": "q0268",
     "year": "2016",
     "session": "1회",
@@ -13532,7 +13490,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0268"
   },
   {
-    "no": "693",
+    "no": "691",
     "id": "q0269",
     "year": "2022",
     "session": "4회",
@@ -13552,7 +13510,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0269"
   },
   {
-    "no": "694",
+    "no": "692",
     "id": "q0270",
     "year": "2018",
     "session": "3회",
@@ -13572,7 +13530,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0270"
   },
   {
-    "no": "695",
+    "no": "693",
     "id": "q0271",
     "year": "2016",
     "session": "4회",
@@ -13592,7 +13550,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0271"
   },
   {
-    "no": "696",
+    "no": "694",
     "id": "q0272",
     "year": "2015",
     "session": "4회",
@@ -13612,7 +13570,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0272"
   },
   {
-    "no": "697",
+    "no": "695",
     "id": "q0273",
     "year": "2019",
     "session": "2회",
@@ -13632,7 +13590,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0273"
   },
   {
-    "no": "698",
+    "no": "696",
     "id": "q0274",
     "year": "2015",
     "session": "5회",
@@ -13652,7 +13610,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0274"
   },
   {
-    "no": "699",
+    "no": "697",
     "id": "q0275",
     "year": "2022",
     "session": "4회",
@@ -13672,7 +13630,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0275"
   },
   {
-    "no": "700",
+    "no": "698",
     "id": "q0276",
     "year": "2022",
     "session": "4회",
@@ -13692,7 +13650,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0276"
   },
   {
-    "no": "701",
+    "no": "699",
     "id": "q0277",
     "year": "2020",
     "session": "3회",
@@ -13712,7 +13670,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0277"
   },
   {
-    "no": "702",
+    "no": "700",
     "id": "q0278",
     "year": "2022",
     "session": "3회",
@@ -13732,7 +13690,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0278"
   },
   {
-    "no": "703",
+    "no": "701",
     "id": "q0279",
     "year": "2015",
     "session": "5회",
@@ -13752,7 +13710,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0279"
   },
   {
-    "no": "704",
+    "no": "702",
     "id": "q0280",
     "year": "2019",
     "session": "2회",
@@ -13772,7 +13730,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0280"
   },
   {
-    "no": "705",
+    "no": "703",
     "id": "q0281",
     "year": "2019",
     "session": "2회",
@@ -13792,7 +13750,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0281"
   },
   {
-    "no": "706",
+    "no": "704",
     "id": "q0282",
     "year": "2018",
     "session": "3회",
@@ -13812,7 +13770,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0282"
   },
   {
-    "no": "707",
+    "no": "705",
     "id": "q0283",
     "year": "2014",
     "session": "5회",
@@ -13832,7 +13790,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0283"
   },
   {
-    "no": "708",
+    "no": "706",
     "id": "q0284",
     "year": "2024",
     "session": "2회",
@@ -13852,7 +13810,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0284"
   },
   {
-    "no": "709",
+    "no": "707",
     "id": "q0285",
     "year": "2024",
     "session": "2회",
@@ -13872,7 +13830,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0285"
   },
   {
-    "no": "710",
+    "no": "708",
     "id": "q0286",
     "year": "2021",
     "session": "3회",
@@ -13893,7 +13851,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0286"
   },
   {
-    "no": "711",
+    "no": "709",
     "id": "q0287",
     "year": "2018",
     "session": "1회",
@@ -13913,7 +13871,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0287"
   },
   {
-    "no": "712",
+    "no": "710",
     "id": "q0288",
     "year": "2015",
     "session": "1회",
@@ -13933,7 +13891,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0288"
   },
   {
-    "no": "713",
+    "no": "711",
     "id": "q0289",
     "year": "2016",
     "session": "4회",
@@ -13953,7 +13911,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0289"
   },
   {
-    "no": "714",
+    "no": "712",
     "id": "q0290",
     "year": "2016",
     "session": "1회",
@@ -13973,7 +13931,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0290"
   },
   {
-    "no": "715",
+    "no": "713",
     "id": "q0291",
     "year": "2014",
     "session": "1회",
@@ -13993,7 +13951,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0291"
   },
   {
-    "no": "716",
+    "no": "714",
     "id": "q0292",
     "year": "2020",
     "session": "2회",
@@ -14013,7 +13971,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0292"
   },
   {
-    "no": "717",
+    "no": "715",
     "id": "q0293",
     "year": "2024",
     "session": "1회",
@@ -14033,7 +13991,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0293"
   },
   {
-    "no": "718",
+    "no": "716",
     "id": "q0294",
     "year": "2022",
     "session": "2회",
@@ -14053,7 +14011,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0294"
   },
   {
-    "no": "719",
+    "no": "717",
     "id": "q0295",
     "year": "2022",
     "session": "3회",
@@ -14073,7 +14031,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0295"
   },
   {
-    "no": "720",
+    "no": "718",
     "id": "q0296",
     "year": "2014",
     "session": "5회",
@@ -14093,7 +14051,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0296"
   },
   {
-    "no": "721",
+    "no": "719",
     "id": "q0297",
     "year": "2022",
     "session": "4회",
@@ -14114,7 +14072,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0297"
   },
   {
-    "no": "722",
+    "no": "720",
     "id": "q0298",
     "year": "2014",
     "session": "1회",
@@ -14134,7 +14092,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0298"
   },
   {
-    "no": "723",
+    "no": "721",
     "id": "q0299",
     "year": "2021",
     "session": "4회",
@@ -14154,7 +14112,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0299"
   },
   {
-    "no": "724",
+    "no": "722",
     "id": "q0300",
     "year": "2021",
     "session": "4회",
@@ -14174,7 +14132,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0300"
   },
   {
-    "no": "725",
+    "no": "723",
     "id": "q0301",
     "year": "2022",
     "session": "2회",
@@ -14195,7 +14153,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0301"
   },
   {
-    "no": "726",
+    "no": "724",
     "id": "q0302",
     "year": "2021",
     "session": "3회",
@@ -14216,7 +14174,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0302"
   },
   {
-    "no": "727",
+    "no": "725",
     "id": "q0303",
     "year": "2024",
     "session": "2회",
@@ -14236,7 +14194,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0303"
   },
   {
-    "no": "728",
+    "no": "726",
     "id": "q0304",
     "year": "2024",
     "session": "1회",
@@ -14256,7 +14214,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0304"
   },
   {
-    "no": "729",
+    "no": "727",
     "id": "q0305",
     "year": "2024",
     "session": "2회",
@@ -14277,7 +14235,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0305"
   },
   {
-    "no": "730",
+    "no": "728",
     "id": "q0306",
     "year": "2021",
     "session": "4회",
@@ -14297,7 +14255,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0306"
   },
   {
-    "no": "731",
+    "no": "729",
     "id": "q0307",
     "year": "2024",
     "session": "2회",
@@ -14317,7 +14275,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0307"
   },
   {
-    "no": "732",
+    "no": "730",
     "id": "q0308",
     "year": "2024",
     "session": "2회",
@@ -14337,7 +14295,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0308"
   },
   {
-    "no": "733",
+    "no": "731",
     "id": "q0309",
     "year": "2024",
     "session": "2회",
@@ -14357,7 +14315,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0309"
   },
   {
-    "no": "734",
+    "no": "732",
     "id": "q0310",
     "year": "2024",
     "session": "1회",
@@ -14377,7 +14335,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0310"
   },
   {
-    "no": "735",
+    "no": "733",
     "id": "q0311",
     "year": "2020",
     "session": "1회",
@@ -14397,7 +14355,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0311"
   },
   {
-    "no": "736",
+    "no": "734",
     "id": "q0312",
     "year": "2021",
     "session": "4회",
@@ -14417,7 +14375,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0312"
   },
   {
-    "no": "737",
+    "no": "735",
     "id": "q0313",
     "year": "2024",
     "session": "3회",
@@ -14437,7 +14395,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0313"
   },
   {
-    "no": "738",
+    "no": "736",
     "id": "q0314",
     "year": "2015",
     "session": "5회",
@@ -14457,7 +14415,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0314"
   },
   {
-    "no": "739",
+    "no": "737",
     "id": "q0315",
     "year": "2022",
     "session": "2회",
@@ -14477,7 +14435,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0315"
   },
   {
-    "no": "740",
+    "no": "738",
     "id": "q0316",
     "year": "2014",
     "session": "4회",
@@ -14497,7 +14455,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0316"
   },
   {
-    "no": "741",
+    "no": "739",
     "id": "q0317",
     "year": "2016",
     "session": "4회",
@@ -14517,7 +14475,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0317"
   },
   {
-    "no": "742",
+    "no": "740",
     "id": "q0318",
     "year": "2015",
     "session": "1회",
@@ -14537,7 +14495,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0318"
   },
   {
-    "no": "743",
+    "no": "741",
     "id": "q0319",
     "year": "2015",
     "session": "5회",
@@ -14557,7 +14515,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0319"
   },
   {
-    "no": "744",
+    "no": "742",
     "id": "q0320",
     "year": "2014",
     "session": "4회",
@@ -14577,7 +14535,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0320"
   },
   {
-    "no": "745",
+    "no": "743",
     "id": "q0321",
     "year": "2020",
     "session": "1회",
@@ -14597,7 +14555,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0321"
   },
   {
-    "no": "746",
+    "no": "744",
     "id": "q0322",
     "year": "2018",
     "session": "1회",
@@ -14617,7 +14575,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0322"
   },
   {
-    "no": "747",
+    "no": "745",
     "id": "q0323",
     "year": "2015",
     "session": "4회",
@@ -14637,7 +14595,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0323"
   },
   {
-    "no": "748",
+    "no": "746",
     "id": "q0324",
     "year": "2019",
     "session": "2회",
@@ -14657,7 +14615,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0324"
   },
   {
-    "no": "749",
+    "no": "747",
     "id": "q0325",
     "year": "2020",
     "session": "3회",
@@ -14677,7 +14635,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0325"
   },
   {
-    "no": "750",
+    "no": "748",
     "id": "q0326",
     "year": "2020",
     "session": "3회",
@@ -14697,7 +14655,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0326"
   },
   {
-    "no": "751",
+    "no": "749",
     "id": "q0327",
     "year": "2019",
     "session": "2회",
@@ -14717,7 +14675,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0327"
   },
   {
-    "no": "752",
+    "no": "750",
     "id": "q0328",
     "year": "2015",
     "session": "5회",
@@ -14737,7 +14695,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0328"
   },
   {
-    "no": "753",
+    "no": "751",
     "id": "q0329",
     "year": "2024",
     "session": "1회",
@@ -14757,7 +14715,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0329"
   },
   {
-    "no": "754",
+    "no": "752",
     "id": "q0330",
     "year": "2021",
     "session": "4회",
@@ -14777,7 +14735,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0330"
   },
   {
-    "no": "755",
+    "no": "753",
     "id": "q0331",
     "year": "2020",
     "session": "1회",
@@ -14797,7 +14755,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0331"
   },
   {
-    "no": "756",
+    "no": "754",
     "id": "q0332",
     "year": "2015",
     "session": "1회",
@@ -14817,7 +14775,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0332"
   },
   {
-    "no": "757",
+    "no": "755",
     "id": "q0333",
     "year": "2016",
     "session": "4회",
@@ -14837,7 +14795,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0333"
   },
   {
-    "no": "758",
+    "no": "756",
     "id": "q0334",
     "year": "2018",
     "session": "3회",
@@ -14857,7 +14815,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0334"
   },
   {
-    "no": "759",
+    "no": "757",
     "id": "q0335",
     "year": "2016",
     "session": "1회",
@@ -14877,7 +14835,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0335"
   },
   {
-    "no": "760",
+    "no": "758",
     "id": "q0336",
     "year": "2018",
     "session": "3회",
@@ -14897,7 +14855,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0336"
   },
   {
-    "no": "761",
+    "no": "759",
     "id": "q0337",
     "year": "2025",
     "session": "1회",
@@ -14917,7 +14875,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0337"
   },
   {
-    "no": "762",
+    "no": "760",
     "id": "q0338",
     "year": "2021",
     "session": "4회",
@@ -14937,7 +14895,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0338"
   },
   {
-    "no": "763",
+    "no": "761",
     "id": "q0339",
     "year": "2024",
     "session": "2회",
@@ -14957,7 +14915,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0339"
   },
   {
-    "no": "764",
+    "no": "762",
     "id": "q0340",
     "year": "2022",
     "session": "3회",
@@ -14977,7 +14935,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0340"
   },
   {
-    "no": "765",
+    "no": "763",
     "id": "q0341",
     "year": "2014",
     "session": "4회",
@@ -14997,7 +14955,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0341"
   },
   {
-    "no": "766",
+    "no": "764",
     "id": "q0342",
     "year": "2015",
     "session": "2회",
@@ -15017,7 +14975,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0342"
   },
   {
-    "no": "767",
+    "no": "765",
     "id": "q0343",
     "year": "2015",
     "session": "1회",
@@ -15037,7 +14995,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0343"
   },
   {
-    "no": "768",
+    "no": "766",
     "id": "q0344",
     "year": "2019",
     "session": "1회",
@@ -15057,7 +15015,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0344"
   },
   {
-    "no": "769",
+    "no": "767",
     "id": "q0345",
     "year": "2020",
     "session": "2회",
@@ -15077,7 +15035,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0345"
   },
   {
-    "no": "770",
+    "no": "768",
     "id": "q0346",
     "year": "2024",
     "session": "2회",
@@ -15097,7 +15055,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0346"
   },
   {
-    "no": "771",
+    "no": "769",
     "id": "q0347",
     "year": "2021",
     "session": "4회",
@@ -15117,7 +15075,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0347"
   },
   {
-    "no": "772",
+    "no": "770",
     "id": "q0348",
     "year": "2015",
     "session": "5회",
@@ -15137,7 +15095,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0348"
   },
   {
-    "no": "773",
+    "no": "771",
     "id": "q0349",
     "year": "2022",
     "session": "4회",
@@ -15157,7 +15115,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0349"
   },
   {
-    "no": "774",
+    "no": "772",
     "id": "q0350",
     "year": "2024",
     "session": "2회",
@@ -15177,7 +15135,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0350"
   },
   {
-    "no": "775",
+    "no": "773",
     "id": "q0351",
     "year": "2020",
     "session": "3회",
@@ -15197,7 +15155,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0351"
   },
   {
-    "no": "776",
+    "no": "774",
     "id": "q0352",
     "year": "2015",
     "session": "2회",
@@ -15217,7 +15175,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0352"
   },
   {
-    "no": "777",
+    "no": "775",
     "id": "q0353",
     "year": "2020",
     "session": "2회",
@@ -15237,7 +15195,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0353"
   },
   {
-    "no": "778",
+    "no": "776",
     "id": "q0354",
     "year": "2014",
     "session": "1회",
@@ -15257,7 +15215,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0354"
   },
   {
-    "no": "779",
+    "no": "777",
     "id": "q0355",
     "year": "2016",
     "session": "1회",
@@ -15277,7 +15235,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0355"
   },
   {
-    "no": "780",
+    "no": "778",
     "id": "q0356",
     "year": "2021",
     "session": "3회",
@@ -15297,7 +15255,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0356"
   },
   {
-    "no": "781",
+    "no": "779",
     "id": "q0357",
     "year": "2024",
     "session": "1회",
@@ -15317,7 +15275,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0357"
   },
   {
-    "no": "782",
+    "no": "780",
     "id": "q0358",
     "year": "2024",
     "session": "1회",
@@ -15337,7 +15295,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0358"
   },
   {
-    "no": "783",
+    "no": "781",
     "id": "q0359",
     "year": "2019",
     "session": "1회",
@@ -15357,7 +15315,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0359"
   },
   {
-    "no": "784",
+    "no": "782",
     "id": "q0360",
     "year": "2024",
     "session": "2회",
@@ -15377,7 +15335,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0360"
   },
   {
-    "no": "785",
+    "no": "783",
     "id": "q0361",
     "year": "2022",
     "session": "4회",
@@ -15397,7 +15355,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0361"
   },
   {
-    "no": "786",
+    "no": "784",
     "id": "q0362",
     "year": "2014",
     "session": "4회",
@@ -15417,7 +15375,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0362"
   },
   {
-    "no": "787",
+    "no": "785",
     "id": "q0363",
     "year": "2024",
     "session": "2회",
@@ -15437,7 +15395,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0363"
   },
   {
-    "no": "788",
+    "no": "786",
     "id": "q0364",
     "year": "2015",
     "session": "2회",
@@ -15457,7 +15415,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0364"
   },
   {
-    "no": "789",
+    "no": "787",
     "id": "q0365",
     "year": "2020",
     "session": "1회",
@@ -15477,7 +15435,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0365"
   },
   {
-    "no": "790",
+    "no": "788",
     "id": "q0366",
     "year": "2014",
     "session": "5회",
@@ -15497,7 +15455,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0366"
   },
   {
-    "no": "791",
+    "no": "789",
     "id": "q0367",
     "year": "2017",
     "session": "3회",
@@ -15517,7 +15475,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0367"
   },
   {
-    "no": "792",
+    "no": "790",
     "id": "q0368",
     "year": "2020",
     "session": "2회",
@@ -15537,7 +15495,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0368"
   },
   {
-    "no": "793",
+    "no": "791",
     "id": "q0369",
     "year": "2019",
     "session": "2회",
@@ -15557,7 +15515,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0369"
   },
   {
-    "no": "794",
+    "no": "792",
     "id": "q0370",
     "year": "2021",
     "session": "4회",
@@ -15577,7 +15535,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0370"
   },
   {
-    "no": "795",
+    "no": "793",
     "id": "q0371",
     "year": "2015",
     "session": "2회",
@@ -15597,7 +15555,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0371"
   },
   {
-    "no": "796",
+    "no": "794",
     "id": "q0372",
     "year": "2019",
     "session": "4회",
@@ -15617,7 +15575,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0372"
   },
   {
-    "no": "797",
+    "no": "795",
     "id": "q0373",
     "year": "2021",
     "session": "4회",
@@ -15637,7 +15595,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0373"
   },
   {
-    "no": "798",
+    "no": "796",
     "id": "q0374",
     "year": "2020",
     "session": "2회",
@@ -15657,7 +15615,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0374"
   },
   {
-    "no": "799",
+    "no": "797",
     "id": "q0375",
     "year": "2021",
     "session": "3회",
@@ -15677,7 +15635,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0375"
   },
   {
-    "no": "800",
+    "no": "798",
     "id": "q0376",
     "year": "2016",
     "session": "1회",
@@ -15697,7 +15655,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0376"
   },
   {
-    "no": "801",
+    "no": "799",
     "id": "q0377",
     "year": "2017",
     "session": "3회",
@@ -15717,7 +15675,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0377"
   },
   {
-    "no": "802",
+    "no": "800",
     "id": "q0378",
     "year": "2019",
     "session": "4회",
@@ -15737,7 +15695,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0378"
   },
   {
-    "no": "803",
+    "no": "801",
     "id": "q0379",
     "year": "2015",
     "session": "4회",
@@ -15757,7 +15715,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0379"
   },
   {
-    "no": "804",
+    "no": "802",
     "id": "q0380",
     "year": "2021",
     "session": "3회",
@@ -15777,7 +15735,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0380"
   },
   {
-    "no": "805",
+    "no": "803",
     "id": "q0381",
     "year": "2016",
     "session": "1회",
@@ -15797,7 +15755,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0381"
   },
   {
-    "no": "806",
+    "no": "804",
     "id": "q0382",
     "year": "2014",
     "session": "1회",
@@ -15817,7 +15775,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0382"
   },
   {
-    "no": "807",
+    "no": "805",
     "id": "q0383",
     "year": "2015",
     "session": "1회",
@@ -15837,7 +15795,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0383"
   },
   {
-    "no": "808",
+    "no": "806",
     "id": "q0384",
     "year": "2018",
     "session": "1회",
@@ -15857,7 +15815,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0384"
   },
   {
-    "no": "809",
+    "no": "807",
     "id": "q0385",
     "year": "2020",
     "session": "2회",
@@ -15877,7 +15835,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0385"
   },
   {
-    "no": "810",
+    "no": "808",
     "id": "q0386",
     "year": "2020",
     "session": "3회",
@@ -15897,7 +15855,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0386"
   },
   {
-    "no": "811",
+    "no": "809",
     "id": "q0387",
     "year": "2021",
     "session": "4회",
@@ -15917,7 +15875,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0387"
   },
   {
-    "no": "812",
+    "no": "810",
     "id": "q0388",
     "year": "2022",
     "session": "2회",
@@ -15937,7 +15895,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0388"
   },
   {
-    "no": "813",
+    "no": "811",
     "id": "q0389",
     "year": "2019",
     "session": "4회",
@@ -15957,7 +15915,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0389"
   },
   {
-    "no": "814",
+    "no": "812",
     "id": "q0390",
     "year": "2022",
     "session": "4회",
@@ -15977,7 +15935,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0390"
   },
   {
-    "no": "815",
+    "no": "813",
     "id": "q0391",
     "year": "2020",
     "session": "3회",
@@ -15997,7 +15955,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0391"
   },
   {
-    "no": "816",
+    "no": "814",
     "id": "q0392",
     "year": "2019",
     "session": "2회",
@@ -16017,7 +15975,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0392"
   },
   {
-    "no": "817",
+    "no": "815",
     "id": "q0393",
     "year": "2022",
     "session": "3회",
@@ -16037,7 +15995,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0393"
   },
   {
-    "no": "818",
+    "no": "816",
     "id": "q0394",
     "year": "2020",
     "session": "3회",
@@ -16057,7 +16015,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0394"
   },
   {
-    "no": "819",
+    "no": "817",
     "id": "q0395",
     "year": "2018",
     "session": "1회",
@@ -16077,7 +16035,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0395"
   },
   {
-    "no": "820",
+    "no": "818",
     "id": "q0396",
     "year": "2024",
     "session": "1회",
@@ -16097,7 +16055,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0396"
   },
   {
-    "no": "821",
+    "no": "819",
     "id": "q0397",
     "year": "2024",
     "session": "1회",
@@ -16117,7 +16075,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0397"
   },
   {
-    "no": "822",
+    "no": "820",
     "id": "q0398",
     "year": "2016",
     "session": "2회",
@@ -16137,7 +16095,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0398"
   },
   {
-    "no": "823",
+    "no": "821",
     "id": "q0399",
     "year": "2024",
     "session": "1회",
@@ -16157,7 +16115,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0399"
   },
   {
-    "no": "824",
+    "no": "822",
     "id": "q0400",
     "year": "2024",
     "session": "1회",
@@ -16177,7 +16135,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0400"
   },
   {
-    "no": "825",
+    "no": "823",
     "id": "q0401",
     "year": "2022",
     "session": "2회",
@@ -16197,7 +16155,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0401"
   },
   {
-    "no": "826",
+    "no": "824",
     "id": "q0402",
     "year": "2020",
     "session": "2회",
@@ -16217,7 +16175,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0402"
   },
   {
-    "no": "827",
+    "no": "825",
     "id": "q0403",
     "year": "2021",
     "session": "4회",
@@ -16237,7 +16195,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0403"
   },
   {
-    "no": "828",
+    "no": "826",
     "id": "q0404",
     "year": "2022",
     "session": "3회",
@@ -16257,7 +16215,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0404"
   },
   {
-    "no": "829",
+    "no": "827",
     "id": "q0405",
     "year": "2021",
     "session": "3회",
@@ -16277,7 +16235,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0405"
   },
   {
-    "no": "830",
+    "no": "828",
     "id": "q0406",
     "year": "2021",
     "session": "4회",
@@ -16297,7 +16255,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0406"
   },
   {
-    "no": "831",
+    "no": "829",
     "id": "q0407",
     "year": "2019",
     "session": "2회",
@@ -16317,7 +16275,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0407"
   },
   {
-    "no": "832",
+    "no": "830",
     "id": "q0408",
     "year": "2021",
     "session": "3회",
@@ -16337,7 +16295,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0408"
   },
   {
-    "no": "833",
+    "no": "831",
     "id": "q0409",
     "year": "2016",
     "session": "2회",
@@ -16357,7 +16315,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0409"
   },
   {
-    "no": "834",
+    "no": "832",
     "id": "q0410",
     "year": "2024",
     "session": "1회",
@@ -16377,7 +16335,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0410"
   },
   {
-    "no": "835",
+    "no": "833",
     "id": "q0411",
     "year": "2022",
     "session": "4회",
@@ -16397,7 +16355,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0411"
   },
   {
-    "no": "836",
+    "no": "834",
     "id": "q0412",
     "year": "2018",
     "session": "3회",
@@ -16417,7 +16375,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0412"
   },
   {
-    "no": "837",
+    "no": "835",
     "id": "q0413",
     "year": "2015",
     "session": "1회",
@@ -16437,7 +16395,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0413"
   },
   {
-    "no": "838",
+    "no": "836",
     "id": "q0414",
     "year": "2024",
     "session": "2회",
@@ -16457,7 +16415,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0414"
   },
   {
-    "no": "839",
+    "no": "837",
     "id": "q0415",
     "year": "2021",
     "session": "3회",
@@ -16478,7 +16436,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0415"
   },
   {
-    "no": "840",
+    "no": "838",
     "id": "q0416",
     "year": "2016",
     "session": "1회",
@@ -16498,7 +16456,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0416"
   },
   {
-    "no": "841",
+    "no": "839",
     "id": "q0417",
     "year": "2015",
     "session": "1회",
@@ -16518,7 +16476,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0417"
   },
   {
-    "no": "842",
+    "no": "840",
     "id": "q0418",
     "year": "2022",
     "session": "4회",
@@ -16538,7 +16496,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0418"
   },
   {
-    "no": "843",
+    "no": "841",
     "id": "q0419",
     "year": "2016",
     "session": "1회",
@@ -16558,7 +16516,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0419"
   },
   {
-    "no": "844",
+    "no": "842",
     "id": "q0420",
     "year": "2017",
     "session": "4회",
@@ -16578,7 +16536,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0420"
   },
   {
-    "no": "845",
+    "no": "843",
     "id": "q0421",
     "year": "2015",
     "session": "5회",
@@ -16598,7 +16556,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0421"
   },
   {
-    "no": "846",
+    "no": "844",
     "id": "q0422",
     "year": "2015",
     "session": "1회",
@@ -16618,7 +16576,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0422"
   },
   {
-    "no": "847",
+    "no": "845",
     "id": "q0423",
     "year": "2022",
     "session": "2회",
@@ -16638,7 +16596,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0423"
   },
   {
-    "no": "848",
+    "no": "846",
     "id": "q0424",
     "year": "2022",
     "session": "4회",
@@ -16658,7 +16616,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0424"
   },
   {
-    "no": "849",
+    "no": "847",
     "id": "q0425",
     "year": "2020",
     "session": "1회",
@@ -16678,7 +16636,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0425"
   },
   {
-    "no": "850",
+    "no": "848",
     "id": "q0426",
     "year": "2022",
     "session": "2회",
@@ -16698,7 +16656,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0426"
   },
   {
-    "no": "851",
+    "no": "849",
     "id": "q0427",
     "year": "2014",
     "session": "1회",
@@ -16718,7 +16676,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0427"
   },
   {
-    "no": "852",
+    "no": "850",
     "id": "q0428",
     "year": "2015",
     "session": "1회",
@@ -16738,7 +16696,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0428"
   },
   {
-    "no": "853",
+    "no": "851",
     "id": "q0429",
     "year": "2021",
     "session": "4회",
@@ -16758,7 +16716,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0429"
   },
   {
-    "no": "854",
+    "no": "852",
     "id": "q0430",
     "year": "2022",
     "session": "4회",
@@ -16778,7 +16736,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0430"
   },
   {
-    "no": "855",
+    "no": "853",
     "id": "q0431",
     "year": "2016",
     "session": "1회",
@@ -16798,7 +16756,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0431"
   },
   {
-    "no": "856",
+    "no": "854",
     "id": "q0432",
     "year": "2021",
     "session": "4회",
@@ -16818,7 +16776,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0432"
   },
   {
-    "no": "857",
+    "no": "855",
     "id": "q0433",
     "year": "2015",
     "session": "2회",
@@ -16838,7 +16796,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0433"
   },
   {
-    "no": "858",
+    "no": "856",
     "id": "q0434",
     "year": "2020",
     "session": "3회",
@@ -16858,7 +16816,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0434"
   },
   {
-    "no": "859",
+    "no": "857",
     "id": "q0435",
     "year": "2019",
     "session": "4회",
@@ -16878,7 +16836,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0435"
   },
   {
-    "no": "860",
+    "no": "858",
     "id": "q0436",
     "year": "2015",
     "session": "5회",
@@ -16898,7 +16856,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0436"
   },
   {
-    "no": "861",
+    "no": "859",
     "id": "q0437",
     "year": "2019",
     "session": "2회",
@@ -16918,7 +16876,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0437"
   },
   {
-    "no": "862",
+    "no": "860",
     "id": "q0438",
     "year": "2015",
     "session": "2회",
@@ -16938,7 +16896,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0438"
   },
   {
-    "no": "863",
+    "no": "861",
     "id": "q0439",
     "year": "2015",
     "session": "5회",
@@ -16958,7 +16916,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0439"
   },
   {
-    "no": "864",
+    "no": "862",
     "id": "q0440",
     "year": "2024",
     "session": "2회",
@@ -16979,7 +16937,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0440"
   },
   {
-    "no": "865",
+    "no": "863",
     "id": "q0441",
     "year": "2016",
     "session": "4회",
@@ -16999,7 +16957,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0441"
   },
   {
-    "no": "866",
+    "no": "864",
     "id": "q0442",
     "year": "2014",
     "session": "1회",
@@ -17019,7 +16977,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0442"
   },
   {
-    "no": "867",
+    "no": "865",
     "id": "q0443",
     "year": "2018",
     "session": "3회",
@@ -17039,7 +16997,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0443"
   },
   {
-    "no": "868",
+    "no": "866",
     "id": "q0444",
     "year": "2018",
     "session": "1회",
@@ -17059,7 +17017,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0444"
   },
   {
-    "no": "869",
+    "no": "867",
     "id": "q0445",
     "year": "2024",
     "session": "2회",
@@ -17079,7 +17037,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0445"
   },
   {
-    "no": "870",
+    "no": "868",
     "id": "q0446",
     "year": "2021",
     "session": "3회",
@@ -17099,7 +17057,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0446"
   },
   {
-    "no": "871",
+    "no": "869",
     "id": "q0447",
     "year": "2024",
     "session": "1회",
@@ -17119,7 +17077,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0447"
   },
   {
-    "no": "872",
+    "no": "870",
     "id": "q0448",
     "year": "2022",
     "session": "4회",
@@ -17139,7 +17097,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0448"
   },
   {
-    "no": "873",
+    "no": "871",
     "id": "q0449",
     "year": "2021",
     "session": "4회",
@@ -17159,7 +17117,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0449"
   },
   {
-    "no": "874",
+    "no": "872",
     "id": "q0450",
     "year": "2024",
     "session": "2회",
@@ -17179,7 +17137,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0450"
   },
   {
-    "no": "875",
+    "no": "873",
     "id": "q0451",
     "year": "2021",
     "session": "4회",
@@ -17199,7 +17157,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0451"
   },
   {
-    "no": "876",
+    "no": "874",
     "id": "q0453",
     "year": "2022",
     "session": "4회",
@@ -17219,7 +17177,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0453"
   },
   {
-    "no": "877",
+    "no": "875",
     "id": "q0454",
     "year": "2014",
     "session": "5회",
@@ -17239,7 +17197,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0454"
   },
   {
-    "no": "878",
+    "no": "876",
     "id": "q0455",
     "year": "2016",
     "session": "1회",
@@ -17259,7 +17217,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0455"
   },
   {
-    "no": "879",
+    "no": "877",
     "id": "q0456",
     "year": "2022",
     "session": "4회",
@@ -17279,7 +17237,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0456"
   },
   {
-    "no": "880",
+    "no": "878",
     "id": "q0457",
     "year": "2024",
     "session": "2회",
@@ -17299,7 +17257,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0457"
   },
   {
-    "no": "881",
+    "no": "879",
     "id": "q0458",
     "year": "2015",
     "session": "1회",
@@ -17319,7 +17277,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0458"
   },
   {
-    "no": "882",
+    "no": "880",
     "id": "q0459",
     "year": "2025",
     "session": "3회",
@@ -17339,7 +17297,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0459"
   },
   {
-    "no": "883",
+    "no": "881",
     "id": "q0460",
     "year": "2021",
     "session": "4회",
@@ -17359,7 +17317,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0460"
   },
   {
-    "no": "884",
+    "no": "882",
     "id": "q0461",
     "year": "2020",
     "session": "2회",
@@ -17379,7 +17337,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0461"
   },
   {
-    "no": "885",
+    "no": "883",
     "id": "q0462",
     "year": "2022",
     "session": "4회",
@@ -17399,7 +17357,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0462"
   },
   {
-    "no": "886",
+    "no": "884",
     "id": "q0463",
     "year": "2021",
     "session": "4회",
@@ -17419,7 +17377,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0463"
   },
   {
-    "no": "887",
+    "no": "885",
     "id": "q0464",
     "year": "2014",
     "session": "5회",
@@ -17439,7 +17397,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0464"
   },
   {
-    "no": "888",
+    "no": "886",
     "id": "q0465",
     "year": "2016",
     "session": "2회",
@@ -17459,7 +17417,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0465"
   },
   {
-    "no": "889",
+    "no": "887",
     "id": "q0466",
     "year": "2024",
     "session": "1회",
@@ -17479,7 +17437,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0466"
   },
   {
-    "no": "890",
+    "no": "888",
     "id": "q0467",
     "year": "2015",
     "session": "1회",
@@ -17499,7 +17457,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0467"
   },
   {
-    "no": "891",
+    "no": "889",
     "id": "q0468",
     "year": "2020",
     "session": "3회",
@@ -17519,7 +17477,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0468"
   },
   {
-    "no": "892",
+    "no": "890",
     "id": "q0469",
     "year": "2016",
     "session": "1회",
@@ -17539,7 +17497,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0469"
   },
   {
-    "no": "893",
+    "no": "891",
     "id": "q0470",
     "year": "2019",
     "session": "2회",
@@ -17559,7 +17517,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0470"
   },
   {
-    "no": "894",
+    "no": "892",
     "id": "q0471",
     "year": "2015",
     "session": "4회",
@@ -17579,7 +17537,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0471"
   },
   {
-    "no": "895",
+    "no": "893",
     "id": "q0472",
     "year": "2020",
     "session": "2회",
@@ -17599,7 +17557,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0472"
   },
   {
-    "no": "896",
+    "no": "894",
     "id": "q0473",
     "year": "2022",
     "session": "2회",
@@ -17620,7 +17578,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0473"
   },
   {
-    "no": "897",
+    "no": "895",
     "id": "q0474",
     "year": "2024",
     "session": "1회",
@@ -17640,7 +17598,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0474"
   },
   {
-    "no": "898",
+    "no": "896",
     "id": "q0475",
     "year": "2019",
     "session": "2회",
@@ -17660,7 +17618,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0475"
   },
   {
-    "no": "899",
+    "no": "897",
     "id": "q0476",
     "year": "2015",
     "session": "1회",
@@ -17680,7 +17638,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0476"
   },
   {
-    "no": "900",
+    "no": "898",
     "id": "q0477",
     "year": "2015",
     "session": "5회",
@@ -17700,7 +17658,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0477"
   },
   {
-    "no": "901",
+    "no": "899",
     "id": "q0478",
     "year": "2018",
     "session": "3회",
@@ -17720,7 +17678,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0478"
   },
   {
-    "no": "902",
+    "no": "900",
     "id": "q0479",
     "year": "2019",
     "session": "1회",
@@ -17740,7 +17698,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0479"
   },
   {
-    "no": "903",
+    "no": "901",
     "id": "q0480",
     "year": "2017",
     "session": "3회",
@@ -17760,7 +17718,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0480"
   },
   {
-    "no": "904",
+    "no": "902",
     "id": "q0481",
     "year": "2014",
     "session": "5회",
@@ -17780,7 +17738,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0481"
   },
   {
-    "no": "905",
+    "no": "903",
     "id": "q0482",
     "year": "2020",
     "session": "3회",
@@ -17800,7 +17758,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0482"
   },
   {
-    "no": "906",
+    "no": "904",
     "id": "q0483",
     "year": "2018",
     "session": "3회",
@@ -17820,7 +17778,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0483"
   },
   {
-    "no": "907",
+    "no": "905",
     "id": "q0486",
     "year": "2021",
     "session": "4회",
@@ -17840,7 +17798,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0486"
   },
   {
-    "no": "908",
+    "no": "906",
     "id": "q0487",
     "year": "2015",
     "session": "1회",
@@ -17860,7 +17818,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0487"
   },
   {
-    "no": "909",
+    "no": "907",
     "id": "q0488",
     "year": "2020",
     "session": "1회",
@@ -17880,7 +17838,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0488"
   },
   {
-    "no": "910",
+    "no": "908",
     "id": "q0489",
     "year": "2021",
     "session": "3회",
@@ -17900,7 +17858,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0489"
   },
   {
-    "no": "911",
+    "no": "909",
     "id": "q0490",
     "year": "2015",
     "session": "2회",
@@ -17920,7 +17878,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0490"
   },
   {
-    "no": "912",
+    "no": "910",
     "id": "q0491",
     "year": "2020",
     "session": "3회",
@@ -17940,7 +17898,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0491"
   },
   {
-    "no": "913",
+    "no": "911",
     "id": "q0492",
     "year": "2019",
     "session": "1회",
@@ -17960,7 +17918,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0492"
   },
   {
-    "no": "914",
+    "no": "912",
     "id": "q0493",
     "year": "2018",
     "session": "1회",
@@ -17980,7 +17938,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0493"
   },
   {
-    "no": "915",
+    "no": "913",
     "id": "q0494",
     "year": "2020",
     "session": "3회",
@@ -17993,15 +17951,15 @@ window.MASTER_QUIZ_DATA = [
       "ㄷ $\\rightarrow$ ㄹ $\\rightarrow$ ㄱ $\\rightarrow$ ㄴ"
     ],
     "correct": 3,
-    "exp": "리벳 제거 순서는 센터 펀칭 $\\rightarrow$ 드릴 작업 $\\rightarrow$ 핀 펀치로 머리 떼기 $\\rightarrow$ 몸통 제거 순입니다.[출제이력: 16-1,20-3회]",
+    "exp": "리벳 제거 순서는 센터 펀칭 $\\rightarrow$ 드릴 작업 $\\rightarrow$ 핀 펀치로 머리 떼기 $\\rightarrow$ 몸통 제거 순입니다.[출제이력: 16-1,20-3,26-1회]",
     "imgUrl": "https://raw.githubusercontent.com/win8367/aviation-images/refs/heads/main/image63.svg",
     "subcat": "수리 및 소재",
     "ch": "5",
-    "imp": "A급",
+    "imp": "s급",
     "eq": "q0494"
   },
   {
-    "no": "916",
+    "no": "914",
     "id": "q0495",
     "year": "2022",
     "session": "4회",
@@ -18021,7 +17979,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0495"
   },
   {
-    "no": "917",
+    "no": "915",
     "id": "q0496",
     "year": "2022",
     "session": "2회",
@@ -18041,7 +17999,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0496"
   },
   {
-    "no": "918",
+    "no": "916",
     "id": "q0497",
     "year": "2020",
     "session": "2회",
@@ -18061,7 +18019,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0497"
   },
   {
-    "no": "919",
+    "no": "917",
     "id": "q0498",
     "year": "2016",
     "session": "2회",
@@ -18081,7 +18039,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0498"
   },
   {
-    "no": "920",
+    "no": "918",
     "id": "q0499",
     "year": "2014",
     "session": "5회",
@@ -18101,7 +18059,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0499"
   },
   {
-    "no": "921",
+    "no": "919",
     "id": "q0500",
     "year": "2021",
     "session": "4회",
@@ -18121,7 +18079,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0500"
   },
   {
-    "no": "922",
+    "no": "920",
     "id": "q0501",
     "year": "2022",
     "session": "4회",
@@ -18141,7 +18099,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0501"
   },
   {
-    "no": "923",
+    "no": "921",
     "id": "q0502",
     "year": "2014",
     "session": "5회",
@@ -18161,7 +18119,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0502"
   },
   {
-    "no": "924",
+    "no": "922",
     "id": "q0503",
     "year": "2020",
     "session": "2회",
@@ -18181,7 +18139,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0503"
   },
   {
-    "no": "925",
+    "no": "923",
     "id": "q0504",
     "year": "2024",
     "session": "2회",
@@ -18201,7 +18159,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0504"
   },
   {
-    "no": "926",
+    "no": "924",
     "id": "q0505",
     "year": "2019",
     "session": "1회",
@@ -18221,7 +18179,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0505"
   },
   {
-    "no": "927",
+    "no": "925",
     "id": "q0506",
     "year": "2024",
     "session": "1회",
@@ -18241,7 +18199,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0506"
   },
   {
-    "no": "928",
+    "no": "926",
     "id": "q0507",
     "year": "2021",
     "session": "3회",
@@ -18261,7 +18219,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0507"
   },
   {
-    "no": "929",
+    "no": "927",
     "id": "q0508",
     "year": "2021",
     "session": "3회",
@@ -18282,7 +18240,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0508"
   },
   {
-    "no": "930",
+    "no": "928",
     "id": "q0509",
     "year": "2020",
     "session": "1회",
@@ -18302,7 +18260,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0509"
   },
   {
-    "no": "931",
+    "no": "929",
     "id": "q0510",
     "year": "2021",
     "session": "4회",
@@ -18322,7 +18280,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0510"
   },
   {
-    "no": "932",
+    "no": "930",
     "id": "q0511",
     "year": "2018",
     "session": "1회",
@@ -18342,7 +18300,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0511"
   },
   {
-    "no": "933",
+    "no": "931",
     "id": "q0512",
     "year": "2019",
     "session": "1회",
@@ -18362,7 +18320,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0512"
   },
   {
-    "no": "934",
+    "no": "932",
     "id": "q0513",
     "year": "2016",
     "session": "1회",
@@ -18382,7 +18340,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0513"
   },
   {
-    "no": "935",
+    "no": "933",
     "id": "q0514",
     "year": "2014",
     "session": "5회",
@@ -18402,7 +18360,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0514"
   },
   {
-    "no": "936",
+    "no": "934",
     "id": "q0515",
     "year": "2020",
     "session": "3회",
@@ -18422,7 +18380,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0515"
   },
   {
-    "no": "937",
+    "no": "935",
     "id": "q0516",
     "year": "2024",
     "session": "2회",
@@ -18442,7 +18400,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0516"
   },
   {
-    "no": "938",
+    "no": "936",
     "id": "q0517",
     "year": "2014",
     "session": "5회",
@@ -18462,7 +18420,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0517"
   },
   {
-    "no": "939",
+    "no": "937",
     "id": "q0518",
     "year": "2017",
     "session": "3회",
@@ -18482,7 +18440,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0518"
   },
   {
-    "no": "940",
+    "no": "938",
     "id": "q0519",
     "year": "2022",
     "session": "2회",
@@ -18502,7 +18460,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0519"
   },
   {
-    "no": "941",
+    "no": "939",
     "id": "q0520",
     "year": "2020",
     "session": "2회",
@@ -18522,7 +18480,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0520"
   },
   {
-    "no": "942",
+    "no": "940",
     "id": "q0521",
     "year": "2020",
     "session": "2회",
@@ -18542,7 +18500,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0521"
   },
   {
-    "no": "943",
+    "no": "941",
     "id": "q0522",
     "year": "2024",
     "session": "2회",
@@ -18562,7 +18520,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0522"
   },
   {
-    "no": "944",
+    "no": "942",
     "id": "q0523",
     "year": "2015",
     "session": "1회",
@@ -18582,7 +18540,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0523"
   },
   {
-    "no": "945",
+    "no": "943",
     "id": "q0524",
     "year": "2022",
     "session": "2회",
@@ -18603,7 +18561,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0524"
   },
   {
-    "no": "946",
+    "no": "944",
     "id": "q0525",
     "year": "2021",
     "session": "4회",
@@ -18623,7 +18581,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0525"
   },
   {
-    "no": "947",
+    "no": "945",
     "id": "q0526",
     "year": "2025",
     "session": "2회",
@@ -18643,7 +18601,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0526"
   },
   {
-    "no": "948",
+    "no": "946",
     "id": "q0527",
     "year": "2021",
     "session": "3회",
@@ -18663,7 +18621,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0527"
   },
   {
-    "no": "949",
+    "no": "947",
     "id": "q0529",
     "year": "2022",
     "session": "4회",
@@ -18683,7 +18641,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0529"
   },
   {
-    "no": "950",
+    "no": "948",
     "id": "q0530",
     "year": "2020",
     "session": "3회",
@@ -18703,7 +18661,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0530"
   },
   {
-    "no": "951",
+    "no": "949",
     "id": "q0531",
     "year": "2021",
     "session": "3회",
@@ -18723,7 +18681,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0531"
   },
   {
-    "no": "952",
+    "no": "950",
     "id": "q0532",
     "year": "2022",
     "session": "4회",
@@ -18743,7 +18701,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0532"
   },
   {
-    "no": "953",
+    "no": "951",
     "id": "q0533",
     "year": "2021",
     "session": "3회",
@@ -18763,7 +18721,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0533"
   },
   {
-    "no": "954",
+    "no": "952",
     "id": "q0534",
     "year": "2015",
     "session": "2회",
@@ -18783,7 +18741,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0534"
   },
   {
-    "no": "955",
+    "no": "953",
     "id": "q0535",
     "year": "2015",
     "session": "4회",
@@ -18803,7 +18761,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0535"
   },
   {
-    "no": "956",
+    "no": "954",
     "id": "q0536",
     "year": "2022",
     "session": "4회",
@@ -18823,7 +18781,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0536"
   },
   {
-    "no": "957",
+    "no": "955",
     "id": "q0537",
     "year": "2021",
     "session": "3회",
@@ -18843,7 +18801,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0537"
   },
   {
-    "no": "958",
+    "no": "956",
     "id": "q0538",
     "year": "2016",
     "session": "1회",
@@ -18863,7 +18821,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0538"
   },
   {
-    "no": "959",
+    "no": "957",
     "id": "q0539",
     "year": "2024",
     "session": "1회",
@@ -18883,7 +18841,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0539"
   },
   {
-    "no": "960",
+    "no": "958",
     "id": "q0541",
     "year": "2020",
     "session": "3회",
@@ -18904,7 +18862,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0541"
   },
   {
-    "no": "961",
+    "no": "959",
     "id": "q0542",
     "year": "2021",
     "session": "3회",
@@ -18924,7 +18882,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0542"
   },
   {
-    "no": "962",
+    "no": "960",
     "id": "q0543",
     "year": "2019",
     "session": "2회",
@@ -18944,7 +18902,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0543"
   },
   {
-    "no": "963",
+    "no": "961",
     "id": "q0544",
     "year": "2015",
     "session": "2회",
@@ -18964,7 +18922,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0544"
   },
   {
-    "no": "964",
+    "no": "962",
     "id": "q0545",
     "year": "2015",
     "session": "5회",
@@ -18984,7 +18942,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0545"
   },
   {
-    "no": "965",
+    "no": "963",
     "id": "q0546",
     "year": "2021",
     "session": "4회",
@@ -19004,7 +18962,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0546"
   },
   {
-    "no": "966",
+    "no": "964",
     "id": "q0547",
     "year": "2020",
     "session": "2회",
@@ -19024,7 +18982,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0547"
   },
   {
-    "no": "967",
+    "no": "965",
     "id": "q0548",
     "year": "2022",
     "session": "3회",
@@ -19044,7 +19002,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0548"
   },
   {
-    "no": "968",
+    "no": "966",
     "id": "q0549",
     "year": "2021",
     "session": "3회",
@@ -19064,7 +19022,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0549"
   },
   {
-    "no": "969",
+    "no": "967",
     "id": "q0550",
     "year": "2018",
     "session": "1회",
@@ -19084,7 +19042,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0550"
   },
   {
-    "no": "970",
+    "no": "968",
     "id": "q0551",
     "year": "2022",
     "session": "4회",
@@ -19104,7 +19062,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0551"
   },
   {
-    "no": "971",
+    "no": "969",
     "id": "q0552",
     "year": "2015",
     "session": "1회",
@@ -19124,7 +19082,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0552"
   },
   {
-    "no": "972",
+    "no": "970",
     "id": "q0553",
     "year": "2024",
     "session": "2회",
@@ -19144,7 +19102,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0553"
   },
   {
-    "no": "973",
+    "no": "971",
     "id": "q0554",
     "year": "2019",
     "session": "2회",
@@ -19164,7 +19122,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0554"
   },
   {
-    "no": "974",
+    "no": "972",
     "id": "q0555",
     "year": "2019",
     "session": "2회",
@@ -19184,7 +19142,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0555"
   },
   {
-    "no": "975",
+    "no": "973",
     "id": "q0556",
     "year": "2024",
     "session": "1회",
@@ -19204,7 +19162,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0556"
   },
   {
-    "no": "976",
+    "no": "974",
     "id": "q0557",
     "year": "2022",
     "session": "4회",
@@ -19224,7 +19182,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0557"
   },
   {
-    "no": "977",
+    "no": "975",
     "id": "q0558",
     "year": "2014",
     "session": "1회",
@@ -19244,7 +19202,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0558"
   },
   {
-    "no": "978",
+    "no": "976",
     "id": "q0559",
     "year": "2021",
     "session": "4회",
@@ -19264,7 +19222,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0559"
   },
   {
-    "no": "979",
+    "no": "977",
     "id": "q0560",
     "year": "2021",
     "session": "4회",
@@ -19284,7 +19242,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0560"
   },
   {
-    "no": "980",
+    "no": "978",
     "id": "q0561",
     "year": "2015",
     "session": "4회",
@@ -19304,7 +19262,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0561"
   },
   {
-    "no": "981",
+    "no": "979",
     "id": "q0562",
     "year": "2015",
     "session": "2회",
@@ -19324,7 +19282,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0562"
   },
   {
-    "no": "982",
+    "no": "980",
     "id": "q0563",
     "year": "2020",
     "session": "3회",
@@ -19344,7 +19302,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0563"
   },
   {
-    "no": "983",
+    "no": "981",
     "id": "q0564",
     "year": "2018",
     "session": "3회",
@@ -19364,7 +19322,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0564"
   },
   {
-    "no": "984",
+    "no": "982",
     "id": "q0565",
     "year": "2020",
     "session": "1회",
@@ -19384,7 +19342,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0565"
   },
   {
-    "no": "985",
+    "no": "983",
     "id": "q0566",
     "year": "2024",
     "session": "2회",
@@ -19404,7 +19362,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0566"
   },
   {
-    "no": "986",
+    "no": "984",
     "id": "q0567",
     "year": "2022",
     "session": "4회",
@@ -19424,7 +19382,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0567"
   },
   {
-    "no": "987",
+    "no": "985",
     "id": "q0568",
     "year": "2014",
     "session": "4회",
@@ -19444,7 +19402,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0568"
   },
   {
-    "no": "988",
+    "no": "986",
     "id": "q0569",
     "year": "2014",
     "session": "1회",
@@ -19464,7 +19422,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0569"
   },
   {
-    "no": "989",
+    "no": "987",
     "id": "q0570",
     "year": "2022",
     "session": "2회",
@@ -19484,7 +19442,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0570"
   },
   {
-    "no": "990",
+    "no": "988",
     "id": "q0571",
     "year": "2019",
     "session": "2회",
@@ -19504,7 +19462,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0571"
   },
   {
-    "no": "991",
+    "no": "989",
     "id": "q0572",
     "year": "2020",
     "session": "3회",
@@ -19524,7 +19482,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0572"
   },
   {
-    "no": "992",
+    "no": "990",
     "id": "q0573",
     "year": "2020",
     "session": "3회",
@@ -19544,7 +19502,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0573"
   },
   {
-    "no": "993",
+    "no": "991",
     "id": "q0574",
     "year": "2019",
     "session": "4회",
@@ -19564,7 +19522,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0574"
   },
   {
-    "no": "994",
+    "no": "992",
     "id": "q0575",
     "year": "2024",
     "session": "1회",
@@ -19584,7 +19542,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0575"
   },
   {
-    "no": "995",
+    "no": "993",
     "id": "q0576",
     "year": "2024",
     "session": "2회",
@@ -19604,7 +19562,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0576"
   },
   {
-    "no": "996",
+    "no": "994",
     "id": "q0577",
     "year": "2021",
     "session": "4회",
@@ -19624,7 +19582,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0577"
   },
   {
-    "no": "997",
+    "no": "995",
     "id": "q0578",
     "year": "2020",
     "session": "2회",
@@ -19644,7 +19602,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0578"
   },
   {
-    "no": "998",
+    "no": "996",
     "id": "q0579",
     "year": "2022",
     "session": "2회",
@@ -19665,7 +19623,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0579"
   },
   {
-    "no": "999",
+    "no": "997",
     "id": "q0580",
     "year": "2022",
     "session": "4회",
@@ -19685,7 +19643,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0580"
   },
   {
-    "no": "1000",
+    "no": "998",
     "id": "q0582",
     "year": "2022",
     "session": "3회",
@@ -19705,7 +19663,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0582"
   },
   {
-    "no": "1001",
+    "no": "999",
     "id": "q0583",
     "year": "2016",
     "session": "4회",
@@ -19725,7 +19683,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0583"
   },
   {
-    "no": "1002",
+    "no": "1000",
     "id": "q0584",
     "year": "2019",
     "session": "2회",
@@ -19745,7 +19703,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0584"
   },
   {
-    "no": "1003",
+    "no": "1001",
     "id": "q0585",
     "year": "2022",
     "session": "2회",
@@ -19765,7 +19723,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0585"
   },
   {
-    "no": "1004",
+    "no": "1002",
     "id": "q0586",
     "year": "2015",
     "session": "5회",
@@ -19785,7 +19743,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0586"
   },
   {
-    "no": "1005",
+    "no": "1003",
     "id": "q0587",
     "year": "2021",
     "session": "4회",
@@ -19805,7 +19763,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0587"
   },
   {
-    "no": "1006",
+    "no": "1004",
     "id": "q0588",
     "year": "2016",
     "session": "1회",
@@ -19825,7 +19783,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0588"
   },
   {
-    "no": "1007",
+    "no": "1005",
     "id": "q0589",
     "year": "2014",
     "session": "5회",
@@ -19845,7 +19803,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0589"
   },
   {
-    "no": "1008",
+    "no": "1006",
     "id": "q0590",
     "year": "2020",
     "session": "3회",
@@ -19865,7 +19823,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0590"
   },
   {
-    "no": "1009",
+    "no": "1007",
     "id": "q0591",
     "year": "2015",
     "session": "5회",
@@ -19885,7 +19843,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0591"
   },
   {
-    "no": "1010",
+    "no": "1008",
     "id": "q0592",
     "year": "2020",
     "session": "3회",
@@ -19905,7 +19863,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0592"
   },
   {
-    "no": "1011",
+    "no": "1009",
     "id": "q0593",
     "year": "2017",
     "session": "3회",
@@ -19925,7 +19883,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0593"
   },
   {
-    "no": "1012",
+    "no": "1010",
     "id": "q0594",
     "year": "2020",
     "session": "3회",
@@ -19945,7 +19903,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0594"
   },
   {
-    "no": "1013",
+    "no": "1011",
     "id": "q0595",
     "year": "2014",
     "session": "5회",
@@ -19965,7 +19923,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0595"
   },
   {
-    "no": "1014",
+    "no": "1012",
     "id": "q0596",
     "year": "2016",
     "session": "2회",
@@ -19985,7 +19943,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0596"
   },
   {
-    "no": "1015",
+    "no": "1013",
     "id": "q0597",
     "year": "2021",
     "session": "3회",
@@ -20005,7 +19963,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0597"
   },
   {
-    "no": "1016",
+    "no": "1014",
     "id": "q0598",
     "year": "2024",
     "session": "1회",
@@ -20025,7 +19983,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0598"
   },
   {
-    "no": "1017",
+    "no": "1015",
     "id": "q0599",
     "year": "2020",
     "session": "3회",
@@ -20045,7 +20003,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0599"
   },
   {
-    "no": "1018",
+    "no": "1016",
     "id": "q0600",
     "year": "2024",
     "session": "1회",
@@ -20065,7 +20023,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0600"
   },
   {
-    "no": "1019",
+    "no": "1017",
     "id": "q0601",
     "year": "2019",
     "session": "4회",
@@ -20085,7 +20043,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0601"
   },
   {
-    "no": "1020",
+    "no": "1018",
     "id": "q0602",
     "year": "2015",
     "session": "1회",
@@ -20105,7 +20063,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0602"
   },
   {
-    "no": "1021",
+    "no": "1019",
     "id": "q0603",
     "year": "2020",
     "session": "1회",
@@ -20125,7 +20083,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0603"
   },
   {
-    "no": "1022",
+    "no": "1020",
     "id": "q0604",
     "year": "2024",
     "session": "1회",
@@ -20145,7 +20103,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0604"
   },
   {
-    "no": "1023",
+    "no": "1021",
     "id": "q0605",
     "year": "2021",
     "session": "3회",
@@ -20165,7 +20123,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0605"
   },
   {
-    "no": "1024",
+    "no": "1022",
     "id": "q0606",
     "year": "2020",
     "session": "3회",
@@ -20185,7 +20143,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0606"
   },
   {
-    "no": "1025",
+    "no": "1023",
     "id": "q0607",
     "year": "2014",
     "session": "5회",
@@ -20205,7 +20163,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0607"
   },
   {
-    "no": "1026",
+    "no": "1024",
     "id": "q0608",
     "year": "2019",
     "session": "1회",
@@ -20226,7 +20184,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0608"
   },
   {
-    "no": "1027",
+    "no": "1025",
     "id": "q0609",
     "year": "2015",
     "session": "5회",
@@ -20246,7 +20204,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0609"
   },
   {
-    "no": "1028",
+    "no": "1026",
     "id": "q0610",
     "year": "2021",
     "session": "3회",
@@ -20266,7 +20224,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0610"
   },
   {
-    "no": "1029",
+    "no": "1027",
     "id": "q0611",
     "year": "2018",
     "session": "3회",
@@ -20286,7 +20244,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0611"
   },
   {
-    "no": "1030",
+    "no": "1028",
     "id": "q0612",
     "year": "2024",
     "session": "2회",
@@ -20306,7 +20264,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0612"
   },
   {
-    "no": "1031",
+    "no": "1029",
     "id": "q0613",
     "year": "2016",
     "session": "1회",
@@ -20326,7 +20284,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0613"
   },
   {
-    "no": "1032",
+    "no": "1030",
     "id": "q0614",
     "year": "2022",
     "session": "3회",
@@ -20346,7 +20304,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0614"
   },
   {
-    "no": "1033",
+    "no": "1031",
     "id": "q0615",
     "year": "2021",
     "session": "4회",
@@ -20366,7 +20324,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0615"
   },
   {
-    "no": "1034",
+    "no": "1032",
     "id": "q0616",
     "year": "2020",
     "session": "1회",
@@ -20386,7 +20344,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0616"
   },
   {
-    "no": "1035",
+    "no": "1033",
     "id": "q0617",
     "year": "2020",
     "session": "3회",
@@ -20406,7 +20364,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0617"
   },
   {
-    "no": "1036",
+    "no": "1034",
     "id": "q0618",
     "year": "2021",
     "session": "3회",
@@ -20426,7 +20384,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0618"
   },
   {
-    "no": "1037",
+    "no": "1035",
     "id": "q0619",
     "year": "2022",
     "session": "4회",
@@ -20446,7 +20404,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0619"
   },
   {
-    "no": "1038",
+    "no": "1036",
     "id": "q0621",
     "year": "2015",
     "session": "1회",
@@ -20466,7 +20424,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0621"
   },
   {
-    "no": "1039",
+    "no": "1037",
     "id": "q0622",
     "year": "2021",
     "session": "4회",
@@ -20486,7 +20444,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0622"
   },
   {
-    "no": "1040",
+    "no": "1038",
     "id": "q0623",
     "year": "2022",
     "session": "2회",
@@ -20506,7 +20464,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0623"
   },
   {
-    "no": "1041",
+    "no": "1039",
     "id": "q0624",
     "year": "2020",
     "session": "3회",
@@ -20526,7 +20484,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0624"
   },
   {
-    "no": "1042",
+    "no": "1040",
     "id": "q0625",
     "year": "2015",
     "session": "1회",
@@ -20546,7 +20504,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0625"
   },
   {
-    "no": "1043",
+    "no": "1041",
     "id": "q0626",
     "year": "2022",
     "session": "4회",
@@ -20566,7 +20524,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0626"
   },
   {
-    "no": "1044",
+    "no": "1042",
     "id": "q0627",
     "year": "2014",
     "session": "5회",
@@ -20586,7 +20544,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0627"
   },
   {
-    "no": "1045",
+    "no": "1043",
     "id": "q0628",
     "year": "2021",
     "session": "4회",
@@ -20606,7 +20564,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0628"
   },
   {
-    "no": "1046",
+    "no": "1044",
     "id": "q0629",
     "year": "2020",
     "session": "2회",
@@ -20626,7 +20584,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0629"
   },
   {
-    "no": "1047",
+    "no": "1045",
     "id": "q0630",
     "year": "2024",
     "session": "1회",
@@ -20646,7 +20604,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0630"
   },
   {
-    "no": "1048",
+    "no": "1046",
     "id": "q0631",
     "year": "2022",
     "session": "4회",
@@ -20666,7 +20624,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0631"
   },
   {
-    "no": "1049",
+    "no": "1047",
     "id": "q0632",
     "year": "2019",
     "session": "2회",
@@ -20686,7 +20644,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0632"
   },
   {
-    "no": "1050",
+    "no": "1048",
     "id": "q0633",
     "year": "2022",
     "session": "3회",
@@ -20706,7 +20664,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0633"
   },
   {
-    "no": "1051",
+    "no": "1049",
     "id": "q0634",
     "year": "2018",
     "session": "3회",
@@ -20726,7 +20684,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0634"
   },
   {
-    "no": "1052",
+    "no": "1050",
     "id": "q0635",
     "year": "2015",
     "session": "1회",
@@ -20746,7 +20704,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0635"
   },
   {
-    "no": "1053",
+    "no": "1051",
     "id": "q0636",
     "year": "2015",
     "session": "5회",
@@ -20766,7 +20724,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0636"
   },
   {
-    "no": "1054",
+    "no": "1052",
     "id": "q0637",
     "year": "2022",
     "session": "3회",
@@ -20786,7 +20744,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0637"
   },
   {
-    "no": "1055",
+    "no": "1053",
     "id": "q0638",
     "year": "2020",
     "session": "3회",
@@ -20806,7 +20764,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0638"
   },
   {
-    "no": "1056",
+    "no": "1054",
     "id": "q0639",
     "year": "2016",
     "session": "4회",
@@ -20826,7 +20784,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0639"
   },
   {
-    "no": "1057",
+    "no": "1055",
     "id": "q0640",
     "year": "2024",
     "session": "2회",
@@ -20846,7 +20804,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0640"
   },
   {
-    "no": "1058",
+    "no": "1056",
     "id": "q0641",
     "year": "2018",
     "session": "1회",
@@ -20866,7 +20824,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0641"
   },
   {
-    "no": "1059",
+    "no": "1057",
     "id": "q0642",
     "year": "2022",
     "session": "3회",
@@ -20886,7 +20844,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0642"
   },
   {
-    "no": "1060",
+    "no": "1058",
     "id": "q0643",
     "year": "2014",
     "session": "1회",
@@ -20906,7 +20864,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0643"
   },
   {
-    "no": "1061",
+    "no": "1059",
     "id": "q0644",
     "year": "2022",
     "session": "2회",
@@ -20926,7 +20884,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0644"
   },
   {
-    "no": "1062",
+    "no": "1060",
     "id": "q0645",
     "year": "2020",
     "session": "1회",
@@ -20946,7 +20904,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0645"
   },
   {
-    "no": "1063",
+    "no": "1061",
     "id": "q0646",
     "year": "2021",
     "session": "4회",
@@ -20966,7 +20924,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0646"
   },
   {
-    "no": "1064",
+    "no": "1062",
     "id": "q0648",
     "year": "2019",
     "session": "4회",
@@ -20986,7 +20944,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0648"
   },
   {
-    "no": "1065",
+    "no": "1063",
     "id": "q0649",
     "year": "2021",
     "session": "3회",
@@ -21006,7 +20964,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0649"
   },
   {
-    "no": "1066",
+    "no": "1064",
     "id": "q0650",
     "year": "2022",
     "session": "3회",
@@ -21026,7 +20984,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0650"
   },
   {
-    "no": "1067",
+    "no": "1065",
     "id": "q0651",
     "year": "2015",
     "session": "2회",
@@ -21046,7 +21004,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0651"
   },
   {
-    "no": "1068",
+    "no": "1066",
     "id": "q0652",
     "year": "2014",
     "session": "1회",
@@ -21066,7 +21024,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0652"
   },
   {
-    "no": "1069",
+    "no": "1067",
     "id": "q0653",
     "year": "2020",
     "session": "1회",
@@ -21086,7 +21044,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0653"
   },
   {
-    "no": "1070",
+    "no": "1068",
     "id": "q0654",
     "year": "2015",
     "session": "2회",
@@ -21106,7 +21064,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0654"
   },
   {
-    "no": "1071",
+    "no": "1069",
     "id": "q0655",
     "year": "2022",
     "session": "2회",
@@ -21126,7 +21084,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0655"
   },
   {
-    "no": "1072",
+    "no": "1070",
     "id": "q0656",
     "year": "2022",
     "session": "3회",
@@ -21146,7 +21104,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0656"
   },
   {
-    "no": "1073",
+    "no": "1071",
     "id": "q0657",
     "year": "2022",
     "session": "4회",
@@ -21166,7 +21124,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0657"
   },
   {
-    "no": "1074",
+    "no": "1072",
     "id": "q0658",
     "year": "2018",
     "session": "1회",
@@ -21186,7 +21144,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0658"
   },
   {
-    "no": "1075",
+    "no": "1073",
     "id": "q0659",
     "year": "2018",
     "session": "3회",
@@ -21206,7 +21164,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0659"
   },
   {
-    "no": "1076",
+    "no": "1074",
     "id": "q0660",
     "year": "2021",
     "session": "3회",
@@ -21226,7 +21184,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0660"
   },
   {
-    "no": "1077",
+    "no": "1075",
     "id": "q0661",
     "year": "2022",
     "session": "3회",
@@ -21246,7 +21204,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0661"
   },
   {
-    "no": "1078",
+    "no": "1076",
     "id": "q0662",
     "year": "2022",
     "session": "4회",
@@ -21266,7 +21224,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0662"
   },
   {
-    "no": "1079",
+    "no": "1077",
     "id": "q0663",
     "year": "2024",
     "session": "1회",
@@ -21286,7 +21244,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0663"
   },
   {
-    "no": "1080",
+    "no": "1078",
     "id": "q0664",
     "year": "2022",
     "session": "4회",
@@ -21306,7 +21264,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0664"
   },
   {
-    "no": "1081",
+    "no": "1079",
     "id": "q0665",
     "year": "2019",
     "session": "2회",
@@ -21326,7 +21284,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0665"
   },
   {
-    "no": "1082",
+    "no": "1080",
     "id": "q0666",
     "year": "2020",
     "session": "3회",
@@ -21347,7 +21305,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0666"
   },
   {
-    "no": "1083",
+    "no": "1081",
     "id": "q0667",
     "year": "2020",
     "session": "2회",
@@ -21368,7 +21326,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0667"
   },
   {
-    "no": "1084",
+    "no": "1082",
     "id": "q0668",
     "year": "2017",
     "session": "3회",
@@ -21388,7 +21346,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0668"
   },
   {
-    "no": "1085",
+    "no": "1083",
     "id": "q0669",
     "year": "2015",
     "session": "5회",
@@ -21408,7 +21366,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0669"
   },
   {
-    "no": "1086",
+    "no": "1084",
     "id": "q0670",
     "year": "2025",
     "session": "2회",
@@ -21428,7 +21386,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0670"
   },
   {
-    "no": "1087",
+    "no": "1085",
     "id": "q0671",
     "year": "2021",
     "session": "3회",
@@ -21448,7 +21406,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0671"
   },
   {
-    "no": "1088",
+    "no": "1086",
     "id": "q0672",
     "year": "2017",
     "session": "3회",
@@ -21468,7 +21426,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0672"
   },
   {
-    "no": "1089",
+    "no": "1087",
     "id": "q0673",
     "year": "2018",
     "session": "1회",
@@ -21488,7 +21446,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0673"
   },
   {
-    "no": "1090",
+    "no": "1088",
     "id": "q0674",
     "year": "2024",
     "session": "2회",
@@ -21508,7 +21466,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0674"
   },
   {
-    "no": "1091",
+    "no": "1089",
     "id": "q0675",
     "year": "2020",
     "session": "2회",
@@ -21528,7 +21486,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0675"
   },
   {
-    "no": "1092",
+    "no": "1090",
     "id": "q0676",
     "year": "2015",
     "session": "5회",
@@ -21548,7 +21506,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0676"
   },
   {
-    "no": "1093",
+    "no": "1091",
     "id": "q0677",
     "year": "2020",
     "session": "2회",
@@ -21568,7 +21526,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0677"
   },
   {
-    "no": "1094",
+    "no": "1092",
     "id": "q0678",
     "year": "2021",
     "session": "3회",
@@ -21588,7 +21546,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0678"
   },
   {
-    "no": "1095",
+    "no": "1093",
     "id": "q0679",
     "year": "2024",
     "session": "2회",
@@ -21608,7 +21566,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0679"
   },
   {
-    "no": "1096",
+    "no": "1094",
     "id": "q0680",
     "year": "2021",
     "session": "4회",
@@ -21628,7 +21586,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0680"
   },
   {
-    "no": "1097",
+    "no": "1095",
     "id": "q0681",
     "year": "2021",
     "session": "3회",
@@ -21648,7 +21606,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0681"
   },
   {
-    "no": "1098",
+    "no": "1096",
     "id": "q0682",
     "year": "2019",
     "session": "1회",
@@ -21668,7 +21626,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0682"
   },
   {
-    "no": "1099",
+    "no": "1097",
     "id": "q0683",
     "year": "2019",
     "session": "4회",
@@ -21688,7 +21646,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0683"
   },
   {
-    "no": "1100",
+    "no": "1098",
     "id": "q0684",
     "year": "2024",
     "session": "2회",
@@ -21708,7 +21666,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0684"
   },
   {
-    "no": "1101",
+    "no": "1099",
     "id": "q0685",
     "year": "2020",
     "session": "1회",
@@ -21728,7 +21686,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0685"
   },
   {
-    "no": "1102",
+    "no": "1100",
     "id": "q0686",
     "year": "2024",
     "session": "1회",
@@ -21748,7 +21706,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0686"
   },
   {
-    "no": "1103",
+    "no": "1101",
     "id": "q0687",
     "year": "2016",
     "session": "4회",
@@ -21768,7 +21726,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0687"
   },
   {
-    "no": "1104",
+    "no": "1102",
     "id": "q0688",
     "year": "2017",
     "session": "3회",
@@ -21788,7 +21746,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0688"
   },
   {
-    "no": "1105",
+    "no": "1103",
     "id": "q0689",
     "year": "2020",
     "session": "1회",
@@ -21808,7 +21766,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0689"
   },
   {
-    "no": "1106",
+    "no": "1104",
     "id": "q0690",
     "year": "2016",
     "session": "2회",
@@ -21828,7 +21786,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0690"
   },
   {
-    "no": "1107",
+    "no": "1105",
     "id": "q0691",
     "year": "2016",
     "session": "4회",
@@ -21848,7 +21806,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0691"
   },
   {
-    "no": "1108",
+    "no": "1106",
     "id": "q0692",
     "year": "2024",
     "session": "2회",
@@ -21868,7 +21826,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0692"
   },
   {
-    "no": "1109",
+    "no": "1107",
     "id": "q0693",
     "year": "2016",
     "session": "2회",
@@ -21888,7 +21846,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0693"
   },
   {
-    "no": "1110",
+    "no": "1108",
     "id": "q0694",
     "year": "2015",
     "session": "4회",
@@ -21908,7 +21866,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0694"
   },
   {
-    "no": "1111",
+    "no": "1109",
     "id": "q0695",
     "year": "2019",
     "session": "2회",
@@ -21928,7 +21886,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0695"
   },
   {
-    "no": "1112",
+    "no": "1110",
     "id": "q0696",
     "year": "2014",
     "session": "5회",
@@ -21948,7 +21906,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0696"
   },
   {
-    "no": "1113",
+    "no": "1111",
     "id": "q0697",
     "year": "2014",
     "session": "4회",
@@ -21968,7 +21926,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0697"
   },
   {
-    "no": "1114",
+    "no": "1112",
     "id": "q0698",
     "year": "2015",
     "session": "5회",
@@ -21988,7 +21946,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0698"
   },
   {
-    "no": "1115",
+    "no": "1113",
     "id": "q0699",
     "year": "2020",
     "session": "3회",
@@ -22008,7 +21966,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0699"
   },
   {
-    "no": "1116",
+    "no": "1114",
     "id": "q0700",
     "year": "2015",
     "session": "1회",
@@ -22028,7 +21986,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0700"
   },
   {
-    "no": "1117",
+    "no": "1115",
     "id": "q0701",
     "year": "2020",
     "session": "3회",
@@ -22048,7 +22006,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0701"
   },
   {
-    "no": "1118",
+    "no": "1116",
     "id": "q0702",
     "year": "2024",
     "session": "1회",
@@ -22068,7 +22026,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0702"
   },
   {
-    "no": "1119",
+    "no": "1117",
     "id": "q0703",
     "year": "2017",
     "session": "3회",
@@ -22088,7 +22046,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0703"
   },
   {
-    "no": "1120",
+    "no": "1118",
     "id": "q0704",
     "year": "2015",
     "session": "5회",
@@ -22108,7 +22066,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0704"
   },
   {
-    "no": "1121",
+    "no": "1119",
     "id": "q0705",
     "year": "2020",
     "session": "3회",
@@ -22128,7 +22086,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0705"
   },
   {
-    "no": "1122",
+    "no": "1120",
     "id": "q0706",
     "year": "2019",
     "session": "2회",
@@ -22148,7 +22106,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0706"
   },
   {
-    "no": "1123",
+    "no": "1121",
     "id": "q0707",
     "year": "2021",
     "session": "3회",
@@ -22168,7 +22126,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0707"
   },
   {
-    "no": "1124",
+    "no": "1122",
     "id": "q0708",
     "year": "2014",
     "session": "5회",
@@ -22188,7 +22146,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0708"
   },
   {
-    "no": "1125",
+    "no": "1123",
     "id": "q0709",
     "year": "2022",
     "session": "2회",
@@ -22208,7 +22166,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0709"
   },
   {
-    "no": "1126",
+    "no": "1124",
     "id": "q0710",
     "year": "2021",
     "session": "4회",
@@ -22228,7 +22186,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0710"
   },
   {
-    "no": "1127",
+    "no": "1125",
     "id": "q0711",
     "year": "2019",
     "session": "1회",
@@ -22248,7 +22206,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0711"
   },
   {
-    "no": "1128",
+    "no": "1126",
     "id": "q0712",
     "year": "2015",
     "session": "5회",
@@ -22268,7 +22226,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0712"
   },
   {
-    "no": "1129",
+    "no": "1127",
     "id": "q0713",
     "year": "2014",
     "session": "4회",
@@ -22288,7 +22246,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0713"
   },
   {
-    "no": "1130",
+    "no": "1128",
     "id": "q0714",
     "year": "2020",
     "session": "2회",
@@ -22308,7 +22266,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0714"
   },
   {
-    "no": "1131",
+    "no": "1129",
     "id": "q0715",
     "year": "2024",
     "session": "1회",
@@ -22328,7 +22286,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0715"
   },
   {
-    "no": "1132",
+    "no": "1130",
     "id": "q0716",
     "year": "2024",
     "session": "1회",
@@ -22348,7 +22306,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0716"
   },
   {
-    "no": "1133",
+    "no": "1131",
     "id": "q0717",
     "year": "2021",
     "session": "3회",
@@ -22368,7 +22326,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0717"
   },
   {
-    "no": "1134",
+    "no": "1132",
     "id": "q0718",
     "year": "2019",
     "session": "2회",
@@ -22388,7 +22346,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0718"
   },
   {
-    "no": "1135",
+    "no": "1133",
     "id": "q0719",
     "year": "2016",
     "session": "1회",
@@ -22408,7 +22366,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0719"
   },
   {
-    "no": "1136",
+    "no": "1134",
     "id": "q0720",
     "year": "2016",
     "session": "4회",
@@ -22428,7 +22386,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0720"
   },
   {
-    "no": "1137",
+    "no": "1135",
     "id": "q0721",
     "year": "2019",
     "session": "4회",
@@ -22448,7 +22406,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0721"
   },
   {
-    "no": "1138",
+    "no": "1136",
     "id": "q0722",
     "year": "2019",
     "session": "4회",
@@ -22468,7 +22426,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0722"
   },
   {
-    "no": "1139",
+    "no": "1137",
     "id": "q0723",
     "year": "2019",
     "session": "4회",
@@ -22488,7 +22446,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0723"
   },
   {
-    "no": "1140",
+    "no": "1138",
     "id": "q0724",
     "year": "2019",
     "session": "2회",
@@ -22508,7 +22466,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0724"
   },
   {
-    "no": "1141",
+    "no": "1139",
     "id": "q0726",
     "year": "2020",
     "session": "1회",
@@ -22529,7 +22487,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0726"
   },
   {
-    "no": "1142",
+    "no": "1140",
     "id": "q0727",
     "year": "2018",
     "session": "1회",
@@ -22549,7 +22507,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0727"
   },
   {
-    "no": "1143",
+    "no": "1141",
     "id": "q0728",
     "year": "2021",
     "session": "4회",
@@ -22569,7 +22527,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0728"
   },
   {
-    "no": "1144",
+    "no": "1142",
     "id": "q0729",
     "year": "2017",
     "session": "3회",
@@ -22589,7 +22547,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0729"
   },
   {
-    "no": "1145",
+    "no": "1143",
     "id": "q0730",
     "year": "2018",
     "session": "3회",
@@ -22609,7 +22567,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0730"
   },
   {
-    "no": "1146",
+    "no": "1144",
     "id": "q0731",
     "year": "2024",
     "session": "1회",
@@ -22629,7 +22587,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0731"
   },
   {
-    "no": "1147",
+    "no": "1145",
     "id": "q0732",
     "year": "2015",
     "session": "1회",
@@ -22649,7 +22607,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0732"
   },
   {
-    "no": "1148",
+    "no": "1146",
     "id": "q0733",
     "year": "2016",
     "session": "2회",
@@ -22669,7 +22627,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0733"
   },
   {
-    "no": "1149",
+    "no": "1147",
     "id": "q0734",
     "year": "2014",
     "session": "1회",
@@ -22689,7 +22647,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0734"
   },
   {
-    "no": "1150",
+    "no": "1148",
     "id": "q0735",
     "year": "2021",
     "session": "4회",
@@ -22709,7 +22667,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0735"
   },
   {
-    "no": "1151",
+    "no": "1149",
     "id": "q0736",
     "year": "2022",
     "session": "4회",
@@ -22729,7 +22687,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0736"
   },
   {
-    "no": "1152",
+    "no": "1150",
     "id": "q0737",
     "year": "2022",
     "session": "3회",
@@ -22749,7 +22707,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0737"
   },
   {
-    "no": "1153",
+    "no": "1151",
     "id": "q0738",
     "year": "2022",
     "session": "3회",
@@ -22769,7 +22727,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0738"
   },
   {
-    "no": "1154",
+    "no": "1152",
     "id": "q0739",
     "year": "2018",
     "session": "3회",
@@ -22789,7 +22747,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0739"
   },
   {
-    "no": "1155",
+    "no": "1153",
     "id": "q0740",
     "year": "2014",
     "session": "5회",
@@ -22809,7 +22767,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0740"
   },
   {
-    "no": "1156",
+    "no": "1154",
     "id": "q0741",
     "year": "2014",
     "session": "4회",
@@ -22829,7 +22787,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0741"
   },
   {
-    "no": "1157",
+    "no": "1155",
     "id": "q0742",
     "year": "2014",
     "session": "5회",
@@ -22849,7 +22807,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0742"
   },
   {
-    "no": "1158",
+    "no": "1156",
     "id": "q0743",
     "year": "2015",
     "session": "5회",
@@ -22869,7 +22827,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0743"
   },
   {
-    "no": "1159",
+    "no": "1157",
     "id": "q0744",
     "year": "2015",
     "session": "2회",
@@ -22889,7 +22847,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0744"
   },
   {
-    "no": "1160",
+    "no": "1158",
     "id": "q0745",
     "year": "2021",
     "session": "4회",
@@ -22909,7 +22867,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0745"
   },
   {
-    "no": "1161",
+    "no": "1159",
     "id": "q0746",
     "year": "2019",
     "session": "1회",
@@ -22929,7 +22887,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0746"
   },
   {
-    "no": "1162",
+    "no": "1160",
     "id": "q0747",
     "year": "2021",
     "session": "3회",
@@ -22949,7 +22907,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0747"
   },
   {
-    "no": "1163",
+    "no": "1161",
     "id": "q0748",
     "year": "2014",
     "session": "1회",
@@ -22969,7 +22927,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0748"
   },
   {
-    "no": "1164",
+    "no": "1162",
     "id": "q0749",
     "year": "2019",
     "session": "2회",
@@ -22989,7 +22947,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0749"
   },
   {
-    "no": "1165",
+    "no": "1163",
     "id": "q0750",
     "year": "2024",
     "session": "1회",
@@ -23009,7 +22967,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0750"
   },
   {
-    "no": "1166",
+    "no": "1164",
     "id": "q0751",
     "year": "2021",
     "session": "4회",
@@ -23029,7 +22987,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0751"
   },
   {
-    "no": "1167",
+    "no": "1165",
     "id": "q0752",
     "year": "2024",
     "session": "1회",
@@ -23049,7 +23007,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0752"
   },
   {
-    "no": "1168",
+    "no": "1166",
     "id": "q0753",
     "year": "2024",
     "session": "2회",
@@ -23069,7 +23027,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0753"
   },
   {
-    "no": "1169",
+    "no": "1167",
     "id": "q0754",
     "year": "2020",
     "session": "3회",
@@ -23089,7 +23047,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0754"
   },
   {
-    "no": "1170",
+    "no": "1168",
     "id": "q0755",
     "year": "2022",
     "session": "4회",
@@ -23109,7 +23067,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0755"
   },
   {
-    "no": "1171",
+    "no": "1169",
     "id": "q0756",
     "year": "2022",
     "session": "4회",
@@ -23129,7 +23087,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0756"
   },
   {
-    "no": "1172",
+    "no": "1170",
     "id": "q0757",
     "year": "2015",
     "session": "5회",
@@ -23149,7 +23107,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0757"
   },
   {
-    "no": "1173",
+    "no": "1171",
     "id": "q0758",
     "year": "2022",
     "session": "2회",
@@ -23169,7 +23127,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0758"
   },
   {
-    "no": "1174",
+    "no": "1172",
     "id": "q0759",
     "year": "2021",
     "session": "3회",
@@ -23189,7 +23147,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0759"
   },
   {
-    "no": "1175",
+    "no": "1173",
     "id": "q0760",
     "year": "2018",
     "session": "3회",
@@ -23209,7 +23167,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0760"
   },
   {
-    "no": "1176",
+    "no": "1174",
     "id": "q0761",
     "year": "2019",
     "session": "2회",
@@ -23229,7 +23187,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0761"
   },
   {
-    "no": "1177",
+    "no": "1175",
     "id": "q0762",
     "year": "2014",
     "session": "5회",
@@ -23249,7 +23207,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0762"
   },
   {
-    "no": "1178",
+    "no": "1176",
     "id": "q0763",
     "year": "2022",
     "session": "3회",
@@ -23269,7 +23227,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0763"
   },
   {
-    "no": "1179",
+    "no": "1177",
     "id": "q0764",
     "year": "2020",
     "session": "3회",
@@ -23289,7 +23247,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0764"
   },
   {
-    "no": "1180",
+    "no": "1178",
     "id": "q0765",
     "year": "2022",
     "session": "2회",
@@ -23309,7 +23267,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0765"
   },
   {
-    "no": "1181",
+    "no": "1179",
     "id": "q0766",
     "year": "2024",
     "session": "1회",
@@ -23330,7 +23288,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0766"
   },
   {
-    "no": "1182",
+    "no": "1180",
     "id": "q0767",
     "year": "2015",
     "session": "1회",
@@ -23350,7 +23308,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0767"
   },
   {
-    "no": "1183",
+    "no": "1181",
     "id": "q0768",
     "year": "2022",
     "session": "2회",
@@ -23370,7 +23328,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0768"
   },
   {
-    "no": "1184",
+    "no": "1182",
     "id": "q0769",
     "year": "2019",
     "session": "2회",
@@ -23390,7 +23348,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0769"
   },
   {
-    "no": "1185",
+    "no": "1183",
     "id": "q0770",
     "year": "2022",
     "session": "4회",
@@ -23410,7 +23368,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0770"
   },
   {
-    "no": "1186",
+    "no": "1184",
     "id": "q0771",
     "year": "2021",
     "session": "4회",
@@ -23430,7 +23388,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0771"
   },
   {
-    "no": "1187",
+    "no": "1185",
     "id": "q0772",
     "year": "2024",
     "session": "2회",
@@ -23450,7 +23408,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0772"
   },
   {
-    "no": "1188",
+    "no": "1186",
     "id": "q0773",
     "year": "2019",
     "session": "2회",
@@ -23470,7 +23428,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0773"
   },
   {
-    "no": "1189",
+    "no": "1187",
     "id": "q0774",
     "year": "2021",
     "session": "4회",
@@ -23490,7 +23448,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0774"
   },
   {
-    "no": "1190",
+    "no": "1188",
     "id": "q0775",
     "year": "2015",
     "session": "5회",
@@ -23510,7 +23468,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0775"
   },
   {
-    "no": "1191",
+    "no": "1189",
     "id": "q0776",
     "year": "2014",
     "session": "1회",
@@ -23530,7 +23488,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0776"
   },
   {
-    "no": "1192",
+    "no": "1190",
     "id": "q0777",
     "year": "2019",
     "session": "2회",
@@ -23550,7 +23508,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0777"
   },
   {
-    "no": "1193",
+    "no": "1191",
     "id": "q0778",
     "year": "2015",
     "session": "1회",
@@ -23570,7 +23528,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0778"
   },
   {
-    "no": "1194",
+    "no": "1192",
     "id": "q0779",
     "year": "2021",
     "session": "4회",
@@ -23590,7 +23548,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0779"
   },
   {
-    "no": "1195",
+    "no": "1193",
     "id": "q0780",
     "year": "2016",
     "session": "1회",
@@ -23610,7 +23568,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0780"
   },
   {
-    "no": "1196",
+    "no": "1194",
     "id": "q0781",
     "year": "2021",
     "session": "3회",
@@ -23630,7 +23588,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0781"
   },
   {
-    "no": "1197",
+    "no": "1195",
     "id": "q0782",
     "year": "2015",
     "session": "5회",
@@ -23650,7 +23608,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0782"
   },
   {
-    "no": "1198",
+    "no": "1196",
     "id": "q0783",
     "year": "2022",
     "session": "2회",
@@ -23670,7 +23628,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0783"
   },
   {
-    "no": "1199",
+    "no": "1197",
     "id": "q0784",
     "year": "2021",
     "session": "3회",
@@ -23690,7 +23648,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0784"
   },
   {
-    "no": "1200",
+    "no": "1198",
     "id": "q0785",
     "year": "2019",
     "session": "2회",
@@ -23710,7 +23668,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0785"
   },
   {
-    "no": "1201",
+    "no": "1199",
     "id": "q0786",
     "year": "2020",
     "session": "3회",
@@ -23730,7 +23688,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0786"
   },
   {
-    "no": "1202",
+    "no": "1200",
     "id": "q0787",
     "year": "2022",
     "session": "4회",
@@ -23750,7 +23708,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0787"
   },
   {
-    "no": "1203",
+    "no": "1201",
     "id": "q0788",
     "year": "2024",
     "session": "1회",
@@ -23770,7 +23728,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0788"
   },
   {
-    "no": "1204",
+    "no": "1202",
     "id": "q0789",
     "year": "2022",
     "session": "4회",
@@ -23790,7 +23748,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0789"
   },
   {
-    "no": "1205",
+    "no": "1203",
     "id": "q0790",
     "year": "2015",
     "session": "5회",
@@ -23810,7 +23768,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0790"
   },
   {
-    "no": "1206",
+    "no": "1204",
     "id": "q0791",
     "year": "2024",
     "session": "2회",
@@ -23830,7 +23788,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0791"
   },
   {
-    "no": "1207",
+    "no": "1205",
     "id": "q0792",
     "year": "2018",
     "session": "3회",
@@ -23850,7 +23808,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0792"
   },
   {
-    "no": "1208",
+    "no": "1206",
     "id": "q0793",
     "year": "2021",
     "session": "3회",
@@ -23871,7 +23829,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0793"
   },
   {
-    "no": "1209",
+    "no": "1207",
     "id": "q0794",
     "year": "2020",
     "session": "3회",
@@ -23891,7 +23849,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0794"
   },
   {
-    "no": "1210",
+    "no": "1208",
     "id": "q0795",
     "year": "2022",
     "session": "3회",
@@ -23911,7 +23869,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0795"
   },
   {
-    "no": "1211",
+    "no": "1209",
     "id": "q0796",
     "year": "2018",
     "session": "3회",
@@ -23931,7 +23889,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0796"
   },
   {
-    "no": "1212",
+    "no": "1210",
     "id": "q0797",
     "year": "2019",
     "session": "4회",
@@ -23951,7 +23909,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0797"
   },
   {
-    "no": "1213",
+    "no": "1211",
     "id": "q0798",
     "year": "2015",
     "session": "5회",
@@ -23971,7 +23929,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0798"
   },
   {
-    "no": "1214",
+    "no": "1212",
     "id": "q0799",
     "year": "2024",
     "session": "1회",
@@ -23991,7 +23949,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0799"
   },
   {
-    "no": "1215",
+    "no": "1213",
     "id": "q0800",
     "year": "2016",
     "session": "1회",
@@ -24011,7 +23969,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0800"
   },
   {
-    "no": "1216",
+    "no": "1214",
     "id": "q0801",
     "year": "2019",
     "session": "1회",
@@ -24031,7 +23989,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0801"
   },
   {
-    "no": "1217",
+    "no": "1215",
     "id": "q0802",
     "year": "2022",
     "session": "4회",
@@ -24051,7 +24009,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0802"
   },
   {
-    "no": "1218",
+    "no": "1216",
     "id": "q0803",
     "year": "2020",
     "session": "2회",
@@ -24071,7 +24029,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0803"
   },
   {
-    "no": "1219",
+    "no": "1217",
     "id": "q0804",
     "year": "2015",
     "session": "1회",
@@ -24091,7 +24049,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0804"
   },
   {
-    "no": "1220",
+    "no": "1218",
     "id": "q0805",
     "year": "2014",
     "session": "1회",
@@ -24111,7 +24069,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0805"
   },
   {
-    "no": "1221",
+    "no": "1219",
     "id": "q0806",
     "year": "2015",
     "session": "4회",
@@ -24131,7 +24089,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0806"
   },
   {
-    "no": "1222",
+    "no": "1220",
     "id": "q0807",
     "year": "2016",
     "session": "1회",
@@ -24151,7 +24109,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0807"
   },
   {
-    "no": "1223",
+    "no": "1221",
     "id": "q0808",
     "year": "2018",
     "session": "3회",
@@ -24171,7 +24129,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0808"
   },
   {
-    "no": "1224",
+    "no": "1222",
     "id": "q0809",
     "year": "2016",
     "session": "2회",
@@ -24191,7 +24149,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0809"
   },
   {
-    "no": "1225",
+    "no": "1223",
     "id": "q0810",
     "year": "2021",
     "session": "4회",
@@ -24211,7 +24169,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0810"
   },
   {
-    "no": "1226",
+    "no": "1224",
     "id": "q0811",
     "year": "2016",
     "session": "1회",
@@ -24231,7 +24189,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0811"
   },
   {
-    "no": "1227",
+    "no": "1225",
     "id": "q0812",
     "year": "2022",
     "session": "4회",
@@ -24251,7 +24209,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0812"
   },
   {
-    "no": "1228",
+    "no": "1226",
     "id": "q0813",
     "year": "2017",
     "session": "4회",
@@ -24271,7 +24229,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0813"
   },
   {
-    "no": "1229",
+    "no": "1227",
     "id": "q0814",
     "year": "2022",
     "session": "3회",
@@ -24291,7 +24249,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0814"
   },
   {
-    "no": "1230",
+    "no": "1228",
     "id": "q0815",
     "year": "2022",
     "session": "4회",
@@ -24311,7 +24269,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0815"
   },
   {
-    "no": "1231",
+    "no": "1229",
     "id": "q0816",
     "year": "2016",
     "session": "2회",
@@ -24331,17 +24289,17 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0816"
   },
   {
-    "no": "1232",
+    "no": "1230",
     "id": "q0817",
     "year": "2024",
     "session": "2회",
     "category": "기관 정비",
     "q": "초음속 항공기에 사용되는 공기 흡입구(흡입덕트)의 형태는?",
     "options": [
-      "",
-      "",
-      "",
-      ""
+      "1",
+      "2",
+      "3",
+      "4"
     ],
     "correct": 0,
     "exp": "초음속 기류를 아음속으로 감속시키기 위해 수축-확산(Convergent-Divergent)형 덕트를 사용한다. [7][출제이력: 24-2회, 20-2회]",
@@ -24352,7 +24310,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0817"
   },
   {
-    "no": "1233",
+    "no": "1231",
     "id": "q0818",
     "year": "2016",
     "session": "1회",
@@ -24372,7 +24330,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0818"
   },
   {
-    "no": "1234",
+    "no": "1232",
     "id": "q0819",
     "year": "2021",
     "session": "4회",
@@ -24392,7 +24350,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0819"
   },
   {
-    "no": "1235",
+    "no": "1233",
     "id": "q0820",
     "year": "2018",
     "session": "1회",
@@ -24412,7 +24370,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0820"
   },
   {
-    "no": "1236",
+    "no": "1234",
     "id": "q0821",
     "year": "2021",
     "session": "4회",
@@ -24432,7 +24390,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0821"
   },
   {
-    "no": "1237",
+    "no": "1235",
     "id": "q0822",
     "year": "2014",
     "session": "4회",
@@ -24452,7 +24410,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0822"
   },
   {
-    "no": "1238",
+    "no": "1236",
     "id": "q0823",
     "year": "2015",
     "session": "5회",
@@ -24472,7 +24430,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0823"
   },
   {
-    "no": "1239",
+    "no": "1237",
     "id": "q0824",
     "year": "2024",
     "session": "2회",
@@ -24492,7 +24450,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0824"
   },
   {
-    "no": "1240",
+    "no": "1238",
     "id": "q0825",
     "year": "2022",
     "session": "4회",
@@ -24512,7 +24470,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0825"
   },
   {
-    "no": "1241",
+    "no": "1239",
     "id": "q0826",
     "year": "2015",
     "session": "1회",
@@ -24532,7 +24490,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0826"
   },
   {
-    "no": "1242",
+    "no": "1240",
     "id": "q0827",
     "year": "2020",
     "session": "2회",
@@ -24552,7 +24510,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0827"
   },
   {
-    "no": "1243",
+    "no": "1241",
     "id": "q0828",
     "year": "2020",
     "session": "3회",
@@ -24572,7 +24530,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0828"
   },
   {
-    "no": "1244",
+    "no": "1242",
     "id": "q0829",
     "year": "2024",
     "session": "1회",
@@ -24592,7 +24550,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0829"
   },
   {
-    "no": "1245",
+    "no": "1243",
     "id": "q0831",
     "year": "2015",
     "session": "5회",
@@ -24612,7 +24570,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0831"
   },
   {
-    "no": "1246",
+    "no": "1244",
     "id": "q0832",
     "year": "2014",
     "session": "5회",
@@ -24632,7 +24590,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0832"
   },
   {
-    "no": "1247",
+    "no": "1245",
     "id": "q0833",
     "year": "2020",
     "session": "3회",
@@ -24652,7 +24610,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0833"
   },
   {
-    "no": "1248",
+    "no": "1246",
     "id": "q0834",
     "year": "2018",
     "session": "1회",
@@ -24672,7 +24630,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0834"
   },
   {
-    "no": "1249",
+    "no": "1247",
     "id": "q0835",
     "year": "2015",
     "session": "1회",
@@ -24692,7 +24650,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0835"
   },
   {
-    "no": "1250",
+    "no": "1248",
     "id": "q0836",
     "year": "2020",
     "session": "2회",
@@ -24712,7 +24670,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0836"
   },
   {
-    "no": "1251",
+    "no": "1249",
     "id": "q0837",
     "year": "2019",
     "session": "1회",
@@ -24732,7 +24690,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0837"
   },
   {
-    "no": "1252",
+    "no": "1250",
     "id": "q0838",
     "year": "2019",
     "session": "2회",
@@ -24752,7 +24710,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0838"
   },
   {
-    "no": "1253",
+    "no": "1251",
     "id": "q0839",
     "year": "2018",
     "session": "1회",
@@ -24772,7 +24730,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0839"
   },
   {
-    "no": "1254",
+    "no": "1252",
     "id": "q0840",
     "year": "2021",
     "session": "4회",
@@ -24793,7 +24751,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0840"
   },
   {
-    "no": "1255",
+    "no": "1253",
     "id": "q0841",
     "year": "2022",
     "session": "3회",
@@ -24813,7 +24771,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0841"
   },
   {
-    "no": "1256",
+    "no": "1254",
     "id": "q0842",
     "year": "2015",
     "session": "4회",
@@ -24833,7 +24791,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0842"
   },
   {
-    "no": "1257",
+    "no": "1255",
     "id": "q0843",
     "year": "2015",
     "session": "5회",
@@ -24853,7 +24811,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0843"
   },
   {
-    "no": "1258",
+    "no": "1256",
     "id": "q0844",
     "year": "2018",
     "session": "1회",
@@ -24873,7 +24831,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0844"
   },
   {
-    "no": "1259",
+    "no": "1257",
     "id": "q0845",
     "year": "2019",
     "session": "2회",
@@ -24893,7 +24851,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0845"
   },
   {
-    "no": "1260",
+    "no": "1258",
     "id": "q0846",
     "year": "2021",
     "session": "4회",
@@ -24913,7 +24871,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0846"
   },
   {
-    "no": "1261",
+    "no": "1259",
     "id": "q0847",
     "year": "2021",
     "session": "3회",
@@ -24933,7 +24891,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0847"
   },
   {
-    "no": "1262",
+    "no": "1260",
     "id": "q0848",
     "year": "2022",
     "session": "4회",
@@ -24953,7 +24911,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0848"
   },
   {
-    "no": "1263",
+    "no": "1261",
     "id": "q0849",
     "year": "2021",
     "session": "3회",
@@ -24973,7 +24931,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0849"
   },
   {
-    "no": "1264",
+    "no": "1262",
     "id": "q0850",
     "year": "2018",
     "session": "1회",
@@ -24993,7 +24951,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0850"
   },
   {
-    "no": "1265",
+    "no": "1263",
     "id": "q0851",
     "year": "2014",
     "session": "4회",
@@ -25013,7 +24971,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0851"
   },
   {
-    "no": "1266",
+    "no": "1264",
     "id": "q0852",
     "year": "2016",
     "session": "4회",
@@ -25033,7 +24991,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0852"
   },
   {
-    "no": "1267",
+    "no": "1265",
     "id": "q0853",
     "year": "2022",
     "session": "3회",
@@ -25053,7 +25011,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0853"
   },
   {
-    "no": "1268",
+    "no": "1266",
     "id": "q0854",
     "year": "2021",
     "session": "3회",
@@ -25073,7 +25031,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0854"
   },
   {
-    "no": "1269",
+    "no": "1267",
     "id": "q0855",
     "year": "2018",
     "session": "3회",
@@ -25094,7 +25052,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0855"
   },
   {
-    "no": "1270",
+    "no": "1268",
     "id": "q0856",
     "year": "2015",
     "session": "4회",
@@ -25114,7 +25072,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0856"
   },
   {
-    "no": "1271",
+    "no": "1269",
     "id": "q0857",
     "year": "2024",
     "session": "1회",
@@ -25134,7 +25092,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0857"
   },
   {
-    "no": "1272",
+    "no": "1270",
     "id": "q0858",
     "year": "2016",
     "session": "2회",
@@ -25154,7 +25112,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0858"
   },
   {
-    "no": "1273",
+    "no": "1271",
     "id": "q0859",
     "year": "2015",
     "session": "5회",
@@ -25174,7 +25132,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0859"
   },
   {
-    "no": "1274",
+    "no": "1272",
     "id": "q0860",
     "year": "2015",
     "session": "5회",
@@ -25194,7 +25152,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0860"
   },
   {
-    "no": "1275",
+    "no": "1273",
     "id": "q0861",
     "year": "2017",
     "session": "3회",
@@ -25214,7 +25172,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0861"
   },
   {
-    "no": "1276",
+    "no": "1274",
     "id": "q0862",
     "year": "2019",
     "session": "2회",
@@ -25234,7 +25192,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0862"
   },
   {
-    "no": "1277",
+    "no": "1275",
     "id": "q0863",
     "year": "2019",
     "session": "2회",
@@ -25254,7 +25212,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0863"
   },
   {
-    "no": "1278",
+    "no": "1276",
     "id": "q0864",
     "year": "2022",
     "session": "4회",
@@ -25274,7 +25232,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0864"
   },
   {
-    "no": "1279",
+    "no": "1277",
     "id": "q0865",
     "year": "2022",
     "session": "4회",
@@ -25294,7 +25252,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0865"
   },
   {
-    "no": "1280",
+    "no": "1278",
     "id": "q0866",
     "year": "2016",
     "session": "2회",
@@ -25314,7 +25272,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0866"
   },
   {
-    "no": "1281",
+    "no": "1279",
     "id": "q0867",
     "year": "2022",
     "session": "3회",
@@ -25334,7 +25292,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0867"
   },
   {
-    "no": "1282",
+    "no": "1280",
     "id": "q0869",
     "year": "2015",
     "session": "1회",
@@ -25354,7 +25312,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0869"
   },
   {
-    "no": "1283",
+    "no": "1281",
     "id": "q0870",
     "year": "2020",
     "session": "3회",
@@ -25374,7 +25332,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0870"
   },
   {
-    "no": "1284",
+    "no": "1282",
     "id": "q0871",
     "year": "2015",
     "session": "2회",
@@ -25394,7 +25352,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0871"
   },
   {
-    "no": "1285",
+    "no": "1283",
     "id": "q0872",
     "year": "2017",
     "session": "3회",
@@ -25414,7 +25372,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0872"
   },
   {
-    "no": "1286",
+    "no": "1284",
     "id": "q0873",
     "year": "2022",
     "session": "4회",
@@ -25434,7 +25392,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0873"
   },
   {
-    "no": "1287",
+    "no": "1285",
     "id": "q0874",
     "year": "2022",
     "session": "2회",
@@ -25454,7 +25412,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0874"
   },
   {
-    "no": "1288",
+    "no": "1286",
     "id": "q0875",
     "year": "2019",
     "session": "2회",
@@ -25474,7 +25432,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0875"
   },
   {
-    "no": "1289",
+    "no": "1287",
     "id": "q0876",
     "year": "2016",
     "session": "1회",
@@ -25494,7 +25452,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0876"
   },
   {
-    "no": "1290",
+    "no": "1288",
     "id": "q0877",
     "year": "2014",
     "session": "1회",
@@ -25514,7 +25472,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0877"
   },
   {
-    "no": "1291",
+    "no": "1289",
     "id": "q0878",
     "year": "2015",
     "session": "2회",
@@ -25534,7 +25492,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0878"
   },
   {
-    "no": "1292",
+    "no": "1290",
     "id": "q0879",
     "year": "2015",
     "session": "1회",
@@ -25554,7 +25512,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0879"
   },
   {
-    "no": "1293",
+    "no": "1291",
     "id": "q0880",
     "year": "2014",
     "session": "4회",
@@ -25574,7 +25532,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0880"
   },
   {
-    "no": "1294",
+    "no": "1292",
     "id": "q0881",
     "year": "2021",
     "session": "3회",
@@ -25594,7 +25552,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0881"
   },
   {
-    "no": "1295",
+    "no": "1293",
     "id": "q0882",
     "year": "2024",
     "session": "1회",
@@ -25614,7 +25572,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0882"
   },
   {
-    "no": "1296",
+    "no": "1294",
     "id": "q0883",
     "year": "2016",
     "session": "2회",
@@ -25634,7 +25592,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0883"
   },
   {
-    "no": "1297",
+    "no": "1295",
     "id": "q0884",
     "year": "2022",
     "session": "4회",
@@ -25654,7 +25612,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0884"
   },
   {
-    "no": "1298",
+    "no": "1296",
     "id": "q0885",
     "year": "2024",
     "session": "1회",
@@ -25674,7 +25632,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0885"
   },
   {
-    "no": "1299",
+    "no": "1297",
     "id": "q0886",
     "year": "2019",
     "session": "2회",
@@ -25694,7 +25652,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0886"
   },
   {
-    "no": "1300",
+    "no": "1298",
     "id": "q0887",
     "year": "2014",
     "session": "5회",
@@ -25714,7 +25672,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0887"
   },
   {
-    "no": "1301",
+    "no": "1299",
     "id": "q0888",
     "year": "2021",
     "session": "4회",
@@ -25734,7 +25692,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0888"
   },
   {
-    "no": "1302",
+    "no": "1300",
     "id": "q0889",
     "year": "2018",
     "session": "3회",
@@ -25754,7 +25712,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0889"
   },
   {
-    "no": "1303",
+    "no": "1301",
     "id": "q0890",
     "year": "2020",
     "session": "3회",
@@ -25774,7 +25732,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0890"
   },
   {
-    "no": "1304",
+    "no": "1302",
     "id": "q0891",
     "year": "2024",
     "session": "1회",
@@ -25794,7 +25752,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0891"
   },
   {
-    "no": "1305",
+    "no": "1303",
     "id": "q0892",
     "year": "2015",
     "session": "1회",
@@ -25814,7 +25772,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0892"
   },
   {
-    "no": "1306",
+    "no": "1304",
     "id": "q0893",
     "year": "2016",
     "session": "4회",
@@ -25834,7 +25792,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0893"
   },
   {
-    "no": "1307",
+    "no": "1305",
     "id": "q0894",
     "year": "2022",
     "session": "2회",
@@ -25854,7 +25812,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0894"
   },
   {
-    "no": "1308",
+    "no": "1306",
     "id": "q0895",
     "year": "2022",
     "session": "4회",
@@ -25874,7 +25832,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0895"
   },
   {
-    "no": "1309",
+    "no": "1307",
     "id": "q0896",
     "year": "2015",
     "session": "1회",
@@ -25894,7 +25852,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0896"
   },
   {
-    "no": "1310",
+    "no": "1308",
     "id": "q0897",
     "year": "2016",
     "session": "4회",
@@ -25914,7 +25872,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0897"
   },
   {
-    "no": "1311",
+    "no": "1309",
     "id": "q0898",
     "year": "2022",
     "session": "2회",
@@ -25934,7 +25892,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0898"
   },
   {
-    "no": "1312",
+    "no": "1310",
     "id": "q0899",
     "year": "2024",
     "session": "2회",
@@ -25954,7 +25912,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0899"
   },
   {
-    "no": "1313",
+    "no": "1311",
     "id": "q0900",
     "year": "2016",
     "session": "4회",
@@ -25974,7 +25932,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0900"
   },
   {
-    "no": "1314",
+    "no": "1312",
     "id": "q0901",
     "year": "2020",
     "session": "1회",
@@ -25994,7 +25952,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0901"
   },
   {
-    "no": "1315",
+    "no": "1313",
     "id": "q0902",
     "year": "2018",
     "session": "3회",
@@ -26014,7 +25972,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0902"
   },
   {
-    "no": "1316",
+    "no": "1314",
     "id": "q0903",
     "year": "2020",
     "session": "3회",
@@ -26034,7 +25992,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0903"
   },
   {
-    "no": "1317",
+    "no": "1315",
     "id": "q0904",
     "year": "2014",
     "session": "1회",
@@ -26054,7 +26012,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0904"
   },
   {
-    "no": "1318",
+    "no": "1316",
     "id": "q0905",
     "year": "2017",
     "session": "4회",
@@ -26074,7 +26032,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0905"
   },
   {
-    "no": "1319",
+    "no": "1317",
     "id": "q0906",
     "year": "2022",
     "session": "2회",
@@ -26094,7 +26052,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0906"
   },
   {
-    "no": "1320",
+    "no": "1318",
     "id": "q0907",
     "year": "2020",
     "session": "3회",
@@ -26114,7 +26072,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0907"
   },
   {
-    "no": "1321",
+    "no": "1319",
     "id": "q0908",
     "year": "2018",
     "session": "1회",
@@ -26134,7 +26092,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0908"
   },
   {
-    "no": "1322",
+    "no": "1320",
     "id": "q0909",
     "year": "2020",
     "session": "3회",
@@ -26154,7 +26112,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0909"
   },
   {
-    "no": "1323",
+    "no": "1321",
     "id": "q0910",
     "year": "2017",
     "session": "4회",
@@ -26174,7 +26132,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0910"
   },
   {
-    "no": "1324",
+    "no": "1322",
     "id": "q0911",
     "year": "2015",
     "session": "4회",
@@ -26194,7 +26152,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0911"
   },
   {
-    "no": "1325",
+    "no": "1323",
     "id": "q0912",
     "year": "2020",
     "session": "3회",
@@ -26214,7 +26172,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0912"
   },
   {
-    "no": "1326",
+    "no": "1324",
     "id": "q0913",
     "year": "2016",
     "session": "2회",
@@ -26234,7 +26192,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0913"
   },
   {
-    "no": "1327",
+    "no": "1325",
     "id": "q0914",
     "year": "2015",
     "session": "1회",
@@ -26254,7 +26212,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0914"
   },
   {
-    "no": "1328",
+    "no": "1326",
     "id": "q0915",
     "year": "2019",
     "session": "1회",
@@ -26274,7 +26232,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0915"
   },
   {
-    "no": "1329",
+    "no": "1327",
     "id": "q0916",
     "year": "2021",
     "session": "3회",
@@ -26294,7 +26252,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0916"
   },
   {
-    "no": "1330",
+    "no": "1328",
     "id": "q0917",
     "year": "2022",
     "session": "3회",
@@ -26314,7 +26272,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0917"
   },
   {
-    "no": "1331",
+    "no": "1329",
     "id": "q0918",
     "year": "2016",
     "session": "4회",
@@ -26334,7 +26292,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0918"
   },
   {
-    "no": "1332",
+    "no": "1330",
     "id": "q0919",
     "year": "2014",
     "session": "4회",
@@ -26354,7 +26312,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0919"
   },
   {
-    "no": "1333",
+    "no": "1331",
     "id": "q0920",
     "year": "2022",
     "session": "3회",
@@ -26374,7 +26332,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0920"
   },
   {
-    "no": "1334",
+    "no": "1332",
     "id": "q0921",
     "year": "2022",
     "session": "2회",
@@ -26394,7 +26352,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0921"
   },
   {
-    "no": "1335",
+    "no": "1333",
     "id": "q0922",
     "year": "2016",
     "session": "1회",
@@ -26414,7 +26372,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0922"
   },
   {
-    "no": "1336",
+    "no": "1334",
     "id": "q0923",
     "year": "2021",
     "session": "3회",
@@ -26434,7 +26392,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0923"
   },
   {
-    "no": "1337",
+    "no": "1335",
     "id": "q0924",
     "year": "2018",
     "session": "3회",
@@ -26454,7 +26412,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0924"
   },
   {
-    "no": "1338",
+    "no": "1336",
     "id": "q0925",
     "year": "2014",
     "session": "1회",
@@ -26474,7 +26432,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0925"
   },
   {
-    "no": "1339",
+    "no": "1337",
     "id": "q0926",
     "year": "2015",
     "session": "5회",
@@ -26494,7 +26452,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0926"
   },
   {
-    "no": "1340",
+    "no": "1338",
     "id": "q0927",
     "year": "2015",
     "session": "1회",
@@ -26514,7 +26472,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0927"
   },
   {
-    "no": "1341",
+    "no": "1339",
     "id": "q0928",
     "year": "2015",
     "session": "4회",
@@ -26534,7 +26492,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0928"
   },
   {
-    "no": "1342",
+    "no": "1340",
     "id": "q0929",
     "year": "2016",
     "session": "2회",
@@ -26554,7 +26512,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0929"
   },
   {
-    "no": "1343",
+    "no": "1341",
     "id": "q0930",
     "year": "2020",
     "session": "3회",
@@ -26574,7 +26532,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0930"
   },
   {
-    "no": "1344",
+    "no": "1342",
     "id": "q0931",
     "year": "2019",
     "session": "2회",
@@ -26594,7 +26552,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0931"
   },
   {
-    "no": "1345",
+    "no": "1343",
     "id": "q0932",
     "year": "2015",
     "session": "1회",
@@ -26614,7 +26572,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0932"
   },
   {
-    "no": "1346",
+    "no": "1344",
     "id": "q0933",
     "year": "2014",
     "session": "5회",
@@ -26634,7 +26592,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0933"
   },
   {
-    "no": "1347",
+    "no": "1345",
     "id": "q0934",
     "year": "2022",
     "session": "4회",
@@ -26654,7 +26612,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0934"
   },
   {
-    "no": "1348",
+    "no": "1346",
     "id": "q0935",
     "year": "2016",
     "session": "1회",
@@ -26674,7 +26632,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0935"
   },
   {
-    "no": "1349",
+    "no": "1347",
     "id": "q0936",
     "year": "2014",
     "session": "5회",
@@ -26694,7 +26652,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0936"
   },
   {
-    "no": "1350",
+    "no": "1348",
     "id": "q0937",
     "year": "2020",
     "session": "3회",
@@ -26714,7 +26672,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0937"
   },
   {
-    "no": "1351",
+    "no": "1349",
     "id": "q0938",
     "year": "2020",
     "session": "3회",
@@ -26734,7 +26692,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0938"
   },
   {
-    "no": "1352",
+    "no": "1350",
     "id": "q0939",
     "year": "2022",
     "session": "4회",
@@ -26754,7 +26712,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0939"
   },
   {
-    "no": "1353",
+    "no": "1351",
     "id": "q0940",
     "year": "2019",
     "session": "2회",
@@ -26774,7 +26732,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0940"
   },
   {
-    "no": "1354",
+    "no": "1352",
     "id": "q0941",
     "year": "2015",
     "session": "4회",
@@ -26794,7 +26752,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0941"
   },
   {
-    "no": "1355",
+    "no": "1353",
     "id": "q0942",
     "year": "2015",
     "session": "1회",
@@ -26814,7 +26772,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0942"
   },
   {
-    "no": "1356",
+    "no": "1354",
     "id": "q0943",
     "year": "2015",
     "session": "4회",
@@ -26834,7 +26792,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0943"
   },
   {
-    "no": "1357",
+    "no": "1355",
     "id": "q0944",
     "year": "2020",
     "session": "3회",
@@ -26854,7 +26812,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0944"
   },
   {
-    "no": "1358",
+    "no": "1356",
     "id": "q0945",
     "year": "2016",
     "session": "1회",
@@ -26874,7 +26832,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0945"
   },
   {
-    "no": "1359",
+    "no": "1357",
     "id": "q0946",
     "year": "2019",
     "session": "2회",
@@ -26894,7 +26852,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0946"
   },
   {
-    "no": "1360",
+    "no": "1358",
     "id": "q0947",
     "year": "2021",
     "session": "4회",
@@ -26915,7 +26873,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0947"
   },
   {
-    "no": "1361",
+    "no": "1359",
     "id": "q0948",
     "year": "2021",
     "session": "3회",
@@ -26936,7 +26894,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0948"
   },
   {
-    "no": "1362",
+    "no": "1360",
     "id": "q0949",
     "year": "2024",
     "session": "1회",
@@ -26956,7 +26914,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0949"
   },
   {
-    "no": "1363",
+    "no": "1361",
     "id": "q0950",
     "year": "2018",
     "session": "1회",
@@ -26976,7 +26934,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0950"
   },
   {
-    "no": "1364",
+    "no": "1362",
     "id": "q0951",
     "year": "2020",
     "session": "2회",
@@ -26996,7 +26954,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0951"
   },
   {
-    "no": "1365",
+    "no": "1363",
     "id": "q0952",
     "year": "2016",
     "session": "1회",
@@ -27016,7 +26974,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0952"
   },
   {
-    "no": "1366",
+    "no": "1364",
     "id": "q0953",
     "year": "2024",
     "session": "1회",
@@ -27036,7 +26994,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0953"
   },
   {
-    "no": "1367",
+    "no": "1365",
     "id": "q0954",
     "year": "2022",
     "session": "4회",
@@ -27056,7 +27014,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0954"
   },
   {
-    "no": "1368",
+    "no": "1366",
     "id": "q0955",
     "year": "2018",
     "session": "1회",
@@ -27076,7 +27034,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0955"
   },
   {
-    "no": "1369",
+    "no": "1367",
     "id": "q0956",
     "year": "2019",
     "session": "1회",
@@ -27096,7 +27054,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0956"
   },
   {
-    "no": "1370",
+    "no": "1368",
     "id": "q0957",
     "year": "2015",
     "session": "5회",
@@ -27116,7 +27074,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0957"
   },
   {
-    "no": "1371",
+    "no": "1369",
     "id": "q0958",
     "year": "2018",
     "session": "1회",
@@ -27136,7 +27094,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0958"
   },
   {
-    "no": "1372",
+    "no": "1370",
     "id": "q0959",
     "year": "2022",
     "session": "4회",
@@ -27156,7 +27114,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0959"
   },
   {
-    "no": "1373",
+    "no": "1371",
     "id": "q0960",
     "year": "2022",
     "session": "2회",
@@ -27176,7 +27134,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0960"
   },
   {
-    "no": "1374",
+    "no": "1372",
     "id": "q0961",
     "year": "2015",
     "session": "1회",
@@ -27196,7 +27154,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0961"
   },
   {
-    "no": "1375",
+    "no": "1373",
     "id": "q0962",
     "year": "2022",
     "session": "2회",
@@ -27216,7 +27174,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0962"
   },
   {
-    "no": "1376",
+    "no": "1374",
     "id": "q0963",
     "year": "2024",
     "session": "2회",
@@ -27236,7 +27194,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0963"
   },
   {
-    "no": "1377",
+    "no": "1375",
     "id": "q0964",
     "year": "2021",
     "session": "4회",
@@ -27256,7 +27214,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0964"
   },
   {
-    "no": "1378",
+    "no": "1376",
     "id": "q0965",
     "year": "2014",
     "session": "1회",
@@ -27276,7 +27234,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0965"
   },
   {
-    "no": "1379",
+    "no": "1377",
     "id": "q0966",
     "year": "2017",
     "session": "3회",
@@ -27296,7 +27254,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0966"
   },
   {
-    "no": "1380",
+    "no": "1378",
     "id": "q0967",
     "year": "2016",
     "session": "2회",
@@ -27316,7 +27274,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0967"
   },
   {
-    "no": "1381",
+    "no": "1379",
     "id": "q0968",
     "year": "2022",
     "session": "4회",
@@ -27336,7 +27294,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0968"
   },
   {
-    "no": "1382",
+    "no": "1380",
     "id": "q0969",
     "year": "2015",
     "session": "5회",
@@ -27356,7 +27314,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0969"
   },
   {
-    "no": "1383",
+    "no": "1381",
     "id": "q0970",
     "year": "2020",
     "session": "3회",
@@ -27376,7 +27334,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0970"
   },
   {
-    "no": "1384",
+    "no": "1382",
     "id": "q0971",
     "year": "2014",
     "session": "1회",
@@ -27396,7 +27354,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0971"
   },
   {
-    "no": "1385",
+    "no": "1383",
     "id": "q0972",
     "year": "2017",
     "session": "3회",
@@ -27416,7 +27374,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0972"
   },
   {
-    "no": "1386",
+    "no": "1384",
     "id": "q0973",
     "year": "2022",
     "session": "3회",
@@ -27436,7 +27394,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0973"
   },
   {
-    "no": "1387",
+    "no": "1385",
     "id": "q0974",
     "year": "2016",
     "session": "1회",
@@ -27456,7 +27414,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0974"
   },
   {
-    "no": "1388",
+    "no": "1386",
     "id": "q0975",
     "year": "2016",
     "session": "1회",
@@ -27476,7 +27434,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0975"
   },
   {
-    "no": "1389",
+    "no": "1387",
     "id": "q0976",
     "year": "2015",
     "session": "5회",
@@ -27496,7 +27454,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0976"
   },
   {
-    "no": "1390",
+    "no": "1388",
     "id": "q0977",
     "year": "2014",
     "session": "4회",
@@ -27516,7 +27474,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0977"
   },
   {
-    "no": "1391",
+    "no": "1389",
     "id": "q0979",
     "year": "2021",
     "session": "3회",
@@ -27536,7 +27494,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0979"
   },
   {
-    "no": "1392",
+    "no": "1390",
     "id": "q0980",
     "year": "2020",
     "session": "3회",
@@ -27556,7 +27514,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0980"
   },
   {
-    "no": "1393",
+    "no": "1391",
     "id": "q0981",
     "year": "2016",
     "session": "4회",
@@ -27576,7 +27534,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0981"
   },
   {
-    "no": "1394",
+    "no": "1392",
     "id": "q0982",
     "year": "2021",
     "session": "3회",
@@ -27596,7 +27554,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0982"
   },
   {
-    "no": "1395",
+    "no": "1393",
     "id": "q0983",
     "year": "2024",
     "session": "2회",
@@ -27616,7 +27574,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0983"
   },
   {
-    "no": "1396",
+    "no": "1394",
     "id": "q0984",
     "year": "2022",
     "session": "4회",
@@ -27636,7 +27594,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0984"
   },
   {
-    "no": "1397",
+    "no": "1395",
     "id": "q0985",
     "year": "2022",
     "session": "4회",
@@ -27656,7 +27614,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0985"
   },
   {
-    "no": "1398",
+    "no": "1396",
     "id": "q0986",
     "year": "2021",
     "session": "4회",
@@ -27676,7 +27634,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0986"
   },
   {
-    "no": "1399",
+    "no": "1397",
     "id": "q0987",
     "year": "2015",
     "session": "5회",
@@ -27696,7 +27654,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0987"
   },
   {
-    "no": "1400",
+    "no": "1398",
     "id": "q0988",
     "year": "2014",
     "session": "5회",
@@ -27716,7 +27674,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0988"
   },
   {
-    "no": "1401",
+    "no": "1399",
     "id": "q0989",
     "year": "2016",
     "session": "4회",
@@ -27736,7 +27694,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0989"
   },
   {
-    "no": "1402",
+    "no": "1400",
     "id": "q0990",
     "year": "2016",
     "session": "1회",
@@ -27756,7 +27714,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0990"
   },
   {
-    "no": "1403",
+    "no": "1401",
     "id": "q0991",
     "year": "2016",
     "session": "1회",
@@ -27776,7 +27734,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0991"
   },
   {
-    "no": "1404",
+    "no": "1402",
     "id": "q0992",
     "year": "2021",
     "session": "3회",
@@ -27796,7 +27754,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0992"
   },
   {
-    "no": "1405",
+    "no": "1403",
     "id": "q0993",
     "year": "2021",
     "session": "4회",
@@ -27816,7 +27774,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0993"
   },
   {
-    "no": "1406",
+    "no": "1404",
     "id": "q0994",
     "year": "2020",
     "session": "3회",
@@ -27836,7 +27794,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0994"
   },
   {
-    "no": "1407",
+    "no": "1405",
     "id": "q0995",
     "year": "2024",
     "session": "2회",
@@ -27856,7 +27814,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0995"
   },
   {
-    "no": "1408",
+    "no": "1406",
     "id": "q0996",
     "year": "2022",
     "session": "3회",
@@ -27876,7 +27834,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0996"
   },
   {
-    "no": "1409",
+    "no": "1407",
     "id": "q0997",
     "year": "2015",
     "session": "1회",
@@ -27896,7 +27854,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0997"
   },
   {
-    "no": "1410",
+    "no": "1408",
     "id": "q0998",
     "year": "2021",
     "session": "3회",
@@ -27916,7 +27874,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0998"
   },
   {
-    "no": "1411",
+    "no": "1409",
     "id": "q0999",
     "year": "2018",
     "session": "1회",
@@ -27937,7 +27895,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0999"
   },
   {
-    "no": "1412",
+    "no": "1410",
     "id": "q1000",
     "year": "2021",
     "session": "3회",
@@ -27957,7 +27915,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1000"
   },
   {
-    "no": "1413",
+    "no": "1411",
     "id": "q1001",
     "year": "2021",
     "session": "3회",
@@ -27977,7 +27935,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1001"
   },
   {
-    "no": "1414",
+    "no": "1412",
     "id": "q1002",
     "year": "2019",
     "session": "1회",
@@ -27997,7 +27955,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1002"
   },
   {
-    "no": "1415",
+    "no": "1413",
     "id": "q1003",
     "year": "2022",
     "session": "4회",
@@ -28017,7 +27975,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1003"
   },
   {
-    "no": "1416",
+    "no": "1414",
     "id": "q1004",
     "year": "2016",
     "session": "1회",
@@ -28037,7 +27995,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1004"
   },
   {
-    "no": "1417",
+    "no": "1415",
     "id": "q1005",
     "year": "2016",
     "session": "1회",
@@ -28057,7 +28015,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1005"
   },
   {
-    "no": "1418",
+    "no": "1416",
     "id": "q1006",
     "year": "2016",
     "session": "2회",
@@ -28077,7 +28035,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1006"
   },
   {
-    "no": "1419",
+    "no": "1417",
     "id": "q1007",
     "year": "2024",
     "session": "1회",
@@ -28097,7 +28055,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1007"
   },
   {
-    "no": "1420",
+    "no": "1418",
     "id": "q1008",
     "year": "2016",
     "session": "1회",
@@ -28117,7 +28075,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1008"
   },
   {
-    "no": "1421",
+    "no": "1419",
     "id": "q1009",
     "year": "2019",
     "session": "2회",
@@ -28137,7 +28095,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1009"
   },
   {
-    "no": "1422",
+    "no": "1420",
     "id": "q1010",
     "year": "2015",
     "session": "2회",
@@ -28157,7 +28115,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1010"
   },
   {
-    "no": "1423",
+    "no": "1421",
     "id": "q1011",
     "year": "2019",
     "session": "1회",
@@ -28177,7 +28135,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1011"
   },
   {
-    "no": "1424",
+    "no": "1422",
     "id": "q1012",
     "year": "2014",
     "session": "1회",
@@ -28197,7 +28155,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1012"
   },
   {
-    "no": "1425",
+    "no": "1423",
     "id": "q1013",
     "year": "2016",
     "session": "4회",
@@ -28217,7 +28175,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1013"
   },
   {
-    "no": "1426",
+    "no": "1424",
     "id": "q1014",
     "year": "2022",
     "session": "4회",
@@ -28237,7 +28195,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1014"
   },
   {
-    "no": "1427",
+    "no": "1425",
     "id": "q1015",
     "year": "2020",
     "session": "3회",
@@ -28257,7 +28215,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1015"
   },
   {
-    "no": "1428",
+    "no": "1426",
     "id": "q1016",
     "year": "2019",
     "session": "1회",
@@ -28277,7 +28235,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1016"
   },
   {
-    "no": "1429",
+    "no": "1427",
     "id": "q1017",
     "year": "2022",
     "session": "2회",
@@ -28297,7 +28255,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1017"
   },
   {
-    "no": "1430",
+    "no": "1428",
     "id": "q1018",
     "year": "2015",
     "session": "1회",
@@ -28317,7 +28275,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1018"
   },
   {
-    "no": "1431",
+    "no": "1429",
     "id": "q1019",
     "year": "2022",
     "session": "4회",
@@ -28337,7 +28295,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1019"
   },
   {
-    "no": "1432",
+    "no": "1430",
     "id": "q1020",
     "year": "2020",
     "session": "3회",
@@ -28357,7 +28315,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1020"
   },
   {
-    "no": "1433",
+    "no": "1431",
     "id": "q1021",
     "year": "2015",
     "session": "2회",
@@ -28377,7 +28335,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1021"
   },
   {
-    "no": "1434",
+    "no": "1432",
     "id": "q1022",
     "year": "2020",
     "session": "3회",
@@ -28397,7 +28355,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1022"
   },
   {
-    "no": "1435",
+    "no": "1433",
     "id": "q1023",
     "year": "2019",
     "session": "2회",
@@ -28417,7 +28375,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1023"
   },
   {
-    "no": "1436",
+    "no": "1434",
     "id": "q1024",
     "year": "2021",
     "session": "3회",
@@ -28437,7 +28395,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1024"
   },
   {
-    "no": "1437",
+    "no": "1435",
     "id": "q1025",
     "year": "2022",
     "session": "4회",
@@ -28457,7 +28415,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1025"
   },
   {
-    "no": "1438",
+    "no": "1436",
     "id": "q1026",
     "year": "2020",
     "session": "3회",
@@ -28477,7 +28435,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1026"
   },
   {
-    "no": "1439",
+    "no": "1437",
     "id": "q1027",
     "year": "2022",
     "session": "4회",
@@ -28497,7 +28455,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1027"
   },
   {
-    "no": "1440",
+    "no": "1438",
     "id": "q1028",
     "year": "2017",
     "session": "4회",
@@ -28517,7 +28475,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1028"
   },
   {
-    "no": "1441",
+    "no": "1439",
     "id": "q1029",
     "year": "2015",
     "session": "1회",
@@ -28537,7 +28495,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1029"
   },
   {
-    "no": "1442",
+    "no": "1440",
     "id": "q1030",
     "year": "2014",
     "session": "1회",
@@ -28557,7 +28515,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1030"
   },
   {
-    "no": "1443",
+    "no": "1441",
     "id": "q1031",
     "year": "2022",
     "session": "4회",
@@ -28577,7 +28535,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1031"
   },
   {
-    "no": "1444",
+    "no": "1442",
     "id": "q1032",
     "year": "2022",
     "session": "2회",
@@ -28597,7 +28555,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1032"
   },
   {
-    "no": "1445",
+    "no": "1443",
     "id": "q1033",
     "year": "2015",
     "session": "4회",
@@ -28617,7 +28575,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1033"
   },
   {
-    "no": "1446",
+    "no": "1444",
     "id": "q1034",
     "year": "2022",
     "session": "3회",
@@ -28637,7 +28595,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1034"
   },
   {
-    "no": "1447",
+    "no": "1445",
     "id": "q1035",
     "year": "2022",
     "session": "3회",
@@ -28657,7 +28615,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1035"
   },
   {
-    "no": "1448",
+    "no": "1446",
     "id": "q1036",
     "year": "2016",
     "session": "1회",
@@ -28677,7 +28635,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1036"
   },
   {
-    "no": "1449",
+    "no": "1447",
     "id": "q1037",
     "year": "2021",
     "session": "3회",
@@ -28697,7 +28655,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1037"
   },
   {
-    "no": "1450",
+    "no": "1448",
     "id": "q1038",
     "year": "2022",
     "session": "2회",
@@ -28717,7 +28675,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1038"
   },
   {
-    "no": "1451",
+    "no": "1449",
     "id": "q1039",
     "year": "2015",
     "session": "1회",
@@ -28737,7 +28695,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1039"
   },
   {
-    "no": "1452",
+    "no": "1450",
     "id": "q1040",
     "year": "2015",
     "session": "1회",
@@ -28757,7 +28715,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1040"
   },
   {
-    "no": "1453",
+    "no": "1451",
     "id": "q1041",
     "year": "2014",
     "session": "1회",
@@ -28777,7 +28735,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1041"
   },
   {
-    "no": "1454",
+    "no": "1452",
     "id": "q1042",
     "year": "2019",
     "session": "1회",
@@ -28797,7 +28755,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1042"
   },
   {
-    "no": "1455",
+    "no": "1453",
     "id": "q1043",
     "year": "2020",
     "session": "1회",
@@ -28817,7 +28775,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1043"
   },
   {
-    "no": "1456",
+    "no": "1454",
     "id": "q1044",
     "year": "2015",
     "session": "2회",
@@ -28837,7 +28795,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1044"
   },
   {
-    "no": "1457",
+    "no": "1455",
     "id": "q1045",
     "year": "2016",
     "session": "2회",
@@ -28857,7 +28815,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1045"
   },
   {
-    "no": "1458",
+    "no": "1456",
     "id": "q1046",
     "year": "2016",
     "session": "2회",
@@ -28877,7 +28835,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1046"
   },
   {
-    "no": "1459",
+    "no": "1457",
     "id": "q1047",
     "year": "2017",
     "session": "3회",
@@ -28897,7 +28855,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1047"
   },
   {
-    "no": "1460",
+    "no": "1458",
     "id": "q1048",
     "year": "2016",
     "session": "1회",
@@ -28917,7 +28875,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1048"
   },
   {
-    "no": "1461",
+    "no": "1459",
     "id": "q1049",
     "year": "2015",
     "session": "5회",
@@ -28937,7 +28895,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1049"
   },
   {
-    "no": "1462",
+    "no": "1460",
     "id": "q1050",
     "year": "2014",
     "session": "1회",
@@ -28957,7 +28915,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1050"
   },
   {
-    "no": "1463",
+    "no": "1461",
     "id": "q1051",
     "year": "2016",
     "session": "2회",
@@ -28977,7 +28935,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1051"
   },
   {
-    "no": "1464",
+    "no": "1462",
     "id": "q1052",
     "year": "2020",
     "session": "3회",
@@ -28997,7 +28955,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1052"
   },
   {
-    "no": "1465",
+    "no": "1463",
     "id": "q1053",
     "year": "2016",
     "session": "1회",
@@ -29017,7 +28975,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1053"
   },
   {
-    "no": "1466",
+    "no": "1464",
     "id": "q1054",
     "year": "2024",
     "session": "2회",
@@ -29037,7 +28995,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1054"
   },
   {
-    "no": "1467",
+    "no": "1465",
     "id": "q1055",
     "year": "2020",
     "session": "3회",
@@ -29057,7 +29015,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1055"
   },
   {
-    "no": "1468",
+    "no": "1466",
     "id": "q1056",
     "year": "2018",
     "session": "1회",
@@ -29077,7 +29035,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1056"
   },
   {
-    "no": "1469",
+    "no": "1467",
     "id": "q1057",
     "year": "2014",
     "session": "5회",
@@ -29097,7 +29055,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1057"
   },
   {
-    "no": "1470",
+    "no": "1468",
     "id": "q1058",
     "year": "2016",
     "session": "4회",
@@ -29117,7 +29075,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1058"
   },
   {
-    "no": "1471",
+    "no": "1469",
     "id": "q1059",
     "year": "2021",
     "session": "3회",
@@ -29137,7 +29095,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1059"
   },
   {
-    "no": "1472",
+    "no": "1470",
     "id": "q1060",
     "year": "2019",
     "session": "4회",
@@ -29157,7 +29115,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1060"
   },
   {
-    "no": "1473",
+    "no": "1471",
     "id": "q1061",
     "year": "2021",
     "session": "3회",
@@ -29177,7 +29135,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1061"
   },
   {
-    "no": "1474",
+    "no": "1472",
     "id": "q1062",
     "year": "2015",
     "session": "4회",
@@ -29197,7 +29155,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1062"
   },
   {
-    "no": "1475",
+    "no": "1473",
     "id": "q1063",
     "year": "2020",
     "session": "3회",
@@ -29217,7 +29175,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1063"
   },
   {
-    "no": "1476",
+    "no": "1474",
     "id": "q1064",
     "year": "2024",
     "session": "2회",
@@ -29237,7 +29195,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1064"
   },
   {
-    "no": "1477",
+    "no": "1475",
     "id": "q1065",
     "year": "2015",
     "session": "5회",
@@ -29257,7 +29215,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1065"
   },
   {
-    "no": "1478",
+    "no": "1476",
     "id": "q1066",
     "year": "2021",
     "session": "4회",
@@ -29277,7 +29235,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1066"
   },
   {
-    "no": "1479",
+    "no": "1477",
     "id": "q1067",
     "year": "2021",
     "session": "4회",
@@ -29297,7 +29255,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1067"
   },
   {
-    "no": "1480",
+    "no": "1478",
     "id": "q1068",
     "year": "2014",
     "session": "5회",
@@ -29318,7 +29276,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1068"
   },
   {
-    "no": "1481",
+    "no": "1479",
     "id": "q1069",
     "year": "2018",
     "session": "1회",
@@ -29338,7 +29296,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1069"
   },
   {
-    "no": "1482",
+    "no": "1480",
     "id": "q1070",
     "year": "2016",
     "session": "4회",
@@ -29358,7 +29316,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1070"
   },
   {
-    "no": "1483",
+    "no": "1481",
     "id": "q1071",
     "year": "2020",
     "session": "3회",
@@ -29378,7 +29336,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1071"
   },
   {
-    "no": "1484",
+    "no": "1482",
     "id": "q1072",
     "year": "2014",
     "session": "1회",
@@ -29398,7 +29356,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1072"
   },
   {
-    "no": "1485",
+    "no": "1483",
     "id": "q1073",
     "year": "2022",
     "session": "4회",
@@ -29418,7 +29376,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1073"
   },
   {
-    "no": "1486",
+    "no": "1484",
     "id": "q1074",
     "year": "2014",
     "session": "1회",
@@ -29438,7 +29396,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1074"
   },
   {
-    "no": "1487",
+    "no": "1485",
     "id": "q1075",
     "year": "2024",
     "session": "2회",
@@ -29459,7 +29417,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1075"
   },
   {
-    "no": "1488",
+    "no": "1486",
     "id": "q1076",
     "year": "2024",
     "session": "1회",
@@ -29480,7 +29438,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1076"
   },
   {
-    "no": "1489",
+    "no": "1487",
     "id": "q1077",
     "year": "2015",
     "session": "1회",
@@ -29500,7 +29458,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1077"
   },
   {
-    "no": "1490",
+    "no": "1488",
     "id": "q1078",
     "year": "2021",
     "session": "4회",
@@ -29520,7 +29478,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1078"
   },
   {
-    "no": "1491",
+    "no": "1489",
     "id": "q1079",
     "year": "2022",
     "session": "3회",
@@ -29540,7 +29498,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1079"
   },
   {
-    "no": "1492",
+    "no": "1490",
     "id": "q1080",
     "year": "2015",
     "session": "4회",
@@ -29560,7 +29518,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1080"
   },
   {
-    "no": "1493",
+    "no": "1491",
     "id": "q1081",
     "year": "2016",
     "session": "1회",
@@ -29580,7 +29538,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1081"
   },
   {
-    "no": "1494",
+    "no": "1492",
     "id": "q1082",
     "year": "2016",
     "session": "4회",
@@ -29600,7 +29558,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1082"
   },
   {
-    "no": "1495",
+    "no": "1493",
     "id": "q1083",
     "year": "2018",
     "session": "3회",
@@ -29620,7 +29578,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1083"
   },
   {
-    "no": "1496",
+    "no": "1494",
     "id": "q1084",
     "year": "2024",
     "session": "1회",
@@ -29640,7 +29598,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1084"
   },
   {
-    "no": "1497",
+    "no": "1495",
     "id": "q1085",
     "year": "2022",
     "session": "2회",
@@ -29660,7 +29618,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1085"
   },
   {
-    "no": "1498",
+    "no": "1496",
     "id": "q1086",
     "year": "2021",
     "session": "3회",
@@ -29680,7 +29638,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1086"
   },
   {
-    "no": "1499",
+    "no": "1497",
     "id": "q1088",
     "year": "2024",
     "session": "1회",
@@ -29700,7 +29658,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1088"
   },
   {
-    "no": "1500",
+    "no": "1498",
     "id": "q1089",
     "year": "2015",
     "session": "5회",
@@ -29720,7 +29678,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1089"
   },
   {
-    "no": "1501",
+    "no": "1499",
     "id": "q1090",
     "year": "2015",
     "session": "1회",
@@ -29740,7 +29698,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1090"
   },
   {
-    "no": "1502",
+    "no": "1500",
     "id": "q1091",
     "year": "2016",
     "session": "2회",
@@ -29760,7 +29718,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1091"
   },
   {
-    "no": "1503",
+    "no": "1501",
     "id": "q1092",
     "year": "2018",
     "session": "1회",
@@ -29780,7 +29738,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1092"
   },
   {
-    "no": "1504",
+    "no": "1502",
     "id": "q1093",
     "year": "2024",
     "session": "1회",
@@ -29800,7 +29758,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1093"
   },
   {
-    "no": "1505",
+    "no": "1503",
     "id": "q1094",
     "year": "2022",
     "session": "4회",
@@ -29820,7 +29778,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1094"
   },
   {
-    "no": "1506",
+    "no": "1504",
     "id": "q1095",
     "year": "2024",
     "session": "1회",
@@ -29840,7 +29798,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1095"
   },
   {
-    "no": "1507",
+    "no": "1505",
     "id": "q1096",
     "year": "2022",
     "session": "4회",
@@ -29860,7 +29818,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1096"
   },
   {
-    "no": "1508",
+    "no": "1506",
     "id": "q1097",
     "year": "2016",
     "session": "4회",
@@ -29880,7 +29838,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1097"
   },
   {
-    "no": "1509",
+    "no": "1507",
     "id": "q1098",
     "year": "2015",
     "session": "5회",
@@ -29900,7 +29858,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1098"
   },
   {
-    "no": "1510",
+    "no": "1508",
     "id": "q1099",
     "year": "2015",
     "session": "1회",
@@ -29920,7 +29878,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1099"
   },
   {
-    "no": "1511",
+    "no": "1509",
     "id": "q1100",
     "year": "2021",
     "session": "3회",
@@ -29940,7 +29898,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1100"
   },
   {
-    "no": "1512",
+    "no": "1510",
     "id": "q1101",
     "year": "2024",
     "session": "2회",
@@ -29960,7 +29918,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1101"
   },
   {
-    "no": "1513",
+    "no": "1511",
     "id": "q1102",
     "year": "2021",
     "session": "4회",
@@ -29980,7 +29938,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1102"
   },
   {
-    "no": "1514",
+    "no": "1512",
     "id": "q1103",
     "year": "2022",
     "session": "3회",
@@ -30000,7 +29958,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1103"
   },
   {
-    "no": "1515",
+    "no": "1513",
     "id": "q1104",
     "year": "2021",
     "session": "4회",
@@ -30020,7 +29978,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1104"
   },
   {
-    "no": "1516",
+    "no": "1514",
     "id": "q1105",
     "year": "2019",
     "session": "1회",
@@ -30040,7 +29998,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1105"
   },
   {
-    "no": "1517",
+    "no": "1515",
     "id": "q1106",
     "year": "2015",
     "session": "1회",
@@ -30060,7 +30018,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1106"
   },
   {
-    "no": "1518",
+    "no": "1516",
     "id": "q1107",
     "year": "2017",
     "session": "3회",
@@ -30080,7 +30038,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1107"
   },
   {
-    "no": "1519",
+    "no": "1517",
     "id": "q1108",
     "year": "2017",
     "session": "4회",
@@ -30100,7 +30058,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1108"
   },
   {
-    "no": "1520",
+    "no": "1518",
     "id": "q1109",
     "year": "2021",
     "session": "3회",
@@ -30120,7 +30078,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1109"
   },
   {
-    "no": "1521",
+    "no": "1519",
     "id": "q1110",
     "year": "2018",
     "session": "3회",
@@ -30140,7 +30098,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1110"
   },
   {
-    "no": "1522",
+    "no": "1520",
     "id": "q1111",
     "year": "2018",
     "session": "1회",
@@ -30160,7 +30118,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1111"
   },
   {
-    "no": "1523",
+    "no": "1521",
     "id": "q1112",
     "year": "2020",
     "session": "3회",
@@ -30180,7 +30138,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1112"
   },
   {
-    "no": "1524",
+    "no": "1522",
     "id": "q1113",
     "year": "2014",
     "session": "1회",
@@ -30200,7 +30158,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1113"
   },
   {
-    "no": "1525",
+    "no": "1523",
     "id": "q1114",
     "year": "2022",
     "session": "3회",
@@ -30220,7 +30178,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1114"
   },
   {
-    "no": "1526",
+    "no": "1524",
     "id": "q1115",
     "year": "2014",
     "session": "4회",
@@ -30240,7 +30198,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1115"
   },
   {
-    "no": "1527",
+    "no": "1525",
     "id": "q1116",
     "year": "2015",
     "session": "1회",
@@ -30260,7 +30218,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1116"
   },
   {
-    "no": "1528",
+    "no": "1526",
     "id": "q1117",
     "year": "2022",
     "session": "4회",
@@ -30280,7 +30238,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1117"
   },
   {
-    "no": "1529",
+    "no": "1527",
     "id": "q1118",
     "year": "2021",
     "session": "3회",
@@ -30300,7 +30258,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1118"
   },
   {
-    "no": "1530",
+    "no": "1528",
     "id": "q1119",
     "year": "2017",
     "session": "4회",
@@ -30320,7 +30278,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1119"
   },
   {
-    "no": "1531",
+    "no": "1529",
     "id": "q1120",
     "year": "2018",
     "session": "3회",
@@ -30340,7 +30298,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1120"
   },
   {
-    "no": "1532",
+    "no": "1530",
     "id": "q1121",
     "year": "2019",
     "session": "4회",
@@ -30360,7 +30318,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1121"
   },
   {
-    "no": "1533",
+    "no": "1531",
     "id": "q1122",
     "year": "2022",
     "session": "4회",
@@ -30380,7 +30338,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1122"
   },
   {
-    "no": "1534",
+    "no": "1532",
     "id": "q1123",
     "year": "2021",
     "session": "4회",
@@ -30400,7 +30358,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1123"
   },
   {
-    "no": "1535",
+    "no": "1533",
     "id": "q1124",
     "year": "2019",
     "session": "4회",
@@ -30420,7 +30378,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1124"
   },
   {
-    "no": "1536",
+    "no": "1534",
     "id": "q1125",
     "year": "2021",
     "session": "3회",
@@ -30440,7 +30398,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1125"
   },
   {
-    "no": "1537",
+    "no": "1535",
     "id": "q1126",
     "year": "2022",
     "session": "3회",
@@ -30460,7 +30418,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1126"
   },
   {
-    "no": "1538",
+    "no": "1536",
     "id": "q1127",
     "year": "2017",
     "session": "4회",
@@ -30480,7 +30438,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1127"
   },
   {
-    "no": "1539",
+    "no": "1537",
     "id": "q1128",
     "year": "2024",
     "session": "2회",
@@ -30500,7 +30458,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1128"
   },
   {
-    "no": "1540",
+    "no": "1538",
     "id": "q1129",
     "year": "2021",
     "session": "3회",
@@ -30520,7 +30478,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1129"
   },
   {
-    "no": "1541",
+    "no": "1539",
     "id": "q1130",
     "year": "2014",
     "session": "5회",
@@ -30540,7 +30498,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1130"
   },
   {
-    "no": "1542",
+    "no": "1540",
     "id": "q1131",
     "year": "2015",
     "session": "1회",
@@ -30560,7 +30518,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1131"
   },
   {
-    "no": "1543",
+    "no": "1541",
     "id": "q1132",
     "year": "2021",
     "session": "4회",
@@ -30580,7 +30538,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1132"
   },
   {
-    "no": "1544",
+    "no": "1542",
     "id": "q1133",
     "year": "2014",
     "session": "5회",
@@ -30600,7 +30558,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1133"
   },
   {
-    "no": "1545",
+    "no": "1543",
     "id": "q1134",
     "year": "2022",
     "session": "3회",
@@ -30620,7 +30578,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1134"
   },
   {
-    "no": "1546",
+    "no": "1544",
     "id": "q1135",
     "year": "2019",
     "session": "4회",
@@ -30640,7 +30598,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1135"
   },
   {
-    "no": "1547",
+    "no": "1545",
     "id": "q1136",
     "year": "2020",
     "session": "3회",
@@ -30660,7 +30618,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1136"
   },
   {
-    "no": "1548",
+    "no": "1546",
     "id": "q1137",
     "year": "2014",
     "session": "5회",
@@ -30680,7 +30638,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1137"
   },
   {
-    "no": "1549",
+    "no": "1547",
     "id": "q1138",
     "year": "2019",
     "session": "2회",
@@ -30700,7 +30658,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1138"
   },
   {
-    "no": "1550",
+    "no": "1548",
     "id": "q1139",
     "year": "2016",
     "session": "1회",
@@ -30720,7 +30678,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1139"
   },
   {
-    "no": "1551",
+    "no": "1549",
     "id": "q1140",
     "year": "2022",
     "session": "2회",
@@ -30740,7 +30698,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1140"
   },
   {
-    "no": "1552",
+    "no": "1550",
     "id": "q1141",
     "year": "2022",
     "session": "3회",
@@ -30760,7 +30718,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1141"
   },
   {
-    "no": "1553",
+    "no": "1551",
     "id": "q1142",
     "year": "2022",
     "session": "2회",
@@ -30780,7 +30738,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1142"
   },
   {
-    "no": "1554",
+    "no": "1552",
     "id": "q1143",
     "year": "2014",
     "session": "5회",
@@ -30800,7 +30758,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1143"
   },
   {
-    "no": "1555",
+    "no": "1553",
     "id": "q1144",
     "year": "2015",
     "session": "2회",
@@ -30820,7 +30778,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1144"
   },
   {
-    "no": "1556",
+    "no": "1554",
     "id": "q1145",
     "year": "2022",
     "session": "4회",
@@ -30840,7 +30798,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1145"
   },
   {
-    "no": "1557",
+    "no": "1555",
     "id": "q1146",
     "year": "2020",
     "session": "3회",
@@ -30860,7 +30818,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1146"
   },
   {
-    "no": "1558",
+    "no": "1556",
     "id": "q1147",
     "year": "2016",
     "session": "4회",
@@ -30880,7 +30838,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1147"
   },
   {
-    "no": "1559",
+    "no": "1557",
     "id": "q1148",
     "year": "2021",
     "session": "4회",
@@ -30900,7 +30858,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1148"
   },
   {
-    "no": "1560",
+    "no": "1558",
     "id": "q1149",
     "year": "2015",
     "session": "1회",
@@ -30921,7 +30879,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1149"
   },
   {
-    "no": "1561",
+    "no": "1559",
     "id": "q1150",
     "year": "2021",
     "session": "3회",
@@ -30942,7 +30900,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1150"
   },
   {
-    "no": "1562",
+    "no": "1560",
     "id": "q1151",
     "year": "2014",
     "session": "5회",
@@ -30963,7 +30921,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1151"
   },
   {
-    "no": "1563",
+    "no": "1561",
     "id": "q1152",
     "year": "2022",
     "session": "4회",
@@ -30985,7 +30943,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q1152"
   },
   {
-    "no": "1564",
+    "no": "1562",
     "id": "2025-2-G-56",
     "year": "2025",
     "session": "2회",
@@ -31004,7 +30962,7 @@ window.MASTER_QUIZ_DATA = [
     "imp": "New"
   },
   {
-    "no": "1565",
+    "no": "1563",
     "id": "2025-3-G-15",
     "year": "2025",
     "session": "3회",
@@ -31023,7 +30981,7 @@ window.MASTER_QUIZ_DATA = [
     "imp": "New"
   },
   {
-    "no": "1566",
+    "no": "1564",
     "id": "2025-3-G-17",
     "year": "2025",
     "session": "3회",
@@ -31042,7 +31000,7 @@ window.MASTER_QUIZ_DATA = [
     "imp": "New"
   },
   {
-    "no": "1567",
+    "no": "1565",
     "id": "2025-3-G-27",
     "year": "2025",
     "session": "3회",
@@ -31061,7 +31019,7 @@ window.MASTER_QUIZ_DATA = [
     "imp": "New"
   },
   {
-    "no": "1568",
+    "no": "1566",
     "id": "2025-3-G-29",
     "year": "2025",
     "session": "3회",
@@ -31080,7 +31038,7 @@ window.MASTER_QUIZ_DATA = [
     "imp": "New"
   },
   {
-    "no": "1569",
+    "no": "1567",
     "id": "2025-3-G-31",
     "year": "2025",
     "session": "3회",
@@ -31099,7 +31057,7 @@ window.MASTER_QUIZ_DATA = [
     "imp": "New"
   },
   {
-    "no": "1570",
+    "no": "1568",
     "id": "2025-3-G-37",
     "year": "2025",
     "session": "3회",
@@ -31118,7 +31076,7 @@ window.MASTER_QUIZ_DATA = [
     "imp": "New"
   },
   {
-    "no": "1571",
+    "no": "1569",
     "id": "2025-3-G-39",
     "year": "2025",
     "session": "3회",
@@ -31137,7 +31095,7 @@ window.MASTER_QUIZ_DATA = [
     "imp": "New"
   },
   {
-    "no": "1572",
+    "no": "1570",
     "id": "2025-3-G-41",
     "year": "2025",
     "session": "3회",
@@ -31156,7 +31114,7 @@ window.MASTER_QUIZ_DATA = [
     "imp": "New"
   },
   {
-    "no": "1573",
+    "no": "1571",
     "id": "2025-3-G-49",
     "year": "2025",
     "session": "3회",
@@ -31175,7 +31133,7 @@ window.MASTER_QUIZ_DATA = [
     "imp": "New"
   },
   {
-    "no": "1574",
+    "no": "1572",
     "id": "2025-3-G-51",
     "year": "2025",
     "session": "3회",
@@ -31194,7 +31152,7 @@ window.MASTER_QUIZ_DATA = [
     "imp": "New"
   },
   {
-    "no": "1575",
+    "no": "1573",
     "id": "2025-3-G-53",
     "year": "2025",
     "session": "3회",
@@ -31213,7 +31171,7 @@ window.MASTER_QUIZ_DATA = [
     "imp": "New"
   },
   {
-    "no": "1576",
+    "no": "1574",
     "id": "2025-3-G-55",
     "year": "2025",
     "session": "3회",
@@ -31232,7 +31190,7 @@ window.MASTER_QUIZ_DATA = [
     "imp": "New"
   },
   {
-    "no": "1577",
+    "no": "1575",
     "id": "2025-3-G-57",
     "year": "2025",
     "session": "3회",
@@ -31251,7 +31209,7 @@ window.MASTER_QUIZ_DATA = [
     "imp": "New"
   },
   {
-    "no": "1578",
+    "no": "1576",
     "id": "2025-3-G-59",
     "year": "2025",
     "session": "3회",
@@ -31270,7 +31228,7 @@ window.MASTER_QUIZ_DATA = [
     "imp": "New"
   },
   {
-    "no": "1579",
+    "no": "1577",
     "id": "q0125",
     "year": "2021",
     "session": "3회",
@@ -31290,7 +31248,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0125"
   },
   {
-    "no": "1580",
+    "no": "1578",
     "id": "q0117",
     "year": "2018",
     "session": "1회",
@@ -31310,7 +31268,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0117"
   },
   {
-    "no": "1581",
+    "no": "1579",
     "id": "q0115",
     "year": "2014",
     "session": "5회",
@@ -31330,7 +31288,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0115"
   },
   {
-    "no": "1582",
+    "no": "1580",
     "id": "q0109",
     "year": "2020",
     "session": "3회",
@@ -31350,7 +31308,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0109"
   },
   {
-    "no": "1583",
+    "no": "1581",
     "id": "q0097",
     "year": "2014",
     "session": "1회",
@@ -31371,28 +31329,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0097"
   },
   {
-    "no": "1584",
-    "id": "q0058",
-    "year": "2019",
-    "session": "4회",
-    "category": "기체 정비",
-    "q": "버니어캘리퍼스로 측정한 결과 어미자와 아들자의 눈금이 그림과 같이 화살표로 표시된 곳에서 일치하였다면 측정값은 몇 mm인가?(단, 최소 측정값은 1/20mm이다)",
-    "options": [
-      "12.4",
-      "12.8",
-      "14",
-      "18"
-    ],
-    "correct": 0,
-    "exp": "측정값 = 어미자(12) + 아들자(8/20 = 0.4) = 12.4mm입니다. [5][출제이력: 16-1회, 19-4회, 18-1회]",
-    "imgUrl": "https://raw.githubusercontent.com/win8367/aviation-images/refs/heads/main/image9.svg",
-    "subcat": "측정 및 도구",
-    "ch": "4",
-    "imp": "S급",
-    "eq": "q0058"
-  },
-  {
-    "no": "1585",
+    "no": "1582",
     "id": "q0017",
     "year": "2016",
     "session": "2회",
@@ -31412,7 +31349,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0017"
   },
   {
-    "no": "1586",
+    "no": "1583",
     "id": "q0015",
     "year": "2022",
     "session": "3회",
@@ -31433,7 +31370,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0015"
   },
   {
-    "no": "1587",
+    "no": "1584",
     "id": "q0011",
     "year": "2014",
     "session": "5회",
@@ -31453,7 +31390,7 @@ window.MASTER_QUIZ_DATA = [
     "eq": "q0011"
   },
   {
-    "no": "1588",
+    "no": "1585",
     "id": "q0003",
     "year": "2020",
     "session": "3회",
@@ -31471,6 +31408,1133 @@ window.MASTER_QUIZ_DATA = [
     "ch": "8",
     "imp": "A급",
     "eq": "q0003"
+  },
+  {
+    "no": "1586",
+    "id": "2026-1-G-01",
+    "year": "2026",
+    "session": "1회",
+    "category": "항공기 일반",
+    "q": "공기의 흐름과 압력의 관계를 설명한 베르누이 정리를 옳게 설명한 것은?",
+    "options": [
+      "위치 에너지의 변화에 의한 압력이 동압이다.",
+      "정상 흐름에서 정압과 동압의 합은 일정하지 않다.",
+      "유체의 속도가 증가하면 정압이 감소한다.",
+      "베르누이 정리는 밀도와는 무관하다."
+    ],
+    "correct": 2,
+    "exp": "Pt(전압) = P(정압) + 1/2ρV²(동압) = 일정. 유체의 속도가 증가하면 정압이 감소함을 알 수 있다.",
+    "subcat": "대기와 베르누이 정리",
+    "ch": "1",
+    "imp": "A급"
+  },
+  {
+    "no": "1587",
+    "id": "2026-1-G-02",
+    "year": "2026",
+    "session": "1회",
+    "category": "항공기 일반",
+    "q": "비행기의 조종성과 정적 안정성에 대한 설명으로 옳은 것은?",
+    "options": [
+      "조종성과 안정성은 서로 상반 관계이다.",
+      "비행기 설계 시 조종성을 위해서는 안정성은 무시해도 좋다.",
+      "비행기 설계 시 안정성을 위해서는 조종성은 무시해도 좋다.",
+      "조종성과 안정성은 상호 보완 관계이다."
+    ],
+    "correct": 0,
+    "exp": "안정성(stability)과 조종성(control)은 항상 상반된 관계를 갖는다.",
+    "subcat": "비행 안정성과 조종",
+    "ch": "3",
+    "imp": "S급"
+  },
+  {
+    "no": "1588",
+    "id": "2026-1-G-03",
+    "year": "2026",
+    "session": "1회",
+    "category": "항공기 일반",
+    "q": "왕복기관을 장비한 프로펠러 비행기의 이용마력을 나타낸 것은?",
+    "options": [
+      "Pa = (비행기속도 * 이용추력) / 프로펠러효율",
+      "Pa = 제동마력 * 프로펠러효율",
+      "Pa = (항력 * 비행기속도) / 75",
+      "Pa = (항력 * 비행기속도) / 제동마력"
+    ],
+    "correct": 1,
+    "exp": "이용마력(power available)은 프로펠러에서 만들어 낸 마력으로 식은 Pa = 제동마력 × 프로펠러 효율 = bHP × η 이다.",
+    "subcat": "고빈출 계산 및 심화",
+    "ch": "11",
+    "imp": "L급"
+  },
+  {
+    "no": "1589",
+    "id": "2026-1-G-04",
+    "year": "2026",
+    "session": "1회",
+    "category": "항공기 일반",
+    "q": "날개의 압력 중심에 대한 설명으로 옳은 것은?",
+    "options": [
+      "받음각의 변화와 상관없이 항상 일정하다.",
+      "받음각이 증가하면 앞쪽으로 이동한다.",
+      "피칭 모멘트가 일정한 위치이다.",
+      "받음각이 증가하면 뒤쪽으로 이동한다."
+    ],
+    "correct": 1,
+    "exp": "압력 중심(CP)은 받음각이 클 때 앞쪽으로 이동하고, 받음각이 작을 때 뒤쪽으로 이동한다.",
+    "subcat": "날개 구조와 양력/항력",
+    "ch": "2",
+    "imp": "A급"
+  },
+  {
+    "no": "1590",
+    "id": "2026-1-G-05",
+    "year": "2026",
+    "session": "1회",
+    "category": "항공기 일반",
+    "q": "프로펠러에서 유효피치를 가장 올바르게 설명한 것은?",
+    "options": [
+      "비행기가 최저속도에서 프로펠러가 1초간 전진한 거리",
+      "비행기가 최고속도에서 프로펠러가 1초간 전진한 거리",
+      "공기를 강체로 가정하고 프로펠러를 1회전할 때 이론적으로 전진한 거리",
+      "공기 중에서 프로펠러가 1회전 할 때 실제로 전진한 거리"
+    ],
+    "correct": 3,
+    "exp": "유효피치(effective pitch)는 프로펠러 1회전에 실제로 얻은 전진거리를 말한다.",
+    "subcat": "엔진 계통 및 왕복기관",
+    "ch": "9",
+    "imp": "A급"
+  },
+  {
+    "no": "1591",
+    "id": "2026-1-G-06",
+    "year": "2026",
+    "session": "1회",
+    "category": "항공기 일반",
+    "q": "동체 가까이에 있는 날개의 앞전에 실속 스트립(Stall Strip)과 같은 장치를 부착하여 받음각이 커져 실속하게 될 때 날개 뿌리 부분부터 흐름의 분리가 발생하도록 하여 날개 끝 부분의 실속을 늦추고 도움날개(Aileron)가 충분한 기능을 발휘할 수 있도록 하는 장치는?",
+    "options": [
+      "커플링 장치",
+      "앞전 장치",
+      "실속 방지 장치",
+      "실속 트리거 장치"
+    ],
+    "correct": 3,
+    "exp": "실속 트리거 장치는 의도적으로 날개 뿌리 부분에서 먼저 실속이 발생하도록 만든 장치이다.",
+    "subcat": "비행 안정성과 조종",
+    "ch": "3",
+    "imp": "L급"
+  },
+  {
+    "no": "1592",
+    "id": "2026-1-G-07",
+    "year": "2026",
+    "session": "1회",
+    "category": "항공기 일반",
+    "q": "헬리콥터의 엔진이 정지하여 자동회전(autorotation)을 할 때 회전날개의 회전수는 어떻게 변화되는가?",
+    "options": [
+      "일정 높이까지는 감소하면서 하강하고 그 후 일정하게 증가한다.",
+      "지속적으로 증가한다.",
+      "지속적으로 감소한다.",
+      "일정 높이까지는 감소하면서 하강하고 그 후 일정 속도를 유지한다."
+    ],
+    "correct": 3,
+    "exp": "자동 회전 시 조종사가 피치를 조절하여 회전수를 회복시킨 후 일정 속도로 하강하면 rpm은 일정하게 유지된다.",
+    "subcat": "헬리콥터 역학 및 구조",
+    "ch": "13",
+    "imp": "S급"
+  },
+  {
+    "no": "1593",
+    "id": "2026-1-G-08",
+    "year": "2026",
+    "session": "1회",
+    "category": "항공기 일반",
+    "q": "받음각(Angle of Attack)에 대한 설명으로 옳은 것은?",
+    "options": [
+      "앞전에서부터 최대 캠버까지의 시위선상의 거리를 말한다.",
+      "날개 뿌리에서 날개 끝까지 연결한 선과 기체 가로축이 이루는 각이다.",
+      "날개골이 휘어진 정도를 나타낸 것이다.",
+      "날개의 시위선(Chord Line)과 상대 바람이 불어오는 방향이 이루는 각을 말한다."
+    ],
+    "correct": 3,
+    "exp": "받음각은 날개의 시위선과 상대풍이 이루는 각이다.",
+    "subcat": "날개 구조와 양력/항력",
+    "ch": "2",
+    "imp": "S급"
+  },
+  {
+    "no": "1594",
+    "id": "2026-1-G-09",
+    "year": "2026",
+    "session": "1회",
+    "category": "항공기 일반",
+    "q": "활공각이 90°로 무동력 급강하(diving) 비행 시 비행기의 속도는 어떻게 되는가?",
+    "options": [
+      "점차로 증가하다가 다시 줄어든다.",
+      "비행기의 무게에 따라 증가할 수도 있고 감소할 수도 있다.",
+      "계속 증가한다.",
+      "점차로 증가하다가 일정해진다."
+    ],
+    "correct": 3,
+    "exp": "급강하 속도는 점차 증가하여 일정한 종극 속도에 가까워지며 더 이상 증가하지 않는다.",
+    "subcat": "고빈출 계산 및 심화",
+    "ch": "11",
+    "imp": "L급"
+  },
+  {
+    "no": "1595",
+    "id": "2026-1-G-10",
+    "year": "2026",
+    "session": "1회",
+    "category": "항공기 일반",
+    "q": "대기권의 구성을 고도가 낮은 곳부터 순서대로 옳게 나열한 것은?",
+    "options": [
+      "대류권 - 성층권 - 중간권 - 열권",
+      "열권 - 성층권 - 중간권 - 대류권",
+      "대류권 - 중간권 - 성층권 - 열권",
+      "열권 - 대류권 - 성층권 - 중간권"
+    ],
+    "correct": 0,
+    "exp": "대기권은 지표면에서 가까운 순으로 대류권, 성층권, 중간권, 열권 등으로 구분된다.",
+    "subcat": "대기와 베르누이 정리",
+    "ch": "1",
+    "imp": "S급"
+  },
+  {
+    "no": "1596",
+    "id": "2026-1-G-11",
+    "year": "2026",
+    "session": "1회",
+    "category": "항공기 일반",
+    "q": "충돌, 추락, 전복 및 이와 유사한 사고의 위험이 있는 장비 및 시설물에 사용되는 안전색채는?",
+    "options": [
+      "붉은색",
+      "오렌지색",
+      "녹색",
+      "노란색"
+    ],
+    "correct": 3,
+    "exp": "노란색(황색)은 주의를 의미하며 충돌, 추락, 전복 위험 장비에 사용한다.",
+    "subcat": "지상 취급 및 안전",
+    "ch": "10",
+    "imp": "S급"
+  },
+  {
+    "no": "1597",
+    "id": "2026-1-G-12",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "단단히 조여 있는 너트나 볼트를 풀 때 지렛대 역할을 할 수 있도록 하여 풀 수 있는 방향으로 돌려 사용하는 그림과 같은 공구는?",
+    "options": [
+      "슬라이딩 티 핸들",
+      "래칫 핸들",
+      "브레이커 바",
+      "스피드 핸들"
+    ],
+    "correct": 2,
+    "exp": "브레이커 바(힌지 핸들)는 지렛대 원리를 이용해 큰 회전력을 가하는 공구이다.[출제이력:16-1,26-1]",
+    "imgUrl": "https://raw.githubusercontent.com/win8367/aviation-images/refs/heads/main/image18.svg",
+    "subcat": "정밀 측정 및 도구",
+    "ch": "4",
+    "imp": "S급"
+  },
+  {
+    "no": "1598",
+    "id": "2026-1-G-13",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "육안검사(visual inspection)에 대한 설명으로 틀린 것은?",
+    "options": [
+      "신뢰성은 검사자의 능력과 경험에 관계없이 객관적이다.",
+      "가장 오래된 비파괴 검사 방법이다.",
+      "빠르고 경제적이다.",
+      "검사에 사용되는 장비로는 플래시라이트, 확대경 등이 있다."
+    ],
+    "correct": 0,
+    "exp": "육안검사의 신뢰성은 검사자의 숙련도와 경험에 따라 주관적일 수 있다.",
+    "subcat": "정비 관리 및 안전 심화",
+    "ch": "15",
+    "imp": "L급"
+  },
+  {
+    "no": "1599",
+    "id": "2026-1-G-14",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "그림과 같이 측정물을 회전시켜 다이얼게이지로 측정한 최댓값과 최솟값의 차를 구하는 것은 무엇을 측정하는 방법인가?",
+    "options": [
+      "기어의 백래시 측정",
+      "내경과 외경 측정",
+      "원통의 진원 상태 측정",
+      "평면도 측정"
+    ],
+    "correct": 2,
+    "exp": "다이얼 게이지를 이용해 회전체의 흔들림을 측정하여 원통의 진원도(Roundness)를 확인한다.[출제이력: 14-1회, 24-2,26-1회]",
+    "imgUrl": "https://raw.githubusercontent.com/win8367/aviation-images/refs/heads/main/image1.svg",
+    "subcat": "정밀 측정 및 도구",
+    "ch": "4",
+    "imp": "A급"
+  },
+  {
+    "no": "1600",
+    "id": "2026-1-G-15",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "복선식 안전결선 시 기본적으로 지켜야 할 사항으로 옳은 것은?",
+    "options": [
+      "기하학적 모양으로 파스너가 모여 있을 때 적용하는 방법이다.",
+      "3 in 이상 떨어져 있는 피팅 사이에는 결선하지 않는다.",
+      "연속해서 걸 수 있는 최대 길이는 48in이다.",
+      "넓은 간격으로 모인 부품을 연속 결합할 수 있는 최대 수는 3개이다."
+    ],
+    "correct": 3,
+    "exp": "넓은 간격(4~6in)의 부품을 복선식으로 연결할 때는 최대 3개로 제한한다.",
+    "subcat": "체결 요소",
+    "ch": "5",
+    "imp": "A급"
+  },
+  {
+    "no": "1601",
+    "id": "2026-1-G-16",
+    "year": "2026",
+    "session": "1회",
+    "category": "항공기 일반",
+    "q": "다음 중 ATA 100에 의한 항공기 시스템 분류가 틀린 것은?",
+    "options": [
+      "ATA 30 - Ice & rain protection",
+      "ATA 21 - Air conditioning",
+      "ATA 29 - Oxygen",
+      "ATA 32 - Landing Gear"
+    ],
+    "correct": 2,
+    "exp": "ATA 29는 유압 계통이며, 산소 계통은 ATA 35이다.",
+    "subcat": "항공 정비 관리 및 규정",
+    "ch": "14",
+    "imp": "L급"
+  },
+  {
+    "no": "1602",
+    "id": "2026-1-G-17",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "버니어 캘리퍼스로 측정한 결과 어미자 12mm와 아들자의 8번째 눈금이 일치하였다면 측정값은 몇 mm인가?(단, 최소 측정값 0.05mm)",
+    "options": [
+      "12.8",
+      "14",
+      "18",
+      "12.4"
+    ],
+    "correct": 3,
+    "exp": "12mm + (8 × 0.05mm) = 12.4mm 가 된다.[출제이력: 16-1회, 19-4회, 18-1,26-1회]",
+    "imgUrl": "https://raw.githubusercontent.com/win8367/aviation-images/refs/heads/main/image9.svg",
+    "subcat": "정밀 측정 및 도구",
+    "ch": "4",
+    "imp": "S급"
+  },
+  {
+    "no": "1603",
+    "id": "2026-1-G-18",
+    "year": "2026",
+    "session": "1회",
+    "category": "항공기 일반",
+    "q": "항공기의 계류작업에 대한 설명으로 틀린 것은?",
+    "options": [
+      "모든 바퀴에는 굄목을 끼운다.",
+      "소형 항공기는 종료 시마다 계류시켜야 한다.",
+      "기수를 바람 방향으로 주기한다.",
+      "계류 시 모든 문을 닫고 피토튜브를 열어놓는다."
+    ],
+    "correct": 3,
+    "exp": "계류 시에는 이물질 유입 방지를 위해 피토관 등에 덮개를 씌워야 한다.",
+    "subcat": "지상 취급 및 안전",
+    "ch": "10",
+    "imp": "A급"
+  },
+  {
+    "no": "1604",
+    "id": "2026-1-G-19",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "머리에 가로 줄 2개 표시가 되어 있는 볼트 명칭은?",
+    "options": [
+      "특수 볼트",
+      "알루미늄 합금 볼트",
+      "표준 강철 볼트",
+      "정밀 공차 볼트"
+    ],
+    "correct": 1,
+    "exp": "볼트 머리의 대쉬(-) 2개 표시는 알루미늄 합금(2024) 볼트이다.[출제이력: 19-2,20-2,26-1회]",
+    "imgUrl": "https://raw.githubusercontent.com/win8367/aviation-images/refs/heads/main/image26.svg",
+    "subcat": "체결 요소",
+    "ch": "5",
+    "imp": "A급"
+  },
+  {
+    "no": "1605",
+    "id": "2026-1-G-20",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "항공기 외부 전원 공급 장치가 공급하는 3상 교류 전류의 주파수는 몇 Hz인가?",
+    "options": [
+      "400",
+      "300",
+      "200",
+      "100"
+    ],
+    "correct": 0,
+    "exp": "표준 항공기 외부 전원은 400Hz 교류를 사용한다.",
+    "subcat": "가스터빈 엔진 사이클",
+    "ch": "8",
+    "imp": "L급"
+  },
+  {
+    "no": "1606",
+    "id": "2026-1-G-21",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "기체구조의 형식에 대한 설명으로 틀린 것은?",
+    "options": [
+      "무게 대비 강도 효율이 가장 높은 것은 트러스 구조이다.",
+      "모노코크 구조는 응력외피 구조의 일종이다.",
+      "샌드위치 구조는 강도와 강성에 비해 가벼운 장점이 있다.",
+      "세미모노코크 구조는 외피와 보강재가 하중을 분담한다."
+    ],
+    "correct": 0,
+    "exp": "트러스 구조는 골격이 무겁고 외피를 따로 씌워야 하므로 현대기에서는 효율이 낮다.",
+    "subcat": "동체/날개 구조",
+    "ch": "7",
+    "imp": "A급"
+  },
+  {
+    "no": "1607",
+    "id": "2026-1-G-22",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "폴리메타크릴산메틸(아크릴)에 대한 설명으로 틀린 것은?",
+    "options": [
+      "열에 강하고 유기용제에 녹지 않는다.",
+      "광학적 성질이 좋아 창문 유리에 쓰인다.",
+      "플렉시글라스라고도 한다.",
+      "투명도가 매우 양호하다."
+    ],
+    "correct": 0,
+    "exp": "아크릴 수지는 열에 약하고 유기용제에 녹는 단점이 있다.",
+    "subcat": "판금 및 복합소재 수리",
+    "ch": "6",
+    "imp": "L급"
+  },
+  {
+    "no": "1608",
+    "id": "2026-1-G-23",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "유압계통에서 작동유 호스의 크기 호칭은 무엇을 나타내는가?",
+    "options": [
+      "호스의 길이",
+      "호스의 내경",
+      "호스의 내구압력",
+      "호스의 외경"
+    ],
+    "correct": 1,
+    "exp": "호스의 규격 번호는 안지름(ID)을 인치 단위로 나타낸다.",
+    "subcat": "체결 요소",
+    "ch": "5",
+    "imp": "A급"
+  },
+  {
+    "no": "1609",
+    "id": "2026-1-G-24",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "기체 판금작업 시 리벳의 배치에 대한 설명으로 틀린 것은?",
+    "options": [
+      "리벳 끝거리는 판재 모서리에서 리벳 중심까지의 거리이다.",
+      "리벳의 열(row)은 인장력 방향과 직각으로 배열된 리벳들이다.",
+      "리벳의 횡단 피치는 열과 열 사이의 거리이다.",
+      "리벳의 피치는 인접한 리벳 중심 간의 거리이다."
+    ],
+    "correct": 0,
+    "exp": "PDF 상의 정답 근거에 따라 첫 번째 보기가 틀린 설명으로 분류됨.",
+    "subcat": "체결 요소",
+    "ch": "5",
+    "imp": "S급"
+  },
+  {
+    "no": "1610",
+    "id": "2026-1-G-25",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "항공기의 튜브 플레어에 대한 설명으로 옳은 것은?",
+    "options": [
+      "진동이 심한 곳은 단일 플레어 방식을 적용한다.",
+      "항공기용 튜브 플레어 각도는 37도이다.",
+      "이중플레어는 비딩 작업과 함께 한다.",
+      "튜브 벤더를 사용하여 끝을 벌린다."
+    ],
+    "correct": 1,
+    "exp": "항공기 전용 튜브 플레어 각도는 37도이며, 고압 구간은 이중 플레어를 쓴다.",
+    "subcat": "판금 및 복합소재 수리",
+    "ch": "6",
+    "imp": "A급"
+  },
+  {
+    "no": "1611",
+    "id": "2026-1-G-26",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "볼트로 결합된 얇은 판재에서 양쪽에서 당기는 힘이 작용할 때 결합된 볼트에 작용하는 주된 응력은?",
+    "options": [
+      "전단응력",
+      "굽힘응력",
+      "인장응력",
+      "수직응력"
+    ],
+    "correct": 0,
+    "exp": "판재가 미끄러지며 볼트 단면을 자르려는 힘인 전단응력이 작용한다.",
+    "subcat": "고빈출 계산 및 심화",
+    "ch": "11",
+    "imp": "A급",
+    "eq": "0"
+  },
+  {
+    "no": "1612",
+    "id": "2026-1-G-27",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "단자 속에 케이블을 끼우고 전용 도구로 압착하여 연결하는 방법은?",
+    "options": [
+      "스웨이징 단자방법",
+      "니코프레스 처리 방법",
+      "5단 엮기 이음 방법",
+      "랩 숄더 이음 방법"
+    ],
+    "correct": 0,
+    "exp": "터미널 피팅에 케이블을 끼워 압착하는 스웨이징 방식이 가장 보편적이다.",
+    "subcat": "체결 요소",
+    "ch": "5",
+    "imp": "L급"
+  },
+  {
+    "no": "1613",
+    "id": "2026-1-G-28",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "대기압이 객실보다 높을 때 외부 공기를 유입시키는 안전 밸브는?",
+    "options": [
+      "아웃 플로우 밸브",
+      "부압 릴리프 밸브",
+      "압력 릴리프 밸브",
+      "덤프 밸브"
+    ],
+    "correct": 1,
+    "exp": "부압 릴리프 밸브는 동체가 안으로 찌그러지는 것을 막기 위해 공기를 유입시킨다.",
+    "subcat": "동체/날개 구조",
+    "ch": "7",
+    "imp": "L급"
+  },
+  {
+    "no": "1614",
+    "id": "2026-1-G-29",
+    "year": "2026",
+    "session": "1회",
+    "category": "항공기 일반",
+    "q": "조종계통에서 변위를 전달하는 연결장치가 아닌 것은?",
+    "options": [
+      "조종간",
+      "케이블",
+      "조종로드",
+      "벨크랭크"
+    ],
+    "correct": 0,
+    "exp": "조종간은 조종사가 직접 조작하는 입력 장치이며, 나머지는 전달 장치이다.",
+    "subcat": "비행 안정성과 조종",
+    "ch": "3",
+    "imp": "L급"
+  },
+  {
+    "no": "1615",
+    "id": "2026-1-G-30",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "결빙을 막기 위해 사용되는 것이 아닌 것은?",
+    "options": [
+      "가열공기",
+      "전열선",
+      "윈드실드 와이퍼",
+      "알코올"
+    ],
+    "correct": 2,
+    "exp": "와이퍼는 비를 제거하는 장치이며 결빙 방지와는 직접적 관련이 적다.",
+    "subcat": "가스터빈 엔진 사이클",
+    "ch": "8",
+    "imp": "L급"
+  },
+  {
+    "no": "1616",
+    "id": "2026-1-G-31",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "반대쪽에 접근할 수 없는 좁은 공간에 사용하는 리벳은?",
+    "options": [
+      "블라인드 리벳",
+      "접시머리 리벳",
+      "유니버설 리벳",
+      "둥근머리 리벳"
+    ],
+    "correct": 0,
+    "exp": "블라인드 리벳은 한쪽 면에서만 작업이 가능한 특수 리벳이다.",
+    "subcat": "체결 요소",
+    "ch": "5",
+    "imp": "S급"
+  },
+  {
+    "no": "1617",
+    "id": "2026-1-G-32",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "내식성과 고온 강도가 우수하여 엔진 구조재로 쓰이는 재질은?",
+    "options": [
+      "티타늄 합금",
+      "마그네슘 합금",
+      "청동 합금",
+      "인코넬"
+    ],
+    "correct": 0,
+    "exp": "티타늄 합금은 가볍고 강하며 550도까지 고온 성질을 유지한다.",
+    "subcat": "판금 및 복합소재 수리",
+    "ch": "6",
+    "imp": "L급"
+  },
+  {
+    "no": "1618",
+    "id": "2026-1-G-33",
+    "year": "2026",
+    "session": "1회",
+    "category": "항공기 일반",
+    "q": "비행기 꼬리날개의 구성요소로만 나열된 것은?",
+    "options": [
+      "승강타, 방향타, 수직 안정판",
+      "승강타, 정형재, 플랩",
+      "승강타, 정형재, 윙렛",
+      "승강타, 플랩, 방향타"
+    ],
+    "correct": 0,
+    "exp": "꼬리날개는 수직/수평 안정판과 승강키, 방향타 등으로 이루어진다.",
+    "subcat": "비행 안정성과 조종",
+    "ch": "3",
+    "imp": "A급"
+  },
+  {
+    "no": "1619",
+    "id": "2026-1-G-34",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "저압타이어 '7.00 x 6 , 4 ply' 표시가 의미하는 것은?",
+    "options": [
+      "타이어 폭 6.00 in",
+      "타이어 폭 7.00 in",
+      "바깥지름 6.00 in",
+      "안지름 7.00 in"
+    ],
+    "correct": 1,
+    "exp": "앞 숫자는 타이어의 폭(inch)을 의미한다.",
+    "subcat": "지상 취급 및 안전",
+    "ch": "10",
+    "imp": "L급"
+  },
+  {
+    "no": "1620",
+    "id": "2026-1-G-35",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "내식성과 내열성이 좋아 두께를 얇게 제작 가능한 배관 재료는?",
+    "options": [
+      "알루미늄 튜브",
+      "스테인리스 강관",
+      "경질염화비닐 튜브",
+      "주철관"
+    ],
+    "correct": 1,
+    "exp": "스테인리스 강관은 인장강도가 높아 무게 절감이 가능하다.",
+    "subcat": "판금 및 복합소재 수리",
+    "ch": "6",
+    "imp": "L급"
+  },
+  {
+    "no": "1621",
+    "id": "2026-1-G-36",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "나셀(Nacelle)에 대한 설명이 아닌 것은?",
+    "options": [
+      "외피, 카울링, 방화벽 등으로 구성된다.",
+      "정비를 위해 여닫는 부분만을 말한다.",
+      "엔진을 감싸는 유선형 구조물이다.",
+      "공기 흡입구와 배기구가 포함된다."
+    ],
+    "correct": 1,
+    "exp": "여닫는 부분은 카울링이며 나셀은 엔진 전체 하우징을 뜻한다.",
+    "subcat": "동체/날개 구조",
+    "ch": "7",
+    "imp": "A급"
+  },
+  {
+    "no": "1622",
+    "id": "2026-1-G-38",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "두께 0.2cm 판을 반지름 24.8cm로 90° 굽힐 때 세트백은?",
+    "options": [
+      "25.8",
+      "24.8",
+      "25",
+      "25.2"
+    ],
+    "correct": 2,
+    "exp": "SB = tan(45°) * (24.8 + 0.2) = 25.0cm.",
+    "subcat": "고빈출 계산 및 심화",
+    "ch": "11",
+    "imp": "S급"
+  },
+  {
+    "no": "1623",
+    "id": "2026-1-G-39",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "내화성이며 자주색 식별색을 갖는 작동유는?",
+    "options": [
+      "합성유",
+      "동물성유",
+      "광물성유",
+      "식물성유"
+    ],
+    "correct": 0,
+    "exp": "자주색 합성유(Skydrol)는 내화성이 우수한 현대기용 오일이다.",
+    "subcat": "판금 및 복합소재 수리",
+    "ch": "6",
+    "imp": "L급"
+  },
+  {
+    "no": "1624",
+    "id": "2026-1-G-40",
+    "year": "2026",
+    "session": "1회",
+    "category": "기체 정비",
+    "q": "골조 구조가 하중의 대부분을 담당하는 동체 형식은?",
+    "options": [
+      "세미모노코크형",
+      "모노코크형",
+      "트러스형",
+      "응력외피형"
+    ],
+    "correct": 2,
+    "exp": "트러스형은 부재들의 골격망이 하중을 지지하는 전통적인 방식이다.",
+    "subcat": "동체/날개 구조",
+    "ch": "7",
+    "imp": "A급"
+  },
+  {
+    "no": "1625",
+    "id": "2026-1-G-41",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "왕복엔진의 이상적인 작동 사이클은?",
+    "options": [
+      "카르노 사이클",
+      "오토 사이클",
+      "랭킨 사이클",
+      "브레이턴 사이클"
+    ],
+    "correct": 1,
+    "exp": "불꽃 점화식 왕복 엔진의 표준 사이클은 오토 사이클이다.",
+    "subcat": "엔진 계통 및 왕복기관",
+    "ch": "9",
+    "imp": "A급"
+  },
+  {
+    "no": "1626",
+    "id": "2026-1-G-42",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "8개의 캔형 연소실 중 점화장치가 있는 곳의 개수는?",
+    "options": [
+      "16",
+      "2",
+      "4",
+      "8"
+    ],
+    "correct": 1,
+    "exp": "가스터빈은 신뢰성을 위해 보통 2개의 이그나이터를 설치한다.",
+    "subcat": "가스터빈 엔진 사이클",
+    "ch": "8",
+    "imp": "A급"
+  },
+  {
+    "no": "1627",
+    "id": "2026-1-G-43",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "크랭크축 비틀림 진동을 흡수하기 위해 사용하는 것은?",
+    "options": [
+      "주저널",
+      "크랭크 핀",
+      "다이나믹 댐퍼",
+      "평형추"
+    ],
+    "correct": 2,
+    "exp": "다이나믹 댐퍼는 비틀림 진동 에너지를 흡수하여 크랭크축을 보호한다.",
+    "subcat": "엔진 계통 및 왕복기관",
+    "ch": "9",
+    "imp": "L급"
+  },
+  {
+    "no": "1628",
+    "id": "2026-1-G-44",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "왕복엔진 피스톤 링의 기능이 아닌 것은?",
+    "options": [
+      "열전도 작용",
+      "충격흡수 작용",
+      "누설방지 작용",
+      "윤활유 조절 작용"
+    ],
+    "correct": 1,
+    "exp": "기밀 유지, 냉각, 오일 제어가 링의 주 목적이다.",
+    "subcat": "엔진 계통 및 왕복기관",
+    "ch": "9",
+    "imp": "A급"
+  },
+  {
+    "no": "1629",
+    "id": "2026-1-G-45",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "왕복엔진 카울링 검사방법으로 틀린 것은?",
+    "options": [
+      "원래 모양 유지 여부 검사",
+      "부식 손상 검사",
+      "로터 블레이드 간격 측정",
+      "마모 여부 검사"
+    ],
+    "correct": 2,
+    "exp": "블레이드 간격 측정은 가스터빈 엔진의 핵심 점검 사항이다.",
+    "subcat": "엔진 계통 및 왕복기관",
+    "ch": "9",
+    "imp": "L급"
+  },
+  {
+    "no": "1630",
+    "id": "2026-1-G-46",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "가스터빈 시동 시 점화스위치가 꺼지는 때는?",
+    "options": [
+      "자립 회전 속도 도달 후",
+      "최대 EGT 시",
+      "연료 공급 시",
+      "완속 EGT 시"
+    ],
+    "correct": 0,
+    "exp": "엔진이 스스로 회전을 지속할 수 있는 속도에 도달하면 점화가 차단된다.",
+    "subcat": "가스터빈 엔진 사이클",
+    "ch": "8",
+    "imp": "S급"
+  },
+  {
+    "no": "1631",
+    "id": "2026-1-G-47",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "왕복엔진의 마력(HP) 설명으로 틀린 것은?",
+    "options": [
+      "동력의 일반적 단위이다.",
+      "550 ft·lb/s가 1마력이다.",
+      "영국 표준단위로 쓰인다.",
+      "길이나 부피 단위로 쓰인다."
+    ],
+    "correct": 3,
+    "exp": "마력은 일률을 나타내는 물리량이며 길이/부피와는 무관하다.",
+    "subcat": "엔진 계통 및 왕복기관",
+    "ch": "9",
+    "imp": "L급"
+  },
+  {
+    "no": "1632",
+    "id": "2026-1-G-48",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "아음속 흡입구가 확산형으로 구성된 이유는?",
+    "options": [
+      "속도를 높이기 위해",
+      "유량을 줄이기 위해",
+      "에너지를 회복하기 위해",
+      "기류 속도를 감소시키기 위해"
+    ],
+    "correct": 3,
+    "exp": "흐름을 늦추어 압력을 높임으로써 압축기 입구 기류를 안정화한다.",
+    "subcat": "가스터빈 엔진 사이클",
+    "ch": "8",
+    "imp": "A급"
+  },
+  {
+    "no": "1633",
+    "id": "2026-1-G-49",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "가스터빈 윤활유 조건이 아닌 것은?",
+    "options": [
+      "인화점 높음",
+      "기화성 높음",
+      "점도지수 높음",
+      "거품저항성 큼"
+    ],
+    "correct": 1,
+    "exp": "오일 소모를 막기 위해 윤활유는 기화성(휘발성)이 낮아야 한다.",
+    "subcat": "가스터빈 엔진 사이클",
+    "ch": "8",
+    "imp": "S급"
+  },
+  {
+    "no": "1634",
+    "id": "2026-1-G-50",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "냉각핀 방열량에 영향이 가장 적은 것은?",
+    "options": [
+      "공기 유량",
+      "재질",
+      "모양",
+      "크랭크의 크기"
+    ],
+    "correct": 3,
+    "exp": "방열은 표면적과 기류에 의존하며 크랭크축 크기는 상관없다.",
+    "subcat": "엔진 계통 및 왕복기관",
+    "ch": "9",
+    "imp": "A급"
+  },
+  {
+    "no": "1635",
+    "id": "2026-1-G-51",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "전방에 큰 팬이 있는 가스터빈 엔진 형식은?",
+    "options": [
+      "터보프롭",
+      "터보팬",
+      "터보샤프트",
+      "터보제트"
+    ],
+    "correct": 1,
+    "exp": "팬의 바이패스 기류를 이용해 고출력을 내는 터보팬 엔진이다.",
+    "subcat": "가스터빈 엔진 사이클",
+    "ch": "8",
+    "imp": "L급",
+    "eq": "0"
+  },
+  {
+    "no": "1636",
+    "id": "2026-1-G-52",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "자연발화로 소음과 진동, 과열을 일으키는 현상은?",
+    "options": [
+      "베이퍼 록",
+      "킥백",
+      "노킹",
+      "후화"
+    ],
+    "correct": 2,
+    "exp": "정상 연소 전 혼합기가 폭발하는 노킹(Knocking) 현상이다.",
+    "subcat": "엔진 계통 및 왕복기관",
+    "ch": "9",
+    "imp": "A급"
+  },
+  {
+    "no": "1637",
+    "id": "2026-1-G-53",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "가스터빈 부품의 사전 일반 세척(pre cleaning)에 대한 설명은?",
+    "options": [
+      "솔벤트나 증기로 오물을 제거하는 법",
+      "와이어 브러시로 긁어내는 법",
+      "연마제를 분사하는 법",
+      "고압 공기만 이용하는 법"
+    ],
+    "correct": 0,
+    "exp": "정밀 검사 전 솔벤트를 써서 기름기와 탄소물을 씻는 기초 단계이다.",
+    "subcat": "정비 관리 및 안전 심화",
+    "ch": "15",
+    "imp": "L급"
+  },
+  {
+    "no": "1638",
+    "id": "2026-1-G-54",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "왕복엔진 시동기 계통 구성품이 아닌 것은?",
+    "options": [
+      "브래킷",
+      "스타터 스위치",
+      "배터리",
+      "스타터 솔레노이드"
+    ],
+    "correct": 0,
+    "exp": "전기 핵심 부품에는 배터리, 스위치, 솔레노이드가 포함된다.",
+    "subcat": "엔진 계통 및 왕복기관",
+    "ch": "9",
+    "imp": "A급"
+  },
+  {
+    "no": "1639",
+    "id": "2026-1-G-55",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "크랭크 케이스 하부를 오일 탱크로 쓰는 방식은?",
+    "options": [
+      "건식윤활계통",
+      "습식윤활계통",
+      "오일윤활계통",
+      "단일윤활계통"
+    ],
+    "correct": 1,
+    "exp": "내부에 오일을 담아 순환시키는 습식 윤활계통(Wet Sump)이다.",
+    "subcat": "엔진 계통 및 왕복기관",
+    "ch": "9",
+    "imp": "A급"
+  },
+  {
+    "no": "1640",
+    "id": "2026-1-G-56",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "4행정 엔진 캠축과 크랭크축의 속도비는?",
+    "options": [
+      "4배",
+      "2배",
+      "1/2",
+      "1/4"
+    ],
+    "correct": 2,
+    "exp": "크랭크 2회전당 캠은 1회전하므로 비는 1/2이다.",
+    "subcat": "엔진 계통 및 왕복기관",
+    "ch": "9",
+    "imp": "A급"
+  },
+  {
+    "no": "1641",
+    "id": "2026-1-G-57",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "터빈 입구7, 출구3, 로터입구4일 때 축류 터빈 반동도는?",
+    "options": [
+      "25%",
+      "30%",
+      "20%",
+      "35%"
+    ],
+    "correct": 0,
+    "exp": "반동도 = (4-3)/(7-3) = 0.25 (25%).",
+    "subcat": "고빈출 계산 및 심화",
+    "ch": "11",
+    "imp": "A급"
+  },
+  {
+    "no": "1642",
+    "id": "2026-1-G-58",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "원심식 압축기 구성품이 아닌 것은?",
+    "options": [
+      "디퓨저",
+      "매니폴드",
+      "회전자(Rotor)",
+      "임펠러"
+    ],
+    "correct": 2,
+    "exp": "회전자는 축류식 용어이며 원심식은 임펠러를 사용한다.",
+    "subcat": "가스터빈 엔진 사이클",
+    "ch": "8",
+    "imp": "S급"
+  },
+  {
+    "no": "1643",
+    "id": "2026-1-G-59",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "최근 대형기 점화계통으로 주로 쓰이는 것은?",
+    "options": [
+      "Glow 플러그",
+      "용량형 점화계통",
+      "Battery형 플러그",
+      "유도형 점화계통"
+    ],
+    "correct": 1,
+    "exp": "고에너지 방출이 가능한 용량형 방식이 널리 쓰인다.",
+    "subcat": "가스터빈 엔진 사이클",
+    "ch": "8",
+    "imp": "A급"
+  },
+  {
+    "no": "1644",
+    "id": "2026-1-G-60",
+    "year": "2026",
+    "session": "1회",
+    "category": "기관 정비",
+    "q": "연료조정장치(FCU) 수감 요소가 아닌 것은?",
+    "options": [
+      "엔진의 회전수",
+      "배기가스 유량",
+      "압축기 출구 압력",
+      "압축기 입구 온도"
+    ],
+    "correct": 1,
+    "exp": "FCU는 유량 대신 RPM, 압력, 온도를 수감한다.",
+    "subcat": "엔진 계통 및 왕복기관",
+    "ch": "9",
+    "imp": "A급"
   }
 ];
 console.log("데이터 로드 완료: " + window.MASTER_QUIZ_DATA.length + "건");
